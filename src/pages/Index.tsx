@@ -71,26 +71,26 @@ const Index = () => {
       
       <main className="flex-1">
         {/* Hero Section - Clean and focused */}
-        <section className="hero-gradient text-primary-foreground pt-24 pb-12 md:pt-28 md:pb-16">
-          <div className="container-lg">
-            <div className="max-w-xl">
+        <section className="hero-gradient text-primary-foreground pt-24 pb-12 md:pt-28 md:pb-16 min-h-[70vh] md:min-h-0 flex items-center">
+          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:pl-[10%] lg:pl-[15%]">
+            <div className="max-w-xl mx-auto md:mx-0">
               {/* 1. Primary Headline */}
-              <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up">
+              <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up text-left">
                 Business solutions, organised for your business
               </h1>
               
               {/* 2. Supporting Sentence */}
-              <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+              <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-5 leading-relaxed animate-slide-up text-left" style={{ animationDelay: "60ms" }}>
                 From funding to payments, assets, and services, one team helps you organise what your business needs.
               </p>
               
               {/* 3. Confidence Line */}
-              <p className="text-sm text-primary-foreground/50 mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
+              <p className="text-sm text-primary-foreground/50 mb-8 animate-slide-up text-left" style={{ animationDelay: "100ms" }}>
                 One team. End to end.
               </p>
               
               {/* 4. Intent Selector */}
-              <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
+              <div className="mb-6 animate-slide-up" style={{ animationDelay: "140ms" }}>
                 <IntentSelector
                   selectedService={selectedIntent}
                   onServiceSelect={handleIntentSelect}
@@ -98,7 +98,7 @@ const Index = () => {
               </div>
               
               {/* 5. Single Primary CTA */}
-              <div className="animate-slide-up flex justify-center md:justify-start" style={{ animationDelay: "180ms" }}>
+              <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
                 <EnquiryForm
                   triggerVariant="hero"
                   triggerSize="lg"

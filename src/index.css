@@ -198,14 +198,33 @@
     background: hsl(220 20% 13%);
   }
 
-  /* Hero to content transition gradient - softer */
+  /* Hero to content transition gradient - seamless blend */
   .hero-fade {
     background: linear-gradient(
       180deg,
       hsl(220 20% 14%) 0%,
-      hsl(220 20% 18% / 0.5) 40%,
-      hsl(var(--section-primary)) 100%
+      hsl(220 18% 20%) 25%,
+      hsl(220 16% 35%) 50%,
+      hsl(220 14% 70%) 75%,
+      hsl(var(--section-alt)) 100%
     );
+  }
+  
+  /* Bottom fade for hero sections */
+  .hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      hsl(220 20% 14% / 0.3) 50%,
+      hsl(220 20% 14% / 0.6) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
   }
 
   /* Locked Card System - sits on tinted surfaces */

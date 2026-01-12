@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, ArrowLeft } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
@@ -16,23 +16,6 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
       {/* Hero wrapper - includes header for unified fade treatment */}
       <div className="hero-wrapper">
         <Header transparent />
-        
-        {/* Breadcrumb - tighter spacing on mobile */}
-        <div className="border-b border-primary-foreground/10">
-          <div className="container-wide py-2 md:py-3">
-            <nav className="flex items-center text-xs md:text-sm text-primary-foreground/50 flex-wrap gap-0.5">
-              <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[40px] flex items-center">
-                Home
-              </Link>
-              <ChevronRight className="h-3 w-3 mx-1" />
-              <Link to={`/${subService.parentSlug}`} className="hover:text-primary-foreground transition-colors min-h-[40px] flex items-center">
-                {subService.parentName}
-              </Link>
-              <ChevronRight className="h-3 w-3 mx-1" />
-              <span className="text-primary-foreground">{subService.name}</span>
-            </nav>
-          </div>
-        </div>
 
         {/* Hero Section - Text left, image right, tighter spacing */}
         <section className="text-primary-foreground py-8 md:py-12 lg:py-14">
@@ -61,10 +44,13 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
             </div>
           </div>
         </section>
+        
+        {/* Bottom fade overlay */}
+        <div className="hero-bottom-fade" />
       </div>
 
-      {/* Hero to content transition - reduced height */}
-      <div className="hero-fade h-4 md:h-6" />
+      {/* Hero to content transition - smoother blend */}
+      <div className="hero-fade h-8 md:h-12" />
       
       <main className="flex-1">
 

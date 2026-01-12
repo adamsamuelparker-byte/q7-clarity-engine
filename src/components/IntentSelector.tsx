@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -41,31 +41,53 @@ export const IntentSelector = ({
   onServiceSelect,
 }: IntentSelectorProps) => {
   const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isRotating, setIsRotating] = useState(true);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFading, setIsFading] = useState(false);
   const isMobile = useIsMobile();
+  const rotationIntervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const selectedServiceName = selectedService
+  // Get the display name - either selected service or rotating service
+  const displayName = selectedService
     ? intentServices.find((s) => s.id === selectedService)?.name
-    : null;
+    : intentServices[currentIndex].name;
+
+  // Handle rotation
+  useEffect(() => {
+    if (!isRotating || selectedService || isHovered) {
+      if (rotationIntervalRef.current) {
+        clearInterval(rotationIntervalRef.current);
+        rotationIntervalRef.current = null;
+      }
+      return;
+    }
+
+    rotationIntervalRef.current = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % intentServices.length);
+        setIsFading(false);
+      }, 200);
+    }, 3500);
+
+    return () => {
+      if (rotationIntervalRef.current) {
+        clearInterval(rotationIntervalRef.current);
+      }
+    };
+  }, [isRotating, selectedService, isHovered]);
 
   const handleSelect = (serviceId: string, serviceName: string) => {
     onServiceSelect(serviceId, serviceName);
+    setIsRotating(false);
     setOpen(false);
   };
 
-  const SelectorButton = (
-    <button
-      onClick={() => setOpen(true)}
-      className="w-full bg-background text-foreground rounded-lg px-5 py-4 flex items-center justify-between gap-3 cursor-pointer transition-all hover:bg-background/95"
-    >
-      <span className="text-left">
-        <span className="text-muted-foreground">I'm looking for… </span>
-        {selectedServiceName && (
-          <span className="font-medium">{selectedServiceName}</span>
-        )}
-      </span>
-      <ChevronDown className="h-5 w-5 text-muted-foreground shrink-0" />
-    </button>
-  );
+  const handleClick = () => {
+    setIsRotating(false);
+    setOpen(true);
+  };
 
   const ServiceList = (
     <div className="space-y-2">
@@ -89,11 +111,37 @@ export const IntentSelector = ({
     </div>
   );
 
+  const SelectorText = (
+    <button
+      onClick={handleClick}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="inline-flex items-center gap-2 text-lg md:text-xl cursor-pointer group text-left"
+    >
+      <span className="text-primary-foreground/60">I'm looking for…</span>
+      <span 
+        className={cn(
+          "text-accent font-medium transition-opacity duration-200",
+          isFading ? "opacity-0" : "opacity-100"
+        )}
+      >
+        {displayName}
+      </span>
+      <ChevronDown 
+        className={cn(
+          "h-5 w-5 text-accent transition-transform duration-200",
+          open ? "rotate-180" : "rotate-0",
+          "group-hover:translate-y-0.5"
+        )}
+      />
+    </button>
+  );
+
   // Mobile: use bottom sheet
   if (isMobile) {
     return (
       <>
-        {SelectorButton}
+        {SelectorText}
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetContent side="bottom" className="max-h-[80vh] overflow-y-auto rounded-t-2xl">
             <SheetHeader className="mb-4">
@@ -109,9 +157,9 @@ export const IntentSelector = ({
   // Desktop: use dialog
   return (
     <>
-      {SelectorButton}
+      {SelectorText}
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="sm:max-w-md max-h-[80vh] overflow-y-auto">
+        <DialogContent className="sm:max-w-md max-h-[80vh] overflow-y-auto shadow-xl border-0">
           <DialogHeader>
             <DialogTitle>What are you looking for?</DialogTitle>
           </DialogHeader>

@@ -79,25 +79,17 @@ const Index = () => {
           <div className="container-lg">
             <div className="max-w-xl">
               {/* 1. Primary Headline */}
-              <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-medium leading-[1.2] mb-6 animate-slide-up">
+              <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold leading-[1.25] mb-5 animate-slide-up">
                 Financial solutions, organised for your business
               </h1>
               
-              {/* 2. Intent Selector */}
-              <div className="mb-6 animate-slide-up" style={{ animationDelay: "60ms" }}>
-                <IntentSelector
-                  selectedService={selectedIntent}
-                  onServiceSelect={handleIntentSelect}
-                />
-              </div>
-              
-              {/* 3. Supporting Sentence */}
-              <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "100ms" }}>
-                We help businesses access the right funding, services, and solutions, guiding you through every step of the process.
+              {/* 2. Supporting Sentence */}
+              <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+                We help businesses access the right funding and services, guiding you from enquiry to completion.
               </p>
               
-              {/* 4. Reassurance Strip */}
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-4 animate-slide-up text-primary-foreground/60 text-sm font-medium" style={{ animationDelay: "140ms" }}>
+              {/* 3. Reassurance Strip */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-6 animate-slide-up text-primary-foreground/70 text-sm font-medium" style={{ animationDelay: "100ms" }}>
                 {reassuranceItems.map((item, index) => (
                   <span key={index} className="flex items-center">
                     <span>{item}</span>
@@ -108,25 +100,22 @@ const Index = () => {
                 ))}
               </div>
               
-              {/* 5. Trust Sentence */}
-              <p className="text-sm text-primary-foreground/50 mb-8 max-w-md leading-relaxed animate-slide-up" style={{ animationDelay: "180ms" }}>
-                We assess your needs, source the right partners, and manage the process for you.
-              </p>
+              {/* 4. Inline Rotating Intent Selector */}
+              <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
+                <IntentSelector
+                  selectedService={selectedIntent}
+                  onServiceSelect={handleIntentSelect}
+                />
+              </div>
               
-              {/* 6. CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 animate-slide-up" style={{ animationDelay: "220ms" }}>
+              {/* 5. Single Primary CTA */}
+              <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
                 <EnquiryForm
                   triggerVariant="hero"
                   triggerSize="lg"
                   triggerText="Get Started"
                   preSelectedService={selectedIntent || undefined}
                   preSelectedServiceName={selectedIntentName || undefined}
-                />
-                <EnquiryForm
-                  triggerVariant="hero-outline"
-                  triggerSize="lg"
-                  triggerText="Speak to Our Team"
-                  isGeneralEnquiry
                 />
               </div>
             </div>

@@ -106,13 +106,13 @@ export const IntentSelector = ({
           key={service.id}
           onClick={() => handleSelect(service)}
           className={cn(
-            "w-full flex items-center justify-between p-4 rounded-lg border transition-all text-left min-h-[56px]",
+            "w-full flex items-center justify-between p-3 md:p-4 rounded-lg border transition-all text-left min-h-[52px]",
             selectedService === service.id
               ? "border-accent bg-accent/5"
-              : "border-border hover:border-accent/50 hover:bg-accent/5"
+              : "border-card-border hover:border-accent"
           )}
         >
-          <span className="font-medium text-heading">{service.name}</span>
+          <span className="font-medium text-heading text-sm md:text-base">{service.name}</span>
           {selectedService === service.id && (
             <Check className="h-5 w-5 text-accent" />
           )}
@@ -130,13 +130,13 @@ export const IntentSelector = ({
         <Link
           to={pendingService.href}
           onClick={handleActionClose}
-          className="w-full flex items-center justify-between p-4 rounded-lg border border-border hover:border-accent hover:bg-accent/5 transition-all min-h-[56px] group"
+          className="w-full flex items-center justify-between p-3 md:p-4 rounded-lg border border-card-border hover:border-accent transition-all min-h-[52px] group"
         >
           <div>
-            <span className="font-medium text-heading group-hover:text-accent transition-colors">Understand more</span>
+            <span className="font-medium text-heading group-hover:text-accent transition-colors text-sm md:text-base">Understand more</span>
             <p className="text-xs text-muted-foreground mt-0.5">Learn about this solution</p>
           </div>
-          <ArrowRight className="h-5 w-5 text-accent" />
+          <ArrowRight className="h-5 w-5 text-foreground/40 group-hover:text-accent transition-colors" />
         </Link>
         <EnquiryForm
           preSelectedCategory={pendingService.id}
@@ -145,10 +145,10 @@ export const IntentSelector = ({
           triggerClassName="w-full"
           customTrigger={
             <button
-              className="w-full flex items-center justify-between p-4 rounded-lg border border-accent bg-accent/5 hover:bg-accent/10 transition-all min-h-[56px] group"
+              className="w-full flex items-center justify-between p-3 md:p-4 rounded-lg border border-accent bg-accent/5 hover:bg-accent/10 transition-all min-h-[52px] group"
             >
               <div className="text-left">
-                <span className="font-medium text-heading group-hover:text-accent transition-colors">Get in touch</span>
+                <span className="font-medium text-heading group-hover:text-accent transition-colors text-sm md:text-base">Get in touch</span>
                 <p className="text-xs text-muted-foreground mt-0.5">Start your enquiry</p>
               </div>
               <MessageCircle className="h-5 w-5 text-accent" />

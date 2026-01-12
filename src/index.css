@@ -37,16 +37,16 @@
     /* Card - Slightly lighter than section backgrounds */
     --card: 0 0% 100%;
     --card-foreground: 220 20% 14%;
-    --card-border: 220 14% 88%;
+    --card-border: 220 15% 75%;
     --card-border-hover: 174 35% 40%;
     
     /* Popover */
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 14%;
     
-    /* Borders - Subtle charcoal tint */
-    --border: 220 14% 90%;
-    --input: 220 14% 88%;
+    /* Borders - Medium charcoal (noticeably darker than light grey) */
+    --border: 220 12% 78%;
+    --input: 220 14% 80%;
     --ring: 174 35% 40%;
     
     /* Destructive */

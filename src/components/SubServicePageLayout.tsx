@@ -3,6 +3,7 @@ import { ChevronRight, ArrowLeft } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { FloatingCTA } from "@/components/FloatingCTA";
 import type { SubServicePageData } from "@/data/subServicePages";
 
 interface SubServicePageLayoutProps {
@@ -16,18 +17,18 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
       <div className="hero-wrapper">
         <Header transparent />
         
-        {/* Breadcrumb - inside hero wrapper */}
+        {/* Breadcrumb - tighter spacing on mobile */}
         <div className="border-b border-primary-foreground/10">
-          <div className="container-wide py-3 md:py-4">
+          <div className="container-wide py-2 md:py-3">
             <nav className="flex items-center text-xs md:text-sm text-primary-foreground/50 flex-wrap gap-0.5">
-              <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
+              <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[40px] flex items-center">
                 Home
               </Link>
-              <ChevronRight className="h-3 w-3 mx-1 md:mx-2" />
-              <Link to={`/${subService.parentSlug}`} className="hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
+              <ChevronRight className="h-3 w-3 mx-1" />
+              <Link to={`/${subService.parentSlug}`} className="hover:text-primary-foreground transition-colors min-h-[40px] flex items-center">
                 {subService.parentName}
               </Link>
-              <ChevronRight className="h-3 w-3 mx-1 md:mx-2" />
+              <ChevronRight className="h-3 w-3 mx-1" />
               <span className="text-primary-foreground">{subService.name}</span>
             </nav>
           </div>
@@ -153,6 +154,9 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </section>
       </main>
+
+      {/* Floating CTA */}
+      <FloatingCTA />
 
       <Footer />
     </div>

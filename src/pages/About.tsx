@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/CTASection";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const About = () => {
   return (
@@ -82,6 +83,9 @@ const About = () => {
         {/* CTA Section */}
         <CTASection />
       </main>
+
+      {/* Floating CTA */}
+      <FloatingCTA />
 
       <Footer />
     </div>

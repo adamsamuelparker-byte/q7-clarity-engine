@@ -84,10 +84,10 @@ export const solutionPages: Record<string, SolutionPageData> = {
       closing: "There is no obligation, and no pressure to proceed.",
     },
     subProducts: [
-      { id: "unsecured-loans", name: "Unsecured Business Loans", description: "Fast access to funds without needing to secure against assets." },
-      { id: "secured-loans", name: "Secured Business Loans", description: "Larger amounts with competitive rates using asset security." },
-      { id: "invoice-finance", name: "Invoice Finance", description: "Unlock cash tied up in your outstanding invoices." },
-      { id: "merchant-cash", name: "Merchant Cash Advance", description: "Funding based on your card payment turnover." },
+      { id: "secured-business-loans", name: "Secured Business Loans", description: "Larger amounts with competitive rates using asset security." },
+      { id: "working-capital", name: "Working Capital", description: "Solutions to support cash flow and trading cycles." },
+      { id: "emergency-funding", name: "Emergency Funding", description: "Short term support when timing matters." },
+      { id: "refinancing", name: "Refinancing", description: "Review and restructure existing funding arrangements." },
     ],
   },
   "payments-merchant": {
@@ -138,9 +138,8 @@ export const solutionPages: Record<string, SolutionPageData> = {
       closing: "There is no obligation to proceed.",
     },
     subProducts: [
-      { id: "card-terminals", name: "Card Payment Terminals", description: "Countertop and portable terminals for face-to-face payments." },
-      { id: "epos-systems", name: "EPOS Systems", description: "Complete point of sale systems for retail and hospitality." },
-      { id: "online-payments", name: "Online Payment Solutions", description: "Secure payment gateways for your e-commerce operations." },
+      { id: "ecommerce-payments", name: "Ecommerce Payments", description: "Reliable and secure payment systems for online trading." },
+      { id: "merchant-accounts", name: "Merchant Accounts", description: "Access suitable merchant accounts without confusion." },
     ],
   },
   "asset-finance": {
@@ -186,9 +185,8 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "Start an enquiry and tell us what assets you're looking to finance. One of the team will be in touch to discuss your options and next steps.",
     },
     subProducts: [
-      { id: "equipment-finance", name: "Equipment Finance", description: "Finance machinery, equipment, and tools for your business." },
-      { id: "technology-finance", name: "Technology Finance", description: "Spread the cost of IT and technology investments." },
-      { id: "refinancing", name: "Asset Refinancing", description: "Release capital from assets you already own." },
+      { id: "equipment-finance", name: "Equipment Finance", description: "Spread the cost of tools and machinery." },
+      { id: "technology-finance", name: "Technology Finance", description: "Investment in IT and digital infrastructure." },
     ],
   },
   "leasing-rental": {
@@ -234,9 +232,9 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "If you're considering leasing or rental, start an enquiry and tell us what you're looking to access. We'll guide you through the next steps.",
     },
     subProducts: [
-      { id: "vehicle-leasing", name: "Vehicle Leasing", description: "Contract hire and leasing for cars and commercial vehicles." },
-      { id: "equipment-leasing", name: "Equipment Leasing", description: "Lease machinery and equipment with flexible terms." },
-      { id: "technology-rental", name: "Technology Rental", description: "Short and long-term rental for IT and technology." },
+      { id: "vehicle-leasing", name: "Vehicle Leasing", description: "Access vehicles without ownership for flexibility and control." },
+      { id: "fleet-leasing", name: "Fleet Leasing", description: "Scalable solutions for businesses operating multiple vehicles." },
+      { id: "short-term-rental", name: "Short Term Rental", description: "Flexibility without long commitments." },
     ],
   },
   "vehicles-mobility": {
@@ -283,9 +281,8 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "Start an enquiry and let us know what type of vehicle or mobility solution you're exploring. We'll be in touch to discuss next steps.",
     },
     subProducts: [
-      { id: "business-vehicles", name: "Business Vehicles", description: "Cars, vans, and commercial vehicles for your operations." },
-      { id: "electric-mobility", name: "Electric Bikes and Mopeds", description: "Sustainable urban mobility solutions." },
-      { id: "branded-vehicles", name: "Branded Vehicles", description: "Vehicles with your branding for maximum visibility." },
+      { id: "electric-vehicles", name: "Electric Vehicles", description: "Reduce running costs and emissions with electric options." },
+      { id: "delivery-courier-vehicles", name: "Delivery and Courier Vehicles", description: "Reliable vehicles for delivery operations." },
     ],
   },
   "tracking-protection": {
@@ -332,9 +329,8 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "If you'd like to explore tracking or protection options, start an enquiry and tell us what assets you're looking to protect.",
     },
     subProducts: [
-      { id: "vehicle-tracking", name: "Vehicle Tracking", description: "Real-time GPS tracking for cars, vans, and trucks." },
-      { id: "asset-tracking", name: "Asset Tracking", description: "Monitor the location of valuable equipment and assets." },
-      { id: "cctv-webcams", name: "CCTV and Webcams", description: "Visual monitoring and security solutions." },
+      { id: "asset-tracking", name: "Asset Tracking", description: "Monitor valuable equipment for control and visibility." },
+      { id: "asset-recovery", name: "Asset Recovery", description: "Retrieve stolen or lost assets when it matters." },
     ],
   },
   "banking-accounting": {
@@ -380,9 +376,8 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "Start an enquiry and let us know what banking or accounting support you're looking for. We'll be in touch to discuss next steps.",
     },
     subProducts: [
-      { id: "business-accounts", name: "Business Bank Accounts", description: "Current accounts designed for business needs." },
-      { id: "business-cards", name: "Business Credit Cards", description: "Credit and charge cards for business expenses." },
-      { id: "accounting", name: "Accounting Services", description: "Bookkeeping, accounts, and financial reporting." },
+      { id: "business-credit-cards", name: "Business Credit Cards", description: "Manage expenses with suitable card options." },
+      { id: "tax-compliance-support", name: "Tax and Compliance Support", description: "Essential tax and compliance assistance." },
     ],
   },
   "business-support": {
@@ -428,9 +423,8 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "If you'd like to explore business support services, start an enquiry and tell us what you need help with. We'll guide you from there.",
     },
     subProducts: [
-      { id: "operational-support", name: "Operational Support", description: "Day-to-day business operations assistance." },
-      { id: "admin-services", name: "Administration Services", description: "Back office and administrative support." },
-      { id: "advisory", name: "Advisory Services", description: "Ongoing guidance and business advice." },
+      { id: "operational-support", name: "Operational Support", description: "Practical assistance for growing businesses." },
+      { id: "partner-introductions", name: "Partner Introductions", description: "Trusted provider introductions." },
     ],
   },
 };

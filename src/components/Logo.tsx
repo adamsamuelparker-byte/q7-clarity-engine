@@ -23,16 +23,19 @@ export const Logo = ({
       {/* Q7 Icon */}
       <div className={cn(
         "flex items-center justify-center rounded-lg",
-        "w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12",
+        "w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10",
         isLight ? "bg-white/10 border border-white/20" : "bg-primary/5 border border-primary/10",
         iconClassName
       )}>
-        <span className={cn(
-          "text-lg sm:text-xl md:text-2xl font-bold tracking-tight",
-          isLight ? "text-white" : "text-primary"
-        )}>
-          Q7
-        </span>
+        <div className="flex flex-col items-center">
+          <span className={cn(
+            "text-base sm:text-lg md:text-xl font-bold tracking-tight leading-none",
+            isLight ? "text-white" : "text-primary"
+          )}>
+            Q7
+          </span>
+          <div className="w-5 sm:w-6 md:w-7 h-[1.5px] bg-accent/40 mt-0.5 rounded-full" />
+        </div>
       </div>
       
       {/* Text beside logo */}

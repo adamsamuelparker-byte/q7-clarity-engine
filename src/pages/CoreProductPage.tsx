@@ -177,7 +177,7 @@ const CoreProductPage = () => {
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary border-b border-border">
+        <div className="bg-secondary/50">
           <div className="container-wide py-3">
             <nav className="flex items-center text-sm text-muted-foreground">
               <a href="/" className="hover:text-foreground transition-colors">
@@ -190,13 +190,13 @@ const CoreProductPage = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground section-padding-sm">
-          <div className="container-wide">
+        <section className="bg-primary text-primary-foreground py-16 md:py-20">
+          <div className="container-hero">
             <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 animate-slide-up">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-5 animate-slide-up">
                 {product.name}
               </h1>
-              <p className="text-lg text-primary-foreground/80 animate-slide-up" style={{ animationDelay: "100ms" }}>
+              <p className="text-lg md:text-xl text-primary-foreground/80 animate-slide-up leading-relaxed" style={{ animationDelay: "100ms" }}>
                 {product.description}
               </p>
             </div>
@@ -204,8 +204,8 @@ const CoreProductPage = () => {
         </section>
 
         {/* Intro Section */}
-        <section className="section-padding-sm">
-          <div className="container-wide">
+        <section className="py-14 md:py-20">
+          <div className="container-content">
             <div className="max-w-3xl">
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {product.intro}
@@ -215,12 +215,12 @@ const CoreProductPage = () => {
         </section>
 
         {/* Sub Products Grid */}
-        <section className="section-padding bg-secondary">
-          <div className="container-wide">
-            <h2 className="text-2xl font-semibold mb-8">
+        <section className="section-padding bg-secondary/40">
+          <div className="container-content">
+            <h2 className="text-2xl font-semibold mb-10">
               Explore Our {product.name} Options
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {product.subProducts.map((subProduct, index) => (
                 <ProductTile
                   key={subProduct.id}
@@ -236,13 +236,13 @@ const CoreProductPage = () => {
         </section>
 
         {/* Q7 Role Section */}
-        <section className="section-padding-sm">
-          <div className="container-wide">
+        <section className="py-16 md:py-20">
+          <div className="container-content">
             <div className="max-w-3xl">
-              <h2 className="text-2xl font-semibold mb-4">
+              <h2 className="text-2xl font-semibold mb-5">
                 How Q7 Helps
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-5">
                 We work with a wide network of lenders and providers to find the right {product.name.toLowerCase()} solutions for your business. Instead of approaching multiple providers individually, we do the work for you—matching your requirements with the best options available.
               </p>
               <p className="text-muted-foreground leading-relaxed">

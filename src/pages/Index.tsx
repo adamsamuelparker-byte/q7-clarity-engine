@@ -71,7 +71,7 @@ const Index = () => {
       
       <main className="flex-1">
         {/* Hero Section - Clean and focused */}
-        <section className="hero-gradient text-primary-foreground pt-24 pb-12 md:pt-28 md:pb-16 min-h-[70vh] md:min-h-0 flex items-center">
+        <section className="hero-gradient text-primary-foreground pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-28 md:pb-16">
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:pl-[10%] lg:pl-[15%]">
             <div className="max-w-xl mx-auto md:mx-0">
               {/* 1. Primary Headline */}

@@ -85,6 +85,9 @@ const turnoverBands = [
 interface EnquiryFormProps {
   preSelectedCategory?: string;
   preSelectedSubProduct?: string;
+  preSelectedService?: string;
+  preSelectedServiceName?: string;
+  isGeneralEnquiry?: boolean;
   triggerClassName?: string;
   triggerVariant?: "accent" | "hero" | "hero-outline" | "accent-outline";
   triggerSize?: "default" | "lg" | "xl";
@@ -94,6 +97,9 @@ interface EnquiryFormProps {
 export const EnquiryForm = ({
   preSelectedCategory,
   preSelectedSubProduct,
+  preSelectedService,
+  preSelectedServiceName,
+  isGeneralEnquiry = false,
   triggerClassName,
   triggerVariant = "accent",
   triggerSize = "lg",
@@ -102,9 +108,35 @@ export const EnquiryForm = ({
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(1);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(
-    preSelectedCategory ? [preSelectedCategory] : []
-  );
+  
+  // Determine initial categories based on props
+  const getInitialCategories = () => {
+    if (isGeneralEnquiry) return ["general"];
+    if (preSelectedService) {
+      // Map intent services to categories where applicable
+      const serviceToCategory: Record<string, string> = {
+        "business-funding": "business-funding",
+        "card-machines": "merchant-services",
+        "epos-systems": "merchant-services",
+        "vehicle-finance": "asset-finance",
+        "electric-bikes": "asset-finance",
+        "branded-vehicles": "asset-finance",
+        "vehicle-leasing-rental": "leasing-rental",
+        "vehicle-tracking": "tracking-protection",
+        "webcams-cctv": "tracking-protection",
+        "business-bank-accounts": "banking-services",
+        "accounting-services": "banking-services",
+        "not-sure": "not-sure",
+        "general-enquiry": "general",
+      };
+      const category = serviceToCategory[preSelectedService];
+      return category ? [category] : [];
+    }
+    if (preSelectedCategory) return [preSelectedCategory];
+    return [];
+  };
+
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(getInitialCategories);
   const [selectedSubProducts, setSelectedSubProducts] = useState<string[]>(
     preSelectedSubProduct ? [preSelectedSubProduct] : []
   );
@@ -113,7 +145,7 @@ export const EnquiryForm = ({
     turnover: "",
     email: "",
     phone: "",
-    notes: "",
+    notes: preSelectedServiceName ? `Interested in: ${preSelectedServiceName}` : "",
   });
 
   const toggleCategory = (categoryId: string) => {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { 
   Banknote, 
   CreditCard, 
@@ -12,6 +13,7 @@ import { ProductTile } from "@/components/ProductTile";
 import { TrustSection } from "@/components/TrustSection";
 import { CTASection } from "@/components/CTASection";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { IntentSelector } from "@/components/IntentSelector";
 
 const products = [
   {
@@ -53,55 +55,78 @@ const products = [
 ];
 
 const reassuranceItems = [
-  "Tailored funding & working capital",
-  "Asset finance, leasing & payments",
+  "Tailored funding and working capital",
+  "Asset finance, leasing and payments",
   "One team, end to end",
 ];
 
 const Index = () => {
+  const [selectedIntent, setSelectedIntent] = useState<string | null>(null);
+  const [selectedIntentName, setSelectedIntentName] = useState<string | null>(null);
+
+  const handleIntentSelect = (serviceId: string, serviceName: string) => {
+    setSelectedIntent(serviceId);
+    setSelectedIntentName(serviceName);
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header transparent />
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground pt-24 pb-20 md:pt-28 md:pb-24">
+        <section className="bg-primary text-primary-foreground pt-24 pb-16 md:pt-28 md:pb-20">
           <div className="container-lg">
             <div className="max-w-xl">
-              <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-medium leading-[1.2] mb-5 animate-slide-up">
+              {/* 1. Primary Headline */}
+              <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-medium leading-[1.2] mb-6 animate-slide-up">
                 Financial solutions, organised for your business
               </h1>
-              <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+              
+              {/* 2. Intent Selector */}
+              <div className="mb-6 animate-slide-up" style={{ animationDelay: "60ms" }}>
+                <IntentSelector
+                  selectedService={selectedIntent}
+                  onServiceSelect={handleIntentSelect}
+                />
+              </div>
+              
+              {/* 3. Supporting Sentence */}
+              <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "100ms" }}>
                 We help businesses access the right funding, services, and solutions, guiding you through every step of the process.
               </p>
               
-              {/* Horizontal Reassurance Strip */}
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-4 animate-slide-up text-primary-foreground/50 text-sm" style={{ animationDelay: "100ms" }}>
+              {/* 4. Reassurance Strip */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-4 animate-slide-up text-primary-foreground/60 text-sm font-medium" style={{ animationDelay: "140ms" }}>
                 {reassuranceItems.map((item, index) => (
                   <span key={index} className="flex items-center">
                     <span>{item}</span>
                     {index < reassuranceItems.length - 1 && (
-                      <span className="ml-2 text-primary-foreground/25">·</span>
+                      <span className="ml-2 text-primary-foreground/30">·</span>
                     )}
                   </span>
                 ))}
               </div>
               
-              {/* Bespoke Support Line */}
-              <p className="text-sm text-primary-foreground/45 mb-8 max-w-md leading-relaxed animate-slide-up" style={{ animationDelay: "140ms" }}>
+              {/* 5. Trust Sentence */}
+              <p className="text-sm text-primary-foreground/50 mb-8 max-w-md leading-relaxed animate-slide-up" style={{ animationDelay: "180ms" }}>
                 We assess your needs, source the right partners, and manage the process for you.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-3 animate-slide-up" style={{ animationDelay: "180ms" }}>
+              {/* 6. CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 animate-slide-up" style={{ animationDelay: "220ms" }}>
                 <EnquiryForm
                   triggerVariant="hero"
                   triggerSize="lg"
                   triggerText="Get Started"
+                  preSelectedService={selectedIntent || undefined}
+                  preSelectedServiceName={selectedIntentName || undefined}
                 />
                 <EnquiryForm
                   triggerVariant="hero-outline"
                   triggerSize="lg"
                   triggerText="Speak to Our Team"
+                  isGeneralEnquiry
                 />
               </div>
             </div>

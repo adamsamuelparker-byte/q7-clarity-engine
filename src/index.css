@@ -162,50 +162,38 @@
     @apply bg-primary text-primary-foreground;
   }
 
-  /* Hero wrapper - includes header for unified fade treatment */
+  /* Hero wrapper - gradient background from charcoal to section color */
   .hero-wrapper {
     position: relative;
-    background: hsl(var(--hero-bg));
-    overflow: hidden;
+    /* Gradient starts as solid charcoal at top, fades to section-alt at bottom */
+    background: linear-gradient(
+      to bottom,
+      hsl(var(--hero-bg)) 0%,
+      hsl(var(--hero-bg)) 75%,
+      hsl(var(--section-alt)) 100%
+    );
+    padding-bottom: 2rem; /* extra space for the fade to breathe */
   }
   
-  /* Hero edge fades - positioned to avoid text content */
+  @media (min-width: 768px) {
+    .hero-wrapper {
+      padding-bottom: 3rem;
+    }
+  }
+  
+  /* Subtle corner fades for depth - optional accent */
   .hero-wrapper::before {
     content: '';
     position: absolute;
     inset: 0;
     background: 
-      /* Top left corner fade */
-      radial-gradient(ellipse 60% 40% at 0% 0%, hsl(var(--section-primary) / 0.12) 0%, transparent 70%),
-      /* Top right corner fade */
-      radial-gradient(ellipse 60% 40% at 100% 0%, hsl(var(--section-primary) / 0.12) 0%, transparent 70%),
-      /* Bottom left corner fade */
-      radial-gradient(ellipse 50% 35% at 0% 100%, hsl(var(--section-primary) / 0.14) 0%, transparent 70%),
-      /* Bottom right corner fade */
-      radial-gradient(ellipse 50% 35% at 100% 100%, hsl(var(--section-primary) / 0.14) 0%, transparent 70%);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  /* Hero to section transition - starts below hero copy and blends into section surface */
-  .hero-wrapper::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: clamp(56px, 10vh, 112px);
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      transparent 45%,
-      hsl(var(--section-alt)) 100%
-    );
+      radial-gradient(ellipse 60% 40% at 0% 0%, hsl(var(--section-primary) / 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 100% 0%, hsl(var(--section-primary) / 0.08) 0%, transparent 60%);
     pointer-events: none;
     z-index: 1;
   }
   
-  /* Hero content wrapper - sits above the fades */
+  /* Hero content sits above decorative fades */
   .hero-wrapper > * {
     position: relative;
     z-index: 2;
@@ -217,13 +205,8 @@
     background: hsl(var(--hero-bg));
   }
 
-  /* Legacy transition block - disabled (transition handled by hero-wrapper::after) */
-  .hero-fade {
-    display: none;
-    height: 0;
-  }
-
-  /* Bottom fade - hidden */
+  /* Legacy elements - hidden */
+  .hero-fade,
   .hero-bottom-fade {
     display: none;
   }

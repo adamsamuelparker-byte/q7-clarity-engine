@@ -24,9 +24,9 @@ export const intentServices = [
   { id: "branded-vehicles", name: "Branded Vehicles" },
   { id: "vehicle-leasing", name: "Vehicle Leasing" },
   { id: "vehicle-tracking", name: "Vehicle Tracking" },
-  { id: "webcams-cctv", name: "Webcams and CCTV" },
-  { id: "business-bank-accounts", name: "Business Bank Accounts" },
-  { id: "accounting-services", name: "Accounting Services" },
+  { id: "webcams-cctv", name: "CCTV and Webcams" },
+  { id: "business-bank-accounts", name: "Bank Accounts" },
+  { id: "accounting-services", name: "Accounting" },
   { id: "merchant-funding", name: "Merchant Funding" },
 ];
 

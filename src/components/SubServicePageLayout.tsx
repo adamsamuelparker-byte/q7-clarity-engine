@@ -12,14 +12,12 @@ interface SubServicePageLayoutProps {
 export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col bg-section-primary">
-      {/* Header with dark background matching hero */}
-      <div className="bg-primary">
+      {/* Hero wrapper - includes header for unified fade treatment */}
+      <div className="hero-wrapper">
         <Header transparent />
-      </div>
-      
-      <main className="flex-1">
-        {/* Breadcrumb - matches hero background */}
-        <div className="bg-primary border-b border-primary-foreground/10">
+        
+        {/* Breadcrumb - inside hero wrapper */}
+        <div className="border-b border-primary-foreground/10">
           <div className="container-wide py-3 md:py-4">
             <nav className="flex items-center text-xs md:text-sm text-primary-foreground/50 flex-wrap gap-0.5">
               <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
@@ -35,8 +33,8 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </div>
 
-        {/* Hero Section - Text left, image right - with soft edge fades */}
-        <section className="hero-gradient text-primary-foreground py-16 md:py-20 lg:py-24">
+        {/* Hero Section - Text left, image right */}
+        <section className="text-primary-foreground py-14 md:py-18 lg:py-22">
           <div className="container-wide">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center md:pl-[4%] lg:pl-[6%]">
               {/* Text content - left side with centered block */}
@@ -62,9 +60,12 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Hero to content transition */}
-        <div className="hero-fade h-8 md:h-12" />
+      {/* Hero to content transition */}
+      <div className="hero-fade h-8 md:h-12" />
+      
+      <main className="flex-1">
 
         {/* Overview Section - on alt background */}
         <section className="py-14 md:py-16 lg:py-20 section-alt">
@@ -137,7 +138,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
             <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
               Get in touch to discuss your requirements and find out how we can help.
             </p>
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center" data-cta="primary">
               <EnquiryForm
                 preSelectedCategory={subService.parentSlug}
                 preSelectedSubProduct={`${subService.parentSlug}-${subService.slug}`}

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 
 const ThankYou = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-section-primary">
       <Header />
       
       <main className="flex-1 flex items-center justify-center">

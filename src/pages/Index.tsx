@@ -27,7 +27,7 @@ const products = [
     icon: <Banknote className="h-5 w-5" />,
   },
   {
-    title: "Payments & Merchant",
+    title: "Payments and Merchant",
     description: "Accept payments efficiently with solutions that grow with your business.",
     href: "/payments-merchant",
     icon: <CreditCard className="h-5 w-5" />,
@@ -39,25 +39,25 @@ const products = [
     icon: <Truck className="h-5 w-5" />,
   },
   {
-    title: "Leasing & Rental",
+    title: "Leasing and Rental",
     description: "Flexible leasing options for equipment, vehicles, and technology.",
     href: "/leasing-rental",
     icon: <Building2 className="h-5 w-5" />,
   },
   {
-    title: "Vehicles & Mobility",
+    title: "Vehicles and Mobility",
     description: "Business vehicles, electric bikes, and mobility solutions for your operations.",
     href: "/vehicles-mobility",
     icon: <Car className="h-5 w-5" />,
   },
   {
-    title: "Tracking & Protection",
+    title: "Tracking and Protection",
     description: "Monitor and protect your valuable assets with advanced tracking solutions.",
     href: "/tracking-protection",
     icon: <MapPin className="h-5 w-5" />,
   },
   {
-    title: "Banking & Accounting",
+    title: "Banking and Accounting",
     description: "Streamline your business finances with banking and accounting services.",
     href: "/banking-accounting",
     icon: <Landmark className="h-5 w-5" />,

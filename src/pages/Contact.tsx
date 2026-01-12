@@ -13,52 +13,60 @@ const contactInfo = {
 const Contact = () => {
   return (
     <div className="min-h-screen flex flex-col bg-section-primary">
-      <Header />
-      
-      <main className="flex-1">
+      {/* Hero wrapper - includes header for unified fade treatment */}
+      <div className="hero-wrapper">
+        <Header transparent />
+        
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground section-padding-xs">
+        <section className="text-primary-foreground py-8 md:py-10">
           <div className="container-lg">
-            <h1 className="animate-slide-up text-primary-foreground">
+            <h1 className="text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.15] animate-slide-up text-primary-foreground">
               Contact Us
             </h1>
-            <p className="text-base md:text-lg text-primary-foreground/70 mt-4 max-w-xl animate-slide-up leading-relaxed" style={{ animationDelay: "60ms" }}>
+            <p className="text-sm md:text-base lg:text-lg text-primary-foreground/70 mt-3 max-w-xl animate-slide-up leading-relaxed" style={{ animationDelay: "60ms" }}>
               Get in touch to discuss your business needs
             </p>
           </div>
         </section>
+      </div>
 
-        {/* Hero to content transition */}
-        <div className="hero-fade h-6 md:h-8" />
+      {/* Hero to content transition */}
+      <div className="hero-fade h-4 md:h-6" />
 
+      <main className="flex-1">
         {/* Content Section */}
-        <section className="section-padding section-primary">
+        <section className="section-padding section-alt">
           <div className="container-lg">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               {/* Enquiry Form */}
               <div className="animate-fade-in">
-                <h2 className="mb-4 text-heading">
+                <h2 className="mb-3 text-heading text-lg md:text-xl font-semibold">
                   Start Your Enquiry
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
+                <p className="text-muted-foreground leading-relaxed mb-5 text-sm">
                   Use our enquiry form to tell us about your requirements and we'll be in touch to discuss how we can help.
                 </p>
-                <EnquiryForm
-                  triggerVariant="accent"
-                  triggerSize="lg"
-                  triggerText="Open Enquiry Form"
-                />
+                <div data-cta="primary">
+                  <EnquiryForm
+                    triggerVariant="accent"
+                    triggerSize="lg"
+                    triggerText="Open Enquiry Form"
+                  />
+                </div>
+                <p className="text-xs text-muted-foreground/60 mt-2">
+                  No obligation. We'll help you understand your options.
+                </p>
               </div>
 
               {/* Contact Details */}
               <div className="animate-fade-in" style={{ animationDelay: "60ms" }}>
-                <h2 className="mb-6 text-heading">
+                <h2 className="mb-5 text-heading text-lg md:text-xl font-semibold">
                   Other Ways to Reach Us
                 </h2>
-                <div className="space-y-5">
+                <div className="space-y-4">
                   <a 
                     href={`tel:${contactInfo.sales.replace(/\s/g, '')}`}
-                    className="flex items-start gap-4 p-4 bg-card rounded-lg transition-all duration-200 group min-h-[64px]"
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg transition-all duration-200 group min-h-[56px]"
                     style={{ border: '1px solid hsl(var(--card-border))' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
@@ -67,8 +75,8 @@ const Contact = () => {
                       e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
                     }}
                   >
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-5 w-5 text-accent" />
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="h-4 w-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">Sales</p>
@@ -82,7 +90,7 @@ const Contact = () => {
                     href={`https://wa.me/44${contactInfo.whatsapp.replace(/\s/g, '').substring(1)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-4 p-4 bg-card rounded-lg transition-all duration-200 group min-h-[64px]"
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg transition-all duration-200 group min-h-[56px]"
                     style={{ border: '1px solid hsl(var(--card-border))' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
@@ -91,8 +99,8 @@ const Contact = () => {
                       e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
                     }}
                   >
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <MessageCircle className="h-5 w-5 text-accent" />
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <MessageCircle className="h-4 w-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">WhatsApp</p>
@@ -104,7 +112,7 @@ const Contact = () => {
 
                   <a 
                     href={`mailto:${contactInfo.email}`}
-                    className="flex items-start gap-4 p-4 bg-card rounded-lg transition-all duration-200 group min-h-[64px]"
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg transition-all duration-200 group min-h-[56px]"
                     style={{ border: '1px solid hsl(var(--card-border))' }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
@@ -113,8 +121,8 @@ const Contact = () => {
                       e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
                     }}
                   >
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-5 w-5 text-accent" />
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="h-4 w-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">Email</p>
@@ -125,11 +133,11 @@ const Contact = () => {
                   </a>
 
                   <div 
-                    className="flex items-start gap-4 p-4 bg-card rounded-lg min-h-[64px]"
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg min-h-[56px]"
                     style={{ border: '1px solid hsl(var(--card-border))' }}
                   >
-                    <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-5 w-5 text-accent" />
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-4 w-4 text-accent" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">Address</p>

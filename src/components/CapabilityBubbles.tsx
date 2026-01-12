@@ -13,19 +13,19 @@ const capabilities = [
 
 export const CapabilityBubbles = () => {
   return (
-    <section className="section-alt py-8 md:py-12">
+    <section className="section-alt py-6 md:py-8">
       <div className="container-xl">
-        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-5 md:mb-6">
+        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4 md:mb-5">
           What we can help with
         </p>
         
         {/* Mobile: 2 columns, Desktop: 4 columns - improved touch targets */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
           {capabilities.map((capability) => (
             <Link
               key={capability.name}
               to={capability.href}
-              className="group block bg-card rounded-xl px-4 py-4 md:px-5 md:py-5 min-h-[56px] md:min-h-[64px] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20 flex items-center"
+              className="group block bg-card rounded-xl px-3 py-3 md:px-4 md:py-4 min-h-[48px] md:min-h-[56px] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20 flex items-center"
               style={{
                 border: '1px solid hsl(var(--card-border))',
               }}

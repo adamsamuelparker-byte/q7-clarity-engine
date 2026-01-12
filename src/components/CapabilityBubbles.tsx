@@ -13,7 +13,7 @@ const capabilities = [
 
 export const CapabilityBubbles = () => {
   return (
-    <section className="section-alt py-6 md:py-8">
+    <section className="section-alt -mt-px py-6 md:py-8">
       <div className="container-xl">
         <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4 md:mb-5">
           What we can help with

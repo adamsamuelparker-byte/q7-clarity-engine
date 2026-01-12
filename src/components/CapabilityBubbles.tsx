@@ -13,19 +13,19 @@ const capabilities = [
 
 export const CapabilityBubbles = () => {
   return (
-    <section className="section-alt py-10 md:py-12">
+    <section className="section-alt py-8 md:py-12">
       <div className="container-xl">
-        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-6">
+        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-5 md:mb-6">
           What we can help with
         </p>
         
-        {/* Mobile: 2 columns, Desktop: 4 columns */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+        {/* Mobile: 2 columns, Desktop: 4 columns - improved touch targets */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-4">
           {capabilities.map((capability) => (
             <Link
               key={capability.name}
               to={capability.href}
-              className="group block bg-card rounded-xl px-4 py-4 md:px-5 md:py-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="group block bg-card rounded-xl px-4 py-4 md:px-5 md:py-5 min-h-[56px] md:min-h-[64px] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20 flex items-center"
               style={{
                 border: '1px solid hsl(var(--card-border))',
               }}
@@ -38,7 +38,7 @@ export const CapabilityBubbles = () => {
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
-              <span className="text-sm md:text-base font-medium text-heading group-hover:text-accent transition-colors">
+              <span className="text-sm md:text-base font-medium text-heading group-hover:text-accent transition-colors leading-tight">
                 {capability.name}
               </span>
             </Link>

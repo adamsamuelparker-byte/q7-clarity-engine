@@ -18,12 +18,12 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
       <main className="flex-1">
         {/* Breadcrumb */}
         <div className="section-alt border-b" style={{ borderColor: 'hsl(var(--card-border))' }}>
-          <div className="container-wide py-3">
-            <nav className="flex items-center text-xs text-muted-foreground">
-              <Link to="/" className="hover:text-accent transition-colors">
+          <div className="container-wide py-3 md:py-4">
+            <nav className="flex items-center text-xs md:text-sm text-muted-foreground">
+              <Link to="/" className="hover:text-accent transition-colors min-h-[44px] flex items-center">
                 Home
               </Link>
-              <ChevronRight className="h-3 w-3 mx-1.5" />
+              <ChevronRight className="h-3 w-3 mx-1.5 md:mx-2" />
               <span className="text-heading">{solution.name}</span>
             </nav>
           </div>

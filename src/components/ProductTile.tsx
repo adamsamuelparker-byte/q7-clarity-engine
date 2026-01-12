@@ -25,9 +25,10 @@ export const ProductTile = ({
     <Link
       to={href}
       className={cn(
-        "group block bg-card rounded-lg p-6 lg:p-8",
+        "group block bg-card rounded-lg p-5 md:p-6 lg:p-8",
         "transition-all duration-200 ease-out",
         "hover:-translate-y-px",
+        "min-h-[140px] md:min-h-[160px]", // Ensure consistent height
         className
       )}
       style={{
@@ -45,22 +46,22 @@ export const ProductTile = ({
       }}
     >
       {icon && (
-        <div className="mb-4 text-accent/70 group-hover:text-accent transition-colors duration-200">
+        <div className="mb-3 md:mb-4 text-accent/70 group-hover:text-accent transition-colors duration-200">
           {icon}
         </div>
       )}
       <h3 className={cn(
         "font-medium text-heading mb-2 group-hover:text-accent transition-colors duration-200",
-        featured ? "text-base" : "text-[15px]"
+        featured ? "text-base" : "text-[15px] md:text-base"
       )}>
         {title}
       </h3>
-      <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+      <p className="text-sm text-muted-foreground mb-3 md:mb-4 leading-relaxed line-clamp-2">
         {description}
       </p>
-      <div className="flex items-center text-xs font-medium text-accent/60 group-hover:text-accent transition-colors duration-200">
+      <div className="flex items-center text-xs md:text-sm font-medium text-accent/60 group-hover:text-accent transition-colors duration-200">
         Learn more
-        <ChevronRight className="ml-0.5 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+        <ChevronRight className="ml-0.5 h-3.5 w-3.5 md:h-4 md:w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
       </div>
     </Link>
   );

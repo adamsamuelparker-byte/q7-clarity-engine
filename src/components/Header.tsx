@@ -37,13 +37,12 @@ export const Header = ({ transparent = false }: HeaderProps) => {
         : "sticky top-0 bg-background/98 backdrop-blur-sm border-b border-border/40"
     )}>
       <div className="container-wide">
-        <nav className="flex items-center justify-between py-4">
+        <nav className="flex items-center justify-between py-3 md:py-4">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <Logo 
-              showText={false} 
+              showText={true} 
               variant={transparent ? "light" : "dark"}
-              iconClassName="h-12 sm:h-14 md:h-16 w-auto"
             />
           </Link>
 
@@ -91,29 +90,29 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - larger touch target */}
           <Button
             variant="ghost"
             size="icon"
             className={cn(
-              "lg:hidden h-9 w-9",
+              "lg:hidden h-11 w-11 min-h-[44px] min-w-[44px]",
               transparent && "text-primary-foreground hover:bg-white/10"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
+              <X className="h-6 w-6" />
             ) : (
-              <Menu className="h-5 w-5" />
+              <Menu className="h-6 w-6" />
             )}
           </Button>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - improved touch targets */}
         {mobileMenuOpen && (
           <div className={cn(
-            "lg:hidden py-2 animate-fade-in",
+            "lg:hidden py-3 animate-fade-in",
             transparent 
               ? "bg-primary/98 backdrop-blur-sm rounded-lg mb-2" 
               : "border-t border-border/40"
@@ -123,14 +122,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  "px-4 py-2.5 text-sm font-normal transition-colors duration-200",
+                  "px-4 py-3.5 text-base font-normal transition-colors duration-200 min-h-[48px] flex items-center",
                   transparent
                     ? location.pathname === "/"
                       ? "text-primary-foreground"
-                      : "text-primary-foreground/50"
+                      : "text-primary-foreground/60"
                     : location.pathname === "/"
                       ? "text-foreground"
-                      : "text-muted-foreground/80"
+                      : "text-muted-foreground"
                 )}
               >
                 Home
@@ -141,14 +140,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-2.5 text-sm font-normal transition-colors duration-200",
+                    "px-4 py-3.5 text-base font-normal transition-colors duration-200 min-h-[48px] flex items-center",
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground"
-                        : "text-primary-foreground/50"
+                        : "text-primary-foreground/60"
                       : location.pathname === item.href
                         ? "text-foreground"
-                        : "text-muted-foreground/80"
+                        : "text-muted-foreground"
                   )}
                 >
                   {item.name}
@@ -164,14 +163,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-2.5 text-sm font-normal transition-colors duration-200",
+                    "px-4 py-3.5 text-base font-normal transition-colors duration-200 min-h-[48px] flex items-center",
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground"
-                        : "text-primary-foreground/50"
+                        : "text-primary-foreground/60"
                       : location.pathname === item.href
                         ? "text-foreground"
-                        : "text-muted-foreground/80"
+                        : "text-muted-foreground"
                   )}
                 >
                   {item.name}

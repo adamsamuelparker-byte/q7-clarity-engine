@@ -33,7 +33,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
     <header className={cn(
       "w-full z-50",
       transparent 
-        ? "absolute top-0 left-0 right-0" 
+        ? "relative" 
         : "sticky top-0 bg-background/98 backdrop-blur-sm border-b border-border/40"
     )}>
       <div className="container-wide">

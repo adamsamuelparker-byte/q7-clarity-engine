@@ -14,8 +14,8 @@ import { TrustSection } from "@/components/TrustSection";
 import { CTASection } from "@/components/CTASection";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { IntentSelector } from "@/components/IntentSelector";
-import { HeroServiceList } from "@/components/HeroServiceList";
-import { MobileServicesSection } from "@/components/MobileServicesSection";
+import { ServicesDiscoverySection } from "@/components/ServicesDiscoverySection";
+import { BridgingSection } from "@/components/BridgingSection";
 
 const products = [
   {
@@ -70,59 +70,54 @@ const Index = () => {
       <Header transparent />
       
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="hero-gradient text-primary-foreground pt-24 pb-12 md:pt-28 md:pb-16 lg:pb-20">
+        {/* Hero Section - Clean and focused */}
+        <section className="hero-gradient text-primary-foreground pt-24 pb-12 md:pt-28 md:pb-16">
           <div className="container-lg">
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
-              {/* Left: Main content */}
-              <div className="max-w-xl flex-1">
-                {/* 1. Primary Headline - increased size ~10-15% */}
-                <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up">
-                  Business solutions, organised for your business
-                </h1>
-                
-                {/* 2. Supporting Sentence - medium weight */}
-                <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
-                  From funding to payments, assets, and services, one team helps you organise what your business needs.
-                </p>
-                
-                {/* 3. Confidence Line */}
-                <p className="text-sm text-primary-foreground/50 mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
-                  One team. End to end.
-                </p>
-                
-                {/* 4. Inline Rotating Intent Selector */}
-                <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
-                  <IntentSelector
-                    selectedService={selectedIntent}
-                    onServiceSelect={handleIntentSelect}
-                  />
-                </div>
-                
-                {/* 5. Single Primary CTA */}
-                <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
-                  <EnquiryForm
-                    triggerVariant="hero"
-                    triggerSize="lg"
-                    triggerText="Get Started"
-                    preSelectedService={selectedIntent || undefined}
-                    preSelectedServiceName={selectedIntentName || undefined}
-                  />
-                </div>
+            <div className="max-w-xl">
+              {/* 1. Primary Headline */}
+              <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up">
+                Business solutions, organised for your business
+              </h1>
+              
+              {/* 2. Supporting Sentence */}
+              <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+                From funding to payments, assets, and services, one team helps you organise what your business needs.
+              </p>
+              
+              {/* 3. Confidence Line */}
+              <p className="text-sm text-primary-foreground/50 mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
+                One team. End to end.
+              </p>
+              
+              {/* 4. Intent Selector */}
+              <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
+                <IntentSelector
+                  selectedService={selectedIntent}
+                  onServiceSelect={handleIntentSelect}
+                />
               </div>
-
-              {/* Right: Decorative service list (desktop only) */}
-              <div className="hidden lg:block pt-4">
-                <HeroServiceList />
+              
+              {/* 5. Single Primary CTA */}
+              <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
+                <EnquiryForm
+                  triggerVariant="hero"
+                  triggerSize="lg"
+                  triggerText="Get Started"
+                  preSelectedService={selectedIntent || undefined}
+                  preSelectedServiceName={selectedIntentName || undefined}
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Mobile Services Section - below hero */}
-        <MobileServicesSection />
+        {/* Services Discovery Section */}
+        <ServicesDiscoverySection />
 
-        {/* Products Section */}
+        {/* Bridging Section */}
+        <BridgingSection />
+
+        {/* Solution Cards (Primary Branches) */}
         <section className="section-padding">
           <div className="container-xl">
             <div className="mb-10">
@@ -134,7 +129,6 @@ const Index = () => {
               </p>
             </div>
 
-            {/* Grid with subtle variation */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {products.map((product, index) => (
                 <ProductTile

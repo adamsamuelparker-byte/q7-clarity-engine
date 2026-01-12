@@ -10,7 +10,7 @@ const services = [
 
 export const HeroServiceList = () => {
   return (
-    <div className="hidden lg:flex flex-col gap-3">
+    <div className="flex flex-col gap-3">
       {services.map((service, index) => (
         <div 
           key={service} 
@@ -20,7 +20,7 @@ export const HeroServiceList = () => {
           <img 
             src={logoImage}
             alt=""
-            className="h-6 w-auto opacity-60"
+            className="h-10 w-auto opacity-70"
             aria-hidden="true"
           />
           <span className="text-sm text-primary-foreground/50 font-normal">

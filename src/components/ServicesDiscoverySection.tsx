@@ -4,12 +4,12 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Merchant Services (Card Machines and EPOS)", href: "/merchant-services" },
+  { name: "Merchant Services", href: "/merchant-services" },
   { name: "Asset Finance", href: "/asset-finance" },
   { name: "Leasing and Rental", href: "/leasing-rental" },
   { name: "Vehicles and Mobility", href: "/asset-finance" },
   { name: "Tracking and Protection", href: "/tracking-protection" },
-  { name: "Banking and Accounting Services", href: "/banking-services" },
+  { name: "Banking Services", href: "/banking-services" },
 ];
 
 export const ServicesDiscoverySection = () => {
@@ -48,7 +48,7 @@ export const ServicesDiscoverySection = () => {
           What we can help with
         </p>
         <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
-          <div className="flex flex-wrap gap-x-10 gap-y-3">
+          <div className="grid grid-cols-4 gap-x-8 gap-y-4">
             {services.map((service) => (
               <Link
                 key={service.name}

@@ -23,7 +23,7 @@ export const Logo = ({
         src={logoImage}
         alt="Q7 Logo"
         className={cn(
-          "h-14 w-auto",
+          "h-20 w-auto",
           iconClassName
         )}
       />

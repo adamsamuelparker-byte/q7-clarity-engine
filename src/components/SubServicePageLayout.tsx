@@ -15,19 +15,19 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
       <Header />
       
       <main className="flex-1">
-        {/* Breadcrumb */}
-        <div className="section-alt border-b" style={{ borderColor: 'hsl(var(--card-border))' }}>
+        {/* Breadcrumb - matches hero background */}
+        <div className="bg-primary border-b border-primary-foreground/10">
           <div className="container-wide py-3 md:py-4">
-            <nav className="flex items-center text-xs md:text-sm text-muted-foreground flex-wrap gap-0.5">
-              <Link to="/" className="hover:text-accent transition-colors min-h-[44px] flex items-center">
+            <nav className="flex items-center text-xs md:text-sm text-primary-foreground/50 flex-wrap gap-0.5">
+              <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
                 Home
               </Link>
               <ChevronRight className="h-3 w-3 mx-1 md:mx-2" />
-              <Link to={`/${subService.parentSlug}`} className="hover:text-accent transition-colors min-h-[44px] flex items-center">
+              <Link to={`/${subService.parentSlug}`} className="hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
                 {subService.parentName}
               </Link>
               <ChevronRight className="h-3 w-3 mx-1 md:mx-2" />
-              <span className="text-heading">{subService.name}</span>
+              <span className="text-primary-foreground">{subService.name}</span>
             </nav>
           </div>
         </div>

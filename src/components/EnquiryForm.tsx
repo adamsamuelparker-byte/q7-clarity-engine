@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { Check, ChevronRight, ChevronLeft } from "lucide-react";
 import { Button } from "./ui/button";
@@ -100,6 +100,8 @@ interface EnquiryFormProps {
   triggerVariant?: "accent" | "hero" | "hero-outline" | "accent-outline";
   triggerSize?: "default" | "lg" | "xl";
   triggerText?: string;
+  customTrigger?: ReactNode;
+  onOpenChange?: (open: boolean) => void;
 }
 
 export const EnquiryForm = ({
@@ -112,10 +114,17 @@ export const EnquiryForm = ({
   triggerVariant = "accent",
   triggerSize = "lg",
   triggerText = "Get Started",
+  customTrigger,
+  onOpenChange,
 }: EnquiryFormProps) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [step, setStep] = useState(1);
+  
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+    onOpenChange?.(newOpen);
+  };
   
   // Determine initial categories based on props
   const getInitialCategories = () => {
@@ -124,16 +133,13 @@ export const EnquiryForm = ({
       // Map intent services to categories where applicable
       const serviceToCategory: Record<string, string> = {
         "business-funding": "business-funding",
-        "card-machines": "merchant-services",
-        "epos-systems": "merchant-services",
-        "vehicle-finance": "asset-finance",
-        "electric-bikes": "asset-finance",
-        "branded-vehicles": "asset-finance",
-        "vehicle-leasing-rental": "leasing-rental",
-        "vehicle-tracking": "tracking-protection",
-        "webcams-cctv": "tracking-protection",
-        "business-bank-accounts": "banking-services",
-        "accounting-services": "banking-services",
+        "payments-merchant": "payments-merchant",
+        "asset-finance": "asset-finance",
+        "leasing-rental": "leasing-rental",
+        "vehicles-mobility": "vehicles-mobility",
+        "tracking-protection": "tracking-protection",
+        "banking-accounting": "banking-accounting",
+        "business-support": "business-support",
         "not-sure": "not-sure",
         "general-enquiry": "general",
       };
@@ -193,7 +199,7 @@ export const EnquiryForm = ({
       pageUrl: window.location.href,
       timestamp: new Date().toISOString(),
     });
-    setOpen(false);
+    handleOpenChange(false);
     navigate("/thank-you");
   };
 
@@ -203,19 +209,21 @@ export const EnquiryForm = ({
     formData.companyName && formData.turnover && formData.email && formData.phone;
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogTrigger asChild>
-        <Button 
-          variant={triggerVariant} 
-          size={triggerSize}
-          className={triggerClassName}
-        >
-          {triggerText}
-        </Button>
+        {customTrigger || (
+          <Button 
+            variant={triggerVariant} 
+            size={triggerSize}
+            className={triggerClassName}
+          >
+            {triggerText}
+          </Button>
+        )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-lg max-h-[90vh] overflow-y-auto bg-card">
         <DialogHeader>
-          <DialogTitle className="text-xl">
+          <DialogTitle className="text-xl text-heading">
             {step === 1 && "What are you looking for?"}
             {step === 2 && "Any specific products?"}
             {step === 3 && "Your details"}
@@ -246,13 +254,13 @@ export const EnquiryForm = ({
                   key={category.id}
                   onClick={() => toggleCategory(category.id)}
                   className={cn(
-                    "w-full flex items-center justify-between p-4 rounded-md border transition-all duration-200 text-left",
+                    "w-full flex items-center justify-between p-4 rounded-lg border transition-all duration-200 text-left min-h-[56px]",
                     selectedCategories.includes(category.id)
                       ? "border-accent bg-accent/5"
-                      : "border-border hover:border-muted-foreground/30"
+                      : "border-border hover:border-accent/50"
                   )}
                 >
-                  <span className="font-medium">{category.name}</span>
+                  <span className="font-medium text-heading">{category.name}</span>
                   {selectedCategories.includes(category.id) && (
                     <Check className="h-5 w-5 text-accent" />
                   )}
@@ -274,13 +282,13 @@ export const EnquiryForm = ({
                       key={`${product.category}-${product.id}`}
                       onClick={() => toggleSubProduct(`${product.category}-${product.id}`)}
                       className={cn(
-                        "w-full flex items-center justify-between p-4 rounded-md border transition-all duration-200 text-left",
+                        "w-full flex items-center justify-between p-4 rounded-lg border transition-all duration-200 text-left min-h-[56px]",
                         selectedSubProducts.includes(`${product.category}-${product.id}`)
                           ? "border-accent bg-accent/5"
-                          : "border-border hover:border-muted-foreground/30"
+                          : "border-border hover:border-accent/50"
                       )}
                     >
-                      <span className="font-medium">{product.name}</span>
+                      <span className="font-medium text-heading">{product.name}</span>
                       {selectedSubProducts.includes(`${product.category}-${product.id}`) && (
                         <Check className="h-5 w-5 text-accent" />
                       )}

@@ -22,13 +22,15 @@ export const CTASection = ({
         <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
           {description}
         </p>
-        <EnquiryForm
-          preSelectedCategory={preSelectedCategory}
-          preSelectedSubProduct={preSelectedSubProduct}
-          triggerVariant="hero"
-          triggerSize="lg"
-          triggerText="Start Your Enquiry"
-        />
+        <div className="flex justify-center">
+          <EnquiryForm
+            preSelectedCategory={preSelectedCategory}
+            preSelectedSubProduct={preSelectedSubProduct}
+            triggerVariant="hero"
+            triggerSize="lg"
+            triggerText="Start Your Enquiry"
+          />
+        </div>
       </div>
     </section>
   );

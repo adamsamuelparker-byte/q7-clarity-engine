@@ -23,8 +23,8 @@ export const Logo = ({
         src={logoImage}
         alt="Q7 Business & Financial Solutions"
         className={cn(
-          "w-auto object-contain",
-          "drop-shadow-[0_1px_2px_rgba(0,0,0,0.3)]",
+          "w-auto h-full object-contain",
+          "drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]",
           iconClassName
         )}
       />

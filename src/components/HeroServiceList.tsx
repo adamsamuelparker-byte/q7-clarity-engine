@@ -20,7 +20,7 @@ export const HeroServiceList = () => {
           <img 
             src={logoImage}
             alt=""
-            className="h-4 w-auto opacity-40"
+            className="h-6 w-auto opacity-60"
             aria-hidden="true"
           />
           <span className="text-sm text-primary-foreground/50 font-normal">

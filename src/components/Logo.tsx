@@ -51,7 +51,7 @@ export const Logo = ({
             "text-xs sm:text-sm font-semibold tracking-tight",
             isLight ? "text-white" : "text-primary"
           )}>
-            Business & Financial
+            Business and Financial
           </span>
           <span className={cn(
             "text-[10px] sm:text-xs font-normal tracking-wide",

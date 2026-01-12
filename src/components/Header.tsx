@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Payments & Merchant", href: "/payments-merchant" },
+  { name: "Payments and Merchant", href: "/payments-merchant" },
   { name: "Asset Finance", href: "/asset-finance" },
-  { name: "Leasing & Rental", href: "/leasing-rental" },
-  { name: "Vehicles & Mobility", href: "/vehicles-mobility" },
-  { name: "Tracking & Protection", href: "/tracking-protection" },
-  { name: "Banking & Accounting", href: "/banking-accounting" },
+  { name: "Leasing and Rental", href: "/leasing-rental" },
+  { name: "Vehicles and Mobility", href: "/vehicles-mobility" },
+  { name: "Tracking and Protection", href: "/tracking-protection" },
+  { name: "Banking and Accounting", href: "/banking-accounting" },
   { name: "Business Support", href: "/business-support" },
 ];
 
@@ -56,11 +56,11 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   "px-2 py-1.5 text-[10px] font-normal transition-colors duration-200 whitespace-nowrap",
                   transparent 
                     ? location.pathname === item.href
-                      ? "text-primary-foreground/90"
+                      ? "text-primary-foreground"
                       : "text-primary-foreground/50 hover:text-primary-foreground/80"
                     : location.pathname === item.href
                       ? "text-foreground"
-                      : "text-muted-foreground/80 hover:text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {item.name}
@@ -78,11 +78,11 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   "px-2 py-1.5 text-[10px] font-normal transition-colors duration-200",
                   transparent 
                     ? location.pathname === item.href
-                      ? "text-primary-foreground/90"
+                      ? "text-primary-foreground"
                       : "text-primary-foreground/50 hover:text-primary-foreground/80"
                     : location.pathname === item.href
                       ? "text-foreground"
-                      : "text-muted-foreground/80 hover:text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {item.name}
@@ -109,7 +109,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
           </Button>
         </nav>
 
-        {/* Mobile Navigation - improved touch targets */}
+        {/* Mobile Navigation - fixed styling */}
         {mobileMenuOpen && (
           <div className={cn(
             "lg:hidden py-3 animate-fade-in",
@@ -122,14 +122,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  "px-4 py-3.5 text-base font-normal transition-colors duration-200 min-h-[48px] flex items-center",
+                  "px-4 py-3.5 text-base font-normal min-h-[48px] flex items-center rounded-lg mx-2 transition-colors duration-200",
                   transparent
                     ? location.pathname === "/"
-                      ? "text-primary-foreground"
-                      : "text-primary-foreground/60"
+                      ? "text-primary-foreground bg-white/10"
+                      : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
                     : location.pathname === "/"
-                      ? "text-foreground"
-                      : "text-muted-foreground"
+                      ? "text-foreground bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                 )}
               >
                 Home
@@ -140,21 +140,21 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-3.5 text-base font-normal transition-colors duration-200 min-h-[48px] flex items-center",
+                    "px-4 py-3.5 text-base font-normal min-h-[48px] flex items-center rounded-lg mx-2 transition-colors duration-200",
                     transparent
                       ? location.pathname === item.href
-                        ? "text-primary-foreground"
-                        : "text-primary-foreground/60"
+                        ? "text-primary-foreground bg-white/10"
+                        : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
                       : location.pathname === item.href
-                        ? "text-foreground"
-                        : "text-muted-foreground"
+                        ? "text-foreground bg-secondary"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                   )}
                 >
                   {item.name}
                 </Link>
               ))}
               <div className={cn(
-                "my-2 mx-4 h-px",
+                "my-3 mx-4 h-px",
                 transparent ? "bg-primary-foreground/10" : "bg-border"
               )} />
               {secondaryNav.map((item) => (
@@ -163,14 +163,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-3.5 text-base font-normal transition-colors duration-200 min-h-[48px] flex items-center",
+                    "px-4 py-3.5 text-base font-normal min-h-[48px] flex items-center rounded-lg mx-2 transition-colors duration-200",
                     transparent
                       ? location.pathname === item.href
-                        ? "text-primary-foreground"
-                        : "text-primary-foreground/60"
+                        ? "text-primary-foreground bg-white/10"
+                        : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
                       : location.pathname === item.href
-                        ? "text-foreground"
-                        : "text-muted-foreground"
+                        ? "text-foreground bg-secondary"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
                   )}
                 >
                   {item.name}

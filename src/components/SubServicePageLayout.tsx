@@ -48,10 +48,12 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
               
               {/* Image - right side */}
               <div className="animate-fade-in order-first lg:order-last" style={{ animationDelay: "180ms" }}>
-                <div className="aspect-[4/3] bg-primary-foreground/5 rounded-xl border border-primary-foreground/10 flex items-center justify-center">
-                  <div className="text-primary-foreground/20 text-sm">
-                    Service Image
-                  </div>
+                <div className="aspect-[4/3] rounded-xl overflow-hidden border border-primary-foreground/10">
+                  <img 
+                    src={subService.heroImage} 
+                    alt={subService.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

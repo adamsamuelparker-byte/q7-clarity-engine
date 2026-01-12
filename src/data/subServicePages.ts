@@ -1,9 +1,24 @@
 // Sub-service page data for all sub-services under solution pages
+// Hero images are inherited from parent solution pages for consistency
+
+// Parent solution hero images map
+const parentHeroImages: Record<string, string> = {
+  "business-funding": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&q=80",
+  "payments-merchant": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80",
+  "asset-finance": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&q=80",
+  "leasing-rental": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop&q=80",
+  "vehicles-mobility": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
+  "tracking-protection": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80",
+  "banking-accounting": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
+  "business-support": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80",
+};
+
 export interface SubServicePageData {
   slug: string;
   parentSlug: string;
   parentName: string;
   name: string;
+  heroImage: string;
   hero: {
     headline: string;
     intro: string;
@@ -21,6 +36,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "business-funding",
       parentName: "Business Funding",
       name: "Secured Business Loans",
+      heroImage: parentHeroImages["business-funding"],
       hero: {
         headline: "Secured business loans, structured with care",
         intro: "Secured business loans use property or assets as security to support larger or longer term borrowing. We help businesses understand when this type of funding is appropriate and how to approach it sensibly.",
@@ -34,6 +50,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "business-funding",
       parentName: "Business Funding",
       name: "Working Capital",
+      heroImage: parentHeroImages["business-funding"],
       hero: {
         headline: "Working capital solutions to support cash flow",
         intro: "Working capital funding helps businesses manage day to day costs and trading cycles. We help organise solutions that support stability and continuity.",
@@ -47,6 +64,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "business-funding",
       parentName: "Business Funding",
       name: "Emergency Funding",
+      heroImage: parentHeroImages["business-funding"],
       hero: {
         headline: "Emergency funding when timing matters",
         intro: "Unexpected costs or delays can put pressure on a business. We help businesses explore emergency funding options calmly and responsibly.",
@@ -60,6 +78,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "business-funding",
       parentName: "Business Funding",
       name: "Refinancing",
+      heroImage: parentHeroImages["business-funding"],
       hero: {
         headline: "Refinancing existing business funding",
         intro: "Refinancing can help improve cash flow or simplify existing arrangements. We help businesses review current funding and explore alternatives.",
@@ -77,6 +96,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "payments-merchant",
       parentName: "Payments and Merchant Solutions",
       name: "Ecommerce Payments",
+      heroImage: parentHeroImages["payments-merchant"],
       hero: {
         headline: "Ecommerce payment solutions that support online trading",
         intro: "Online businesses require reliable and secure payment systems. We help organise ecommerce payment solutions that integrate smoothly.",
@@ -90,6 +110,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "payments-merchant",
       parentName: "Payments and Merchant Solutions",
       name: "Merchant Accounts",
+      heroImage: parentHeroImages["payments-merchant"],
       hero: {
         headline: "Merchant accounts organised with clarity",
         intro: "A merchant account enables businesses to accept card payments. We help businesses access suitable accounts without confusion.",
@@ -107,6 +128,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "asset-finance",
       parentName: "Asset Finance",
       name: "Equipment Finance",
+      heroImage: parentHeroImages["asset-finance"],
       hero: {
         headline: "Equipment finance for essential business assets",
         intro: "Equipment finance allows businesses to spread the cost of tools and machinery. We help organise suitable solutions.",
@@ -120,6 +142,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "asset-finance",
       parentName: "Asset Finance",
       name: "Technology Finance",
+      heroImage: parentHeroImages["asset-finance"],
       hero: {
         headline: "Technology finance for modern operations",
         intro: "Technology finance supports investment in IT and digital infrastructure. We help businesses access appropriate options.",
@@ -137,6 +160,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "leasing-rental",
       parentName: "Leasing and Rental",
       name: "Vehicle Leasing",
+      heroImage: parentHeroImages["leasing-rental"],
       hero: {
         headline: "Vehicle leasing for flexibility and control",
         intro: "Vehicle leasing allows businesses to access vehicles without ownership. We help organise leasing solutions.",
@@ -150,6 +174,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "leasing-rental",
       parentName: "Leasing and Rental",
       name: "Fleet Leasing",
+      heroImage: parentHeroImages["leasing-rental"],
       hero: {
         headline: "Fleet leasing for growing operations",
         intro: "Fleet leasing supports businesses operating multiple vehicles. We help organise scalable solutions.",
@@ -163,6 +188,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "leasing-rental",
       parentName: "Leasing and Rental",
       name: "Short Term Rental",
+      heroImage: parentHeroImages["leasing-rental"],
       hero: {
         headline: "Short term rental for changing needs",
         intro: "Short term rental provides flexibility without long commitments. We help organise rental solutions.",
@@ -180,6 +206,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "vehicles-mobility",
       parentName: "Vehicles and Mobility",
       name: "Electric Vehicles",
+      heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
         headline: "Electric vehicles for business use",
         intro: "Electric vehicles can reduce running costs and emissions. We help businesses explore suitable options.",
@@ -193,6 +220,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "vehicles-mobility",
       parentName: "Vehicles and Mobility",
       name: "Delivery and Courier Vehicles",
+      heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
         headline: "Delivery and courier vehicles for operations",
         intro: "Reliable vehicles are essential for delivery businesses. We help organise suitable solutions.",
@@ -210,6 +238,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "tracking-protection",
       parentName: "Tracking and Protection",
       name: "Asset Tracking",
+      heroImage: parentHeroImages["tracking-protection"],
       hero: {
         headline: "Asset tracking for control and visibility",
         intro: "Asset tracking helps monitor valuable equipment. We help organise appropriate solutions.",
@@ -223,6 +252,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "tracking-protection",
       parentName: "Tracking and Protection",
       name: "Asset Recovery",
+      heroImage: parentHeroImages["tracking-protection"],
       hero: {
         headline: "Asset recovery support when it matters",
         intro: "Recovery solutions help retrieve stolen or lost assets. We help organise appropriate protection.",
@@ -240,6 +270,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "banking-accounting",
       parentName: "Banking and Accounting Services",
       name: "Business Credit Cards",
+      heroImage: parentHeroImages["banking-accounting"],
       hero: {
         headline: "Business credit cards for controlled spending",
         intro: "Business credit cards can help manage expenses. We help businesses access suitable options.",
@@ -253,6 +284,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "banking-accounting",
       parentName: "Banking and Accounting Services",
       name: "Tax and Compliance Support",
+      heroImage: parentHeroImages["banking-accounting"],
       hero: {
         headline: "Tax and compliance support for peace of mind",
         intro: "Managing tax and compliance is essential. We help organise appropriate support.",
@@ -270,6 +302,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "business-support",
       parentName: "Business Support Services",
       name: "Operational Support",
+      heroImage: parentHeroImages["business-support"],
       hero: {
         headline: "Operational support for growing businesses",
         intro: "Operational support helps businesses run smoothly. We help organise practical assistance.",
@@ -283,6 +316,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
       parentSlug: "business-support",
       parentName: "Business Support Services",
       name: "Partner Introductions",
+      heroImage: parentHeroImages["business-support"],
       hero: {
         headline: "Partner introductions you can trust",
         intro: "Finding the right partners matters. We help introduce businesses to trusted providers.",

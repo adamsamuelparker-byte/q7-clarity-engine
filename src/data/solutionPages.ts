@@ -2,6 +2,7 @@
 export interface SolutionPageData {
   slug: string;
   name: string;
+  heroImage: string;
   hero: {
     headline: string;
     intro: string;
@@ -38,6 +39,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "business-funding": {
     slug: "business-funding",
     name: "Business Funding",
+    heroImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Business funding, organised around your business",
       intro: "Accessing funding doesn't need to be complicated. We help businesses understand their options, structure the right solution, and move forward with clarity and confidence.",
@@ -93,6 +95,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "payments-merchant": {
     slug: "payments-merchant",
     name: "Payments and Merchant Solutions",
+    heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Payments and merchant solutions, built around how you trade",
       intro: "Taking payments should be simple, reliable, and suited to the way your business operates. We help you organise the right payment and merchant setup, so you can focus on running your business, not managing systems.",
@@ -145,6 +148,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "asset-finance": {
     slug: "asset-finance",
     name: "Asset Finance",
+    heroImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Asset finance, structured to support your business",
       intro: "Investing in equipment or assets shouldn't put unnecessary strain on your cash flow. We help businesses access and organise asset finance solutions that allow them to grow while keeping finances manageable.",
@@ -192,6 +196,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "leasing-rental": {
     slug: "leasing-rental",
     name: "Leasing and Rental",
+    heroImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Leasing and rental solutions that fit how you operate",
       intro: "Leasing and rental can provide flexibility without long term commitment. We help businesses organise leasing and rental solutions that align with their operational needs and budget.",
@@ -240,6 +245,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "vehicles-mobility": {
     slug: "vehicles-mobility",
     name: "Vehicles and Mobility",
+    heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Vehicles and mobility solutions for modern businesses",
       intro: "Access to the right vehicles can be essential for how your business operates. We help organise vehicle and mobility solutions that support your team, deliveries, and day to day operations.",
@@ -288,6 +294,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "tracking-protection": {
     slug: "tracking-protection",
     name: "Tracking and Protection",
+    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Tracking and protection solutions for peace of mind",
       intro: "Protecting vehicles and assets is an important part of running a business. We help organise tracking and protection solutions that give visibility, security, and reassurance.",
@@ -336,6 +343,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "banking-accounting": {
     slug: "banking-accounting",
     name: "Banking and Accounting Services",
+    heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Banking and accounting services, organised for clarity",
       intro: "Managing business finances requires structure and visibility. We help organise banking and accounting services so your financial setup supports better decision making.",
@@ -383,6 +391,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "business-support": {
     slug: "business-support",
     name: "Business Support Services",
+    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Business support services that help everything run smoothly",
       intro: "Behind every successful business is a strong support structure. We help organise business support services that keep operations running efficiently.",

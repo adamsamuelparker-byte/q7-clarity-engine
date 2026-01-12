@@ -5,6 +5,8 @@
 /* Q7 Business and Financial Solutions Design System
    Clean, slick, calm, professional - finance led
    Primary: Deep Charcoal | Accent: Muted Teal | Support: Light Grey/White
+   
+   LOCKED DESIGN SYSTEM - One typography, one card, one spacing system
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
@@ -30,7 +32,7 @@
     
     /* Muted */
     --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 50%;
+    --muted-foreground: 220 10% 46%;
     
     /* Card */
     --card: 0 0% 100%;
@@ -49,7 +51,7 @@
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Radius */
+    /* Radius - Unified */
     --radius: 0.5rem;
     
     /* Sidebar */
@@ -65,10 +67,7 @@
     /* Custom Design Tokens */
     --hero-bg: 220 20% 14%;
     --hero-foreground: 0 0% 100%;
-    --section-light: 220 14% 98%;
-    --section-dark: 220 20% 14%;
-    --tile-border: 220 14% 94%;
-    --tile-hover-border: 174 35% 40%;
+    --section-alt: 220 14% 98%;
   }
 
   .dark {
@@ -108,36 +107,50 @@
     font-family: 'Inter', system-ui, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
-  }
-  
+  /* Locked Typography Scale */
   h1 {
-    @apply font-medium;
+    @apply text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight leading-tight;
   }
   
   h2 {
-    @apply font-medium;
+    @apply text-lg md:text-xl font-medium tracking-tight;
+  }
+  
+  h3 {
+    @apply text-base font-medium tracking-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
   }
 }
 
 @layer components {
-  /* Hero Section Styles */
+  /* Hero Section - Unified treatment */
   .hero-section {
     @apply bg-primary text-primary-foreground;
   }
 
-  /* CTA Button Variants */
-  .btn-primary {
-    @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-200;
+  /* Locked Card System */
+  .card-base {
+    @apply bg-card rounded-lg p-6 lg:p-8;
+    @apply border border-border/50;
+    @apply shadow-[0_1px_2px_rgba(0,0,0,0.02),0_2px_4px_rgba(0,0,0,0.02)];
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  .card-interactive {
+    @apply card-base;
+    @apply hover:shadow-[0_2px_8px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.03)];
+    @apply hover:border-accent/20;
   }
 
-  .btn-secondary {
-    @apply bg-transparent border border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/8 transition-colors duration-200;
+  /* Section Backgrounds */
+  .section-white {
+    @apply bg-background;
   }
-
-  /* Section Alternating Backgrounds */
-  .section-light {
+  
+  .section-alt {
     @apply bg-secondary/30;
   }
 
@@ -145,45 +158,48 @@
     @apply bg-primary text-primary-foreground;
   }
 
-  /* Trust Badge Styles */
-  .trust-item {
-    @apply flex items-center gap-3 text-muted-foreground;
-  }
-
-  /* Form Styles */
-  .form-step {
-    @apply space-y-6;
-  }
-
-  /* Navigation Link */
-  .nav-link {
-    @apply text-sm font-normal text-muted-foreground hover:text-foreground transition-colors duration-200;
-  }
-
-  .nav-link-active {
-    @apply text-foreground;
+  /* Page Frame - Visual anchoring for thin pages */
+  .page-frame {
+    @apply min-h-[50vh] flex flex-col;
   }
 }
 
 @layer utilities {
-  /* Container with max-width - varied widths for visual rhythm */
-  .container-narrow {
-    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* Locked Container Widths */
+  .container-sm {
+    @apply max-w-xl mx-auto px-5 sm:px-6;
+  }
+  
+  .container-md {
+    @apply max-w-2xl mx-auto px-5 sm:px-6;
+  }
+  
+  .container-lg {
+    @apply max-w-4xl mx-auto px-5 sm:px-6;
+  }
+  
+  .container-xl {
+    @apply max-w-6xl mx-auto px-5 sm:px-6;
   }
 
   .container-wide {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-7xl mx-auto px-5 sm:px-6;
   }
   
+  /* Legacy aliases */
   .container-hero {
-    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container-lg;
   }
   
   .container-content {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply container-xl;
+  }
+  
+  .container-narrow {
+    @apply container-md;
   }
 
-  /* Spacing utilities */
+  /* Locked Spacing System */
   .section-padding {
     @apply py-16 md:py-24;
   }
@@ -191,40 +207,43 @@
   .section-padding-sm {
     @apply py-12 md:py-16;
   }
+  
+  .section-padding-xs {
+    @apply py-8 md:py-12;
+  }
 
   /* Text utilities */
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Subtle animations */
-  .animate-fade-in {
-    opacity: 0;
-    animation: fadeIn 0.5s ease-out forwards;
-  }
-
-  .animate-slide-up {
-    opacity: 0;
-    animation: slideUp 0.5s ease-out forwards;
+  /* Subtle hover states only */
+  .hover-lift {
+    @apply transition-transform duration-200 ease-out hover:-translate-y-0.5;
   }
 }
 
+/* Minimal keyframe animations - subtle only */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
+  from { 
+    opacity: 0; 
+    transform: translateY(12px); 
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
   }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
 }

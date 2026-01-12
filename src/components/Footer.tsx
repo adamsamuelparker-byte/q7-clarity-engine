@@ -20,30 +20,30 @@ export const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-wide section-padding-sm">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Logo 
               showText={false} 
               iconClassName="bg-accent text-accent-foreground"
             />
-            <p className="mt-4 text-sm text-primary-foreground/70 max-w-xs">
+            <p className="mt-4 text-sm text-primary-foreground/60 max-w-xs">
               Q7 Business and Financial Solutions
             </p>
-            <p className="mt-2 text-xs text-primary-foreground/50">
+            <p className="mt-1.5 text-xs text-primary-foreground/40">
               Organising financial solutions for your business
             </p>
           </div>
 
           {/* Solutions Column */}
           <div className="lg:col-span-2">
-            <h3 className="text-sm font-semibold mb-4">Solutions</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <h3 className="text-sm font-medium mb-4 text-primary-foreground/80">Solutions</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
               {navigation.solutions.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200"
+                    className="text-sm text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors duration-200"
                   >
                     {item.name}
                   </Link>
@@ -54,13 +54,13 @@ export const Footer = () => {
 
           {/* Company Column */}
           <div>
-            <h3 className="text-sm font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+            <h3 className="text-sm font-medium mb-4 text-primary-foreground/80">Company</h3>
+            <ul className="space-y-2.5">
               {navigation.company.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className="text-sm text-primary-foreground/70 hover:text-primary-foreground transition-colors duration-200"
+                    className="text-sm text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors duration-200"
                   >
                     {item.name}
                   </Link>
@@ -71,8 +71,8 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-primary-foreground/10">
-          <p className="text-xs text-primary-foreground/50 text-center">
+        <div className="mt-12 pt-6 border-t border-primary-foreground/10">
+          <p className="text-xs text-primary-foreground/40 text-center">
             © {new Date().getFullYear()} Q7 Business and Financial Solutions. All rights reserved.
           </p>
         </div>

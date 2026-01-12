@@ -29,13 +29,10 @@ const Contact = () => {
             </p>
           </div>
         </section>
-        
-        {/* Bottom fade overlay */}
-        <div className="hero-bottom-fade" />
       </div>
 
       {/* Hero to content transition */}
-      <div className="hero-fade h-8 md:h-12" />
+      <div className="hero-fade" />
 
       <main className="flex-1">
         {/* Content Section */}

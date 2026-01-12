@@ -198,33 +198,28 @@
     background: hsl(220 20% 13%);
   }
 
-  /* Hero to content transition gradient - smooth charcoal to white */
+  /* Hero to content transition - tall gradient for smooth blend */
   .hero-fade {
+    height: 80px;
     background: linear-gradient(
-      180deg,
+      to bottom,
       hsl(220 20% 14%) 0%,
-      hsl(220 18% 25%) 15%,
-      hsl(220 16% 45%) 35%,
-      hsl(220 14% 70%) 55%,
-      hsl(220 14% 88%) 75%,
+      hsl(220 17% 30%) 25%,
+      hsl(220 15% 55%) 50%,
+      hsl(220 14% 80%) 75%,
       hsl(var(--section-alt)) 100%
     );
   }
   
-  /* Bottom fade for hero sections - subtle darkening at bottom */
+  @media (min-width: 768px) {
+    .hero-fade {
+      height: 100px;
+    }
+  }
+  
+  /* Bottom fade - hidden */
   .hero-bottom-fade {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    background: linear-gradient(
-      180deg,
-      transparent 0%,
-      hsl(220 20% 12% / 0.15) 100%
-    );
-    pointer-events: none;
-    z-index: 1;
+    display: none;
   }
 
   /* Locked Card System - sits on tinted surfaces */

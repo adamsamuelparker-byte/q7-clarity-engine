@@ -30,19 +30,19 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </div>
 
-        {/* Hero Section - Text left, image right */}
-        <section className="text-primary-foreground py-14 md:py-18 lg:py-22">
+        {/* Hero Section - Text left, image right, tighter spacing */}
+        <section className="text-primary-foreground py-8 md:py-12 lg:py-14">
           <div className="container-wide">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center md:pl-[4%] lg:pl-[6%]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center md:pl-[4%] lg:pl-[6%]">
               {/* Text content - left side with centered block */}
               <div className="max-w-xl mx-auto md:mx-0">
-                <h1 className="text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] font-semibold leading-[1.15] mb-4 animate-slide-up text-primary-foreground">
+                <h1 className="text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.15] mb-3 animate-slide-up text-primary-foreground">
                   {solution.hero.headline}
                 </h1>
-                <p className="text-sm md:text-base text-accent font-medium mb-4 animate-slide-up" style={{ animationDelay: "40ms" }}>
+                <p className="text-sm md:text-base text-accent font-medium mb-3 animate-slide-up" style={{ animationDelay: "40ms" }}>
                   {solution.hero.tagline}
                 </p>
-                <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "80ms" }}>
+                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "80ms" }}>
                   {solution.hero.intro}
                 </p>
               </div>
@@ -62,8 +62,8 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
         </section>
       </div>
 
-      {/* Hero to content transition */}
-      <div className="hero-fade h-8 md:h-12" />
+      {/* Hero to content transition - reduced height */}
+      <div className="hero-fade h-4 md:h-6" />
       
       <main className="flex-1">
 

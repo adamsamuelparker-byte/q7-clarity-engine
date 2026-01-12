@@ -86,28 +86,28 @@ const Index = () => {
       <div className="hero-wrapper">
         <Header transparent />
         
-        {/* Hero Section - Clean and focused */}
-        <section className="text-primary-foreground pt-8 pb-20 sm:pt-12 sm:pb-24 md:pt-10 md:pb-20">
+        {/* Hero Section - Clean and focused, tighter spacing */}
+        <section className="text-primary-foreground pt-4 pb-12 sm:pt-6 sm:pb-14 md:pt-6 md:pb-14">
           <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             {/* Desktop: slight center shift, Mobile: centered block with left-aligned text */}
             <div className="max-w-xl mx-auto md:mx-0 md:ml-[8%] lg:ml-[12%]">
               {/* 1. Primary Headline - larger and bolder */}
-              <h1 className="text-[1.85rem] sm:text-[2.25rem] md:text-[3rem] lg:text-[3.25rem] font-semibold leading-[1.12] mb-3 animate-slide-up text-left text-primary-foreground">
+              <h1 className="text-[1.75rem] sm:text-[2rem] md:text-[2.75rem] lg:text-[3rem] font-semibold leading-[1.15] mb-2 sm:mb-3 animate-slide-up text-left text-primary-foreground">
                 Business solutions, organised for your business
               </h1>
               
               {/* 2. Emphasis line */}
-              <p className="text-sm md:text-base text-accent font-medium mb-5 animate-slide-up text-left" style={{ animationDelay: "40ms" }}>
+              <p className="text-sm md:text-base text-accent font-medium mb-4 animate-slide-up text-left" style={{ animationDelay: "40ms" }}>
                 One team. End to end.
               </p>
               
               {/* 3. Supporting Sentence - constrained width for readability */}
-              <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-8 leading-relaxed animate-slide-up text-left max-w-md" style={{ animationDelay: "80ms" }}>
+              <p className="text-sm sm:text-base md:text-lg text-primary-foreground/70 font-medium mb-6 leading-relaxed animate-slide-up text-left max-w-md" style={{ animationDelay: "80ms" }}>
                 From funding to payments, assets, and services, one team helps you organise what your business needs.
               </p>
               
               {/* 4. Intent Selector */}
-              <div className="mb-6 animate-slide-up" style={{ animationDelay: "120ms" }}>
+              <div className="mb-5 animate-slide-up" style={{ animationDelay: "120ms" }}>
                 <IntentSelector
                   selectedService={selectedIntent}
                   onServiceSelect={handleIntentSelect}
@@ -123,7 +123,7 @@ const Index = () => {
                   preSelectedService={selectedIntent || undefined}
                   preSelectedServiceName={selectedIntentName || undefined}
                 />
-                <p className="text-xs text-primary-foreground/40 mt-3 text-left">
+                <p className="text-xs text-primary-foreground/40 mt-2 text-left">
                   No obligation. One of the team will be in touch.
                 </p>
               </div>
@@ -132,8 +132,8 @@ const Index = () => {
         </section>
       </div>
 
-      {/* Hero to content transition */}
-      <div className="hero-fade h-8 md:h-12" />
+      {/* Hero to content transition - reduced height */}
+      <div className="hero-fade h-4 md:h-6" />
 
       <main className="flex-1">
         {/* Capability Bubbles Grid - on alt background */}

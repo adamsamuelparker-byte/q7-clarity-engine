@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ProductTile } from "@/components/ProductTile";
+import { FloatingCTA } from "@/components/FloatingCTA";
 import type { SolutionPageData } from "@/data/solutionPages";
 
 interface SolutionPageLayoutProps {
@@ -17,14 +18,14 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
       <div className="hero-wrapper">
         <Header transparent />
         
-        {/* Breadcrumb - inside hero wrapper */}
+        {/* Breadcrumb - tighter spacing on mobile */}
         <div className="border-b border-primary-foreground/10">
-          <div className="container-wide py-3 md:py-4">
+          <div className="container-wide py-2 md:py-3">
             <nav className="flex items-center text-xs md:text-sm text-primary-foreground/50">
-              <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[44px] flex items-center">
+              <Link to="/" className="hover:text-primary-foreground transition-colors min-h-[40px] flex items-center">
                 Home
               </Link>
-              <ChevronRight className="h-3 w-3 mx-1.5 md:mx-2" />
+              <ChevronRight className="h-3 w-3 mx-1.5" />
               <span className="text-primary-foreground">{solution.name}</span>
             </nav>
           </div>
@@ -228,6 +229,9 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
       </main>
+
+      {/* Floating CTA */}
+      <FloatingCTA />
 
       <Footer />
     </div>

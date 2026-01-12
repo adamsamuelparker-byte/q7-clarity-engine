@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
+import { FloatingCTA } from "@/components/FloatingCTA";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
 const contactInfo = {
@@ -66,17 +67,10 @@ const Contact = () => {
                 <div className="space-y-4">
                   <a 
                     href={`tel:${contactInfo.sales.replace(/\s/g, '')}`}
-                    className="flex items-start gap-3 p-3 bg-card rounded-lg transition-all duration-200 group min-h-[56px]"
-                    style={{ border: '1px solid hsl(var(--card-border))' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
-                    }}
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg border border-card-border hover:border-card-border-hover transition-all duration-200 group min-h-[52px]"
                   >
                     <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="h-4 w-4 text-accent" />
+                      <Phone className="h-4 w-4 text-foreground/50 group-hover:text-accent transition-colors" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">Sales</p>
@@ -90,17 +84,10 @@ const Contact = () => {
                     href={`https://wa.me/44${contactInfo.whatsapp.replace(/\s/g, '').substring(1)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-3 p-3 bg-card rounded-lg transition-all duration-200 group min-h-[56px]"
-                    style={{ border: '1px solid hsl(var(--card-border))' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
-                    }}
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg border border-card-border hover:border-card-border-hover transition-all duration-200 group min-h-[52px]"
                   >
                     <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <MessageCircle className="h-4 w-4 text-accent" />
+                      <MessageCircle className="h-4 w-4 text-foreground/50 group-hover:text-accent transition-colors" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">WhatsApp</p>
@@ -112,17 +99,10 @@ const Contact = () => {
 
                   <a 
                     href={`mailto:${contactInfo.email}`}
-                    className="flex items-start gap-3 p-3 bg-card rounded-lg transition-all duration-200 group min-h-[56px]"
-                    style={{ border: '1px solid hsl(var(--card-border))' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
-                    }}
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg border border-card-border hover:border-card-border-hover transition-all duration-200 group min-h-[52px]"
                   >
                     <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="h-4 w-4 text-accent" />
+                      <Mail className="h-4 w-4 text-foreground/50 group-hover:text-accent transition-colors" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">Email</p>
@@ -133,11 +113,10 @@ const Contact = () => {
                   </a>
 
                   <div 
-                    className="flex items-start gap-3 p-3 bg-card rounded-lg min-h-[56px]"
-                    style={{ border: '1px solid hsl(var(--card-border))' }}
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg border border-card-border min-h-[52px]"
                   >
                     <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-4 w-4 text-accent" />
+                      <MapPin className="h-4 w-4 text-foreground/50" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-heading">Address</p>
@@ -152,6 +131,9 @@ const Contact = () => {
           </div>
         </section>
       </main>
+
+      {/* Floating CTA */}
+      <FloatingCTA />
 
       <Footer />
     </div>

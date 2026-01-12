@@ -23,29 +23,22 @@ export const ProductTile = ({
     <Link
       to={href}
       className={cn(
-        "group block bg-card border border-border rounded-md p-6 transition-all duration-300 ease-out hover:border-accent hover:shadow-lg",
+        "group block bg-card rounded-lg p-8 transition-all duration-300 ease-out",
+        "border border-border/60 hover:border-accent/30",
+        "shadow-sm hover:shadow-lg hover:-translate-y-1",
         className
       )}
-      style={{
-        transform: "translateY(0)",
-        ...style,
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-4px)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-      }}
+      style={style}
     >
       {icon && (
-        <div className="mb-4 text-accent">
+        <div className="mb-5 text-accent">
           {icon}
         </div>
       )}
-      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-200">
+      <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-accent transition-colors duration-200">
         {title}
       </h3>
-      <p className="text-sm text-muted-foreground mb-4">
+      <p className="text-sm text-muted-foreground mb-5 leading-relaxed">
         {description}
       </p>
       <div className="flex items-center text-sm font-medium text-accent">

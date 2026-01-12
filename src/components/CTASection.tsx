@@ -16,10 +16,10 @@ export const CTASection = ({
   return (
     <section className="section-padding bg-primary text-primary-foreground">
       <div className="container-narrow text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-5">
           {title}
         </h2>
-        <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+        <p className="text-primary-foreground/75 mb-10 max-w-xl mx-auto leading-relaxed">
           {description}
         </p>
         <EnquiryForm

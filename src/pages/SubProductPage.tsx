@@ -165,7 +165,7 @@ const SubProductPage = () => {
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary border-b border-border">
+        <div className="bg-secondary/50">
           <div className="container-wide py-3">
             <nav className="flex items-center text-sm text-muted-foreground flex-wrap gap-1">
               <Link to="/" className="hover:text-foreground transition-colors">
@@ -182,8 +182,8 @@ const SubProductPage = () => {
         </div>
 
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground section-padding-sm">
-          <div className="container-wide">
+        <section className="bg-primary text-primary-foreground py-14 md:py-18">
+          <div className="container-hero">
             <div className="max-w-3xl">
               <h1 className="text-3xl md:text-4xl font-semibold mb-4 animate-slide-up">
                 {product.name}
@@ -194,8 +194,8 @@ const SubProductPage = () => {
 
         {/* Content Sections */}
         <section className="section-padding">
-          <div className="container-wide">
-            <div className="max-w-3xl space-y-12">
+          <div className="container-content">
+            <div className="max-w-3xl space-y-14">
               {/* What It Is */}
               <div className="animate-fade-in">
                 <h2 className="text-xl font-semibold mb-4 text-foreground">

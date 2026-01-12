@@ -87,42 +87,46 @@ const Index = () => {
       </div>
       
       <main className="flex-1">
-        {/* Hero Section - Clean and focused */}
-        <section className="hero-gradient text-primary-foreground pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-8 md:pb-16">
-          <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:pl-[10%] lg:pl-[15%]">
-            <div className="max-w-xl mx-auto md:mx-0">
-              {/* 1. Primary Headline */}
-              <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up text-left text-primary-foreground">
+        {/* Hero Section - Clean and focused with soft edge fades */}
+        <section className="hero-gradient text-primary-foreground pt-10 pb-20 sm:pt-14 sm:pb-24 md:pt-12 md:pb-20">
+          <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+            {/* Desktop: slight center shift, Mobile: centered block with left-aligned text */}
+            <div className="max-w-xl mx-auto md:mx-0 md:ml-[8%] lg:ml-[12%]">
+              {/* 1. Primary Headline - larger and bolder */}
+              <h1 className="text-[1.85rem] sm:text-[2.25rem] md:text-[3rem] lg:text-[3.25rem] font-semibold leading-[1.12] mb-3 animate-slide-up text-left text-primary-foreground">
                 Business solutions, organised for your business
               </h1>
               
-              {/* 2. Supporting Sentence */}
-              <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-5 leading-relaxed animate-slide-up text-left" style={{ animationDelay: "60ms" }}>
-                From funding to payments, assets, and services, one team helps you organise what your business needs.
-              </p>
-              
-              {/* 3. Confidence Line */}
-              <p className="text-sm text-primary-foreground/50 mb-8 animate-slide-up text-left" style={{ animationDelay: "100ms" }}>
+              {/* 2. Emphasis line */}
+              <p className="text-sm md:text-base text-accent font-medium mb-5 animate-slide-up text-left" style={{ animationDelay: "40ms" }}>
                 One team. End to end.
               </p>
               
+              {/* 3. Supporting Sentence - constrained width for readability */}
+              <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-8 leading-relaxed animate-slide-up text-left max-w-md" style={{ animationDelay: "80ms" }}>
+                From funding to payments, assets, and services, one team helps you organise what your business needs.
+              </p>
+              
               {/* 4. Intent Selector */}
-              <div className="mb-6 animate-slide-up" style={{ animationDelay: "140ms" }}>
+              <div className="mb-6 animate-slide-up" style={{ animationDelay: "120ms" }}>
                 <IntentSelector
                   selectedService={selectedIntent}
                   onServiceSelect={handleIntentSelect}
                 />
               </div>
               
-              {/* 5. Single Primary CTA */}
-              <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
+              {/* 5. Single Primary CTA with reassurance */}
+              <div className="animate-slide-up" style={{ animationDelay: "160ms" }}>
                 <EnquiryForm
                   triggerVariant="hero"
                   triggerSize="lg"
-                  triggerText="Get Started"
+                  triggerText="Start Your Enquiry"
                   preSelectedService={selectedIntent || undefined}
                   preSelectedServiceName={selectedIntentName || undefined}
                 />
+                <p className="text-xs text-primary-foreground/40 mt-3 text-left">
+                  No obligation. One of the team will be in touch.
+                </p>
               </div>
             </div>
           </div>

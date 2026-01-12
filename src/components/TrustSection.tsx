@@ -25,31 +25,31 @@ const trustItems = [
 
 export const TrustSection = () => {
   return (
-    <section className="section-padding-sm bg-secondary/40">
+    <section className="py-16 md:py-20 bg-secondary/25">
       <div className="container-content">
-        <div className="text-center mb-14">
-          <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+        <div className="mb-10">
+          <h2 className="text-xl md:text-2xl font-medium text-foreground mb-2">
             Why Work With Q7
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-sm max-w-md">
             We organise financial solutions that work for your business
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {trustItems.map((item, index) => (
             <div
               key={item.title}
-              className="text-center animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="animate-fade-in"
+              style={{ animationDelay: `${index * 80}ms` }}
             >
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/8 text-accent mb-5">
-                <item.icon className="h-6 w-6" />
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/8 text-accent/70 mb-4">
+                <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">
+              <h3 className="text-sm font-medium text-foreground mb-1">
                 {item.title}
               </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              <p className="text-xs text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
             </div>

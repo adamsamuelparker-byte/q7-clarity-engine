@@ -30,38 +30,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
       "w-full z-50",
       transparent ? "absolute top-0 left-0 right-0" : "sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border"
     )}>
-      {/* Top Bar - Unified with hero when transparent */}
-      <div className={cn(
-        transparent ? "bg-transparent" : "bg-primary text-primary-foreground"
-      )}>
-        <div className="container-wide py-1.5">
-          <div className="flex items-center justify-between">
-            <Logo 
-              showText={false} 
-              iconClassName="w-7 h-7"
-              textClassName={transparent ? "text-primary-foreground" : ""}
-            />
-            <span className={cn(
-              "text-xs hidden sm:block",
-              transparent ? "text-primary-foreground/60" : "text-primary-foreground/70"
-            )}>
-              Organising financial solutions for your business
-            </span>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Header */}
-      <div className={cn(
-        "container-wide",
-        transparent ? "bg-transparent" : ""
-      )}>
-        <nav className="flex items-center justify-between py-3">
+      {/* Main Header - No separate top bar, unified surface */}
+      <div className="container-wide">
+        <nav className="flex items-center justify-between py-2.5">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <Logo 
               showText={true} 
-              textClassName={transparent ? "text-primary-foreground" : ""}
+              textClassName={transparent ? "text-primary-foreground/70" : ""}
             />
           </Link>
 
@@ -72,11 +48,11 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-2.5 py-2 text-sm font-medium transition-colors duration-200 rounded-md",
+                  "px-2.5 py-1.5 text-[13px] font-normal transition-colors duration-200 rounded",
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground bg-white/10"
-                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/5"
+                      : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-white/5"
                     : location.pathname === item.href
                       ? "text-foreground bg-secondary"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
@@ -92,16 +68,16 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             variant="ghost"
             size="icon"
             className={cn(
-              "lg:hidden",
+              "lg:hidden h-9 w-9",
               transparent && "text-primary-foreground hover:bg-white/10"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-5 w-5" />
             )}
           </Button>
         </nav>
@@ -109,21 +85,21 @@ export const Header = ({ transparent = false }: HeaderProps) => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className={cn(
-            "lg:hidden py-4 animate-fade-in",
-            transparent ? "bg-primary/95 backdrop-blur rounded-lg mb-4" : "border-t border-border"
+            "lg:hidden py-3 animate-fade-in",
+            transparent ? "bg-primary/95 backdrop-blur rounded-lg mb-3" : "border-t border-border"
           )}>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-0.5">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-3 text-sm font-medium transition-colors duration-200 rounded-md",
+                    "px-4 py-2.5 text-sm font-normal transition-colors duration-200 rounded",
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground bg-white/10"
-                        : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/5"
+                        : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-white/5"
                       : location.pathname === item.href
                         ? "text-foreground bg-secondary"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"

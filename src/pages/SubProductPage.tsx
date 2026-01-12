@@ -165,27 +165,27 @@ const SubProductPage = () => {
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary/50">
-          <div className="container-wide py-3">
-            <nav className="flex items-center text-sm text-muted-foreground flex-wrap gap-1">
+        <div className="bg-secondary/30">
+          <div className="container-wide py-2.5">
+            <nav className="flex items-center text-xs text-muted-foreground flex-wrap gap-0.5">
               <Link to="/" className="hover:text-foreground transition-colors">
                 Home
               </Link>
-              <ChevronRight className="h-4 w-4 mx-1" />
+              <ChevronRight className="h-3.5 w-3.5 mx-1" />
               <Link to={`/${categorySlug}`} className="hover:text-foreground transition-colors">
                 {parentName}
               </Link>
-              <ChevronRight className="h-4 w-4 mx-1" />
+              <ChevronRight className="h-3.5 w-3.5 mx-1" />
               <span className="text-foreground">{product.name}</span>
             </nav>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-14 md:py-18">
+        <section className="bg-primary text-primary-foreground py-10 md:py-14">
           <div className="container-hero">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl font-semibold mb-4 animate-slide-up">
+            <div className="max-w-2xl">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-medium mb-2 animate-slide-up tracking-tight">
                 {product.name}
               </h1>
             </div>
@@ -193,35 +193,35 @@ const SubProductPage = () => {
         </section>
 
         {/* Content Sections */}
-        <section className="section-padding">
+        <section className="py-14 md:py-20">
           <div className="container-content">
-            <div className="max-w-3xl space-y-14">
+            <div className="max-w-2xl space-y-12">
               {/* What It Is */}
               <div className="animate-fade-in">
-                <h2 className="text-xl font-semibold mb-4 text-foreground">
+                <h2 className="text-base font-medium mb-3 text-foreground">
                   What It Is
                 </h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {product.whatItIs}
                 </p>
               </div>
 
               {/* Who It's For */}
-              <div className="animate-fade-in" style={{ animationDelay: "100ms" }}>
-                <h2 className="text-xl font-semibold mb-4 text-foreground">
+              <div className="animate-fade-in" style={{ animationDelay: "80ms" }}>
+                <h2 className="text-base font-medium mb-3 text-foreground">
                   Who It's For
                 </h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {product.whoItIsFor}
                 </p>
               </div>
 
               {/* How Q7 Helps */}
-              <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
-                <h2 className="text-xl font-semibold mb-4 text-foreground">
+              <div className="animate-fade-in" style={{ animationDelay: "160ms" }}>
+                <h2 className="text-base font-medium mb-3 text-foreground">
                   How Q7 Helps
                 </h2>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {product.howQ7Helps}
                 </p>
               </div>

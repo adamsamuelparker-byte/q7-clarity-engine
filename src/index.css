@@ -7,7 +7,7 @@
    Primary: Deep Charcoal | Accent: Muted Teal | Support: Light Grey/White
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
@@ -30,7 +30,7 @@
     
     /* Muted */
     --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 45%;
+    --muted-foreground: 220 10% 50%;
     
     /* Card */
     --card: 0 0% 100%;
@@ -41,7 +41,7 @@
     --popover-foreground: 220 20% 14%;
     
     /* Borders */
-    --border: 220 14% 90%;
+    --border: 220 14% 92%;
     --input: 220 14% 90%;
     --ring: 174 35% 40%;
     
@@ -67,12 +67,8 @@
     --hero-foreground: 0 0% 100%;
     --section-light: 220 14% 98%;
     --section-dark: 220 20% 14%;
-    --tile-border: 220 14% 92%;
+    --tile-border: 220 14% 94%;
     --tile-hover-border: 174 35% 40%;
-    
-    /* Card Shadows */
-    --card-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.05), 0 4px 16px -4px rgba(0, 0, 0, 0.08);
-    --card-shadow-hover: 0 8px 24px -8px rgba(0, 0, 0, 0.1), 0 16px 32px -16px rgba(0, 0, 0, 0.12);
   }
 
   .dark {
@@ -113,15 +109,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight;
+    @apply tracking-tight;
   }
   
   h1 {
-    @apply font-semibold;
+    @apply font-medium;
   }
   
   h2 {
-    @apply font-semibold;
+    @apply font-medium;
   }
 }
 
@@ -131,31 +127,18 @@
     @apply bg-primary text-primary-foreground;
   }
 
-  /* Product Tile Card - Softer, less boxy */
-  .product-tile {
-    @apply bg-card rounded-lg p-8 transition-all duration-300 ease-out;
-    border: 1px solid hsl(var(--tile-border));
-    box-shadow: var(--card-shadow);
-  }
-
-  .product-tile:hover {
-    border-color: hsl(var(--accent) / 0.3);
-    box-shadow: var(--card-shadow-hover);
-    transform: translateY(-4px);
-  }
-
   /* CTA Button Variants */
   .btn-primary {
     @apply bg-accent text-accent-foreground hover:bg-accent/90 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition-colors duration-200;
+    @apply bg-transparent border border-primary-foreground/25 text-primary-foreground hover:bg-primary-foreground/8 transition-colors duration-200;
   }
 
   /* Section Alternating Backgrounds */
   .section-light {
-    @apply bg-secondary/50;
+    @apply bg-secondary/30;
   }
 
   .section-dark {
@@ -174,27 +157,18 @@
 
   /* Navigation Link */
   .nav-link {
-    @apply text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200;
+    @apply text-sm font-normal text-muted-foreground hover:text-foreground transition-colors duration-200;
   }
 
   .nav-link-active {
     @apply text-foreground;
-  }
-  
-  /* Reassurance Strip */
-  .reassurance-item {
-    @apply flex items-center gap-2.5 text-primary-foreground/85 text-sm md:text-base;
-  }
-  
-  .reassurance-bullet {
-    @apply w-1.5 h-1.5 rounded-full bg-accent shrink-0;
   }
 }
 
 @layer utilities {
   /* Container with max-width - varied widths for visual rhythm */
   .container-narrow {
-    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-3xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .container-wide {
@@ -202,7 +176,7 @@
   }
   
   .container-hero {
-    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .container-content {
@@ -211,11 +185,11 @@
 
   /* Spacing utilities */
   .section-padding {
-    @apply py-20 md:py-28;
+    @apply py-16 md:py-24;
   }
 
   .section-padding-sm {
-    @apply py-14 md:py-20;
+    @apply py-12 md:py-16;
   }
 
   /* Text utilities */
@@ -231,7 +205,7 @@
 
   .animate-slide-up {
     opacity: 0;
-    animation: slideUp 0.6s ease-out forwards;
+    animation: slideUp 0.5s ease-out forwards;
   }
 }
 
@@ -247,7 +221,7 @@
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;

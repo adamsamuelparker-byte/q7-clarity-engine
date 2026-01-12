@@ -177,26 +177,26 @@ const CoreProductPage = () => {
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary/50">
-          <div className="container-wide py-3">
-            <nav className="flex items-center text-sm text-muted-foreground">
+        <div className="bg-secondary/30">
+          <div className="container-wide py-2.5">
+            <nav className="flex items-center text-xs text-muted-foreground">
               <a href="/" className="hover:text-foreground transition-colors">
                 Home
               </a>
-              <ChevronRight className="h-4 w-4 mx-2" />
+              <ChevronRight className="h-3.5 w-3.5 mx-1.5" />
               <span className="text-foreground">{product.name}</span>
             </nav>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-16 md:py-20">
+        <section className="bg-primary text-primary-foreground py-12 md:py-16">
           <div className="container-hero">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-5 animate-slide-up">
+            <div className="max-w-2xl">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4 animate-slide-up tracking-tight">
                 {product.name}
               </h1>
-              <p className="text-lg md:text-xl text-primary-foreground/80 animate-slide-up leading-relaxed" style={{ animationDelay: "100ms" }}>
+              <p className="text-base md:text-lg text-primary-foreground/75 animate-slide-up leading-relaxed" style={{ animationDelay: "80ms" }}>
                 {product.description}
               </p>
             </div>
@@ -204,10 +204,10 @@ const CoreProductPage = () => {
         </section>
 
         {/* Intro Section */}
-        <section className="py-14 md:py-20">
+        <section className="py-12 md:py-16">
           <div className="container-content">
-            <div className="max-w-3xl">
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="max-w-2xl">
+              <p className="text-base text-muted-foreground leading-relaxed">
                 {product.intro}
               </p>
             </div>
@@ -215,12 +215,12 @@ const CoreProductPage = () => {
         </section>
 
         {/* Sub Products Grid */}
-        <section className="section-padding bg-secondary/40">
+        <section className="py-12 md:py-16 bg-secondary/25">
           <div className="container-content">
-            <h2 className="text-2xl font-semibold mb-10">
+            <h2 className="text-lg md:text-xl font-medium mb-8">
               Explore Our {product.name} Options
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
               {product.subProducts.map((subProduct, index) => (
                 <ProductTile
                   key={subProduct.id}
@@ -236,16 +236,16 @@ const CoreProductPage = () => {
         </section>
 
         {/* Q7 Role Section */}
-        <section className="py-16 md:py-20">
+        <section className="py-12 md:py-16">
           <div className="container-content">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl font-semibold mb-5">
+            <div className="max-w-2xl">
+              <h2 className="text-lg md:text-xl font-medium mb-4">
                 How Q7 Helps
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-5">
+              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
                 We work with a wide network of lenders and providers to find the right {product.name.toLowerCase()} solutions for your business. Instead of approaching multiple providers individually, we do the work for you—matching your requirements with the best options available.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm">
                 Our role is to simplify the process, provide guidance, and help you make informed decisions about the solutions that will best support your business goals.
               </p>
             </div>

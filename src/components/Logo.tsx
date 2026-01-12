@@ -14,10 +14,10 @@ export const Logo = ({
   textClassName 
 }: LogoProps) => {
   return (
-    <div className={cn("flex items-center gap-3", className)}>
-      {/* Q7 Logo Symbol - Stylised Q with 7 integrated */}
+    <div className={cn("flex items-center gap-2.5", className)}>
+      {/* Q7 Logo Symbol - Primary brand mark */}
       <div className={cn(
-        "relative flex items-center justify-center w-10 h-10 rounded-full bg-accent text-accent-foreground font-bold text-lg",
+        "relative flex items-center justify-center w-9 h-9 rounded-full bg-accent text-accent-foreground",
         iconClassName
       )}>
         <svg 
@@ -32,7 +32,7 @@ export const Logo = ({
             cy="18" 
             r="12" 
             stroke="currentColor" 
-            strokeWidth="3" 
+            strokeWidth="2.5" 
             fill="none"
           />
           {/* Q tail */}
@@ -42,7 +42,7 @@ export const Logo = ({
             x2="34" 
             y2="36" 
             stroke="currentColor" 
-            strokeWidth="3" 
+            strokeWidth="2.5" 
             strokeLinecap="round"
           />
           {/* Number 7 inside */}
@@ -51,8 +51,8 @@ export const Logo = ({
             y="23" 
             textAnchor="middle" 
             fill="currentColor" 
-            fontSize="14" 
-            fontWeight="700"
+            fontSize="13" 
+            fontWeight="600"
             fontFamily="Inter, sans-serif"
           >
             7
@@ -60,10 +60,10 @@ export const Logo = ({
         </svg>
       </div>
       
-      {/* Business Name - Plain text, not stylised */}
+      {/* Business Name - Plain, neutral text (not a wordmark) */}
       {showText && (
         <span className={cn(
-          "text-sm font-medium text-foreground hidden sm:block",
+          "text-[13px] font-normal text-foreground/80 hidden sm:block tracking-normal",
           textClassName
         )}>
           Q7 Business and Financial Solutions

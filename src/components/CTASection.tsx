@@ -14,19 +14,19 @@ export const CTASection = ({
   preSelectedSubProduct,
 }: CTASectionProps) => {
   return (
-    <section className="section-padding bg-primary text-primary-foreground">
+    <section className="py-16 md:py-20 bg-primary text-primary-foreground">
       <div className="container-narrow text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold mb-5">
+        <h2 className="text-xl md:text-2xl font-medium mb-3">
           {title}
         </h2>
-        <p className="text-primary-foreground/75 mb-10 max-w-xl mx-auto leading-relaxed">
+        <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
           {description}
         </p>
         <EnquiryForm
           preSelectedCategory={preSelectedCategory}
           preSelectedSubProduct={preSelectedSubProduct}
           triggerVariant="hero"
-          triggerSize="xl"
+          triggerSize="lg"
           triggerText="Start Your Enquiry"
         />
       </div>

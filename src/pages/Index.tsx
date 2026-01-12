@@ -130,10 +130,13 @@ const Index = () => {
             </div>
           </div>
         </section>
+        
+        {/* Bottom fade overlay */}
+        <div className="hero-bottom-fade" />
       </div>
 
-      {/* Hero to content transition - reduced height */}
-      <div className="hero-fade h-4 md:h-6" />
+      {/* Hero to content transition */}
+      <div className="hero-fade h-8 md:h-12" />
 
       <main className="flex-1">
         {/* Capability Bubbles Grid - on alt background */}

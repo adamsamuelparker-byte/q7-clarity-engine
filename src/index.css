@@ -198,30 +198,30 @@
     background: hsl(220 20% 13%);
   }
 
-  /* Hero to content transition gradient - seamless blend */
+  /* Hero to content transition gradient - smooth charcoal to white */
   .hero-fade {
     background: linear-gradient(
       180deg,
       hsl(220 20% 14%) 0%,
-      hsl(220 18% 20%) 25%,
-      hsl(220 16% 35%) 50%,
-      hsl(220 14% 70%) 75%,
+      hsl(220 18% 25%) 15%,
+      hsl(220 16% 45%) 35%,
+      hsl(220 14% 70%) 55%,
+      hsl(220 14% 88%) 75%,
       hsl(var(--section-alt)) 100%
     );
   }
   
-  /* Bottom fade for hero sections */
+  /* Bottom fade for hero sections - subtle darkening at bottom */
   .hero-bottom-fade {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 60px;
     background: linear-gradient(
       180deg,
       transparent 0%,
-      hsl(220 20% 14% / 0.3) 50%,
-      hsl(220 20% 14% / 0.6) 100%
+      hsl(220 20% 12% / 0.15) 100%
     );
     pointer-events: none;
     z-index: 1;

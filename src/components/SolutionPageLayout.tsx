@@ -13,7 +13,10 @@ interface SolutionPageLayoutProps {
 export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col bg-section-primary">
-      <Header />
+      {/* Header with dark background matching hero */}
+      <div className="bg-primary">
+        <Header transparent />
+      </div>
       
       <main className="flex-1">
         {/* Breadcrumb - matches hero background */}

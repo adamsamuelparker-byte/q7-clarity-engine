@@ -81,11 +81,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-section-primary">
-      <Header transparent />
+      {/* Header with dark background matching hero */}
+      <div className="bg-primary">
+        <Header transparent />
+      </div>
       
       <main className="flex-1">
         {/* Hero Section - Clean and focused */}
-        <section className="hero-gradient text-primary-foreground pt-28 pb-16 sm:pt-32 sm:pb-20 md:pt-28 md:pb-16">
+        <section className="hero-gradient text-primary-foreground pt-8 pb-16 sm:pt-12 sm:pb-20 md:pt-8 md:pb-16">
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:pl-[10%] lg:pl-[15%]">
             <div className="max-w-xl mx-auto md:mx-0">
               {/* 1. Primary Headline */}

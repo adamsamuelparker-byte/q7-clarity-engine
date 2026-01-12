@@ -17,9 +17,9 @@ const supportPoints = [
 
 export const BridgingSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding section-primary">
       <div className="container-lg text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
+        <h2 className="text-2xl md:text-3xl font-semibold text-heading mb-4">
           How we work
         </h2>
         <p className="text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">

@@ -12,19 +12,19 @@ interface SolutionPageLayoutProps {
 
 export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-section-primary">
       <Header />
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary/30 border-b border-border/50">
+        <div className="section-alt border-b" style={{ borderColor: 'hsl(var(--card-border))' }}>
           <div className="container-wide py-3">
             <nav className="flex items-center text-xs text-muted-foreground">
-              <Link to="/" className="hover:text-foreground transition-colors">
+              <Link to="/" className="hover:text-accent transition-colors">
                 Home
               </Link>
               <ChevronRight className="h-3 w-3 mx-1.5" />
-              <span className="text-foreground">{solution.name}</span>
+              <span className="text-heading">{solution.name}</span>
             </nav>
           </div>
         </div>
@@ -35,7 +35,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Text content - left side */}
               <div className="max-w-xl">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-6 animate-slide-up">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-6 animate-slide-up text-primary-foreground">
                   {solution.hero.headline}
                 </h1>
                 <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed mb-6 animate-slide-up" style={{ animationDelay: "60ms" }}>
@@ -60,11 +60,14 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
-        {/* What This Covers */}
-        <section className="py-14 md:py-16 lg:py-20">
+        {/* Hero to content transition */}
+        <div className="hero-fade h-8 md:h-12" />
+
+        {/* What This Covers - on primary background */}
+        <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 What This Covers
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -87,11 +90,14 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
-        {/* How Q7 Helps */}
-        <section className="py-14 md:py-16 lg:py-20 bg-secondary/30">
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* How Q7 Helps - on alt background */}
+        <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 How Q7 Helps
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -114,11 +120,14 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
-        {/* Who This Is For */}
-        <section className="py-14 md:py-16 lg:py-20">
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* Who This Is For - on primary background */}
+        <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 Who This Is For
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -141,11 +150,14 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
-        {/* What Happens Next */}
-        <section className="py-14 md:py-16 lg:py-20 bg-secondary/30">
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* What Happens Next - on alt background */}
+        <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 What Happens Next
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
@@ -165,11 +177,11 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
-        {/* Sub Products Grid (if available) */}
+        {/* Sub Products Grid (if available) - on primary background */}
         {solution.subProducts && solution.subProducts.length > 0 && (
-          <section className="py-14 md:py-16 lg:py-20">
+          <section className="py-14 md:py-16 lg:py-20 section-primary">
             <div className="container-xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-8 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-8 text-heading">
                 Explore {solution.name} Options
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

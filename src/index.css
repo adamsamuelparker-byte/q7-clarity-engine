@@ -14,7 +14,7 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 0 0% 100%;
+    --background: 220 14% 98%;
     --foreground: 220 20% 14%;
     
     /* Charcoal - Primary (Dominant) */
@@ -26,25 +26,27 @@
     --accent-foreground: 0 0% 100%;
     --accent-hover: 174 35% 35%;
     
-    /* Secondary - Soft Greys */
-    --secondary: 220 14% 96%;
+    /* Secondary - Soft Greys for alternating sections */
+    --secondary: 220 14% 95%;
     --secondary-foreground: 220 20% 14%;
     
-    /* Muted */
-    --muted: 220 14% 96%;
+    /* Muted - For secondary text and labels */
+    --muted: 220 14% 95%;
     --muted-foreground: 220 10% 46%;
     
-    /* Card */
+    /* Card - Slightly lighter than section backgrounds */
     --card: 0 0% 100%;
     --card-foreground: 220 20% 14%;
+    --card-border: 220 14% 88%;
+    --card-border-hover: 174 35% 40%;
     
     /* Popover */
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 14%;
     
-    /* Borders */
-    --border: 220 14% 92%;
-    --input: 220 14% 90%;
+    /* Borders - Subtle charcoal tint */
+    --border: 220 14% 90%;
+    --input: 220 14% 88%;
     --ring: 174 35% 40%;
     
     /* Destructive */
@@ -67,7 +69,16 @@
     /* Custom Design Tokens */
     --hero-bg: 220 20% 14%;
     --hero-foreground: 0 0% 100%;
-    --section-alt: 220 14% 98%;
+    
+    /* Section backgrounds - alternating rhythm */
+    --section-primary: 220 14% 98%;
+    --section-alt: 220 14% 95%;
+    
+    /* Typography colors */
+    --text-heading: 220 20% 14%;
+    --text-body: 220 15% 28%;
+    --text-muted: 220 10% 46%;
+    --text-subtle: 220 10% 58%;
   }
 
   .dark {
@@ -83,6 +94,8 @@
     --muted-foreground: 220 10% 65%;
     --card: 220 20% 12%;
     --card-foreground: 0 0% 98%;
+    --card-border: 220 20% 22%;
+    --card-border-hover: 174 35% 45%;
     --popover: 220 20% 12%;
     --popover-foreground: 0 0% 98%;
     --border: 220 20% 20%;
@@ -90,6 +103,12 @@
     --ring: 174 35% 45%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
+    --section-primary: 220 20% 10%;
+    --section-alt: 220 20% 12%;
+    --text-heading: 0 0% 98%;
+    --text-body: 0 0% 85%;
+    --text-muted: 220 10% 65%;
+    --text-subtle: 220 10% 55%;
   }
 }
 
@@ -103,25 +122,35 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
+    color: hsl(var(--text-body));
   }
 
-  /* Locked Typography Scale */
+  /* Locked Typography Scale with proper color hierarchy */
   h1 {
     @apply text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight leading-tight;
+    color: hsl(var(--text-heading));
   }
   
   h2 {
     @apply text-lg md:text-xl font-medium tracking-tight;
+    color: hsl(var(--text-heading));
   }
   
   h3 {
     @apply text-base font-medium tracking-tight;
+    color: hsl(var(--text-heading));
   }
   
   p {
     @apply leading-relaxed;
+    color: hsl(var(--text-body));
+  }
+
+  /* Links default to teal */
+  a {
+    @apply transition-colors duration-200;
   }
 }
 
@@ -141,36 +170,90 @@
     );
   }
 
-  /* Locked Card System */
+  /* Hero to content transition gradient */
+  .hero-fade {
+    background: linear-gradient(
+      180deg,
+      hsl(220 20% 14%) 0%,
+      hsl(220 20% 16%) 30%,
+      hsl(var(--section-primary)) 100%
+    );
+  }
+
+  /* Locked Card System - sits on tinted surfaces */
   .card-base {
     @apply bg-card rounded-lg p-6 lg:p-8;
-    @apply border border-border/50;
-    @apply shadow-[0_1px_2px_rgba(0,0,0,0.02),0_2px_4px_rgba(0,0,0,0.02)];
+    border: 1px solid hsl(var(--card-border));
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.01);
     @apply transition-all duration-200 ease-out;
   }
   
   .card-interactive {
-    @apply card-base;
-    @apply hover:shadow-[0_2px_8px_rgba(0,0,0,0.04),0_4px_12px_rgba(0,0,0,0.03)];
-    @apply hover:border-accent/20;
+    @apply card-base cursor-pointer;
   }
 
-  /* Section Backgrounds */
-  .section-white {
-    @apply bg-background;
+  .card-interactive:hover,
+  .card-interactive:focus-within {
+    border-color: hsl(var(--card-border-hover));
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+  }
+
+  /* Section Backgrounds - alternating rhythm */
+  .section-primary {
+    background-color: hsl(var(--section-primary));
   }
   
   .section-alt {
-    @apply bg-secondary/30;
+    background-color: hsl(var(--section-alt));
   }
 
   .section-dark {
     @apply bg-primary text-primary-foreground;
   }
 
+  /* Legacy aliases */
+  .section-white {
+    background-color: hsl(var(--section-primary));
+  }
+
   /* Page Frame - Visual anchoring for thin pages */
   .page-frame {
     @apply min-h-[50vh] flex flex-col;
+  }
+
+  /* Typography utility classes */
+  .text-heading {
+    color: hsl(var(--text-heading));
+  }
+
+  .text-body {
+    color: hsl(var(--text-body));
+  }
+
+  .text-subtle {
+    color: hsl(var(--text-subtle));
+  }
+
+  /* Teal link styling */
+  .link-teal {
+    color: hsl(var(--accent));
+  }
+
+  .link-teal:hover {
+    color: hsl(var(--accent-hover));
+  }
+
+  /* Section divider with teal accent */
+  .section-divider {
+    @apply h-px w-full;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--accent) / 0.2) 20%,
+      hsl(var(--accent) / 0.3) 50%,
+      hsl(var(--accent) / 0.2) 80%,
+      transparent 100%
+    );
   }
 }
 

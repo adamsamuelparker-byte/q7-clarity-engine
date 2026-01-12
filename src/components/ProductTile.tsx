@@ -26,15 +26,23 @@ export const ProductTile = ({
       to={href}
       className={cn(
         "group block bg-card rounded-lg p-6 lg:p-8",
-        "border border-border/40",
-        "shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
         "transition-all duration-200 ease-out",
-        "hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)]",
-        "hover:border-accent/25",
         "hover:-translate-y-px",
         className
       )}
-      style={style}
+      style={{
+        border: '1px solid hsl(var(--card-border))',
+        boxShadow: '0 1px 2px rgba(0, 0, 0, 0.02)',
+        ...style,
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
+        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02)';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
+        e.currentTarget.style.boxShadow = '0 1px 2px rgba(0, 0, 0, 0.02)';
+      }}
     >
       {icon && (
         <div className="mb-4 text-accent/70 group-hover:text-accent transition-colors duration-200">
@@ -42,7 +50,7 @@ export const ProductTile = ({
         </div>
       )}
       <h3 className={cn(
-        "font-medium text-foreground mb-2 group-hover:text-accent transition-colors duration-200",
+        "font-medium text-heading mb-2 group-hover:text-accent transition-colors duration-200",
         featured ? "text-base" : "text-[15px]"
       )}>
         {title}

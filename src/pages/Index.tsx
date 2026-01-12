@@ -80,7 +80,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-section-primary">
       <Header transparent />
       
       <main className="flex-1">
@@ -89,7 +89,7 @@ const Index = () => {
           <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 md:pl-[10%] lg:pl-[15%]">
             <div className="max-w-xl mx-auto md:mx-0">
               {/* 1. Primary Headline */}
-              <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up text-left">
+              <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up text-left text-primary-foreground">
                 Business solutions, organised for your business
               </h1>
               
@@ -125,17 +125,20 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Capability Bubbles Grid */}
+        {/* Hero to content transition */}
+        <div className="hero-fade h-8 md:h-12" />
+
+        {/* Capability Bubbles Grid - on alt background */}
         <CapabilityBubbles />
 
-        {/* Bridging Section */}
+        {/* Bridging Section - on primary background */}
         <BridgingSection />
 
-        {/* Solution Cards (Primary Branches) */}
-        <section className="section-padding">
+        {/* Solution Cards (Primary Branches) - on alt background */}
+        <section className="section-padding section-alt">
           <div className="container-xl">
             <div className="mb-10">
-              <h2 className="text-foreground mb-2">
+              <h2 className="text-heading mb-2">
                 Our Solutions
               </h2>
               <p className="text-muted-foreground max-w-lg text-sm">
@@ -156,7 +159,7 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Trust Section */}
+        {/* Trust Section - on primary background */}
         <TrustSection />
 
         {/* CTA Section */}

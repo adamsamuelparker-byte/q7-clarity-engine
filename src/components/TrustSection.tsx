@@ -25,10 +25,10 @@ const trustItems = [
 
 export const TrustSection = () => {
   return (
-    <section className="section-padding-sm bg-secondary/20">
+    <section className="section-padding-sm section-primary">
       <div className="container-xl">
         <div className="mb-10">
-          <h2 className="text-foreground mb-2">
+          <h2 className="text-heading mb-2">
             Why Work With Q7
           </h2>
           <p className="text-muted-foreground text-sm max-w-md">
@@ -46,7 +46,7 @@ export const TrustSection = () => {
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/8 text-accent/70 mb-4">
                 <item.icon className="h-5 w-5" />
               </div>
-              <h3 className="text-sm font-medium text-foreground mb-1">
+              <h3 className="text-sm font-medium text-heading mb-1">
                 {item.title}
               </h3>
               <p className="text-xs text-muted-foreground leading-relaxed">

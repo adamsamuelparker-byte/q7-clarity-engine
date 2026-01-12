@@ -11,23 +11,23 @@ interface SubServicePageLayoutProps {
 
 export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-section-primary">
       <Header />
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary/30 border-b border-border/50">
+        <div className="section-alt border-b" style={{ borderColor: 'hsl(var(--card-border))' }}>
           <div className="container-wide py-3">
             <nav className="flex items-center text-xs text-muted-foreground flex-wrap gap-0.5">
-              <Link to="/" className="hover:text-foreground transition-colors">
+              <Link to="/" className="hover:text-accent transition-colors">
                 Home
               </Link>
               <ChevronRight className="h-3 w-3 mx-1" />
-              <Link to={`/${subService.parentSlug}`} className="hover:text-foreground transition-colors">
+              <Link to={`/${subService.parentSlug}`} className="hover:text-accent transition-colors">
                 {subService.parentName}
               </Link>
               <ChevronRight className="h-3 w-3 mx-1" />
-              <span className="text-foreground">{subService.name}</span>
+              <span className="text-heading">{subService.name}</span>
             </nav>
           </div>
         </div>
@@ -38,7 +38,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Text content - left side */}
               <div className="max-w-xl">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-6 animate-slide-up">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-6 animate-slide-up text-primary-foreground">
                   {subService.hero.headline}
                 </h1>
                 <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
@@ -60,11 +60,14 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </section>
 
-        {/* Overview Section */}
-        <section className="py-14 md:py-16 lg:py-20">
+        {/* Hero to content transition */}
+        <div className="hero-fade h-8 md:h-12" />
+
+        {/* Overview Section - on primary background */}
+        <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 Overview
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -74,11 +77,14 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </section>
 
-        {/* How Q7 Helps Section */}
-        <section className="py-14 md:py-16 lg:py-20 bg-secondary/30">
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* How Q7 Helps Section - on alt background */}
+        <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 How Q7 Helps
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -88,11 +94,14 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </section>
 
-        {/* What Happens Next Section */}
-        <section className="py-14 md:py-16 lg:py-20">
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* What Happens Next Section - on primary background */}
+        <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-foreground">
+              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
                 What Happens Next
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -103,11 +112,11 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
         </section>
 
         {/* Back to Parent Link */}
-        <section className="pb-8">
+        <section className="pb-8 section-primary">
           <div className="container-lg">
             <Link 
               to={`/${subService.parentSlug}`}
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-accent hover:text-accent-hover transition-colors"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to {subService.parentName}

@@ -18,6 +18,7 @@ import { EnquiryForm } from "@/components/EnquiryForm";
 import { IntentSelector } from "@/components/IntentSelector";
 import { CapabilityBubbles } from "@/components/CapabilityBubbles";
 import { BridgingSection } from "@/components/BridgingSection";
+import { FloatingCTA } from "@/components/FloatingCTA";
 
 const products = [
   {
@@ -81,14 +82,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-section-primary">
-      {/* Header with dark background matching hero */}
-      <div className="bg-primary">
+      {/* Hero wrapper - includes header for unified fade treatment */}
+      <div className="hero-wrapper">
         <Header transparent />
-      </div>
-      
-      <main className="flex-1">
-        {/* Hero Section - Clean and focused with soft edge fades */}
-        <section className="hero-gradient text-primary-foreground pt-10 pb-20 sm:pt-14 sm:pb-24 md:pt-12 md:pb-20">
+        
+        {/* Hero Section - Clean and focused */}
+        <section className="text-primary-foreground pt-8 pb-20 sm:pt-12 sm:pb-24 md:pt-10 md:pb-20">
           <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             {/* Desktop: slight center shift, Mobile: centered block with left-aligned text */}
             <div className="max-w-xl mx-auto md:mx-0 md:ml-[8%] lg:ml-[12%]">
@@ -116,7 +115,7 @@ const Index = () => {
               </div>
               
               {/* 5. Single Primary CTA with reassurance */}
-              <div className="animate-slide-up" style={{ animationDelay: "160ms" }}>
+              <div className="animate-slide-up" style={{ animationDelay: "160ms" }} data-cta="primary">
                 <EnquiryForm
                   triggerVariant="hero"
                   triggerSize="lg"
@@ -131,10 +130,12 @@ const Index = () => {
             </div>
           </div>
         </section>
+      </div>
 
-        {/* Hero to content transition */}
-        <div className="hero-fade h-8 md:h-12" />
+      {/* Hero to content transition */}
+      <div className="hero-fade h-8 md:h-12" />
 
+      <main className="flex-1">
         {/* Capability Bubbles Grid - on alt background */}
         <CapabilityBubbles />
 
@@ -172,6 +173,9 @@ const Index = () => {
         {/* CTA Section */}
         <CTASection />
       </main>
+
+      {/* Floating CTA - hides when other CTAs are visible */}
+      <FloatingCTA />
 
       <Footer />
     </div>

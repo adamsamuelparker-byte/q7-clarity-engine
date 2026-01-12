@@ -25,7 +25,7 @@ export const CTASection = ({
         <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
           {description}
         </p>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center" data-cta="primary">
           <EnquiryForm
             preSelectedCategory={preSelectedCategory}
             preSelectedSubProduct={preSelectedSubProduct}

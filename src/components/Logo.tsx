@@ -17,26 +17,16 @@ export const Logo = ({
   variant = "dark"
 }: LogoProps) => {
   return (
-    <div className={cn("flex items-center gap-2.5", className)}>
-      {/* Q7 Logo Symbol - Primary brand mark */}
+    <div className={cn("flex items-center", className)}>
+      {/* Q7 Logo - Full brand mark */}
       <img 
         src={logoImage}
-        alt="Q7 Logo"
+        alt="Q7 Business and Financial Solutions"
         className={cn(
-          "h-20 w-auto",
+          "h-10 w-auto",
           iconClassName
         )}
       />
-      
-      {/* Business Name - Plain, neutral text (not a wordmark) */}
-      {showText && (
-        <span className={cn(
-          "text-[13px] font-normal text-foreground/80 hidden sm:block tracking-normal",
-          textClassName
-        )}>
-          Q7 Business and Financial Solutions
-        </span>
-      )}
     </div>
   );
 };

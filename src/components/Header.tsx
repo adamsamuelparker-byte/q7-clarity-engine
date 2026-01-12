@@ -30,34 +30,34 @@ export const Header = ({ transparent = false }: HeaderProps) => {
       "w-full z-50",
       transparent 
         ? "absolute top-0 left-0 right-0" 
-        : "sticky top-0 bg-background/98 backdrop-blur-sm border-b border-border/60"
+        : "sticky top-0 bg-background/98 backdrop-blur-sm border-b border-border/40"
     )}>
       <div className="container-wide">
-        <nav className="flex items-center justify-between py-3">
-          {/* Logo */}
+        <nav className="flex items-center justify-between py-4">
+          {/* Logo - single logo, no duplicate text */}
           <Link to="/" className="flex-shrink-0">
             <Logo 
-              showText={true} 
+              showText={false} 
               variant={transparent ? "light" : "dark"}
-              textClassName={transparent ? "text-primary-foreground/60" : "text-muted-foreground"}
+              iconClassName="h-10 w-auto"
             />
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:items-center lg:gap-0.5">
+          {/* Desktop Navigation - reduced weight, increased spacing */}
+          <div className="hidden lg:flex lg:items-center lg:gap-1.5">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-2.5 py-1.5 text-[13px] font-normal transition-colors duration-200 rounded",
+                  "px-3 py-1.5 text-[12px] font-normal transition-colors duration-200",
                   transparent 
                     ? location.pathname === item.href
-                      ? "text-primary-foreground"
-                      : "text-primary-foreground/60 hover:text-primary-foreground"
+                      ? "text-primary-foreground/90"
+                      : "text-primary-foreground/50 hover:text-primary-foreground/80"
                     : location.pathname === item.href
                       ? "text-foreground"
-                      : "text-muted-foreground hover:text-foreground"
+                      : "text-muted-foreground/80 hover:text-foreground"
                 )}
               >
                 {item.name}
@@ -90,7 +90,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             "lg:hidden py-2 animate-fade-in",
             transparent 
               ? "bg-primary/98 backdrop-blur-sm rounded-lg mb-2" 
-              : "border-t border-border/60"
+              : "border-t border-border/40"
           )}>
             <div className="flex flex-col">
               {navigation.map((item) => (
@@ -103,10 +103,10 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground"
-                        : "text-primary-foreground/60"
+                        : "text-primary-foreground/50"
                       : location.pathname === item.href
                         ? "text-foreground"
-                        : "text-muted-foreground"
+                        : "text-muted-foreground/80"
                   )}
                 >
                   {item.name}

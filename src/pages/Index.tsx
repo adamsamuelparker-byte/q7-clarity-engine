@@ -14,6 +14,7 @@ import { TrustSection } from "@/components/TrustSection";
 import { CTASection } from "@/components/CTASection";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { IntentSelector } from "@/components/IntentSelector";
+import { HeroServiceList } from "@/components/HeroServiceList";
 
 const products = [
   {
@@ -80,46 +81,68 @@ const Index = () => {
         {/* Hero Section */}
         <section className="bg-primary text-primary-foreground pt-24 pb-16 md:pt-28 md:pb-20">
           <div className="container-lg">
-            <div className="max-w-xl">
-              {/* 1. Primary Headline */}
-              <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold leading-[1.25] mb-5 animate-slide-up">
-                Business solutions, organised for your business
-              </h1>
-              
-              {/* 2. Supporting Sentence */}
-              <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
-                From funding to payments, assets, and services, one team helps you organise what your business needs.
-              </p>
-              
-              {/* 3. Reassurance Strip */}
-              <div className="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-6 animate-slide-up text-primary-foreground/70 text-sm font-medium" style={{ animationDelay: "100ms" }}>
-                {reassuranceItems.map((item, index) => (
-                  <span key={index} className="flex items-center">
-                    <span>{item}</span>
-                    {index < reassuranceItems.length - 1 && (
-                      <span className="ml-2 text-primary-foreground/30">·</span>
-                    )}
-                  </span>
-                ))}
+            <div className="flex items-start justify-between gap-12">
+              {/* Left: Main content */}
+              <div className="max-w-xl flex-1">
+                {/* 1. Primary Headline */}
+                <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold leading-[1.25] mb-5 animate-slide-up">
+                  Business solutions, organised for your business
+                </h1>
+                
+                {/* 2. Supporting Sentence */}
+                <p className="text-base md:text-lg text-primary-foreground/70 mb-6 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+                  From funding to payments, assets, and services, one team helps you organise what your business needs.
+                </p>
+                
+                {/* Desktop: Reassurance Strip */}
+                <div className="hidden md:flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-8 animate-slide-up text-primary-foreground/50 text-sm" style={{ animationDelay: "100ms" }}>
+                  <div className="max-w-md">
+                    {reassuranceItems.map((item, index) => (
+                      <span key={index} className="inline">
+                        <span>{item}</span>
+                        {index < reassuranceItems.length - 1 && (
+                          <span className="mx-2 text-primary-foreground/25">·</span>
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* 4. Inline Rotating Intent Selector */}
+                <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
+                  <IntentSelector
+                    selectedService={selectedIntent}
+                    onServiceSelect={handleIntentSelect}
+                  />
+                </div>
+                
+                {/* 5. Single Primary CTA */}
+                <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
+                  <EnquiryForm
+                    triggerVariant="hero"
+                    triggerSize="lg"
+                    triggerText="Get Started"
+                    preSelectedService={selectedIntent || undefined}
+                    preSelectedServiceName={selectedIntentName || undefined}
+                  />
+                </div>
+
+                {/* Mobile: Reassurance Strip - below CTA */}
+                <div className="md:hidden flex flex-wrap items-center gap-x-2 gap-y-1 mt-8 pt-6 border-t border-primary-foreground/10 animate-slide-up text-primary-foreground/50 text-xs" style={{ animationDelay: "220ms" }}>
+                  {reassuranceItems.map((item, index) => (
+                    <span key={index} className="inline">
+                      <span>{item}</span>
+                      {index < reassuranceItems.length - 1 && (
+                        <span className="mx-1.5 text-primary-foreground/20">·</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
               </div>
-              
-              {/* 4. Inline Rotating Intent Selector */}
-              <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
-                <IntentSelector
-                  selectedService={selectedIntent}
-                  onServiceSelect={handleIntentSelect}
-                />
-              </div>
-              
-              {/* 5. Single Primary CTA */}
-              <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
-                <EnquiryForm
-                  triggerVariant="hero"
-                  triggerSize="lg"
-                  triggerText="Get Started"
-                  preSelectedService={selectedIntent || undefined}
-                  preSelectedServiceName={selectedIntentName || undefined}
-                />
+
+              {/* Right: Decorative service list (desktop only) */}
+              <div className="hidden lg:block pt-4">
+                <HeroServiceList />
               </div>
             </div>
           </div>

@@ -27,6 +27,8 @@ export const intentServices = [
   { id: "webcams-cctv", name: "Webcams and CCTV" },
   { id: "business-bank-accounts", name: "Business Bank Accounts" },
   { id: "accounting-services", name: "Accounting Services" },
+  { id: "not-sure", name: "I'm Not Sure Yet" },
+  { id: "general-enquiry", name: "General Enquiry" },
 ];
 
 interface IntentSelectorProps {
@@ -45,6 +47,9 @@ export const IntentSelector = ({
   const [isFading, setIsFading] = useState(false);
   const isMobile = useIsMobile();
   const rotationIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Rotation interval - slower on mobile
+  const rotationInterval = isMobile ? 4000 : 3500;
 
   // Get the display name - either selected service or rotating service
   const displayName = selectedService
@@ -67,14 +72,14 @@ export const IntentSelector = ({
         setCurrentIndex((prev) => (prev + 1) % intentServices.length);
         setIsFading(false);
       }, 200);
-    }, 3500);
+    }, rotationInterval);
 
     return () => {
       if (rotationIntervalRef.current) {
         clearInterval(rotationIntervalRef.current);
       }
     };
-  }, [isRotating, selectedService, isHovered]);
+  }, [isRotating, selectedService, isHovered, rotationInterval]);
 
   const handleSelect = (serviceId: string, serviceName: string) => {
     onServiceSelect(serviceId, serviceName);
@@ -110,27 +115,35 @@ export const IntentSelector = ({
   );
 
   const SelectorText = (
-    <div className="inline-block rounded-full bg-white/5 border border-white/10 px-5 py-3">
+    <div className={cn(
+      "inline-block rounded-full px-5 py-3",
+      "bg-white/[0.06] border border-white/[0.08]",
+      isMobile && "w-full"
+    )}>
       <button
         onClick={handleClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="inline-flex items-center gap-2 text-lg md:text-xl cursor-pointer group text-left"
+        className={cn(
+          "inline-flex items-center gap-2 cursor-pointer group text-left",
+          isMobile ? "text-base w-full justify-between" : "text-lg md:text-xl"
+        )}
       >
-        <span className="text-primary-foreground/60">I'm looking for…</span>
-        <span 
-          className={cn(
-            "text-accent font-medium transition-opacity duration-200",
-            isFading ? "opacity-0" : "opacity-100"
-          )}
-        >
-          {displayName}
+        <span className="flex items-center gap-2 min-w-0">
+          <span className="text-primary-foreground/50 whitespace-nowrap">I'm looking for…</span>
+          <span 
+            className={cn(
+              "text-accent font-medium transition-opacity duration-200 truncate",
+              isFading ? "opacity-0" : "opacity-100"
+            )}
+          >
+            {displayName}
+          </span>
         </span>
         <ChevronDown 
           className={cn(
-            "h-5 w-5 text-accent transition-transform duration-200",
-            open ? "rotate-180" : "rotate-0",
-            "group-hover:translate-y-0.5"
+            "h-4 w-4 text-accent flex-shrink-0 transition-transform duration-300",
+            open ? "rotate-180" : "rotate-0"
           )}
         />
       </button>

@@ -50,6 +50,13 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          border: "hsl(var(--card-border))",
+          "border-hover": "hsl(var(--card-border-hover))",
+        },
+        // Section backgrounds
+        section: {
+          primary: "hsl(var(--section-primary))",
+          alt: "hsl(var(--section-alt))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

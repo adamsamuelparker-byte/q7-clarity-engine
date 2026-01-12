@@ -13,7 +13,7 @@ const capabilities = [
 
 export const CapabilityBubbles = () => {
   return (
-    <section className="bg-muted/30 border-y border-border py-10 md:py-12">
+    <section className="section-alt py-10 md:py-12">
       <div className="container-xl">
         <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-6">
           What we can help with
@@ -25,9 +25,20 @@ export const CapabilityBubbles = () => {
             <Link
               key={capability.name}
               to={capability.href}
-              className="group block bg-background border border-border rounded-xl px-4 py-4 md:px-5 md:py-5 transition-all duration-200 hover:border-accent hover:shadow-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20"
+              className="group block bg-card rounded-xl px-4 py-4 md:px-5 md:py-5 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-accent/20"
+              style={{
+                border: '1px solid hsl(var(--card-border))',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'hsl(var(--card-border-hover))';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'hsl(var(--card-border))';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
             >
-              <span className="text-sm md:text-base font-medium text-foreground/80 group-hover:text-foreground transition-colors">
+              <span className="text-sm md:text-base font-medium text-heading group-hover:text-accent transition-colors">
                 {capability.name}
               </span>
             </Link>

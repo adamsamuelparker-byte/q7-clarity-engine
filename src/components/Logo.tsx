@@ -21,7 +21,7 @@ export const Logo = ({
       {/* Q7 Logo - Full brand mark */}
       <img 
         src={logoImage}
-        alt="Q7 Business and Financial Solutions"
+        alt="Q7 Business & Financial Solutions"
         className={cn(
           "w-auto",
           iconClassName

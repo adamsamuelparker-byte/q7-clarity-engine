@@ -10,9 +10,9 @@ const navigation = [
   { name: "Business Funding", href: "/business-funding" },
   { name: "Merchant Services", href: "/merchant-services" },
   { name: "Asset Finance", href: "/asset-finance" },
-  { name: "Leasing and Rental", href: "/leasing-rental" },
-  { name: "Tracking and Protection", href: "/tracking-protection" },
-  { name: "Banking and Business Services", href: "/banking-services" },
+  { name: "Leasing & Rental", href: "/leasing-rental" },
+  { name: "Tracking & Protection", href: "/tracking-protection" },
+  { name: "Banking & Business Services", href: "/banking-services" },
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
@@ -39,7 +39,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             <Logo 
               showText={false} 
               variant={transparent ? "light" : "dark"}
-              iconClassName="h-12 sm:h-14 md:h-16 lg:h-[4.5rem] w-auto"
+              iconClassName="h-14 sm:h-16 md:h-20 lg:h-24 w-auto"
             />
           </Link>
 

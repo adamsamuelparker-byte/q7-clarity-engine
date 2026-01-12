@@ -4,11 +4,13 @@ import { Logo } from "./Logo";
 const navigation = {
   solutions: [
     { name: "Business Funding", href: "/business-funding" },
-    { name: "Merchant Services", href: "/merchant-services" },
+    { name: "Payments & Merchant", href: "/payments-merchant" },
     { name: "Asset Finance", href: "/asset-finance" },
-    { name: "Leasing and Rental", href: "/leasing-rental" },
-    { name: "Tracking and Protection", href: "/tracking-protection" },
-    { name: "Banking and Business Services", href: "/banking-services" },
+    { name: "Leasing & Rental", href: "/leasing-rental" },
+    { name: "Vehicles & Mobility", href: "/vehicles-mobility" },
+    { name: "Tracking & Protection", href: "/tracking-protection" },
+    { name: "Banking & Accounting", href: "/banking-accounting" },
+    { name: "Business Support", href: "/business-support" },
   ],
   company: [
     { name: "About", href: "/about" },

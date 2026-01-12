@@ -6,13 +6,17 @@ import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
 
 const navigation = [
-  { name: "Homepage", href: "/" },
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Merchant Services", href: "/merchant-services" },
+  { name: "Payments & Merchant", href: "/payments-merchant" },
   { name: "Asset Finance", href: "/asset-finance" },
   { name: "Leasing & Rental", href: "/leasing-rental" },
+  { name: "Vehicles & Mobility", href: "/vehicles-mobility" },
   { name: "Tracking & Protection", href: "/tracking-protection" },
-  { name: "Banking & Business Services", href: "/banking-services" },
+  { name: "Banking & Accounting", href: "/banking-accounting" },
+  { name: "Business Support", href: "/business-support" },
+];
+
+const secondaryNav = [
   { name: "About", href: "/about" },
   { name: "Contact", href: "/contact" },
 ];
@@ -34,7 +38,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
     )}>
       <div className="container-wide">
         <nav className="flex items-center justify-between py-4">
-          {/* Logo - single logo, no duplicate text */}
+          {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <Logo 
               showText={false} 
@@ -43,14 +47,36 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             />
           </Link>
 
-          {/* Desktop Navigation - reduced weight, increased spacing */}
-          <div className="hidden lg:flex lg:items-center lg:gap-3">
+          {/* Desktop Navigation - 8 solution pages */}
+          <div className="hidden lg:flex lg:items-center lg:gap-1">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-2.5 py-1.5 text-[11px] font-normal transition-colors duration-200",
+                  "px-2 py-1.5 text-[10px] font-normal transition-colors duration-200 whitespace-nowrap",
+                  transparent 
+                    ? location.pathname === item.href
+                      ? "text-primary-foreground/90"
+                      : "text-primary-foreground/50 hover:text-primary-foreground/80"
+                    : location.pathname === item.href
+                      ? "text-foreground"
+                      : "text-muted-foreground/80 hover:text-foreground"
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <span className={cn(
+              "mx-1.5 h-4 w-px",
+              transparent ? "bg-primary-foreground/20" : "bg-border"
+            )} />
+            {secondaryNav.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={cn(
+                  "px-2 py-1.5 text-[10px] font-normal transition-colors duration-200",
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground/90"
@@ -93,7 +119,46 @@ export const Header = ({ transparent = false }: HeaderProps) => {
               : "border-t border-border/40"
           )}>
             <div className="flex flex-col">
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  "px-4 py-2.5 text-sm font-normal transition-colors duration-200",
+                  transparent
+                    ? location.pathname === "/"
+                      ? "text-primary-foreground"
+                      : "text-primary-foreground/50"
+                    : location.pathname === "/"
+                      ? "text-foreground"
+                      : "text-muted-foreground/80"
+                )}
+              >
+                Home
+              </Link>
               {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className={cn(
+                    "px-4 py-2.5 text-sm font-normal transition-colors duration-200",
+                    transparent
+                      ? location.pathname === item.href
+                        ? "text-primary-foreground"
+                        : "text-primary-foreground/50"
+                      : location.pathname === item.href
+                        ? "text-foreground"
+                        : "text-muted-foreground/80"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className={cn(
+                "my-2 mx-4 h-px",
+                transparent ? "bg-primary-foreground/10" : "bg-border"
+              )} />
+              {secondaryNav.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}

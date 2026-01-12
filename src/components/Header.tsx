@@ -39,7 +39,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             <Logo 
               showText={false} 
               variant={transparent ? "light" : "dark"}
-              iconClassName="h-8 md:h-10 lg:h-12 w-auto"
+              iconClassName="h-10 md:h-12 lg:h-14 w-auto"
             />
           </Link>
 

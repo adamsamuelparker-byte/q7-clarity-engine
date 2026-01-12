@@ -35,18 +35,11 @@ export const Header = ({ transparent = false }: HeaderProps) => {
       <div className="container-wide">
         <nav className="flex items-center justify-between py-4">
           {/* Logo - single logo, no duplicate text */}
-          <Link
-            to="/"
-            className={cn(
-              "flex-shrink-0",
-              transparent &&
-                "overflow-hidden rounded-md bg-background/85 backdrop-blur-sm shadow-sm ring-1 ring-border/40 p-1.5 lg:bg-transparent lg:shadow-none lg:ring-0 lg:p-0"
-            )}
-          >
+          <Link to="/" className="flex-shrink-0">
             <Logo 
               showText={false} 
               variant={transparent ? "light" : "dark"}
-              iconClassName="h-16 sm:h-20 md:h-24 lg:h-40 min-h-[60px] w-auto scale-150 sm:scale-100 origin-left"
+              iconClassName="h-12 sm:h-14 md:h-16 w-auto"
             />
           </Link>
 

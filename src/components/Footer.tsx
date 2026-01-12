@@ -26,6 +26,7 @@ export const Footer = () => {
             <Logo 
               showText={false} 
               variant="light"
+              iconClassName="h-12 sm:h-14 md:h-16 w-auto"
             />
             <p className="mt-4 text-sm text-primary-foreground/60 max-w-xs">
               Q7 Business and Financial Solutions

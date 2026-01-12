@@ -31,7 +31,6 @@ const coreCategories = [
   { id: "banking-accounting", name: "Banking and Accounting Services" },
   { id: "business-support", name: "Business Support Services" },
   { id: "general", name: "General enquiry" },
-  { id: "not-sure", name: "I'm not sure yet" },
 ];
 
 const subProducts: Record<string, { id: string; name: string }[]> = {
@@ -40,43 +39,35 @@ const subProducts: Record<string, { id: string; name: string }[]> = {
     { id: "working-capital", name: "Working Capital" },
     { id: "emergency-funding", name: "Emergency Funding" },
     { id: "refinancing", name: "Refinancing" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "payments-merchant": [
     { id: "ecommerce-payments", name: "Ecommerce Payments" },
     { id: "merchant-accounts", name: "Merchant Accounts" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "asset-finance": [
     { id: "equipment-finance", name: "Equipment Finance" },
     { id: "technology-finance", name: "Technology Finance" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "leasing-rental": [
     { id: "vehicle-leasing", name: "Vehicle Leasing" },
     { id: "fleet-leasing", name: "Fleet Leasing" },
     { id: "short-term-rental", name: "Short Term Rental" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "vehicles-mobility": [
     { id: "electric-vehicles", name: "Electric Vehicles" },
     { id: "delivery-courier-vehicles", name: "Delivery and Courier Vehicles" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "tracking-protection": [
     { id: "asset-tracking", name: "Asset Tracking" },
     { id: "asset-recovery", name: "Asset Recovery" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "banking-accounting": [
     { id: "business-credit-cards", name: "Business Credit Cards" },
     { id: "tax-compliance-support", name: "Tax and Compliance Support" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
   "business-support": [
     { id: "operational-support", name: "Operational Support" },
     { id: "partner-introductions", name: "Partner Introductions" },
-    { id: "not-sure", name: "I'm not sure yet" },
   ],
 };
 
@@ -96,6 +87,7 @@ interface EnquiryFormProps {
   preSelectedService?: string;
   preSelectedServiceName?: string;
   isGeneralEnquiry?: boolean;
+  skipCategorySelection?: boolean;
   triggerClassName?: string;
   triggerVariant?: "accent" | "hero" | "hero-outline" | "accent-outline";
   triggerSize?: "default" | "lg" | "xl";
@@ -110,6 +102,7 @@ export const EnquiryForm = ({
   preSelectedService,
   preSelectedServiceName,
   isGeneralEnquiry = false,
+  skipCategorySelection = false,
   triggerClassName,
   triggerVariant = "accent",
   triggerSize = "lg",
@@ -119,12 +112,6 @@ export const EnquiryForm = ({
 }: EnquiryFormProps) => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  const [step, setStep] = useState(1);
-  
-  const handleOpenChange = (newOpen: boolean) => {
-    setOpen(newOpen);
-    onOpenChange?.(newOpen);
-  };
   
   // Determine initial categories based on props
   const getInitialCategories = () => {
@@ -140,7 +127,6 @@ export const EnquiryForm = ({
         "tracking-protection": "tracking-protection",
         "banking-accounting": "banking-accounting",
         "business-support": "business-support",
-        "not-sure": "not-sure",
         "general-enquiry": "general",
       };
       const category = serviceToCategory[preSelectedService];
@@ -148,6 +134,19 @@ export const EnquiryForm = ({
     }
     if (preSelectedCategory) return [preSelectedCategory];
     return [];
+  };
+
+  // Determine starting step - skip step 1 if category already selected
+  const shouldSkipStep1 = skipCategorySelection || !!preSelectedCategory || !!preSelectedService;
+  const [step, setStep] = useState(shouldSkipStep1 ? 2 : 1);
+  
+  const handleOpenChange = (newOpen: boolean) => {
+    setOpen(newOpen);
+    onOpenChange?.(newOpen);
+    // Reset step when closing
+    if (!newOpen) {
+      setStep(shouldSkipStep1 ? 2 : 1);
+    }
   };
 
   const [selectedCategories, setSelectedCategories] = useState<string[]>(getInitialCategories);
@@ -228,9 +227,9 @@ export const EnquiryForm = ({
             {step === 2 && "Any specific products?"}
             {step === 3 && "Your details"}
           </DialogTitle>
-          {/* Progress indicator */}
+          {/* Progress indicator - adjust for skipped steps */}
           <div className="flex items-center gap-2 pt-4">
-            {[1, 2, 3].map((s) => (
+            {(shouldSkipStep1 ? [2, 3] : [1, 2, 3]).map((s) => (
               <div
                 key={s}
                 className={cn(
@@ -247,22 +246,22 @@ export const EnquiryForm = ({
           {step === 1 && (
             <div className="space-y-3">
               <p className="text-sm text-muted-foreground mb-4">
-                Select all that apply
+                You can select multiple options
               </p>
               {coreCategories.map((category) => (
                 <button
                   key={category.id}
                   onClick={() => toggleCategory(category.id)}
                   className={cn(
-                    "w-full flex items-center justify-between p-4 rounded-lg border transition-all duration-200 text-left min-h-[56px]",
+                    "w-full flex items-center justify-between p-3 md:p-4 rounded-lg border transition-all duration-200 text-left min-h-[48px] md:min-h-[56px]",
                     selectedCategories.includes(category.id)
                       ? "border-accent bg-accent/5"
                       : "border-border hover:border-accent/50"
                   )}
                 >
-                  <span className="font-medium text-heading">{category.name}</span>
+                  <span className="font-medium text-heading text-sm md:text-base">{category.name}</span>
                   {selectedCategories.includes(category.id) && (
-                    <Check className="h-5 w-5 text-accent" />
+                    <Check className="h-5 w-5 text-accent flex-shrink-0" />
                   )}
                 </button>
               ))}
@@ -275,22 +274,22 @@ export const EnquiryForm = ({
               {getAvailableSubProducts().length > 0 ? (
                 <>
                   <p className="text-sm text-muted-foreground mb-4">
-                    Optional: Select specific products you're interested in
+                    Optional: Select specific products (you can select multiple)
                   </p>
                   {getAvailableSubProducts().map((product) => (
                     <button
                       key={`${product.category}-${product.id}`}
                       onClick={() => toggleSubProduct(`${product.category}-${product.id}`)}
                       className={cn(
-                        "w-full flex items-center justify-between p-4 rounded-lg border transition-all duration-200 text-left min-h-[56px]",
+                        "w-full flex items-center justify-between p-3 md:p-4 rounded-lg border transition-all duration-200 text-left min-h-[48px] md:min-h-[56px]",
                         selectedSubProducts.includes(`${product.category}-${product.id}`)
                           ? "border-accent bg-accent/5"
                           : "border-border hover:border-accent/50"
                       )}
                     >
-                      <span className="font-medium text-heading">{product.name}</span>
+                      <span className="font-medium text-heading text-sm md:text-base">{product.name}</span>
                       {selectedSubProducts.includes(`${product.category}-${product.id}`) && (
-                        <Check className="h-5 w-5 text-accent" />
+                        <Check className="h-5 w-5 text-accent flex-shrink-0" />
                       )}
                     </button>
                   ))}
@@ -383,7 +382,7 @@ export const EnquiryForm = ({
 
         {/* Navigation Buttons */}
         <div className="flex items-center justify-between mt-6 pt-4 border-t border-border">
-          {step > 1 ? (
+          {step > (shouldSkipStep1 ? 2 : 1) ? (
             <Button
               variant="ghost"
               onClick={() => setStep(step - 1)}

@@ -140,6 +140,8 @@ export const IntentSelector = ({
         </Link>
         <EnquiryForm
           preSelectedCategory={pendingService.id}
+          skipCategorySelection={true}
+          preSelectedServiceName={pendingService.name}
           triggerClassName="w-full"
           customTrigger={
             <button

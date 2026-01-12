@@ -57,6 +57,7 @@ export default {
         section: {
           primary: "hsl(var(--section-primary))",
           alt: "hsl(var(--section-alt))",
+          "charcoal-tint": "hsl(var(--section-charcoal-tint))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

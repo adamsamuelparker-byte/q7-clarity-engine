@@ -70,13 +70,14 @@
     --hero-bg: 220 20% 14%;
     --hero-foreground: 0 0% 100%;
     
-    /* Section backgrounds - alternating rhythm */
-    --section-primary: 220 14% 98%;
-    --section-alt: 220 14% 95%;
+    /* Section backgrounds - alternating rhythm (no pure white) */
+    --section-primary: 220 14% 97%;
+    --section-alt: 220 12% 93%;
+    --section-charcoal-tint: 220 10% 90%;
     
-    /* Typography colors */
+    /* Typography colors - charcoal to grey hierarchy */
     --text-heading: 220 20% 14%;
-    --text-body: 220 15% 28%;
+    --text-body: 220 12% 32%;
     --text-muted: 220 10% 46%;
     --text-subtle: 220 10% 58%;
   }
@@ -129,12 +130,13 @@
 
   /* Locked Typography Scale with proper color hierarchy */
   h1 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight leading-tight;
+    @apply text-2xl md:text-3xl lg:text-[2.75rem] font-semibold tracking-tight;
+    line-height: 1.15;
     color: hsl(var(--text-heading));
   }
   
   h2 {
-    @apply text-lg md:text-xl font-medium tracking-tight;
+    @apply text-lg md:text-xl lg:text-2xl font-semibold tracking-tight;
     color: hsl(var(--text-heading));
   }
   
@@ -155,27 +157,37 @@
 }
 
 @layer components {
-  /* Hero Section - Unified treatment */
+  /* Hero Section - Unified treatment with soft edge fades */
   .hero-section {
     @apply bg-primary text-primary-foreground;
   }
 
-  /* Hero Gradient - subtle depth */
+  /* Hero Gradient - soft fades at edges */
   .hero-gradient {
-    background: linear-gradient(
-      180deg,
-      hsl(220 20% 12%) 0%,
-      hsl(220 20% 14%) 50%,
-      hsl(220 20% 15%) 100%
-    );
+    position: relative;
+    background: hsl(220 20% 13%);
+  }
+  
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      /* Left fade */
+      linear-gradient(90deg, hsl(var(--section-primary) / 0.15) 0%, transparent 8%),
+      /* Right fade */
+      linear-gradient(270deg, hsl(var(--section-primary) / 0.15) 0%, transparent 8%),
+      /* Bottom fade */
+      linear-gradient(180deg, transparent 70%, hsl(var(--section-primary) / 0.25) 100%);
+    pointer-events: none;
   }
 
-  /* Hero to content transition gradient */
+  /* Hero to content transition gradient - softer */
   .hero-fade {
     background: linear-gradient(
       180deg,
       hsl(220 20% 14%) 0%,
-      hsl(220 20% 16%) 30%,
+      hsl(220 20% 18% / 0.5) 40%,
       hsl(var(--section-primary)) 100%
     );
   }

@@ -35,16 +35,16 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </div>
 
-        {/* Hero Section - Text left, image right */}
-        <section className="bg-primary text-primary-foreground py-16 md:py-20 lg:py-24">
+        {/* Hero Section - Text left, image right - with soft edge fades */}
+        <section className="hero-gradient text-primary-foreground py-16 md:py-20 lg:py-24">
           <div className="container-wide">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {/* Text content - left side */}
-              <div className="max-w-xl">
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight mb-6 animate-slide-up text-primary-foreground">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center md:pl-[4%] lg:pl-[6%]">
+              {/* Text content - left side with centered block */}
+              <div className="max-w-xl mx-auto md:mx-0">
+                <h1 className="text-[1.75rem] md:text-[2.25rem] lg:text-[2.75rem] font-semibold leading-[1.15] mb-4 animate-slide-up text-primary-foreground">
                   {subService.hero.headline}
                 </h1>
-                <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+                <p className="text-base md:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "60ms" }}>
                   {subService.hero.intro}
                 </p>
               </div>
@@ -66,11 +66,11 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
         {/* Hero to content transition */}
         <div className="hero-fade h-8 md:h-12" />
 
-        {/* Overview Section - on primary background */}
-        <section className="py-14 md:py-16 lg:py-20 section-primary">
+        {/* Overview Section - on alt background */}
+        <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
                 Overview
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -83,11 +83,11 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
         {/* Subtle divider */}
         <div className="section-divider" />
 
-        {/* How Q7 Helps Section - on alt background */}
-        <section className="py-14 md:py-16 lg:py-20 section-alt">
+        {/* How Q7 Helps Section - on primary background */}
+        <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
                 How Q7 Helps
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -100,11 +100,11 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
         {/* Subtle divider */}
         <div className="section-divider" />
 
-        {/* What Happens Next Section - on primary background */}
-        <section className="py-14 md:py-16 lg:py-20 section-primary">
+        {/* What Happens Next Section - on alt background */}
+        <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-medium mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
                 What Happens Next
               </h2>
               <p className="text-muted-foreground leading-relaxed">
@@ -114,7 +114,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </section>
 
-        {/* Back to Parent Link */}
+        {/* Back to Parent Link - on primary background */}
         <section className="pb-8 section-primary">
           <div className="container-lg">
             <Link 
@@ -127,16 +127,17 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 md:py-20 bg-primary text-primary-foreground">
-          <div className="container-md text-center">
-            <h2 className="text-xl md:text-2xl font-medium mb-3 text-primary-foreground">
+        {/* CTA Section with reassurance */}
+        <section className="py-16 md:py-20 bg-primary text-primary-foreground relative">
+          <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-section-primary/10 to-transparent pointer-events-none" />
+          <div className="container-md text-center relative z-10">
+            <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold mb-3 text-primary-foreground">
               Interested in {subService.name.toLowerCase()}?
             </h2>
             <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
               Get in touch to discuss your requirements and find out how we can help.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-col items-center">
               <EnquiryForm
                 preSelectedCategory={subService.parentSlug}
                 preSelectedSubProduct={`${subService.parentSlug}-${subService.slug}`}
@@ -144,6 +145,9 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
                 triggerSize="lg"
                 triggerText="Start Your Enquiry"
               />
+              <p className="text-xs text-primary-foreground/40 mt-3">
+                No obligation. We'll help you understand your options.
+              </p>
             </div>
           </div>
         </section>

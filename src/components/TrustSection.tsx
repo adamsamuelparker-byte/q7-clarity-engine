@@ -25,10 +25,10 @@ const trustItems = [
 
 export const TrustSection = () => {
   return (
-    <section className="section-padding-sm section-primary">
+    <section className="section-padding-sm section-alt">
       <div className="container-xl">
         <div className="mb-10">
-          <h2 className="text-heading mb-2">
+          <h2 className="text-heading mb-2 text-xl md:text-2xl font-semibold">
             Why Work With Q7
           </h2>
           <p className="text-muted-foreground text-sm max-w-md">

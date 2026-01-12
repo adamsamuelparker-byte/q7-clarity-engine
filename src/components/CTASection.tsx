@@ -14,15 +14,18 @@ export const CTASection = ({
   preSelectedSubProduct,
 }: CTASectionProps) => {
   return (
-    <section className="section-padding bg-primary text-primary-foreground">
-      <div className="container-md text-center">
-        <h2 className="text-xl md:text-2xl font-medium mb-3 text-primary-foreground">
+    <section className="section-padding bg-primary text-primary-foreground relative">
+      {/* Subtle top fade from content */}
+      <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-section-primary/10 to-transparent pointer-events-none" />
+      
+      <div className="container-md text-center relative z-10">
+        <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold mb-3 text-primary-foreground">
           {title}
         </h2>
         <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
           {description}
         </p>
-        <div className="flex justify-center">
+        <div className="flex flex-col items-center">
           <EnquiryForm
             preSelectedCategory={preSelectedCategory}
             preSelectedSubProduct={preSelectedSubProduct}
@@ -30,6 +33,9 @@ export const CTASection = ({
             triggerSize="lg"
             triggerText="Start Your Enquiry"
           />
+          <p className="text-xs text-primary-foreground/40 mt-3">
+            No obligation. We'll help you understand your options.
+          </p>
         </div>
       </div>
     </section>

@@ -87,7 +87,7 @@ const Index = () => {
         <Header transparent />
         
         {/* Hero Section - Clean and focused, tighter spacing */}
-        <section className="text-primary-foreground pt-4 pb-12 sm:pt-6 sm:pb-14 md:pt-6 md:pb-14">
+        <section className="text-primary-foreground pt-4 pb-8 sm:pt-6 sm:pb-10 md:pt-6 md:pb-10">
           <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             {/* Desktop: slight center shift, Mobile: centered block with left-aligned text */}
             <div className="max-w-xl mx-auto md:mx-0 md:ml-[8%] lg:ml-[12%]">
@@ -131,10 +131,6 @@ const Index = () => {
           </div>
         </section>
       </div>
-
-      {/* Hero to content transition */}
-      <div className="hero-fade" />
-
       <main className="flex-1">
         {/* Capability Bubbles Grid - on alt background */}
         <CapabilityBubbles />

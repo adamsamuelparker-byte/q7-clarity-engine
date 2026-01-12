@@ -162,41 +162,16 @@
     @apply bg-primary text-primary-foreground;
   }
 
-  /* Hero wrapper - gradient background from charcoal to section color */
+  /* Hero wrapper - solid charcoal (no fades) */
   .hero-wrapper {
     position: relative;
-    /* Gradient starts as solid charcoal at top, fades to section-alt at bottom */
-    background: linear-gradient(
-      to bottom,
-      hsl(var(--hero-bg)) 0%,
-      hsl(var(--hero-bg)) 75%,
-      hsl(var(--section-alt)) 100%
-    );
-    padding-bottom: 2rem; /* extra space for the fade to breathe */
+    background: hsl(var(--hero-bg));
   }
-  
-  @media (min-width: 768px) {
-    .hero-wrapper {
-      padding-bottom: 3rem;
-    }
-  }
-  
-  /* Subtle corner fades for depth - optional accent */
-  .hero-wrapper::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: 
-      radial-gradient(ellipse 60% 40% at 0% 0%, hsl(var(--section-primary) / 0.08) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 40% at 100% 0%, hsl(var(--section-primary) / 0.08) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  /* Hero content sits above decorative fades */
+
+  /* Ensure hero content always sits above any future decorative layers */
   .hero-wrapper > * {
     position: relative;
-    z-index: 2;
+    z-index: 1;
   }
 
   /* Hero Gradient - for compatibility */

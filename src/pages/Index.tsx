@@ -98,7 +98,7 @@ const Index = () => {
               </div>
               
               {/* 5. Single Primary CTA */}
-              <div className="animate-slide-up" style={{ animationDelay: "180ms" }}>
+              <div className="animate-slide-up flex justify-center md:justify-start" style={{ animationDelay: "180ms" }}>
                 <EnquiryForm
                   triggerVariant="hero"
                   triggerSize="lg"

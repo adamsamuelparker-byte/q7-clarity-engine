@@ -25,10 +25,10 @@ const trustItems = [
 
 export const TrustSection = () => {
   return (
-    <section className="py-16 md:py-20 bg-secondary/25">
-      <div className="container-content">
+    <section className="section-padding-sm bg-secondary/20">
+      <div className="container-xl">
         <div className="mb-10">
-          <h2 className="text-xl md:text-2xl font-medium text-foreground mb-2">
+          <h2 className="text-foreground mb-2">
             Why Work With Q7
           </h2>
           <p className="text-muted-foreground text-sm max-w-md">
@@ -36,12 +36,12 @@ export const TrustSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {trustItems.map((item, index) => (
             <div
               key={item.title}
               className="animate-fade-in"
-              style={{ animationDelay: `${index * 80}ms` }}
+              style={{ animationDelay: `${index * 60}ms` }}
             >
               <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-accent/8 text-accent/70 mb-4">
                 <item.icon className="h-5 w-5" />

@@ -9,29 +9,27 @@ const Contact = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground section-padding-sm">
-          <div className="container-wide">
-            <div className="max-w-3xl">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 animate-slide-up">
-                Contact Us
-              </h1>
-              <p className="text-lg text-primary-foreground/80 animate-slide-up" style={{ animationDelay: "100ms" }}>
-                Get in touch to discuss your business needs
-              </p>
-            </div>
+        <section className="bg-primary text-primary-foreground section-padding-xs">
+          <div className="container-lg">
+            <h1 className="animate-slide-up">
+              Contact Us
+            </h1>
+            <p className="text-base md:text-lg text-primary-foreground/70 mt-4 max-w-xl animate-slide-up leading-relaxed" style={{ animationDelay: "60ms" }}>
+              Get in touch to discuss your business needs
+            </p>
           </div>
         </section>
 
         {/* Content Section */}
-        <section className="section-padding">
-          <div className="container-wide">
-            <div className="max-w-3xl">
-              <div className="space-y-8">
+        <section className="section-padding page-frame">
+          <div className="container-lg">
+            <div className="max-w-2xl">
+              <div className="space-y-10">
                 <div className="animate-fade-in">
-                  <h2 className="text-xl font-semibold mb-4 text-foreground">
+                  <h2 className="mb-4 text-foreground">
                     Start Your Enquiry
                   </h2>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
+                  <p className="text-muted-foreground leading-relaxed mb-6 text-sm">
                     Use our enquiry form to tell us about your requirements and we'll be in touch to discuss how we can help.
                   </p>
                   <EnquiryForm
@@ -41,19 +39,19 @@ const Contact = () => {
                   />
                 </div>
 
-                <div className="pt-8 border-t border-border animate-fade-in" style={{ animationDelay: "100ms" }}>
-                  <h2 className="text-xl font-semibold mb-4 text-foreground">
+                <div className="pt-8 border-t border-border animate-fade-in" style={{ animationDelay: "60ms" }}>
+                  <h2 className="mb-4 text-foreground">
                     Other Ways to Reach Us
                   </h2>
-                  <div className="space-y-4 text-muted-foreground">
+                  <div className="space-y-3 text-sm text-muted-foreground">
                     <p>
-                      <strong className="text-foreground">Email:</strong> [Placeholder]
+                      <span className="font-medium text-foreground">Email:</span> [Placeholder]
                     </p>
                     <p>
-                      <strong className="text-foreground">Phone:</strong> [Placeholder]
+                      <span className="font-medium text-foreground">Phone:</span> [Placeholder]
                     </p>
                     <p>
-                      <strong className="text-foreground">Address:</strong> [Placeholder]
+                      <span className="font-medium text-foreground">Address:</span> [Placeholder]
                     </p>
                   </div>
                 </div>

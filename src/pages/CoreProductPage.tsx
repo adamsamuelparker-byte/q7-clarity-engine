@@ -1,4 +1,4 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -177,26 +177,26 @@ const CoreProductPage = () => {
       
       <main className="flex-1">
         {/* Breadcrumb */}
-        <div className="bg-secondary/30">
-          <div className="container-wide py-2.5">
+        <div className="bg-secondary/30 border-b border-border/50">
+          <div className="container-wide py-3">
             <nav className="flex items-center text-xs text-muted-foreground">
-              <a href="/" className="hover:text-foreground transition-colors">
+              <Link to="/" className="hover:text-foreground transition-colors">
                 Home
-              </a>
-              <ChevronRight className="h-3.5 w-3.5 mx-1.5" />
+              </Link>
+              <ChevronRight className="h-3 w-3 mx-1.5" />
               <span className="text-foreground">{product.name}</span>
             </nav>
           </div>
         </div>
 
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-12 md:py-16">
-          <div className="container-hero">
-            <div className="max-w-2xl">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-medium mb-4 animate-slide-up tracking-tight">
+        <section className="bg-primary text-primary-foreground section-padding-xs">
+          <div className="container-lg">
+            <div className="max-w-xl">
+              <h1 className="animate-slide-up">
                 {product.name}
               </h1>
-              <p className="text-base md:text-lg text-primary-foreground/75 animate-slide-up leading-relaxed" style={{ animationDelay: "80ms" }}>
+              <p className="text-base md:text-lg text-primary-foreground/70 mt-4 animate-slide-up leading-relaxed" style={{ animationDelay: "60ms" }}>
                 {product.description}
               </p>
             </div>
@@ -204,20 +204,18 @@ const CoreProductPage = () => {
         </section>
 
         {/* Intro Section */}
-        <section className="py-12 md:py-16">
-          <div className="container-content">
-            <div className="max-w-2xl">
-              <p className="text-base text-muted-foreground leading-relaxed">
-                {product.intro}
-              </p>
-            </div>
+        <section className="section-padding-sm">
+          <div className="container-lg">
+            <p className="text-muted-foreground leading-relaxed max-w-2xl">
+              {product.intro}
+            </p>
           </div>
         </section>
 
         {/* Sub Products Grid */}
-        <section className="py-12 md:py-16 bg-secondary/25">
-          <div className="container-content">
-            <h2 className="text-lg md:text-xl font-medium mb-8">
+        <section className="section-padding-sm bg-secondary/20">
+          <div className="container-xl">
+            <h2 className="mb-8 text-foreground">
               Explore Our {product.name} Options
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -228,7 +226,7 @@ const CoreProductPage = () => {
                   description={subProduct.description}
                   href={`/${slug}/${subProduct.id}`}
                   className="animate-fade-in"
-                  style={{ animationDelay: `${index * 50}ms` } as React.CSSProperties}
+                  style={{ animationDelay: `${index * 40}ms` }}
                 />
               ))}
             </div>
@@ -236,13 +234,13 @@ const CoreProductPage = () => {
         </section>
 
         {/* Q7 Role Section */}
-        <section className="py-12 md:py-16">
-          <div className="container-content">
+        <section className="section-padding-sm">
+          <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-lg md:text-xl font-medium mb-4">
+              <h2 className="mb-4 text-foreground">
                 How Q7 Helps
               </h2>
-              <p className="text-muted-foreground leading-relaxed mb-4 text-sm">
+              <p className="text-muted-foreground leading-relaxed mb-3 text-sm">
                 We work with a wide network of lenders and providers to find the right {product.name.toLowerCase()} solutions for your business. Instead of approaching multiple providers individually, we do the work for you—matching your requirements with the best options available.
               </p>
               <p className="text-muted-foreground leading-relaxed text-sm">

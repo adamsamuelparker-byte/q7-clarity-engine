@@ -11,17 +11,17 @@ const ThankYou = () => {
       
       <main className="flex-1 flex items-center justify-center">
         <section className="section-padding">
-          <div className="container-narrow text-center">
+          <div className="container-md text-center">
             <div className="animate-fade-in">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 text-accent mb-6">
-                <CheckCircle className="h-8 w-8" />
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 text-accent mb-6">
+                <CheckCircle className="h-7 w-7" />
               </div>
               
-              <h1 className="text-3xl md:text-4xl font-semibold mb-4 text-foreground">
+              <h1 className="text-2xl md:text-3xl font-medium mb-4 text-foreground">
                 Thank You
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-8 max-w-md mx-auto">
+              <p className="text-muted-foreground mb-8 max-w-sm mx-auto leading-relaxed">
                 We've received your enquiry. A member of our team will be in touch shortly to discuss your requirements.
               </p>
               

@@ -25,30 +25,32 @@ export const ProductTile = ({
     <Link
       to={href}
       className={cn(
-        "group block bg-card rounded-lg transition-all duration-300 ease-out",
-        "border-0 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_2px_8px_rgba(0,0,0,0.04)]",
-        "hover:shadow-[0_4px_12px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.06)]",
-        "hover:-translate-y-0.5",
-        featured ? "p-8 lg:p-10" : "p-7 lg:p-8",
+        "group block bg-card rounded-lg p-6 lg:p-8",
+        "border border-border/40",
+        "shadow-[0_1px_2px_rgba(0,0,0,0.02)]",
+        "transition-all duration-200 ease-out",
+        "hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)]",
+        "hover:border-accent/25",
+        "hover:-translate-y-px",
         className
       )}
       style={style}
     >
       {icon && (
-        <div className="mb-4 text-accent/80 group-hover:text-accent transition-colors duration-200">
+        <div className="mb-4 text-accent/70 group-hover:text-accent transition-colors duration-200">
           {icon}
         </div>
       )}
       <h3 className={cn(
         "font-medium text-foreground mb-2 group-hover:text-accent transition-colors duration-200",
-        featured ? "text-lg" : "text-base"
+        featured ? "text-base" : "text-[15px]"
       )}>
         {title}
       </h3>
       <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
         {description}
       </p>
-      <div className="flex items-center text-xs font-medium text-accent/70 group-hover:text-accent transition-colors duration-200">
+      <div className="flex items-center text-xs font-medium text-accent/60 group-hover:text-accent transition-colors duration-200">
         Learn more
         <ChevronRight className="ml-0.5 h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
       </div>

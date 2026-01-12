@@ -14,9 +14,9 @@ export const CTASection = ({
   preSelectedSubProduct,
 }: CTASectionProps) => {
   return (
-    <section className="py-16 md:py-20 bg-primary text-primary-foreground">
-      <div className="container-narrow text-center">
-        <h2 className="text-xl md:text-2xl font-medium mb-3">
+    <section className="section-padding bg-primary text-primary-foreground">
+      <div className="container-md text-center">
+        <h2 className="text-xl md:text-2xl font-medium mb-3 text-primary-foreground">
           {title}
         </h2>
         <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">

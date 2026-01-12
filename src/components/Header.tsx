@@ -28,16 +28,17 @@ export const Header = ({ transparent = false }: HeaderProps) => {
   return (
     <header className={cn(
       "w-full z-50",
-      transparent ? "absolute top-0 left-0 right-0" : "sticky top-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b border-border"
+      transparent 
+        ? "absolute top-0 left-0 right-0" 
+        : "sticky top-0 bg-background/98 backdrop-blur-sm border-b border-border/60"
     )}>
-      {/* Main Header - No separate top bar, unified surface */}
       <div className="container-wide">
-        <nav className="flex items-center justify-between py-2.5">
+        <nav className="flex items-center justify-between py-3">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
             <Logo 
               showText={true} 
-              textClassName={transparent ? "text-primary-foreground/70" : ""}
+              textClassName={transparent ? "text-primary-foreground/60" : "text-muted-foreground"}
             />
           </Link>
 
@@ -51,11 +52,11 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   "px-2.5 py-1.5 text-[13px] font-normal transition-colors duration-200 rounded",
                   transparent 
                     ? location.pathname === item.href
-                      ? "text-primary-foreground bg-white/10"
-                      : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-white/5"
+                      ? "text-primary-foreground"
+                      : "text-primary-foreground/60 hover:text-primary-foreground"
                     : location.pathname === item.href
-                      ? "text-foreground bg-secondary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                      ? "text-foreground"
+                      : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {item.name}
@@ -85,24 +86,26 @@ export const Header = ({ transparent = false }: HeaderProps) => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className={cn(
-            "lg:hidden py-3 animate-fade-in",
-            transparent ? "bg-primary/95 backdrop-blur rounded-lg mb-3" : "border-t border-border"
+            "lg:hidden py-2 animate-fade-in",
+            transparent 
+              ? "bg-primary/98 backdrop-blur-sm rounded-lg mb-2" 
+              : "border-t border-border/60"
           )}>
-            <div className="flex flex-col space-y-0.5">
+            <div className="flex flex-col">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-2.5 text-sm font-normal transition-colors duration-200 rounded",
+                    "px-4 py-2.5 text-sm font-normal transition-colors duration-200",
                     transparent
                       ? location.pathname === item.href
-                        ? "text-primary-foreground bg-white/10"
-                        : "text-primary-foreground/70 hover:text-primary-foreground hover:bg-white/5"
+                        ? "text-primary-foreground"
+                        : "text-primary-foreground/60"
                       : location.pathname === item.href
-                        ? "text-foreground bg-secondary"
-                        : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                        ? "text-foreground"
+                        : "text-muted-foreground"
                   )}
                 >
                   {item.name}

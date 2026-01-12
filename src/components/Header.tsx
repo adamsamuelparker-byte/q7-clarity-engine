@@ -39,18 +39,18 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             <Logo 
               showText={false} 
               variant={transparent ? "light" : "dark"}
-              iconClassName="h-24 w-auto"
+              iconClassName="h-7 lg:h-9 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation - reduced weight, increased spacing */}
-          <div className="hidden lg:flex lg:items-center lg:gap-1.5">
+          <div className="hidden lg:flex lg:items-center lg:gap-3">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-3 py-1.5 text-[12px] font-normal transition-colors duration-200",
+                  "px-2.5 py-1.5 text-[11px] font-normal transition-colors duration-200",
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground/90"

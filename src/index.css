@@ -131,6 +131,16 @@
     @apply bg-primary text-primary-foreground;
   }
 
+  /* Hero Gradient - subtle depth */
+  .hero-gradient {
+    background: linear-gradient(
+      180deg,
+      hsl(220 20% 12%) 0%,
+      hsl(220 20% 14%) 50%,
+      hsl(220 20% 15%) 100%
+    );
+  }
+
   /* Locked Card System */
   .card-base {
     @apply bg-card rounded-lg p-6 lg:p-8;

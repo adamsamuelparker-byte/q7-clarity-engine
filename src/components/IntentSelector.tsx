@@ -22,11 +22,12 @@ export const intentServices = [
   { id: "vehicle-finance", name: "Vehicle Finance" },
   { id: "electric-bikes", name: "Electric Bikes" },
   { id: "branded-vehicles", name: "Branded Vehicles" },
-  { id: "vehicle-leasing-rental", name: "Vehicle Leasing and Rental" },
+  { id: "vehicle-leasing", name: "Vehicle Leasing" },
   { id: "vehicle-tracking", name: "Vehicle Tracking" },
   { id: "webcams-cctv", name: "Webcams and CCTV" },
   { id: "business-bank-accounts", name: "Business Bank Accounts" },
   { id: "accounting-services", name: "Accounting Services" },
+  { id: "merchant-funding", name: "Merchant Funding" },
 ];
 
 interface IntentSelectorProps {

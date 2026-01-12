@@ -241,7 +241,7 @@ const CoreProductPage = () => {
                 How Q7 Helps
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-3 text-sm">
-                We work with a wide network of lenders and providers to find the right {product.name.toLowerCase()} solutions for your business. Instead of approaching multiple providers individually, we do the work for you—matching your requirements with the best options available.
+                We work with a wide network of lenders and providers to find the right {product.name.toLowerCase()} solutions for your business. Instead of approaching multiple providers individually, we do the work for you, matching your requirements with the best options available.
               </p>
               <p className="text-muted-foreground leading-relaxed text-sm">
                 Our role is to simplify the process, provide guidance, and help you make informed decisions about the solutions that will best support your business goals.

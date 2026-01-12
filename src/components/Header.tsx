@@ -38,6 +38,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
           <Link to="/" className="flex-shrink-0">
             <Logo 
               showText={true} 
+              variant={transparent ? "light" : "dark"}
               textClassName={transparent ? "text-primary-foreground/60" : "text-muted-foreground"}
             />
           </Link>

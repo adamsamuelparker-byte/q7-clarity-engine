@@ -16,7 +16,7 @@ const subProductData: Record<string, Record<string, {
       name: "Unsecured Business Loans",
       whatItIs: "Unsecured business loans provide funding without requiring you to put up assets as security. These loans are typically based on your business performance, trading history, and ability to repay.",
       whoItIsFor: "Ideal for established businesses with a strong trading history who need quick access to capital without tying up assets. Suitable for working capital, expansion, or managing cash flow.",
-      howQ7Helps: "We compare options from multiple lenders to find competitive rates and terms that match your circumstances. Our process is straightforward—we gather your requirements once and present you with suitable options.",
+      howQ7Helps: "We compare options from multiple lenders to find competitive rates and terms that match your circumstances. Our process is straightforward: we gather your requirements once and present you with suitable options.",
     },
     "secured-loans": {
       name: "Secured Business Loans",

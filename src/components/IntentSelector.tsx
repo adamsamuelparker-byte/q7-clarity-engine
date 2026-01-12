@@ -112,29 +112,31 @@ export const IntentSelector = ({
   );
 
   const SelectorText = (
-    <button
-      onClick={handleClick}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className="inline-flex items-center gap-2 text-lg md:text-xl cursor-pointer group text-left"
-    >
-      <span className="text-primary-foreground/60">I'm looking for…</span>
-      <span 
-        className={cn(
-          "text-accent font-medium transition-opacity duration-200",
-          isFading ? "opacity-0" : "opacity-100"
-        )}
+    <div className="inline-block rounded-full bg-white/5 border border-white/10 px-5 py-3">
+      <button
+        onClick={handleClick}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        className="inline-flex items-center gap-2 text-lg md:text-xl cursor-pointer group text-left"
       >
-        {displayName}
-      </span>
-      <ChevronDown 
-        className={cn(
-          "h-5 w-5 text-accent transition-transform duration-200",
-          open ? "rotate-180" : "rotate-0",
-          "group-hover:translate-y-0.5"
-        )}
-      />
-    </button>
+        <span className="text-primary-foreground/60">I'm looking for…</span>
+        <span 
+          className={cn(
+            "text-accent font-medium transition-opacity duration-200",
+            isFading ? "opacity-0" : "opacity-100"
+          )}
+        >
+          {displayName}
+        </span>
+        <ChevronDown 
+          className={cn(
+            "h-5 w-5 text-accent transition-transform duration-200",
+            open ? "rotate-180" : "rotate-0",
+            "group-hover:translate-y-0.5"
+          )}
+        />
+      </button>
+    </div>
   );
 
   // Mobile: use bottom sheet

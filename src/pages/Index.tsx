@@ -55,8 +55,11 @@ const products = [
 ];
 
 const reassuranceItems = [
-  "Tailored funding and working capital",
-  "Asset finance, leasing and payments",
+  "Funding",
+  "Payments",
+  "Asset finance",
+  "Leasing",
+  "Business services",
   "One team, end to end",
 ];
 
@@ -80,12 +83,12 @@ const Index = () => {
             <div className="max-w-xl">
               {/* 1. Primary Headline */}
               <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold leading-[1.25] mb-5 animate-slide-up">
-                Financial solutions, organised for your business
+                Business solutions, organised for your business
               </h1>
               
               {/* 2. Supporting Sentence */}
               <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
-                We help businesses access the right funding and services, guiding you from enquiry to completion.
+                From funding to payments, assets, and services, one team helps you organise what your business needs.
               </p>
               
               {/* 3. Reassurance Strip */}

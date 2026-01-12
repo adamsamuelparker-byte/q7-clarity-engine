@@ -15,6 +15,7 @@ import { CTASection } from "@/components/CTASection";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { IntentSelector } from "@/components/IntentSelector";
 import { HeroServiceList } from "@/components/HeroServiceList";
+import { MobileServicesSection } from "@/components/MobileServicesSection";
 
 const products = [
   {
@@ -55,15 +56,6 @@ const products = [
   },
 ];
 
-const reassuranceItems = [
-  "Funding",
-  "Payments",
-  "Asset finance",
-  "Leasing",
-  "Business services",
-  "One team, end to end",
-];
-
 const Index = () => {
   const [selectedIntent, setSelectedIntent] = useState<string | null>(null);
   const [selectedIntentName, setSelectedIntentName] = useState<string | null>(null);
@@ -79,34 +71,25 @@ const Index = () => {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground pt-24 pb-16 md:pt-28 md:pb-20">
+        <section className="hero-gradient text-primary-foreground pt-24 pb-12 md:pt-28 md:pb-16 lg:pb-20">
           <div className="container-lg">
-            <div className="flex items-start justify-between gap-12">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-12">
               {/* Left: Main content */}
               <div className="max-w-xl flex-1">
-                {/* 1. Primary Headline */}
-                <h1 className="text-2xl sm:text-3xl md:text-[2.5rem] font-semibold leading-[1.25] mb-5 animate-slide-up">
+                {/* 1. Primary Headline - increased size ~10-15% */}
+                <h1 className="text-[1.65rem] sm:text-[2rem] md:text-[2.75rem] font-semibold leading-[1.3] mb-5 animate-slide-up">
                   Business solutions, organised for your business
                 </h1>
                 
-                {/* 2. Supporting Sentence */}
-                <p className="text-base md:text-lg text-primary-foreground/70 mb-6 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
+                {/* 2. Supporting Sentence - medium weight */}
+                <p className="text-base md:text-lg text-primary-foreground/70 font-medium mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
                   From funding to payments, assets, and services, one team helps you organise what your business needs.
                 </p>
                 
-                {/* Desktop: Reassurance Strip */}
-                <div className="hidden md:flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-8 animate-slide-up text-primary-foreground/50 text-sm" style={{ animationDelay: "100ms" }}>
-                  <div className="max-w-md">
-                    {reassuranceItems.map((item, index) => (
-                      <span key={index} className="inline">
-                        <span>{item}</span>
-                        {index < reassuranceItems.length - 1 && (
-                          <span className="mx-2 text-primary-foreground/25">·</span>
-                        )}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                {/* 3. Confidence Line */}
+                <p className="text-sm text-primary-foreground/50 mb-8 animate-slide-up" style={{ animationDelay: "100ms" }}>
+                  One team. End to end.
+                </p>
                 
                 {/* 4. Inline Rotating Intent Selector */}
                 <div className="mb-8 animate-slide-up" style={{ animationDelay: "140ms" }}>
@@ -126,18 +109,6 @@ const Index = () => {
                     preSelectedServiceName={selectedIntentName || undefined}
                   />
                 </div>
-
-                {/* Mobile: Reassurance Strip - below CTA */}
-                <div className="md:hidden flex flex-wrap items-center gap-x-2 gap-y-1 mt-8 pt-6 border-t border-primary-foreground/10 animate-slide-up text-primary-foreground/50 text-xs" style={{ animationDelay: "220ms" }}>
-                  {reassuranceItems.map((item, index) => (
-                    <span key={index} className="inline">
-                      <span>{item}</span>
-                      {index < reassuranceItems.length - 1 && (
-                        <span className="mx-1.5 text-primary-foreground/20">·</span>
-                      )}
-                    </span>
-                  ))}
-                </div>
               </div>
 
               {/* Right: Decorative service list (desktop only) */}
@@ -147,6 +118,9 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Mobile Services Section - below hero */}
+        <MobileServicesSection />
 
         {/* Products Section */}
         <section className="section-padding">

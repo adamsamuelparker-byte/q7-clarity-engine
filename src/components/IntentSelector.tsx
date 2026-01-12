@@ -27,8 +27,6 @@ export const intentServices = [
   { id: "webcams-cctv", name: "Webcams and CCTV" },
   { id: "business-bank-accounts", name: "Business Bank Accounts" },
   { id: "accounting-services", name: "Accounting Services" },
-  { id: "not-sure", name: "I'm Not Sure Yet" },
-  { id: "general-enquiry", name: "General Enquiry" },
 ];
 
 interface IntentSelectorProps {

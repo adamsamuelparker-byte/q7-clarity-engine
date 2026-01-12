@@ -25,7 +25,7 @@ export const Footer = () => {
           <div className="lg:col-span-1">
             <Logo 
               showText={false} 
-              iconClassName="bg-accent text-accent-foreground"
+              variant="light"
             />
             <p className="mt-4 text-sm text-primary-foreground/60 max-w-xs">
               Q7 Business and Financial Solutions

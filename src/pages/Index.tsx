@@ -72,7 +72,7 @@ const Index = () => {
                 Financial solutions, organised for your business
               </h1>
               <p className="text-base md:text-lg text-primary-foreground/75 mb-5 leading-relaxed animate-slide-up" style={{ animationDelay: "60ms" }}>
-                We help businesses access the right funding, services, and solutions—guiding you through every step of the process.
+                We help businesses access the right funding, services, and solutions, guiding you through every step of the process.
               </p>
               
               {/* Horizontal Reassurance Strip */}

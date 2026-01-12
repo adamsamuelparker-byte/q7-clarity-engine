@@ -23,11 +23,13 @@ import { cn } from "@/lib/utils";
 
 const coreCategories = [
   { id: "business-funding", name: "Business Funding" },
-  { id: "merchant-services", name: "Merchant Services" },
+  { id: "payments-merchant", name: "Payments and Merchant Solutions" },
   { id: "asset-finance", name: "Asset Finance" },
   { id: "leasing-rental", name: "Leasing and Rental" },
+  { id: "vehicles-mobility", name: "Vehicles and Mobility" },
   { id: "tracking-protection", name: "Tracking and Protection" },
-  { id: "banking-services", name: "Banking and Business Services" },
+  { id: "banking-accounting", name: "Banking and Accounting Services" },
+  { id: "business-support", name: "Business Support Services" },
   { id: "general", name: "General enquiry" },
   { id: "not-sure", name: "I'm not sure yet" },
 ];
@@ -40,34 +42,46 @@ const subProducts: Record<string, { id: string; name: string }[]> = {
     { id: "merchant-cash", name: "Merchant Cash Advance" },
     { id: "not-sure", name: "I'm not sure yet" },
   ],
-  "merchant-services": [
+  "payments-merchant": [
     { id: "card-terminals", name: "Card Payment Terminals" },
+    { id: "epos-systems", name: "EPOS Systems" },
     { id: "online-payments", name: "Online Payment Solutions" },
-    { id: "mobile-payments", name: "Mobile Payment Solutions" },
     { id: "not-sure", name: "I'm not sure yet" },
   ],
   "asset-finance": [
     { id: "equipment-finance", name: "Equipment Finance" },
-    { id: "vehicle-finance", name: "Vehicle Finance" },
+    { id: "technology-finance", name: "Technology Finance" },
     { id: "refinancing", name: "Asset Refinancing" },
     { id: "not-sure", name: "I'm not sure yet" },
   ],
   "leasing-rental": [
-    { id: "equipment-leasing", name: "Equipment Leasing" },
     { id: "vehicle-leasing", name: "Vehicle Leasing" },
+    { id: "equipment-leasing", name: "Equipment Leasing" },
     { id: "technology-rental", name: "Technology Rental" },
+    { id: "not-sure", name: "I'm not sure yet" },
+  ],
+  "vehicles-mobility": [
+    { id: "business-vehicles", name: "Business Vehicles" },
+    { id: "electric-mobility", name: "Electric Bikes and Mopeds" },
+    { id: "branded-vehicles", name: "Branded Vehicles" },
     { id: "not-sure", name: "I'm not sure yet" },
   ],
   "tracking-protection": [
     { id: "vehicle-tracking", name: "Vehicle Tracking" },
     { id: "asset-tracking", name: "Asset Tracking" },
-    { id: "fleet-management", name: "Fleet Management" },
+    { id: "cctv-webcams", name: "CCTV and Webcams" },
     { id: "not-sure", name: "I'm not sure yet" },
   ],
-  "banking-services": [
+  "banking-accounting": [
     { id: "business-accounts", name: "Business Bank Accounts" },
-    { id: "currency-exchange", name: "Currency Exchange" },
-    { id: "corporate-cards", name: "Corporate Cards" },
+    { id: "business-cards", name: "Business Credit Cards" },
+    { id: "accounting", name: "Accounting Services" },
+    { id: "not-sure", name: "I'm not sure yet" },
+  ],
+  "business-support": [
+    { id: "operational-support", name: "Operational Support" },
+    { id: "admin-services", name: "Administration Services" },
+    { id: "advisory", name: "Advisory Services" },
     { id: "not-sure", name: "I'm not sure yet" },
   ],
 };

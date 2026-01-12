@@ -4,8 +4,10 @@ import {
   CreditCard, 
   Truck, 
   Building2, 
+  Car, 
   MapPin, 
-  Landmark 
+  Landmark,
+  HeadphonesIcon
 } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -25,9 +27,9 @@ const products = [
     icon: <Banknote className="h-5 w-5" />,
   },
   {
-    title: "Merchant Services",
+    title: "Payments & Merchant",
     description: "Accept payments efficiently with solutions that grow with your business.",
-    href: "/merchant-services",
+    href: "/payments-merchant",
     icon: <CreditCard className="h-5 w-5" />,
   },
   {
@@ -37,22 +39,34 @@ const products = [
     icon: <Truck className="h-5 w-5" />,
   },
   {
-    title: "Leasing and Rental",
+    title: "Leasing & Rental",
     description: "Flexible leasing options for equipment, vehicles, and technology.",
     href: "/leasing-rental",
     icon: <Building2 className="h-5 w-5" />,
   },
   {
-    title: "Tracking and Protection",
+    title: "Vehicles & Mobility",
+    description: "Business vehicles, electric bikes, and mobility solutions for your operations.",
+    href: "/vehicles-mobility",
+    icon: <Car className="h-5 w-5" />,
+  },
+  {
+    title: "Tracking & Protection",
     description: "Monitor and protect your valuable assets with advanced tracking solutions.",
     href: "/tracking-protection",
     icon: <MapPin className="h-5 w-5" />,
   },
   {
-    title: "Banking and Business Services",
-    description: "Streamline your business operations with tailored banking solutions.",
-    href: "/banking-services",
+    title: "Banking & Accounting",
+    description: "Streamline your business finances with banking and accounting services.",
+    href: "/banking-accounting",
     icon: <Landmark className="h-5 w-5" />,
+  },
+  {
+    title: "Business Support",
+    description: "Operational support and business services to help everything run smoothly.",
+    href: "/business-support",
+    icon: <HeadphonesIcon className="h-5 w-5" />,
   },
 ];
 
@@ -129,7 +143,7 @@ const Index = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {products.map((product, index) => (
                 <ProductTile
                   key={product.title}

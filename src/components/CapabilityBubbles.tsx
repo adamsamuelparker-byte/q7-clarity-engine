@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 const capabilities = [
   { name: "Business Funding", href: "/business-funding" },
+  { name: "Payments & Merchant", href: "/payments-merchant" },
   { name: "Asset Finance", href: "/asset-finance" },
-  { name: "Payments & Merchant Solutions", href: "/merchant-services" },
-  { name: "Banking & Accounting Services", href: "/banking-services" },
   { name: "Leasing & Rental", href: "/leasing-rental" },
+  { name: "Vehicles & Mobility", href: "/vehicles-mobility" },
   { name: "Tracking & Protection", href: "/tracking-protection" },
-  { name: "Vehicles & Mobility", href: "/asset-finance" },
-  { name: "Business Support Services", href: "/banking-services" },
+  { name: "Banking & Accounting", href: "/banking-accounting" },
+  { name: "Business Support", href: "/business-support" },
 ];
 
 export const CapabilityBubbles = () => {

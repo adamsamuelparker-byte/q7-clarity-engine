@@ -14,7 +14,7 @@ import { TrustSection } from "@/components/TrustSection";
 import { CTASection } from "@/components/CTASection";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { IntentSelector } from "@/components/IntentSelector";
-import { ServicesDiscoverySection } from "@/components/ServicesDiscoverySection";
+import { CapabilityBubbles } from "@/components/CapabilityBubbles";
 import { BridgingSection } from "@/components/BridgingSection";
 
 const products = [
@@ -111,8 +111,8 @@ const Index = () => {
           </div>
         </section>
 
-        {/* Services Discovery Section */}
-        <ServicesDiscoverySection />
+        {/* Capability Bubbles Grid */}
+        <CapabilityBubbles />
 
         {/* Bridging Section */}
         <BridgingSection />

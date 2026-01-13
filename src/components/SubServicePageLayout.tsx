@@ -51,16 +51,21 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
       
       <main className="flex-1">
 
-        {/* Overview Section - on alt background */}
+        {/* What It Is Section - on alt background */}
         <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
-                Overview
+                What It Is
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {subService.overview}
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                {subService.whatItIs.intro}
               </p>
+              {subService.whatItIs.details && (
+                <p className="text-muted-foreground leading-relaxed">
+                  {subService.whatItIs.details}
+                </p>
+              )}
             </div>
           </div>
         </section>
@@ -68,16 +73,89 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
         {/* Subtle divider */}
         <div className="section-divider" />
 
-        {/* How Q7 Helps Section - on primary background */}
+        {/* How It Can Be Used Section - on primary background */}
         <section className="py-14 md:py-16 lg:py-20 section-primary">
+          <div className="container-lg">
+            <div className="max-w-2xl">
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
+                How It Can Be Used
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                {subService.howItCanBeUsed.intro}
+              </p>
+              <ul className="space-y-2.5 mb-6">
+                {subService.howItCanBeUsed.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {subService.howItCanBeUsed.outro && (
+                <p className="text-muted-foreground leading-relaxed">
+                  {subService.howItCanBeUsed.outro}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* How Q7 Helps Section - on alt background */}
+        <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
                 How Q7 Helps
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {subService.howQ7Helps}
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                {subService.howQ7Helps.intro}
               </p>
+              <ul className="space-y-2.5 mb-6">
+                {subService.howQ7Helps.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {subService.howQ7Helps.outro && (
+                <p className="text-muted-foreground leading-relaxed font-medium">
+                  {subService.howQ7Helps.outro}
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Subtle divider */}
+        <div className="section-divider" />
+
+        {/* Who This Is For Section - on primary background */}
+        <section className="py-14 md:py-16 lg:py-20 section-primary">
+          <div className="container-lg">
+            <div className="max-w-2xl">
+              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
+                Who This Is For
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                {subService.whoThisIsFor.intro}
+              </p>
+              <ul className="space-y-2.5 mb-6">
+                {subService.whoThisIsFor.items.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              {subService.whoThisIsFor.outro && (
+                <p className="text-muted-foreground leading-relaxed">
+                  {subService.whoThisIsFor.outro}
+                </p>
+              )}
             </div>
           </div>
         </section>

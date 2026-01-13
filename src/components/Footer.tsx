@@ -119,9 +119,17 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-primary-foreground/10">
-          <p className="text-xs text-primary-foreground/40 text-center">
-            © {new Date().getFullYear()} Q7 Business and Financial Solutions. All rights reserved.
-          </p>
+          <div className="text-xs text-primary-foreground/40 text-center space-y-1">
+            <p>
+              © {new Date().getFullYear()} Q7 Business and Financial Solutions Ltd. All rights reserved.
+            </p>
+            <p>
+              Company No. 16917917 | Registered in England and Wales
+            </p>
+            <p>
+              Registered Address: 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ
+            </p>
+          </div>
         </div>
       </div>
     </footer>

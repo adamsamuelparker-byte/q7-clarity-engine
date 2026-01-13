@@ -1,4 +1,9 @@
 // Solution page data for all 8 core solutions
+export interface WhatThisCoversItem {
+  name: string;
+  slug: string;
+}
+
 export interface SolutionPageData {
   slug: string;
   name: string;
@@ -10,7 +15,7 @@ export interface SolutionPageData {
   };
   whatThisCovers: {
     intro: string;
-    items: string[];
+    items: WhatThisCoversItem[];
     outro?: string;
   };
   howQ7Helps: {
@@ -48,13 +53,13 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "Business funding can mean different things depending on where your business is and what you are trying to achieve. We help you explore and arrange funding solutions that align with your goals, cash flow, and trading position.",
       items: [
-        "Unsecured business loans",
-        "Secured business lending",
-        "Working capital solutions",
-        "Invoice finance",
-        "Merchant cash advance",
-        "Short term or emergency funding",
-        "Refinancing existing facilities",
+        { name: "Unsecured business loans", slug: "unsecured-business-loans" },
+        { name: "Secured business lending", slug: "secured-business-loans" },
+        { name: "Working capital solutions", slug: "working-capital" },
+        { name: "Invoice finance", slug: "invoice-finance" },
+        { name: "Merchant cash advance", slug: "merchant-cash-advance" },
+        { name: "Short term or emergency funding", slug: "emergency-funding" },
+        { name: "Refinancing existing facilities", slug: "refinancing" },
       ],
       outro: "Our role is not to push a single product, but to help you identify what makes sense for your business and then organise it properly.",
     },
@@ -86,8 +91,11 @@ export const solutionPages: Record<string, SolutionPageData> = {
       closing: "There is no obligation, and no pressure to proceed.",
     },
     subProducts: [
+      { id: "unsecured-business-loans", name: "Unsecured Business Loans", description: "Quick access funding without property security." },
       { id: "secured-business-loans", name: "Secured Business Loans", description: "Larger amounts with competitive rates using asset security." },
       { id: "working-capital", name: "Working Capital", description: "Solutions to support cash flow and trading cycles." },
+      { id: "invoice-finance", name: "Invoice Finance", description: "Unlock cash tied up in outstanding invoices." },
+      { id: "merchant-cash-advance", name: "Merchant Cash Advance", description: "Advance funding against future card sales." },
       { id: "emergency-funding", name: "Emergency Funding", description: "Short term support when timing matters." },
       { id: "refinancing", name: "Refinancing", description: "Review and restructure existing funding arrangements." },
     ],
@@ -104,12 +112,12 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "Every business takes payments differently. Whether you trade in person, online, or across multiple locations, we help you put the right merchant and payment solutions in place.",
       items: [
-        "Card machines",
-        "EPOS systems",
-        "Ecommerce payment solutions",
-        "Merchant accounts",
-        "Payment processing setup",
-        "Switching or reviewing existing providers",
+        { name: "Card machines", slug: "card-machines" },
+        { name: "EPOS systems", slug: "epos-systems" },
+        { name: "Ecommerce payment solutions", slug: "ecommerce-payments" },
+        { name: "Merchant accounts", slug: "merchant-accounts" },
+        { name: "Payment processing setup", slug: "payment-processing" },
+        { name: "Switching or reviewing existing providers", slug: "switching-providers" },
       ],
       outro: "Rather than offering one size fits all solutions, we help you understand the options and choose what works best for your business.",
     },
@@ -141,8 +149,12 @@ export const solutionPages: Record<string, SolutionPageData> = {
       closing: "There is no obligation to proceed.",
     },
     subProducts: [
+      { id: "card-machines", name: "Card Machines", description: "Card terminal solutions for in-person payments." },
+      { id: "epos-systems", name: "EPOS Systems", description: "Point of sale systems for retail and hospitality." },
       { id: "ecommerce-payments", name: "Ecommerce Payments", description: "Reliable and secure payment systems for online trading." },
       { id: "merchant-accounts", name: "Merchant Accounts", description: "Access suitable merchant accounts without confusion." },
+      { id: "payment-processing", name: "Payment Processing", description: "Set up efficient payment processing for your business." },
+      { id: "switching-providers", name: "Switching Providers", description: "Review and switch existing payment providers." },
     ],
   },
   "asset-finance": {
@@ -157,10 +169,10 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "Asset finance allows businesses to spread the cost of essential equipment over time, rather than paying upfront. We can help organise finance for:",
       items: [
-        "Business equipment",
-        "Machinery and tools",
-        "Technology and hardware",
-        "Specialist or industry specific assets",
+        { name: "Business equipment", slug: "equipment-finance" },
+        { name: "Machinery and tools", slug: "machinery-finance" },
+        { name: "Technology and hardware", slug: "technology-finance" },
+        { name: "Specialist or industry specific assets", slug: "specialist-assets" },
       ],
       outro: "Our role is to help you understand what options are available and ensure the finance structure suits how your business operates.",
     },
@@ -190,7 +202,9 @@ export const solutionPages: Record<string, SolutionPageData> = {
     },
     subProducts: [
       { id: "equipment-finance", name: "Equipment Finance", description: "Spread the cost of tools and machinery." },
+      { id: "machinery-finance", name: "Machinery Finance", description: "Finance for industrial machinery and tools." },
       { id: "technology-finance", name: "Technology Finance", description: "Investment in IT and digital infrastructure." },
+      { id: "specialist-assets", name: "Specialist Assets", description: "Finance for industry-specific equipment." },
     ],
   },
   "leasing-rental": {
@@ -205,10 +219,10 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "Leasing and rental solutions allow businesses to access vehicles or equipment without outright purchase. This can include:",
       items: [
-        "Vehicle leasing",
-        "Equipment leasing",
-        "Short or long term rental",
-        "Flexible contract options",
+        { name: "Vehicle leasing", slug: "vehicle-leasing" },
+        { name: "Equipment leasing", slug: "equipment-leasing" },
+        { name: "Fleet leasing", slug: "fleet-leasing" },
+        { name: "Short or long term rental", slug: "short-term-rental" },
       ],
       outro: "We help you understand the differences and choose an approach that suits your business.",
     },
@@ -238,6 +252,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
     },
     subProducts: [
       { id: "vehicle-leasing", name: "Vehicle Leasing", description: "Access vehicles without ownership for flexibility and control." },
+      { id: "equipment-leasing", name: "Equipment Leasing", description: "Lease equipment to preserve capital." },
       { id: "fleet-leasing", name: "Fleet Leasing", description: "Scalable solutions for businesses operating multiple vehicles." },
       { id: "short-term-rental", name: "Short Term Rental", description: "Flexibility without long commitments." },
     ],
@@ -254,11 +269,11 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "We support businesses with a range of vehicle and mobility needs. This can include:",
       items: [
-        "Business vehicles",
-        "Electric bikes and mopeds",
-        "Branded vehicles",
-        "Fleet solutions",
-        "Micro and urban mobility options",
+        { name: "Business vehicles", slug: "business-vehicles" },
+        { name: "Electric vehicles", slug: "electric-vehicles" },
+        { name: "Delivery and courier vehicles", slug: "delivery-courier-vehicles" },
+        { name: "Fleet solutions", slug: "fleet-solutions" },
+        { name: "Micro and urban mobility options", slug: "micro-mobility" },
       ],
       outro: "We help you understand what's available and how to access it in a way that suits your business.",
     },
@@ -287,8 +302,11 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "Start an enquiry and let us know what type of vehicle or mobility solution you're exploring. We'll be in touch to discuss next steps.",
     },
     subProducts: [
+      { id: "business-vehicles", name: "Business Vehicles", description: "Vehicles for business operations and staff." },
       { id: "electric-vehicles", name: "Electric Vehicles", description: "Reduce running costs and emissions with electric options." },
       { id: "delivery-courier-vehicles", name: "Delivery and Courier Vehicles", description: "Reliable vehicles for delivery operations." },
+      { id: "fleet-solutions", name: "Fleet Solutions", description: "Comprehensive fleet management options." },
+      { id: "micro-mobility", name: "Micro Mobility", description: "Electric bikes, scooters and urban mobility solutions." },
     ],
   },
   "tracking-protection": {
@@ -303,11 +321,11 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "Tracking and protection solutions help businesses monitor and safeguard their assets. This can include:",
       items: [
-        "Vehicle tracking systems",
-        "Asset tracking and monitoring",
-        "Theft recovery solutions",
-        "Webcams and CCTV",
-        "Thatcham approved tracking options",
+        { name: "Vehicle tracking systems", slug: "vehicle-tracking" },
+        { name: "Asset tracking and monitoring", slug: "asset-tracking" },
+        { name: "Theft recovery solutions", slug: "asset-recovery" },
+        { name: "Webcams and CCTV", slug: "cctv-webcams" },
+        { name: "Thatcham approved tracking options", slug: "thatcham-tracking" },
       ],
       outro: "We help you understand what level of protection is appropriate for your business.",
     },
@@ -336,8 +354,11 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "If you'd like to explore tracking or protection options, start an enquiry and tell us what assets you're looking to protect.",
     },
     subProducts: [
+      { id: "vehicle-tracking", name: "Vehicle Tracking", description: "Monitor vehicle location and usage in real time." },
       { id: "asset-tracking", name: "Asset Tracking", description: "Monitor valuable equipment for control and visibility." },
       { id: "asset-recovery", name: "Asset Recovery", description: "Retrieve stolen or lost assets when it matters." },
+      { id: "cctv-webcams", name: "CCTV and Webcams", description: "Visual monitoring for security and oversight." },
+      { id: "thatcham-tracking", name: "Thatcham Tracking", description: "Insurance-approved tracking solutions." },
     ],
   },
   "banking-accounting": {
@@ -352,10 +373,10 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "We help businesses access and organise essential banking and accounting support. This can include:",
       items: [
-        "Business bank accounts",
-        "Business credit cards",
-        "Accounting services",
-        "Tax and compliance support",
+        { name: "Business bank accounts", slug: "business-bank-accounts" },
+        { name: "Business credit cards", slug: "business-credit-cards" },
+        { name: "Accounting services", slug: "accounting-services" },
+        { name: "Tax and compliance support", slug: "tax-compliance-support" },
       ],
       outro: "Our focus is on helping you put the right foundations in place.",
     },
@@ -384,7 +405,9 @@ export const solutionPages: Record<string, SolutionPageData> = {
       intro: "Start an enquiry and let us know what banking or accounting support you're looking for. We'll be in touch to discuss next steps.",
     },
     subProducts: [
+      { id: "business-bank-accounts", name: "Business Bank Accounts", description: "Set up suitable business banking." },
       { id: "business-credit-cards", name: "Business Credit Cards", description: "Manage expenses with suitable card options." },
+      { id: "accounting-services", name: "Accounting Services", description: "Professional accounting support for your business." },
       { id: "tax-compliance-support", name: "Tax and Compliance Support", description: "Essential tax and compliance assistance." },
     ],
   },
@@ -400,11 +423,11 @@ export const solutionPages: Record<string, SolutionPageData> = {
     whatThisCovers: {
       intro: "Business support services can vary depending on your needs and stage of growth. This may include:",
       items: [
-        "Operational support",
-        "Back office services",
-        "Business administration support",
-        "Partner introductions",
-        "Ongoing advisory support",
+        { name: "Operational support", slug: "operational-support" },
+        { name: "Back office services", slug: "back-office-services" },
+        { name: "Business administration support", slug: "admin-support" },
+        { name: "Partner introductions", slug: "partner-introductions" },
+        { name: "Ongoing advisory support", slug: "advisory-support" },
       ],
       outro: "Our role is to help you access the right support when you need it.",
     },
@@ -433,7 +456,10 @@ export const solutionPages: Record<string, SolutionPageData> = {
     },
     subProducts: [
       { id: "operational-support", name: "Operational Support", description: "Practical assistance for growing businesses." },
+      { id: "back-office-services", name: "Back Office Services", description: "Administrative and operational support." },
+      { id: "admin-support", name: "Admin Support", description: "Business administration assistance." },
       { id: "partner-introductions", name: "Partner Introductions", description: "Trusted provider introductions." },
+      { id: "advisory-support", name: "Advisory Support", description: "Ongoing business guidance and advice." },
     ],
   },
 };

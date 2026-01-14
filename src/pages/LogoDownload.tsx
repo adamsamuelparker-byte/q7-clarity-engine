@@ -16,6 +16,31 @@ const LogoDownload = () => {
           Right-click on any logo and select "Save image as..." to download
         </p>
 
+        {/* Transparent Background - Just the Logo */}
+        <section className="mb-12">
+          <h2 className="text-xl font-semibold text-foreground mb-6">Logo on Transparent Background</h2>
+          <p className="text-sm text-muted-foreground mb-4">Screenshot this - the checkered pattern indicates transparency</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {sizes.map((size) => (
+              <div key={`transparent-${size.name}`} className="flex flex-col items-center">
+                <div 
+                  className="p-8 rounded-lg flex items-center justify-center"
+                  style={{ 
+                    transform: `scale(${size.scale})`, 
+                    transformOrigin: 'center',
+                    backgroundImage: 'linear-gradient(45deg, #e0e0e0 25%, transparent 25%), linear-gradient(-45deg, #e0e0e0 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #e0e0e0 75%), linear-gradient(-45deg, transparent 75%, #e0e0e0 75%)',
+                    backgroundSize: '20px 20px',
+                    backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
+                  }}
+                >
+                  <Logo variant="dark" />
+                </div>
+                <span className="text-sm text-muted-foreground mt-2">{size.name}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Dark Logo on White Background */}
         <section className="mb-12">
           <h2 className="text-xl font-semibold text-foreground mb-6">Dark Logo (for light backgrounds)</h2>

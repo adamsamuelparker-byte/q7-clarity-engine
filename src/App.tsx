@@ -12,6 +12,7 @@ import Contact from "./pages/Contact";
 import ThankYou from "./pages/ThankYou";
 import NotFound from "./pages/NotFound";
 import AdminDashboard from "./pages/AdminDashboard";
+import LogoDownload from "./pages/LogoDownload";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/logo" element={<LogoDownload />} />
           
           {/* Sub Product Pages - more specific, comes before single param route */}
           <Route path="/:categorySlug/:productSlug" element={<SubProductPage />} />

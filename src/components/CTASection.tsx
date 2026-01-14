@@ -1,4 +1,5 @@
 import { EnquiryForm } from "./EnquiryForm";
+import { WhatsAppCTA } from "./WhatsAppCTA";
 
 interface CTASectionProps {
   title?: string;
@@ -36,6 +37,9 @@ export const CTASection = ({
           <p className="text-xs text-primary-foreground/40 mt-3">
             No obligation. We'll help you understand your options.
           </p>
+          <div className="mt-4">
+            <WhatsAppCTA variant="service" />
+          </div>
         </div>
       </div>
     </section>

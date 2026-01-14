@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
 const contactInfo = {
@@ -57,6 +58,9 @@ const Contact = () => {
                 <p className="text-xs text-muted-foreground/60 mt-2">
                   No obligation. We'll help you understand your options.
                 </p>
+                <div className="mt-4">
+                  <WhatsAppCTA variant="contact" />
+                </div>
               </div>
 
               {/* Contact Details */}

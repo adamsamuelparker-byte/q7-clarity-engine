@@ -19,6 +19,7 @@ import { IntentSelector } from "@/components/IntentSelector";
 import { CapabilityBubbles } from "@/components/CapabilityBubbles";
 import { BridgingSection } from "@/components/BridgingSection";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 
 const products = [
   {
@@ -126,6 +127,9 @@ const Index = () => {
                 <p className="text-xs text-primary-foreground/40 mt-2 text-left">
                   No obligation. One of the team will be in touch.
                 </p>
+                <div className="mt-4">
+                  <WhatsAppCTA variant="default" />
+                </div>
               </div>
             </div>
           </div>

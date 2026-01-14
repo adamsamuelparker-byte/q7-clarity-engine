@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ProductTile } from "@/components/ProductTile";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import type { SolutionPageData } from "@/data/solutionPages";
 
 interface SolutionPageLayoutProps {
@@ -216,6 +217,9 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
               <p className="text-xs text-primary-foreground/40 mt-3">
                 No obligation. One of the team will be in touch.
               </p>
+              <div className="mt-4">
+                <WhatsAppCTA variant="service" />
+              </div>
             </div>
           </div>
         </section>

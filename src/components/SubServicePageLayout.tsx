@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { FloatingCTA } from "@/components/FloatingCTA";
+import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import type { SubServicePageData } from "@/data/subServicePages";
 
 interface SubServicePageLayoutProps {
@@ -211,6 +212,9 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
               <p className="text-xs text-primary-foreground/40 mt-3">
                 No obligation. We'll help you understand your options.
               </p>
+              <div className="mt-4">
+                <WhatsAppCTA variant="service" />
+              </div>
             </div>
           </div>
         </section>

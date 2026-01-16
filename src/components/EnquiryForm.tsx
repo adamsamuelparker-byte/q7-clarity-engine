@@ -20,6 +20,8 @@ import {
   DialogTrigger,
 } from "./ui/dialog";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const coreCategories = [
   { id: "business-funding", name: "Business Funding" },
@@ -189,17 +191,61 @@ export const EnquiryForm = ({
     return products;
   };
 
-  const handleSubmit = () => {
-    // In a real implementation, this would submit to a backend
-    console.log({
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    
+    const leadData = {
+      companyName: formData.companyName,
+      email: formData.email,
+      phone: formData.phone,
+      turnover: formData.turnover,
       categories: selectedCategories,
       subProducts: selectedSubProducts,
-      ...formData,
+      notes: formData.notes,
       pageUrl: window.location.href,
-      timestamp: new Date().toISOString(),
-    });
-    handleOpenChange(false);
-    navigate("/thank-you");
+    };
+
+    try {
+      // Save to database
+      const { error: dbError } = await supabase.from('leads').insert({
+        company_name: formData.companyName,
+        email: formData.email,
+        phone: formData.phone,
+        turnover: formData.turnover,
+        categories: selectedCategories,
+        sub_products: selectedSubProducts,
+        notes: formData.notes,
+        page_url: window.location.href,
+      });
+
+      if (dbError) {
+        console.error("Database error:", dbError);
+      }
+
+      // Send email notification
+      const { error: emailError } = await supabase.functions.invoke('send-lead-notification', {
+        body: leadData,
+      });
+
+      if (emailError) {
+        console.error("Email error:", emailError);
+      }
+
+      handleOpenChange(false);
+      navigate("/thank-you");
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast({
+        title: "Error",
+        description: "There was an issue submitting your enquiry. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const canProceedStep1 = selectedCategories.length > 0;
@@ -409,9 +455,9 @@ export const EnquiryForm = ({
             <Button
               variant="accent"
               onClick={handleSubmit}
-              disabled={!canSubmit}
+              disabled={!canSubmit || isSubmitting}
             >
-              Submit Enquiry
+              {isSubmitting ? "Submitting..." : "Submit Enquiry"}
             </Button>
           )}
         </div>

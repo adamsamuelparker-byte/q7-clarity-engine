@@ -8,7 +8,7 @@ import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 const contactInfo = {
   sales: "0330 6113399",
   whatsapp: "07454 759742",
-  email: "sales@q7businessandfinancialsolutions.com",
+  email: "Ibusinessfinancialsolutions@gmail.com",
   address: "71-75 Shelton Street, Covent Garden, London WC2H 9JQ",
 };
 

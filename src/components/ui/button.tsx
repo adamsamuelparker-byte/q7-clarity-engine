@@ -15,10 +15,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-secondary hover:text-foreground",
         link: "text-accent underline-offset-4 hover:underline",
-        // Q7 Premium Variants - Muted teal-blue for CTAs only
-        accent: "bg-accent text-accent-foreground hover:bg-accent-hover",
-        "accent-outline": "border-2 border-accent text-accent hover:bg-accent hover:text-accent-foreground",
-        hero: "bg-accent text-accent-foreground hover:bg-accent-hover font-semibold",
+        // Q7 Premium Variants - Saturated teal for CTAs only
+        accent: "bg-[hsl(180,50%,32%)] text-white font-semibold hover:bg-[hsl(180,50%,26%)] shadow-md",
+        "accent-outline": "border-2 border-[hsl(180,50%,32%)] text-[hsl(180,50%,32%)] hover:bg-[hsl(180,50%,32%)] hover:text-white",
+        hero: "bg-[hsl(180,50%,32%)] text-white font-semibold hover:bg-[hsl(180,50%,26%)] shadow-md",
         "hero-outline": "border border-primary-foreground/30 text-primary-foreground bg-transparent hover:bg-primary-foreground/10",
         nav: "text-muted-foreground hover:text-foreground bg-transparent",
       },

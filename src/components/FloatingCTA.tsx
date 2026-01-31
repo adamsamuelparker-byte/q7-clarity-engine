@@ -69,11 +69,14 @@ export const FloatingCTA = () => {
           : "opacity-0 translate-y-4 pointer-events-none"
       )}
     >
-      <div className={cn(
-        "bg-primary/95 backdrop-blur-sm rounded-xl shadow-xl border border-primary-foreground/10",
-        "p-5",
-        "flex flex-col items-center gap-4"
-      )}>
+      <div 
+        className={cn(
+          "backdrop-blur-sm rounded-xl shadow-2xl border border-primary-foreground/10",
+          "p-6",
+          "flex flex-col items-center gap-5"
+        )}
+        style={{ backgroundColor: 'hsl(222, 47%, 22%)' }}
+      >
         <EnquiryForm
           triggerVariant="hero"
           triggerSize="lg"

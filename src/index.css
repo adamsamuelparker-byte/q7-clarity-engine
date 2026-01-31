@@ -18,13 +18,13 @@
     --foreground: 222 47% 18%;
     
     /* Deep Royal Blue - Primary (Authority, Trust) */
-    --primary: 222 47% 18%;
+    --primary: 222 47% 25%;
     --primary-foreground: 0 0% 100%;
     
-    /* Muted Teal-Blue - Accent (CTAs ONLY) */
-    --accent: 184 32% 38%;
+    /* Saturated Teal - Accent (CTAs ONLY) */
+    --accent: 180 50% 32%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 184 32% 32%;
+    --accent-hover: 180 50% 26%;
     
     /* Secondary - Soft Greys for alternating sections */
     --secondary: 220 14% 95%;
@@ -35,9 +35,9 @@
     --muted-foreground: 215 12% 42%;
     
     /* Card - Off-white with premium depth */
-    --card: 220 20% 99%;
-    --card-foreground: 222 47% 18%;
-    --card-border: 215 20% 85%;
+    --card: 215 30% 97%;
+    --card-foreground: 222 47% 25%;
+    --card-border: 215 25% 80%;
     --card-border-hover: 222 47% 18%;
     
     /* Popover */
@@ -72,11 +72,11 @@
     
     /* Section backgrounds - alternating rhythm (premium off-whites) */
     --section-primary: 220 14% 98%;
-    --section-alt: 215 16% 95%;
+    --section-alt: 215 25% 93%;
     --section-charcoal-tint: 215 12% 92%;
     
     /* Typography colors - royal blue to grey hierarchy */
-    --text-heading: 222 47% 18%;
+    --text-heading: 222 47% 25%;
     --text-body: 215 12% 36%;
     --text-muted: 215 10% 48%;
     --text-subtle: 215 10% 58%;

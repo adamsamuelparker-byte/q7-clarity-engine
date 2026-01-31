@@ -31,26 +31,40 @@ export const CapabilityBubbles = () => {
             <Link
               key={capability.name}
               to={capability.href}
-              className="group block rounded-md px-4 py-4 md:px-5 md:py-5 min-h-[56px] md:min-h-[64px] transition-all duration-300 flex items-center focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="group block rounded-md overflow-hidden transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent/20"
               style={{
-                backgroundColor: 'hsl(215, 20%, 90%)',
-                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)'
+                backgroundColor: 'hsl(215, 20%, 93%)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.10), 0 2px 4px rgba(0, 0, 0, 0.05)';
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)';
                 e.currentTarget.style.transform = 'translateY(-2px)';
+                const strip = e.currentTarget.querySelector('[data-strip]') as HTMLElement;
+                if (strip) strip.style.backgroundColor = 'hsl(195, 65%, 28%)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
                 e.currentTarget.style.transform = 'translateY(0)';
+                const strip = e.currentTarget.querySelector('[data-strip]') as HTMLElement;
+                if (strip) strip.style.backgroundColor = 'hsl(220, 45%, 20%, 0.7)';
               }}
             >
-              <span 
-                className="text-sm md:text-base font-semibold transition-colors leading-tight group-hover:text-[hsl(195,65%,28%)]"
-                style={{ color: 'hsl(220, 45%, 18%)' }}
-              >
-                {capability.name}
-              </span>
+              {/* Top navy strip */}
+              <div 
+                data-strip
+                className="h-[4px] w-full transition-colors duration-300"
+                style={{ backgroundColor: 'hsl(220, 45%, 20%, 0.7)' }}
+              />
+              
+              {/* Card content */}
+              <div className="px-4 py-4 md:px-5 md:py-5 min-h-[52px] md:min-h-[60px] flex items-center">
+                <span 
+                  className="text-sm md:text-base font-semibold transition-colors leading-tight"
+                  style={{ color: 'hsl(220, 45%, 18%)' }}
+                >
+                  {capability.name}
+                </span>
+              </div>
             </Link>
           ))}
         </div>

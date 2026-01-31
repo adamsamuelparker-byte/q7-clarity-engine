@@ -1,317 +1,187 @@
 
+# Complete Visual Redesign - Final Unified Plan
 
-# Complete Site Redesign and Updates Plan
-
-This comprehensive plan covers all requested changes in a single implementation.
-
----
-
-## Summary of All Changes
-
-| Area | Change |
-|------|--------|
-| **Category Renames** | "Vehicles and Mobility" → "Vehicles & Fleet Solutions", "Payments and Merchant" → "Payments & Merchant Services" |
-| **Image Updates** | Tracking (GPS trackers), Delivery (bike images), Fleet (van images) |
-| **Floating CTA** | Bolder, bigger button and text |
-| **Product Cards Position** | Move to top of solution pages, make compact and collapsible |
-| **Design System Overhaul** | New premium colour palette, typography, and component styling |
-| **Trusted Lenders Section** | New animated logo carousel below hero |
+This plan implements all visual changes plus standardises "and" to "&" across all product cards.
 
 ---
 
-## Part 1: Design System Overhaul
-
-### 1.1 New Colour Palette
-
-**Current → New:**
-
-| Token | Current (Charcoal) | New (Royal Blue) |
-|-------|-------------------|------------------|
-| `--primary` | `220 20% 14%` | `222 47% 22%` (Deep Royal Blue) |
-| `--accent` | `174 35% 40%` (Teal) | `184 32% 40%` (Muted Teal-Blue) |
-| `--border` | `220 12% 78%` | `215 20% 75%` (Soft Slate Blue-Grey) |
-
-**New Colour Hierarchy (strict 3 colours + neutrals):**
-
-1. **Primary - Deep Royal Blue** (`222 47% 22%`): Headings, navigation highlights, key emphasis
-2. **Accent - Muted Teal-Blue** (`184 32% 40%`): CTAs only (Start Your Enquiry, WhatsApp, Submit)
-3. **Support - Soft Slate Blue-Grey** (`215 20% 68%`): Borders, dividers, icons, secondary UI
-
-### 1.2 Typography Updates
-
-| Element | Current | New |
-|---------|---------|-----|
-| H1 | `font-semibold` | `font-bold` (stronger weight for confidence) |
-| H2, H3 | `text-heading` (charcoal) | `text-heading` (royal blue) |
-| Body | Grey | Neutral grey, comfortable line spacing |
-| CTA Text | Mixed case | Sentence case, slight letter-spacing increase |
-
-### 1.3 Files to Update
-
-| File | Changes |
-|------|---------|
-| `src/index.css` | Complete CSS variable overhaul for new colour system |
-| `tailwind.config.ts` | Update custom colour definitions |
-
----
-
-## Part 2: Product Card Redesign
-
-### 2.1 Premium Card Styling
-
-| Element | Current | New |
-|---------|---------|-----|
-| Background | Pure white (`card`) | Off-white (`--card: 220 20% 99%`) |
-| Border | Light grey | Soft slate blue-grey, low opacity |
-| Shadow | Minimal | Soft depth shadow |
-| Padding | `p-4 md:p-5 lg:p-6` | `p-5 md:p-6 lg:p-8` (more breathing room) |
-| Title colour | Charcoal | Royal blue |
-| CTA style | Text with chevron | Text "Learn more →" in teal, arrow animates on hover |
-
-### 2.2 Hover Behaviour
-
-- Gentle lift upward (`-translate-y-1`)
-- Slightly stronger shadow
-- Subtle royal blue border at low opacity
-- Slow, refined transition (`duration-300`)
-
-### 2.3 File to Update
-
-| File | Changes |
-|------|---------|
-| `src/components/ProductTile.tsx` | Update styling, animation, hover states |
-
----
-
-## Part 3: Primary CTA Button Updates
-
-### 3.1 Button Styling
-
-| Element | Current | New |
-|---------|---------|-----|
-| Background | Teal | Muted teal-blue (accent colour) |
-| Text | White | White, medium-bold weight |
-| Corners | `rounded-md` | `rounded-lg` (rounded but not pill) |
-| Effects | Shadow, hover glow | No gradients, no glow, simple hover darken |
-
-### 3.2 CTA Reassurance Text
-
-Add supporting text beneath CTAs where appropriate:
-> "No obligation. Speak directly with our team."
-
-### 3.3 Files to Update
-
-| File | Changes |
-|------|---------|
-| `src/components/ui/button.tsx` | Update accent/hero variants, add letter-spacing |
-| `src/components/CTASection.tsx` | Ensure reassurance text present |
-| `src/components/FloatingCTA.tsx` | Make bolder/bigger (already planned) |
-
----
-
-## Part 4: Floating CTA Enhancement
-
-### Current → New
-
-| Element | Current | New |
-|---------|---------|-----|
-| Container padding | `p-4` | `p-5` |
-| Container shadow | `shadow-lg` | `shadow-xl` |
-| Container gap | `gap-3` | `gap-4` |
-| Button size | `default` (h-10) | `lg` (h-12) |
-| Button text | `text-sm` | `text-base` |
-| WhatsApp text | `text-xs` | `text-sm` |
-
-### File to Update
-
-| File | Changes |
-|------|---------|
-| `src/components/FloatingCTA.tsx` | Update sizing and prominence |
-
----
-
-## Part 5: Solution Page Layout - Products at Top
-
-### 5.1 New Layout Order
-
-1. Hero section
-2. **Sub Products Grid (NEW POSITION)** - compact, collapsible
-3. What This Covers
-4. How Q7 Helps
-5. Who This Is For
-6. What Happens Next
-7. CTA Section
-
-### 5.2 Collapsible Implementation
-
-- Import `Collapsible`, `CollapsibleContent`, `CollapsibleTrigger` from Radix UI
-- Default state: expanded (cards visible)
-- Toggle header with chevron icon that rotates
-- Compact grid: `grid-cols-2 lg:grid-cols-4` with `gap-3`
-- Reduced section padding: `py-6 md:py-8`
-
-### File to Update
-
-| File | Changes |
-|------|---------|
-| `src/components/SolutionPageLayout.tsx` | Reorganise layout, add collapsible wrapper |
-
----
-
-## Part 6: Trusted Lenders Section (New Component)
-
-### 6.1 Design Specifications
-
-- **Position**: Directly below hero on homepage and business-funding page
-- **Purpose**: Trust and reassurance only
-- **Background**: Soft light grey/off-white band
-- **Heading** (optional): "Trusted funding partners" or "Access to a wide panel of UK lenders"
-
-### 6.2 Logo Carousel
-
-**Lenders from image (17 logos):**
-1. 365 Finance
-2. YouLend
-3. Funding Circle
-4. iwoca
-5. Capital On Tap
-6. Triver
-7. ReCap
-8. Capify
-9. Sigma Lending
-10. Swiftfund
-11. Got Capital
-12. MixCap
-13. Bizcap
-14. MCL Finance
-15. Cube Funder
-16. Multifi
-17. Swish Fund
-
-**Layout:**
-- All logos inline on single horizontal row
-- Evenly spaced, vertically centred
-- No individual white bubble cards
-- Smooth conveyor belt animation (right to left)
-- Slow, constant, non-distracting movement
-
-**Animation:**
-- CSS keyframe animation for continuous scroll
-- Duplicated logo set for seamless loop
-- Speed: ~30-40 seconds for full cycle
-
-**No interactive controls:**
-- No arrows
-- No pagination dots
-- No manual scrolling
-- No hover zoom
-
-### 6.3 Implementation
-
-**New files to create:**
-| File | Purpose |
-|------|---------|
-| `src/components/TrustedLendersCarousel.tsx` | New component with animated logo carousel |
-| `src/assets/lenders/` | Directory for lender logo images (extracted from user image) |
+## Part 1: Standardise "and" to "&" in Product Cards
 
 **Files to update:**
-| File | Changes |
-|------|---------|
-| `src/pages/Index.tsx` | Import and add TrustedLendersCarousel after hero |
-| `src/components/SolutionPageLayout.tsx` | Optionally add to business-funding page |
-| `src/index.css` | Add marquee animation keyframes |
+
+### `src/pages/Index.tsx`
+
+| Line | Current | New |
+|------|---------|-----|
+| 45 | `"Leasing and Rental"` | `"Leasing & Rental"` |
+| 57 | `"Tracking and Protection"` | `"Tracking & Protection"` |
+| 63 | `"Banking and Accounting"` | `"Banking & Accounting"` |
+
+### `src/data/solutionPages.ts`
+
+| Current Name | New Name |
+|--------------|----------|
+| `"Leasing and Rental"` | `"Leasing & Rental"` |
+| `"Tracking and Protection"` | `"Tracking & Protection"` |
+| `"Banking and Accounting"` | `"Banking & Accounting"` |
+
+Also update parent references in `subServicePages.ts`:
+- `"Leasing and Rental"` → `"Leasing & Rental"`
+- etc.
+
+**Note:** Only changing titles/names displayed in cards. Body copy in descriptions will keep natural "and" usage.
 
 ---
 
-## Part 7: Category Name Changes
+## Part 2: Colour System - Visible Contrast
 
-### 7.1 Text Updates
+**File: `src/index.css`**
 
-| Current | New |
-|---------|-----|
-| "Vehicles and Mobility" | "Vehicles & Fleet Solutions" |
-| "Payments and Merchant" | "Payments & Merchant Services" |
-
-### 7.2 Files to Update
-
-| File | Occurrences |
-|------|-------------|
-| `src/pages/Index.tsx` | 2 product titles |
-| `src/components/CapabilityBubbles.tsx` | 2 capability names |
-| `src/components/IntentSelector.tsx` | 2 service names |
-| `src/components/EnquiryForm.tsx` | Category names |
-| `src/components/Header.tsx` | Navigation links |
-| `src/data/solutionPages.ts` | Solution names, headlines, navigation |
-| `src/data/subServicePages.ts` | ~15 parentName updates |
+| Token | Current | New |
+|-------|---------|-----|
+| `--primary` | `222 47% 18%` | `222 47% 25%` |
+| `--text-heading` | `222 47% 18%` | `222 47% 25%` |
+| `--accent` | `184 32% 38%` | `180 50% 32%` |
+| `--accent-hover` | `184 32% 32%` | `180 50% 26%` |
+| `--card` | `220 20% 99%` | `215 30% 97%` |
+| `--section-alt` | `215 16% 95%` | `215 25% 93%` |
+| `--card-border` | `215 20% 85%` | `215 25% 80%` |
 
 ---
 
-## Part 8: Image Updates
+## Part 3: Product Cards - Clearly Elevated
 
-### 8.1 Tracking and Protection
+**File: `src/components/ProductTile.tsx`**
 
-- Update heroImage to show GPS trackers / fleet tracking devices
-- Suggested: GPS device on dashboard, fleet tracking map interface
+| Element | Current | New |
+|---------|---------|-----|
+| Background | `bg-card` | Explicit `bg-[hsl(215,30%,97%)]` |
+| Border | `border-card-border` | `border-[hsl(215,25%,88%)]` (softer) |
+| Shadow | Hover only | Base shadow `shadow-[0_2px_8px_rgba(0,0,0,0.04)]` |
+| Padding | `p-5 md:p-6 lg:p-8` | `p-6 md:p-7 lg:p-9` |
+| Title colour | `text-heading` | Explicit `text-[hsl(222,47%,25%)]` |
+| Title weight | `font-semibold` | `font-bold` |
+| Title spacing | `mb-2` | `mb-3` |
+| CTA colour | `text-accent` | Explicit `text-[hsl(180,50%,32%)]` |
 
-### 8.2 Delivery and Courier Vehicles
-
-- Custom heroImage override showing electric cargo/delivery bikes
-- Just Eat / Deliveroo style bike imagery
-
-### 8.3 Fleet Vehicles
-
-- Custom heroImage showing business fleet vehicles
-- Row of branded vans, delivery fleet
-
-### Files to Update
-
-| File | Changes |
-|------|---------|
-| `src/data/solutionPages.ts` | Update tracking-protection heroImage |
-| `src/data/subServicePages.ts` | Add custom heroImage overrides for delivery-courier-vehicles and fleet-vehicles |
+**Hover state:**
+```
+hover:shadow-[0_8px_24px_rgba(0,0,0,0.08)]
+hover:border-[hsl(222,47%,25%,0.2)]
+hover:-translate-y-1.5
+```
 
 ---
 
-## Complete File Change Summary
+## Part 4: CTA Buttons - Visually Dominant
 
-| File | Changes |
-|------|---------|
-| `src/index.css` | Complete colour system overhaul, new CSS variables, marquee animation |
-| `tailwind.config.ts` | Update custom colour definitions for royal blue palette |
-| `src/components/ui/button.tsx` | Update accent/hero variants, letter-spacing for CTAs |
-| `src/components/ProductTile.tsx` | Premium card styling, hover effects, royal blue titles |
-| `src/components/FloatingCTA.tsx` | Bigger, bolder sizing |
-| `src/components/SolutionPageLayout.tsx` | Move products to top, add collapsible, add lenders section |
-| `src/components/TrustedLendersCarousel.tsx` | **NEW** - Animated lender logo carousel |
-| `src/pages/Index.tsx` | Category renames, add TrustedLendersCarousel |
-| `src/components/CapabilityBubbles.tsx` | Category renames |
-| `src/components/IntentSelector.tsx` | Category renames |
-| `src/components/EnquiryForm.tsx` | Category renames |
-| `src/components/Header.tsx` | Navigation category renames |
-| `src/data/solutionPages.ts` | Category renames, image updates |
-| `src/data/subServicePages.ts` | Category renames (~15), image overrides (3) |
-| `src/assets/lenders/` | **NEW** - Lender logo images |
+**File: `src/components/ui/button.tsx`**
 
-**Total: 14 files modified, 2 new files/directories created**
+Update `accent` and `hero` variants:
+
+| Element | Current | New |
+|---------|---------|-----|
+| Background | `bg-accent` | `bg-[hsl(180,50%,32%)]` |
+| Hover | `hover:bg-accent-hover` | `hover:bg-[hsl(180,50%,26%)]` |
+| Text | `text-accent-foreground` | `text-white font-semibold` |
+| Shadow | None | `shadow-md` |
 
 ---
 
-## Technical Notes
+## Part 5: Trusted Lenders Carousel - Logo Image
 
-### Lender Logo Handling
-- Logos will be copied from the user-uploaded reference image
-- Individual logo files will be saved to `src/assets/lenders/`
-- Original logo colours and proportions will be preserved
-- No modifications to logo designs
+**File: `src/components/TrustedLendersCarousel.tsx`**
 
-### Animation Performance
-- CSS-only marquee animation (no JavaScript)
-- Uses `translateX` for GPU acceleration
-- Duplicated logo set ensures seamless infinite loop
-- `will-change: transform` for smooth rendering
+Revert to using the original `lender-logos.png` image in a sliding marquee with:
+- Visible grey background band (`bg-[#f0f2f5]`)
+- Top and bottom borders for clear separation
+- Fade edges for smooth visual
 
-### Colour Accessibility
-- Royal blue provides strong contrast against white/off-white backgrounds
-- Muted teal-blue accent meets WCAG AA for button text
-- Body text grey ensures comfortable reading
+```tsx
+import lenderLogos from "@/assets/lenders/lender-logos.png";
 
+// Display as single scrolling image strip
+<img src={lenderLogos} alt="Trusted funding partners" className="h-12 md:h-14 w-auto" />
+```
+
+---
+
+## Part 6: Section Headings - Force Royal Blue
+
+**File: `src/pages/Index.tsx`**
+```tsx
+<h2 className="text-[hsl(222,47%,25%)] font-bold mb-2">
+  Our Solutions
+</h2>
+```
+
+**File: `src/components/SolutionPageLayout.tsx`**
+
+Force royal blue on all section headings:
+- "What this covers"
+- "How Q7 helps"
+- "Who this is for"
+- "What happens next"
+
+**File: `src/components/CapabilityBubbles.tsx`**
+
+Royal blue text with teal hover for capability names.
+
+---
+
+## Part 7: Floating CTA - Bolder
+
+**File: `src/components/FloatingCTA.tsx`**
+
+| Element | Current | New |
+|---------|---------|-----|
+| Container shadow | `shadow-xl` | `shadow-2xl` |
+| Container padding | `p-5` | `p-6` |
+| Background | `bg-primary/95` | `bg-[hsl(222,47%,22%)]` (solid) |
+
+---
+
+## Part 8: Card Component Base
+
+**File: `src/components/ui/card.tsx`**
+
+Update base styling with visible off-white background and soft shadow.
+
+---
+
+## Complete File Summary
+
+| # | File | Changes |
+|---|------|---------|
+| 1 | `src/index.css` | Update 7 CSS variables for more visible colours |
+| 2 | `src/pages/Index.tsx` | Standardise "and" → "&", force royal blue heading |
+| 3 | `src/data/solutionPages.ts` | Standardise "and" → "&" in solution names |
+| 4 | `src/data/subServicePages.ts` | Standardise parent name references |
+| 5 | `src/components/ProductTile.tsx` | Explicit colours, stronger shadow, more padding, bold titles |
+| 6 | `src/components/ui/button.tsx` | Explicit teal for accent/hero variants |
+| 7 | `src/components/TrustedLendersCarousel.tsx` | Use logo image, visible grey band |
+| 8 | `src/components/SolutionPageLayout.tsx` | Force royal blue on all headings |
+| 9 | `src/components/CapabilityBubbles.tsx` | Royal blue text with teal hover |
+| 10 | `src/components/FloatingCTA.tsx` | Larger, bolder styling |
+| 11 | `src/components/ui/card.tsx` | Visible off-white background, soft shadow |
+
+**Total: 11 files modified**
+
+---
+
+## Visual Impact Summary
+
+After implementation:
+
+| Element | Before | After |
+|---------|--------|-------|
+| Card titles | "Leasing and Rental" | "Leasing & Rental" |
+| Headings | Dark grey | Clearly royal blue |
+| Cards | Barely visible | Off-white with shadow, elevated |
+| CTAs | Muted teal | Saturated teal, stands out |
+| Lender section | Text bubbles | Logo image in grey band |
+
+**Colour Hierarchy:**
+- **Royal Blue** = Authority (headings, emphasis)
+- **Teal** = Action (CTAs only)
+- **Slate Grey** = Structure (borders, icons, dividers)

@@ -4,7 +4,6 @@ import { ChevronRight, ChevronLeft, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { cn } from "@/lib/utils";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
@@ -22,16 +21,25 @@ const purposeOptions = [
   { id: "other", label: "Other" },
 ];
 
+const turnoverOptions = [
+  { id: "under-5k", label: "Under £5,000" },
+  { id: "5k-10k", label: "£5,000 - £10,000" },
+  { id: "10k-25k", label: "£10,000 - £25,000" },
+  { id: "25k-50k", label: "£25,000 - £50,000" },
+  { id: "50k-100k", label: "£50,000 - £100,000" },
+  { id: "over-100k", label: "Over £100,000" },
+];
+
 const cardPaymentOptions = [
   { id: "yes", label: "Yes" },
   { id: "no", label: "No" },
 ];
 
-const cardVolumeOptions = [
-  { id: "0-1000", label: "£0 to £1,000" },
-  { id: "1000-5000", label: "£1,000 to £5,000" },
-  { id: "5000-20000", label: "£5,000 to £20,000" },
-  { id: "20000-plus", label: "£20,000+" },
+const cardPercentageOptions = [
+  { id: "0-25", label: "0-25%" },
+  { id: "25-50", label: "25-50%" },
+  { id: "50-75", label: "50-75%" },
+  { id: "75-100", label: "75-100%" },
 ];
 
 const residentialOptions = [
@@ -61,8 +69,9 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
 
   // Form state
   const [purpose, setPurpose] = useState("");
+  const [turnover, setTurnover] = useState("");
   const [acceptsCards, setAcceptsCards] = useState("");
-  const [cardVolume, setCardVolume] = useState("");
+  const [cardPercentage, setCardPercentage] = useState("");
   const [residentialStatus, setResidentialStatus] = useState("");
   const [tradingTime, setTradingTime] = useState("");
   const [businessType, setBusinessType] = useState("");
@@ -73,7 +82,7 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
     mobile: "",
   });
 
-  const totalSteps = 8;
+  const totalSteps = 9;
 
   const formatCurrency = (amount: number) => {
     if (amount >= 200000) {
@@ -90,30 +99,31 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
   const canProceed = () => {
     switch (step) {
       case 1: return !!purpose;
-      case 2: return !!acceptsCards;
-      case 3: return acceptsCards === "no" || !!cardVolume;
-      case 4: return !!residentialStatus;
-      case 5: return !!tradingTime;
-      case 6: return !!businessType;
-      case 7: return !!(contactDetails.fullName && contactDetails.businessName);
-      case 8: return !!(contactDetails.email && contactDetails.mobile);
+      case 2: return !!turnover;
+      case 3: return !!acceptsCards;
+      case 4: return acceptsCards === "no" || !!cardPercentage;
+      case 5: return !!residentialStatus;
+      case 6: return !!tradingTime;
+      case 7: return !!businessType;
+      case 8: return !!(contactDetails.fullName && contactDetails.businessName);
+      case 9: return !!(contactDetails.email && contactDetails.mobile);
       default: return false;
     }
   };
 
   const handleNext = () => {
-    // Skip card volume step if they don't accept cards
-    if (step === 2 && acceptsCards === "no") {
-      setStep(4);
+    // Skip card percentage step if they don't accept cards
+    if (step === 3 && acceptsCards === "no") {
+      setStep(5);
     } else if (step < totalSteps) {
       setStep(step + 1);
     }
   };
 
   const handleBack = () => {
-    // Skip card volume step when going back if they don't accept cards
-    if (step === 4 && acceptsCards === "no") {
-      setStep(2);
+    // Skip card percentage step when going back if they don't accept cards
+    if (step === 5 && acceptsCards === "no") {
+      setStep(3);
     } else if (step > 1) {
       setStep(step - 1);
     }
@@ -122,11 +132,14 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
   const handleSubmit = async () => {
     setIsSubmitting(true);
     
+    const selectedTurnover = turnoverOptions.find(o => o.id === turnover)?.label || turnover;
+    
     const notes = [
       `Loan Amount: ${formatCurrency(loanAmount)}`,
       `Purpose: ${purposeOptions.find(o => o.id === purpose)?.label || purpose}`,
+      `Monthly Turnover: ${selectedTurnover}`,
       `Accepts Card Payments: ${acceptsCards}`,
-      acceptsCards === "yes" ? `Card Volume: ${cardVolumeOptions.find(o => o.id === cardVolume)?.label || cardVolume}` : null,
+      acceptsCards === "yes" ? `Card Sales Percentage: ${cardPercentageOptions.find(o => o.id === cardPercentage)?.label || cardPercentage}` : null,
       `Residential Status: ${residentialOptions.find(o => o.id === residentialStatus)?.label || residentialStatus}`,
       `Time Trading: ${tradingTimeOptions.find(o => o.id === tradingTime)?.label || tradingTime}`,
       `Business Type: ${businessTypeOptions.find(o => o.id === businessType)?.label || businessType}`,
@@ -137,7 +150,7 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
         company_name: contactDetails.businessName,
         email: contactDetails.email,
         phone: contactDetails.mobile,
-        turnover: "Quick form - see notes",
+        turnover: selectedTurnover,
         categories: ["business-funding"],
         sub_products: [],
         notes: `Full Name: ${contactDetails.fullName}\n${notes}`,
@@ -154,7 +167,7 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
           companyName: contactDetails.businessName,
           email: contactDetails.email,
           phone: contactDetails.mobile,
-          turnover: "Quick form - see notes",
+          turnover: selectedTurnover,
           categories: ["business-funding"],
           subProducts: [],
           notes: `Full Name: ${contactDetails.fullName}\n${notes}`,
@@ -265,8 +278,31 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 2: Card Payments */}
+          {/* Step 2: Monthly Turnover */}
           {step === 2 && (
+            <div className="space-y-4">
+              <h3 
+                className="text-lg font-semibold mb-4"
+                style={{ color: 'hsl(220, 45%, 18%)' }}
+              >
+                What's your monthly turnover?
+              </h3>
+              <div className="space-y-3">
+                {turnoverOptions.map((option) => (
+                  <OptionButton
+                    key={option.id}
+                    selected={turnover === option.id}
+                    onClick={() => setTurnover(option.id)}
+                  >
+                    {option.label}
+                  </OptionButton>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 3: Card Payments */}
+          {step === 3 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
@@ -288,21 +324,21 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 3: Card Volume (conditional) */}
-          {step === 3 && acceptsCards === "yes" && (
+          {/* Step 4: Card Sales Percentage (conditional) */}
+          {step === 4 && acceptsCards === "yes" && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
                 style={{ color: 'hsl(220, 45%, 18%)' }}
               >
-                How much per month?
+                What percentage of sales are by card?
               </h3>
               <div className="space-y-3">
-                {cardVolumeOptions.map((option) => (
+                {cardPercentageOptions.map((option) => (
                   <OptionButton
                     key={option.id}
-                    selected={cardVolume === option.id}
-                    onClick={() => setCardVolume(option.id)}
+                    selected={cardPercentage === option.id}
+                    onClick={() => setCardPercentage(option.id)}
                   >
                     {option.label}
                   </OptionButton>
@@ -311,8 +347,8 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 4: Residential Status */}
-          {step === 4 && (
+          {/* Step 5: Residential Status */}
+          {step === 5 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
@@ -334,8 +370,8 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 5: Time Trading */}
-          {step === 5 && (
+          {/* Step 6: Time Trading */}
+          {step === 6 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
@@ -357,8 +393,8 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 6: Business Type */}
-          {step === 6 && (
+          {/* Step 7: Business Type */}
+          {step === 7 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
@@ -380,8 +416,8 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 7: Name Details */}
-          {step === 7 && (
+          {/* Step 8: Name Details */}
+          {step === 8 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
@@ -414,8 +450,8 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 8: Contact Details */}
-          {step === 8 && (
+          {/* Step 9: Contact Details */}
+          {step === 9 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
@@ -500,7 +536,7 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
               className="text-center text-sm mt-4"
               style={{ color: 'hsl(220, 12%, 50%)' }}
             >
-              No obligation. No upfront fees.
+              We'll be in touch within 24 hours
             </p>
           )}
         </div>

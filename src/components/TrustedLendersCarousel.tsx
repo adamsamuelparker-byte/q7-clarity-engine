@@ -67,17 +67,17 @@ export const TrustedLendersCarousel = () => {
           />
           
           {/* Scrolling logo strip */}
-          <div className="flex animate-marquee">
+          <div className="flex animate-marquee-fast">
             {/* First set of logos */}
             {lenders.map((lender, index) => (
               <div 
                 key={`first-${index}`}
-                className="flex-shrink-0 mx-6 md:mx-8"
+                className="flex-shrink-0 mx-8 md:mx-12"
               >
                 <img 
                   src={lender.logo} 
                   alt={lender.name}
-                  className="h-10 md:h-12 w-auto object-contain"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
                 />
               </div>
             ))}
@@ -85,13 +85,13 @@ export const TrustedLendersCarousel = () => {
             {lenders.map((lender, index) => (
               <div 
                 key={`second-${index}`}
-                className="flex-shrink-0 mx-6 md:mx-8"
+                className="flex-shrink-0 mx-8 md:mx-12"
                 aria-hidden="true"
               >
                 <img 
                   src={lender.logo} 
                   alt=""
-                  className="h-10 md:h-12 w-auto object-contain"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
                 />
               </div>
             ))}

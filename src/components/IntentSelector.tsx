@@ -164,8 +164,8 @@ export const IntentSelector = ({
 
   const SelectorText = (
     <div className={cn(
-      "inline-block rounded-full px-5 py-3",
-      "bg-white/[0.06] border border-white/[0.08]",
+      "inline-block rounded-lg px-5 py-3",
+      "bg-white/[0.08] border border-white/[0.12]",
       isMobile && "w-full"
     )}>
       <button
@@ -178,10 +178,10 @@ export const IntentSelector = ({
         )}
       >
         <span className="flex items-center gap-2 min-w-0">
-          <span className="text-primary-foreground/50 whitespace-nowrap">I'm looking for…</span>
+          <span className="text-primary-foreground/40 font-normal whitespace-nowrap text-sm md:text-base">I'm looking for…</span>
           <span 
             className={cn(
-              "text-accent font-medium transition-opacity duration-200 truncate",
+              "text-white font-semibold transition-opacity duration-200 truncate",
               isFading ? "opacity-0" : "opacity-100"
             )}
           >
@@ -190,7 +190,7 @@ export const IntentSelector = ({
         </span>
         <ChevronDown 
           className={cn(
-            "h-4 w-4 text-accent flex-shrink-0 transition-transform duration-300",
+            "h-5 w-5 text-white/60 flex-shrink-0 transition-transform duration-300",
             open ? "rotate-180" : "rotate-0"
           )}
         />

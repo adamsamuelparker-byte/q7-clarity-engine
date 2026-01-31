@@ -36,6 +36,13 @@ const lenders = [
   { name: "Swish Fund", logo: logoSwishFund },
 ];
 
+import Autoplay from "embla-carousel-autoplay";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+
 export const TrustedLendersCarousel = () => {
   return (
     <section 
@@ -53,49 +60,37 @@ export const TrustedLendersCarousel = () => {
           Access to a wide panel of UK lenders
         </p>
         
-        {/* Marquee container */}
-        <div className="relative overflow-hidden">
-          {/* Fade edges */}
-          <div 
-            className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, hsl(220, 15%, 92%), transparent)' }}
-          />
-          <div 
-            className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, hsl(220, 15%, 92%), transparent)' }}
-          />
-          
-          {/* Scrolling logo strip */}
-          <div className="flex animate-marquee-fast">
-            {/* First set of logos */}
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 2000,
+              stopOnInteraction: false,
+              stopOnMouseEnter: true,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
             {lenders.map((lender, index) => (
-              <div 
-                key={`first-${index}`}
-                className="flex-shrink-0 mx-8 md:mx-12"
+              <CarouselItem 
+                key={index} 
+                className="pl-4 basis-1/3 md:basis-1/5 lg:basis-1/6"
               >
-                <img 
-                  src={lender.logo} 
-                  alt={lender.name}
-                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
-                />
-              </div>
+                <div className="flex items-center justify-center p-2">
+                  <img 
+                    src={lender.logo} 
+                    alt={lender.name}
+                    className="h-14 md:h-16 lg:h-20 w-auto object-contain"
+                  />
+                </div>
+              </CarouselItem>
             ))}
-            {/* Duplicate set for seamless loop */}
-            {lenders.map((lender, index) => (
-              <div 
-                key={`second-${index}`}
-                className="flex-shrink-0 mx-8 md:mx-12"
-                aria-hidden="true"
-              >
-                <img 
-                  src={lender.logo} 
-                  alt=""
-                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+          </CarouselContent>
+        </Carousel>
       </div>
     </section>
   );

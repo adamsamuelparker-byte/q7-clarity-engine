@@ -32,18 +32,18 @@ export const ProductTile = ({
         className
       )}
       style={{
-        backgroundColor: 'hsl(215, 30%, 97%)',
-        border: '1px solid hsl(215, 25%, 88%)',
-        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+        backgroundColor: 'hsl(215, 35%, 93%)',
+        border: '1px solid hsl(215, 30%, 85%)',
+        boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)',
         ...style,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.08)';
-        e.currentTarget.style.borderColor = 'hsl(222, 47%, 25%, 0.2)';
+        e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.10)';
+        e.currentTarget.style.borderColor = 'hsl(222, 47%, 25%, 0.3)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
-        e.currentTarget.style.borderColor = 'hsl(215, 25%, 88%)';
+        e.currentTarget.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.06)';
+        e.currentTarget.style.borderColor = 'hsl(215, 30%, 85%)';
       }}
     >
       {icon && (

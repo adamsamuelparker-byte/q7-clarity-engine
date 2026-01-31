@@ -30,16 +30,16 @@ const Slider = React.forwardRef<
         />
       </SliderPrimitive.Track>
       <SliderPrimitive.Thumb 
-        className="block h-8 w-8 rounded-full border-2 bg-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-grab active:cursor-grabbing flex items-center justify-center overflow-hidden"
+        className="block h-12 w-12 rounded-full border-[3px] bg-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 cursor-grab active:cursor-grabbing flex items-center justify-center overflow-hidden"
         style={{ 
           borderColor: 'hsl(220, 45%, 20%)',
-          boxShadow: '0 2px 10px rgba(0, 0, 0, 0.18)'
+          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)'
         }}
       >
         <img 
           src={q7Thumb} 
           alt="Q7" 
-          className="w-5 h-5 object-contain pointer-events-none"
+          className="w-7 h-7 object-contain pointer-events-none"
         />
       </SliderPrimitive.Thumb>
     </SliderPrimitive.Root>

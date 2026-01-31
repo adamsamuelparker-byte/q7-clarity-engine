@@ -1,80 +1,129 @@
 
-# Complete Visual Redesign - Final Unified Plan
 
-✅ **IMPLEMENTED**
+# Fix Lender Carousel & Product Card Visibility
+
+## Problems Identified
+
+Looking at the current site, I can see:
+
+1. **Lender Carousel**: The grey background band IS visible, and logos ARE showing, but:
+   - Logos appear very small (h-12 = 48px height)
+   - The marquee animation may not be smooth due to incorrect width configuration
+   - Need more visual separation from the hero above
+
+2. **Product Cards**: The off-white color is being applied (`hsl(215, 30%, 97%)`) but:
+   - 97% lightness is almost pure white - barely distinguishable
+   - The section background (`section-alt` at 93% lightness) is too similar
+   - Cards don't stand out enough from the page
 
 ---
 
-## Changes Made
+## Part 1: Fix Lender Carousel
 
-### Part 1: Standardised "and" to "&" in Product Cards ✅
-- `src/pages/Index.tsx` - Updated 3 product titles
-- `src/data/solutionPages.ts` - Updated 3 solution names
-- `src/data/subServicePages.ts` - Updated 13 parent name references
-- `src/components/CapabilityBubbles.tsx` - Updated 3 capability names
+**File: `src/components/TrustedLendersCarousel.tsx`**
 
-### Part 2: Colour System - Visible Contrast ✅
-Updated `src/index.css`:
-- `--primary`: `222 47% 25%` (was 18%)
-- `--text-heading`: `222 47% 25%` (was 18%)
-- `--accent`: `180 50% 32%` (was 184 32% 38%)
-- `--accent-hover`: `180 50% 26%` (was 184 32% 32%)
-- `--card`: `215 30% 97%` (was 220 20% 99%)
-- `--section-alt`: `215 25% 93%` (was 215 16% 95%)
-- `--card-border`: `215 25% 80%` (was 215 20% 85%)
+Make the following changes:
 
-### Part 3: Product Cards - Clearly Elevated ✅
-Updated `src/components/ProductTile.tsx`:
-- Explicit HSL background: `hsl(215, 30%, 97%)`
-- Soft border: `hsl(215, 25%, 88%)`
-- Base shadow: `0 2px 8px rgba(0, 0, 0, 0.04)`
-- Increased padding: `p-6 md:p-7 lg:p-9`
-- Bold titles with explicit royal blue
-- Hover effects: lift + larger shadow
+| Element | Current | New |
+|---------|---------|-----|
+| Logo height | `h-12 md:h-14` | `h-16 md:h-20` (64px/80px - much more visible) |
+| Background | `#f0f2f5` | `#e8eaef` (slightly darker grey for more contrast) |
+| Container padding | `py-6 md:py-8` | `py-8 md:py-10` |
+| Top border | `border-y` | `border-t-4 border-b` with accent color hint |
+| Animation setup | Single flex container | Ensure proper width for seamless loop |
 
-### Part 4: CTA Buttons - Visually Dominant ✅
-Updated `src/components/ui/button.tsx`:
-- `accent` and `hero` variants use explicit saturated teal
-- Added `shadow-md` for elevation
-- White text with `font-semibold`
+**Updated component structure:**
+```tsx
+<section 
+  className="py-8 md:py-10"
+  style={{ 
+    backgroundColor: '#e8eaef',
+    borderTop: '3px solid hsl(215, 25%, 85%)',
+    borderBottom: '1px solid hsl(215, 25%, 85%)'
+  }}
+>
+```
 
-### Part 5: Trusted Lenders Carousel - Logo Image ✅
-Updated `src/components/TrustedLendersCarousel.tsx`:
-- Uses `lender-logos.png` composite image
-- Grey background band: `#f0f2f5`
-- Fade edges with matching gradient
-- Continuous marquee animation
+---
 
-### Part 6: Section Headings - Force Royal Blue ✅
-- `src/pages/Index.tsx` - "Our Solutions" heading
-- `src/components/SolutionPageLayout.tsx` - All 5 section headings
-- `src/components/CapabilityBubbles.tsx` - Royal blue text with teal hover
+## Part 2: Fix Product Card Backgrounds
 
-### Part 7: Floating CTA - Bolder ✅
-Updated `src/components/FloatingCTA.tsx`:
-- Solid background: `hsl(222, 47%, 22%)`
-- Larger shadow: `shadow-2xl`
-- Increased padding: `p-6` and `gap-5`
+The current off-white (`hsl(215, 30%, 97%)`) is too close to white. Need to make cards visually distinct.
 
-### Part 8: Card Component Base ✅
-Updated `src/components/ui/card.tsx`:
-- Explicit off-white background
-- Soft shadow
-- Consistent border
+**File: `src/components/ProductTile.tsx`**
+
+| Element | Current | New |
+|---------|---------|-----|
+| Background | `hsl(215, 30%, 97%)` | `hsl(215, 35%, 95%)` (more visible blue-tint) |
+| Border | `hsl(215, 25%, 88%)` | `hsl(215, 30%, 85%)` (slightly more visible) |
+| Shadow | `0 2px 8px rgba(0,0,0,0.04)` | `0 2px 12px rgba(0,0,0,0.06)` (stronger) |
+
+**Updated style:**
+```tsx
+style={{
+  backgroundColor: 'hsl(215, 35%, 95%)',
+  border: '1px solid hsl(215, 30%, 85%)',
+  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)',
+}}
+```
+
+---
+
+## Part 3: Fix CapabilityBubbles Cards (WHAT WE CAN HELP WITH section)
+
+These cards also use `bg-card` which may not be applying correctly.
+
+**File: `src/components/CapabilityBubbles.tsx`**
+
+Change from CSS variable to explicit styling:
+```tsx
+<Link
+  className="group block rounded-lg px-3 py-3 md:px-4 md:py-4 ..."
+  style={{ 
+    backgroundColor: 'hsl(215, 35%, 95%)',
+    border: '1px solid hsl(215, 30%, 85%)'
+  }}
+>
+```
+
+---
+
+## Part 4: Update section-alt Background for More Contrast
+
+**File: `src/index.css`**
+
+Make the alternating section background lighter so cards stand out more:
+
+| Token | Current | New |
+|-------|---------|-----|
+| `--section-alt` | `215 25% 93%` | `215 20% 96%` (lighter, so cards contrast better) |
+| `--card` | `215 30% 97%` | `215 35% 93%` (darker, more visible) |
+
+This creates more separation: section background at 96%, cards at 93%.
+
+---
+
+## Files to Modify
+
+| File | Changes |
+|------|---------|
+| `src/components/TrustedLendersCarousel.tsx` | Larger logos, darker grey background, thicker top border |
+| `src/components/ProductTile.tsx` | More visible off-white background, stronger border and shadow |
+| `src/components/CapabilityBubbles.tsx` | Explicit background color instead of CSS variable |
+| `src/index.css` | Adjust `--section-alt` and `--card` for better contrast |
 
 ---
 
 ## Visual Impact
 
+After these changes:
+
 | Element | Before | After |
 |---------|--------|-------|
-| Card titles | "Leasing and Rental" | "Leasing & Rental" |
-| Headings | Dark grey | Clearly royal blue |
-| Cards | Barely visible | Off-white with shadow, elevated |
-| CTAs | Muted teal | Saturated teal, stands out |
-| Lender section | Text bubbles | Logo image in grey band |
+| Lender logos | 48-56px tall, static-looking | 64-80px tall, clearly animated |
+| Lender section | Barely visible grey | Clear grey band with top accent |
+| Product cards | Nearly white, blend in | Visible off-white with blue tint, elevated |
+| Capability cards | White, blend in | Visible off-white with clear border |
 
-**Colour Hierarchy:**
-- **Royal Blue** = Authority (headings, emphasis)
-- **Teal** = Action (CTAs only)
-- **Slate Grey** = Structure (borders, icons, dividers)
+The goal is for these elements to be **obviously different** from the page background at first glance.
+

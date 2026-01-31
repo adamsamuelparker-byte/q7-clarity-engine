@@ -6,13 +6,12 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
   <div 
     ref={ref} 
     className={cn(
-      "rounded-lg text-card-foreground transition-all duration-200",
+      "rounded-md text-card-foreground transition-all duration-200",
       className
     )} 
     style={{
-      backgroundColor: 'hsl(215, 30%, 97%)',
-      border: '1px solid hsl(215, 25%, 88%)',
-      boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02)',
+      backgroundColor: 'hsl(215, 20%, 90%)',
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)',
     }}
     {...props} 
   />
@@ -21,14 +20,19 @@ Card.displayName = "Card";
 
 const CardHeader = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
-    <div ref={ref} className={cn("flex flex-col space-y-1.5 p-6", className)} {...props} />
+    <div ref={ref} className={cn("flex flex-col space-y-2 p-7", className)} {...props} />
   ),
 );
 CardHeader.displayName = "CardHeader";
 
 const CardTitle = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<HTMLHeadingElement>>(
   ({ className, ...props }, ref) => (
-    <h3 ref={ref} className={cn("text-2xl font-semibold leading-none tracking-tight text-heading", className)} {...props} />
+    <h3 
+      ref={ref} 
+      className={cn("text-xl font-bold leading-tight tracking-tight", className)} 
+      style={{ color: 'hsl(220, 45%, 18%)' }}
+      {...props} 
+    />
   ),
 );
 CardTitle.displayName = "CardTitle";

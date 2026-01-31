@@ -3,51 +3,51 @@
 @tailwind utilities;
 
 /* Q7 Business and Financial Solutions Design System
-   Clean, slick, calm, professional - finance led
-   Primary: Deep Charcoal | Accent: Muted Teal | Support: Light Grey/White
+   Premium, calm, professional - boutique commercial finance broker
+   Primary: Deep Royal Blue | Accent: Muted Teal-Blue (CTAs only) | Support: Soft Slate Blue-Grey
    
-   LOCKED DESIGN SYSTEM - One typography, one card, one spacing system
+   LOCKED DESIGN SYSTEM - Three-colour hierarchy plus neutrals
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
     /* Core Brand Colors */
     --background: 220 14% 98%;
-    --foreground: 220 20% 14%;
+    --foreground: 222 47% 18%;
     
-    /* Charcoal - Primary (Dominant) */
-    --primary: 220 20% 14%;
+    /* Deep Royal Blue - Primary (Authority, Trust) */
+    --primary: 222 47% 18%;
     --primary-foreground: 0 0% 100%;
     
-    /* Muted Teal - Accent (Sparingly) */
-    --accent: 174 35% 40%;
+    /* Muted Teal-Blue - Accent (CTAs ONLY) */
+    --accent: 184 32% 38%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 174 35% 35%;
+    --accent-hover: 184 32% 32%;
     
     /* Secondary - Soft Greys for alternating sections */
     --secondary: 220 14% 95%;
-    --secondary-foreground: 220 20% 14%;
+    --secondary-foreground: 222 47% 18%;
     
     /* Muted - For secondary text and labels */
     --muted: 220 14% 95%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 215 12% 42%;
     
-    /* Card - Slightly lighter than section backgrounds */
-    --card: 0 0% 100%;
-    --card-foreground: 220 20% 14%;
-    --card-border: 220 15% 75%;
-    --card-border-hover: 174 35% 40%;
+    /* Card - Off-white with premium depth */
+    --card: 220 20% 99%;
+    --card-foreground: 222 47% 18%;
+    --card-border: 215 20% 85%;
+    --card-border-hover: 222 47% 18%;
     
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 14%;
+    --popover-foreground: 222 47% 18%;
     
-    /* Borders - Medium charcoal (noticeably darker than light grey) */
-    --border: 220 12% 78%;
-    --input: 220 14% 80%;
-    --ring: 174 35% 40%;
+    /* Borders - Soft Slate Blue-Grey (Support colour) */
+    --border: 215 20% 80%;
+    --input: 215 20% 82%;
+    --ring: 184 32% 38%;
     
     /* Destructive */
     --destructive: 0 72% 51%;
@@ -57,59 +57,59 @@
     --radius: 0.5rem;
     
     /* Sidebar */
-    --sidebar-background: 220 20% 14%;
+    --sidebar-background: 222 47% 18%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 174 35% 40%;
+    --sidebar-primary: 184 32% 38%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 20% 20%;
+    --sidebar-accent: 222 47% 24%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 174 35% 40%;
+    --sidebar-border: 222 47% 24%;
+    --sidebar-ring: 184 32% 38%;
     
     /* Custom Design Tokens */
-    --hero-bg: 220 20% 14%;
+    --hero-bg: 222 47% 18%;
     --hero-foreground: 0 0% 100%;
     
-    /* Section backgrounds - alternating rhythm (no pure white) */
-    --section-primary: 220 14% 97%;
-    --section-alt: 220 12% 93%;
-    --section-charcoal-tint: 220 10% 90%;
+    /* Section backgrounds - alternating rhythm (premium off-whites) */
+    --section-primary: 220 14% 98%;
+    --section-alt: 215 16% 95%;
+    --section-charcoal-tint: 215 12% 92%;
     
-    /* Typography colors - charcoal to grey hierarchy */
-    --text-heading: 220 20% 14%;
-    --text-body: 220 12% 32%;
-    --text-muted: 220 10% 46%;
-    --text-subtle: 220 10% 58%;
+    /* Typography colors - royal blue to grey hierarchy */
+    --text-heading: 222 47% 18%;
+    --text-body: 215 12% 36%;
+    --text-muted: 215 10% 48%;
+    --text-subtle: 215 10% 58%;
   }
 
   .dark {
-    --background: 220 20% 10%;
+    --background: 222 47% 10%;
     --foreground: 0 0% 98%;
     --primary: 0 0% 98%;
-    --primary-foreground: 220 20% 14%;
-    --accent: 174 35% 45%;
+    --primary-foreground: 222 47% 18%;
+    --accent: 184 32% 45%;
     --accent-foreground: 0 0% 100%;
-    --secondary: 220 20% 16%;
+    --secondary: 222 47% 16%;
     --secondary-foreground: 0 0% 98%;
-    --muted: 220 20% 16%;
-    --muted-foreground: 220 10% 65%;
-    --card: 220 20% 12%;
+    --muted: 222 47% 16%;
+    --muted-foreground: 215 10% 65%;
+    --card: 222 47% 12%;
     --card-foreground: 0 0% 98%;
-    --card-border: 220 20% 22%;
-    --card-border-hover: 174 35% 45%;
-    --popover: 220 20% 12%;
+    --card-border: 222 47% 22%;
+    --card-border-hover: 184 32% 45%;
+    --popover: 222 47% 12%;
     --popover-foreground: 0 0% 98%;
-    --border: 220 20% 20%;
-    --input: 220 20% 20%;
-    --ring: 174 35% 45%;
+    --border: 222 47% 20%;
+    --input: 222 47% 20%;
+    --ring: 184 32% 45%;
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
-    --section-primary: 220 20% 10%;
-    --section-alt: 220 20% 12%;
+    --section-primary: 222 47% 10%;
+    --section-alt: 222 47% 12%;
     --text-heading: 0 0% 98%;
     --text-body: 0 0% 85%;
-    --text-muted: 220 10% 65%;
-    --text-subtle: 220 10% 55%;
+    --text-muted: 215 10% 65%;
+    --text-subtle: 215 10% 55%;
   }
 }
 
@@ -126,11 +126,12 @@
     @apply bg-background font-sans antialiased;
     font-family: 'Inter', system-ui, sans-serif;
     color: hsl(var(--text-body));
+    line-height: 1.7;
   }
 
-  /* Locked Typography Scale with proper color hierarchy */
+  /* Locked Typography Scale - stronger weights for premium feel */
   h1 {
-    @apply text-2xl md:text-3xl lg:text-[2.75rem] font-semibold tracking-tight;
+    @apply text-2xl md:text-3xl lg:text-[2.75rem] font-bold tracking-tight;
     line-height: 1.15;
     color: hsl(var(--text-heading));
   }
@@ -141,7 +142,7 @@
   }
   
   h3 {
-    @apply text-base font-medium tracking-tight;
+    @apply text-base font-semibold tracking-tight;
     color: hsl(var(--text-heading));
   }
   
@@ -162,7 +163,7 @@
     @apply bg-primary text-primary-foreground;
   }
 
-  /* Hero wrapper - solid charcoal (no fades) */
+  /* Hero wrapper - solid royal blue */
   .hero-wrapper {
     position: relative;
     background: hsl(var(--hero-bg));
@@ -186,12 +187,12 @@
     display: none;
   }
 
-  /* Locked Card System - sits on tinted surfaces */
+  /* Premium Card System - off-white with soft depth */
   .card-base {
     @apply bg-card rounded-lg p-6 lg:p-8;
     border: 1px solid hsl(var(--card-border));
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.01);
-    @apply transition-all duration-200 ease-out;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.02);
+    @apply transition-all duration-300 ease-out;
   }
   
   .card-interactive {
@@ -200,8 +201,9 @@
 
   .card-interactive:hover,
   .card-interactive:focus-within {
-    border-color: hsl(var(--card-border-hover));
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+    border-color: hsl(var(--primary) / 0.2);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
+    transform: translateY(-2px);
   }
 
   /* Section Backgrounds - alternating rhythm */
@@ -240,7 +242,7 @@
     color: hsl(var(--text-subtle));
   }
 
-  /* Teal link styling */
+  /* Teal link styling - accent colour */
   .link-teal {
     color: hsl(var(--accent));
   }
@@ -249,15 +251,15 @@
     color: hsl(var(--accent-hover));
   }
 
-  /* Section divider with teal accent */
+  /* Section divider with subtle accent */
   .section-divider {
     @apply h-px w-full;
     background: linear-gradient(
       90deg,
       transparent 0%,
-      hsl(var(--accent) / 0.2) 20%,
-      hsl(var(--accent) / 0.3) 50%,
-      hsl(var(--accent) / 0.2) 80%,
+      hsl(var(--border) / 0.4) 20%,
+      hsl(var(--border) / 0.6) 50%,
+      hsl(var(--border) / 0.4) 80%,
       transparent 100%
     );
   }
@@ -298,7 +300,7 @@
     @apply container-md;
   }
 
-  /* Locked Spacing System - tighter */
+  /* Locked Spacing System */
   .section-padding {
     @apply py-12 md:py-16;
   }
@@ -316,13 +318,18 @@
     text-wrap: balance;
   }
 
-  /* Subtle hover states only */
+  /* Subtle hover states - slow and refined */
   .hover-lift {
-    @apply transition-transform duration-200 ease-out hover:-translate-y-0.5;
+    @apply transition-all duration-300 ease-out hover:-translate-y-0.5;
+  }
+  
+  /* CTA letter spacing for premium feel */
+  .cta-text {
+    letter-spacing: 0.015em;
   }
 }
 
-/* Minimal keyframe animations - subtle only */
+/* Minimal keyframe animations - subtle and refined */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -345,4 +352,22 @@
 
 .animate-slide-up {
   animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Marquee animation for trusted lenders carousel */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
 }

@@ -7,12 +7,12 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Payments and Merchant", href: "/payments-merchant" },
+  { name: "Payments & Merchant", href: "/payments-merchant" },
   { name: "Asset Finance", href: "/asset-finance" },
-  { name: "Leasing and Rental", href: "/leasing-rental" },
-  { name: "Vehicles and Mobility", href: "/vehicles-mobility" },
-  { name: "Tracking and Protection", href: "/tracking-protection" },
-  { name: "Banking and Accounting", href: "/banking-accounting" },
+  { name: "Leasing & Rental", href: "/leasing-rental" },
+  { name: "Vehicles & Fleet", href: "/vehicles-mobility" },
+  { name: "Tracking & Protection", href: "/tracking-protection" },
+  { name: "Banking & Accounting", href: "/banking-accounting" },
   { name: "Business Support", href: "/business-support" },
 ];
 

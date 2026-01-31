@@ -20,10 +20,10 @@ import {
 
 export const intentServices = [
   { id: "business-funding", name: "Business Funding", href: "/business-funding" },
-  { id: "payments-merchant", name: "Payments and Merchant", href: "/payments-merchant" },
+  { id: "payments-merchant", name: "Payments & Merchant Services", href: "/payments-merchant" },
   { id: "asset-finance", name: "Asset Finance", href: "/asset-finance" },
   { id: "leasing-rental", name: "Leasing and Rental", href: "/leasing-rental" },
-  { id: "vehicles-mobility", name: "Vehicles and Mobility", href: "/vehicles-mobility" },
+  { id: "vehicles-mobility", name: "Vehicles & Fleet Solutions", href: "/vehicles-mobility" },
   { id: "tracking-protection", name: "Tracking and Protection", href: "/tracking-protection" },
   { id: "banking-accounting", name: "Banking and Accounting", href: "/banking-accounting" },
   { id: "business-support", name: "Business Support", href: "/business-support" },

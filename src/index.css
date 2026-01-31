@@ -370,7 +370,12 @@
   animation: marquee 4s linear infinite;
 }
 
+.animate-marquee-smooth {
+  animation: marquee 25s linear infinite;
+}
+
 .animate-marquee:hover,
-.animate-marquee-fast:hover {
+.animate-marquee-fast:hover,
+.animate-marquee-smooth:hover {
   animation-play-state: paused;
 }

@@ -1,4 +1,40 @@
-import lenderLogos from "@/assets/lenders/lender-logos.png";
+import logo365Finance from "@/assets/lenders/365-finance.png";
+import logoYoulend from "@/assets/lenders/youlend.png";
+import logoFundingCircle from "@/assets/lenders/funding-circle.png";
+import logoIwoca from "@/assets/lenders/iwoca.png";
+import logoCapitalOnTap from "@/assets/lenders/capital-on-tap.png";
+import logoTriver from "@/assets/lenders/triver.png";
+import logoRecap from "@/assets/lenders/recap.png";
+import logoCapify from "@/assets/lenders/capify.png";
+import logoSigmaLending from "@/assets/lenders/sigma-lending.png";
+import logoSwiftfund from "@/assets/lenders/swiftfund.png";
+import logoGotCapital from "@/assets/lenders/got-capital.png";
+import logoMarcap from "@/assets/lenders/marcap.png";
+import logoBizcap from "@/assets/lenders/bizcap.png";
+import logoMclFinance from "@/assets/lenders/mcl-finance.png";
+import logoCubeFunder from "@/assets/lenders/cube-funder.png";
+import logoMultifi from "@/assets/lenders/multifi.png";
+import logoSwishFund from "@/assets/lenders/swish-fund.png";
+
+const lenders = [
+  { name: "365 Finance", logo: logo365Finance },
+  { name: "YouLend", logo: logoYoulend },
+  { name: "Funding Circle", logo: logoFundingCircle },
+  { name: "iwoca", logo: logoIwoca },
+  { name: "Capital on Tap", logo: logoCapitalOnTap },
+  { name: "Triver", logo: logoTriver },
+  { name: "Recap", logo: logoRecap },
+  { name: "Capify", logo: logoCapify },
+  { name: "Sigma Lending", logo: logoSigmaLending },
+  { name: "Swiftfund", logo: logoSwiftfund },
+  { name: "Got Capital", logo: logoGotCapital },
+  { name: "MarCap", logo: logoMarcap },
+  { name: "Bizcap", logo: logoBizcap },
+  { name: "MCL Finance", logo: logoMclFinance },
+  { name: "Cube Funder", logo: logoCubeFunder },
+  { name: "Multifi", logo: logoMultifi },
+  { name: "Swish Fund", logo: logoSwishFund },
+];
 
 export const TrustedLendersCarousel = () => {
   return (
@@ -22,27 +58,43 @@ export const TrustedLendersCarousel = () => {
         <div className="relative overflow-hidden">
           {/* Fade edges for premium feel */}
           <div 
-            className="absolute left-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+            className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
             style={{ background: 'linear-gradient(to right, #e4e7ed, transparent)' }}
           />
           <div 
-            className="absolute right-0 top-0 bottom-0 w-32 z-10 pointer-events-none"
+            className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
             style={{ background: 'linear-gradient(to left, #e4e7ed, transparent)' }}
           />
           
           {/* Scrolling logo strip */}
           <div className="flex animate-marquee">
-            <img 
-              src={lenderLogos} 
-              alt="Trusted funding partners including 365 Finance, YouLend, Funding Circle, iwoca, Capital on Tap, Triver, Recap, Capify, Sigma Lending, Swiftfund, Got Capital, MarCap, Bizcap, MCL Finance, Cube Funder, Multifi, and Swish Fund" 
-              className="h-20 md:h-24 w-auto flex-shrink-0"
-            />
-            <img 
-              src={lenderLogos} 
-              alt="" 
-              aria-hidden="true"
-              className="h-20 md:h-24 w-auto flex-shrink-0 ml-20"
-            />
+            {/* First set of logos */}
+            {lenders.map((lender, index) => (
+              <div 
+                key={`first-${index}`}
+                className="flex-shrink-0 mx-6 md:mx-8"
+              >
+                <img 
+                  src={lender.logo} 
+                  alt={lender.name}
+                  className="h-10 md:h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {lenders.map((lender, index) => (
+              <div 
+                key={`second-${index}`}
+                className="flex-shrink-0 mx-6 md:mx-8"
+                aria-hidden="true"
+              >
+                <img 
+                  src={lender.logo} 
+                  alt=""
+                  className="h-10 md:h-12 w-auto object-contain"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

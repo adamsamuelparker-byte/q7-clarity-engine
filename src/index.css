@@ -35,10 +35,10 @@
     --muted-foreground: 215 12% 42%;
     
     /* Card - Off-white with premium depth */
-    --card: 215 30% 97%;
+    --card: 215 35% 93%;
     --card-foreground: 222 47% 25%;
-    --card-border: 215 25% 80%;
-    --card-border-hover: 222 47% 18%;
+    --card-border: 215 30% 85%;
+    --card-border-hover: 222 47% 25%;
     
     /* Popover */
     --popover: 0 0% 100%;
@@ -72,7 +72,7 @@
     
     /* Section backgrounds - alternating rhythm (premium off-whites) */
     --section-primary: 220 14% 98%;
-    --section-alt: 215 25% 93%;
+    --section-alt: 215 20% 96%;
     --section-charcoal-tint: 215 12% 92%;
     
     /* Typography colors - royal blue to grey hierarchy */

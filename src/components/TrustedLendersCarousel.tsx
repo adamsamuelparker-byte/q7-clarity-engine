@@ -3,10 +3,11 @@ import lenderLogos from "@/assets/lenders/lender-logos.png";
 export const TrustedLendersCarousel = () => {
   return (
     <section 
-      className="py-6 md:py-8 border-y"
+      className="py-8 md:py-10"
       style={{ 
-        backgroundColor: '#f0f2f5',
-        borderColor: 'hsl(215, 20%, 85%)'
+        backgroundColor: '#e8eaef',
+        borderTop: '3px solid hsl(215, 25%, 85%)',
+        borderBottom: '1px solid hsl(215, 25%, 85%)'
       }}
     >
       <div className="container-xl">
@@ -21,12 +22,12 @@ export const TrustedLendersCarousel = () => {
         <div className="relative overflow-hidden">
           {/* Fade edges for premium feel */}
           <div 
-            className="absolute left-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, #f0f2f5, transparent)' }}
+            className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+            style={{ background: 'linear-gradient(to right, #e8eaef, transparent)' }}
           />
           <div 
-            className="absolute right-0 top-0 bottom-0 w-20 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, #f0f2f5, transparent)' }}
+            className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+            style={{ background: 'linear-gradient(to left, #e8eaef, transparent)' }}
           />
           
           {/* Scrolling logo strip */}
@@ -34,13 +35,13 @@ export const TrustedLendersCarousel = () => {
             <img 
               src={lenderLogos} 
               alt="Trusted funding partners" 
-              className="h-12 md:h-14 w-auto flex-shrink-0"
+              className="h-16 md:h-20 w-auto flex-shrink-0"
             />
             <img 
               src={lenderLogos} 
               alt="" 
               aria-hidden="true"
-              className="h-12 md:h-14 w-auto flex-shrink-0 ml-12"
+              className="h-16 md:h-20 w-auto flex-shrink-0 ml-16"
             />
           </div>
         </div>

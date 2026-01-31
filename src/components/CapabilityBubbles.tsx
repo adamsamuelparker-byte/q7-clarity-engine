@@ -25,7 +25,17 @@ export const CapabilityBubbles = () => {
             <Link
               key={capability.name}
               to={capability.href}
-              className="group block bg-card rounded-lg px-3 py-3 md:px-4 md:py-4 min-h-[48px] md:min-h-[52px] border border-card-border hover:border-card-border-hover transition-all duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="group block rounded-lg px-3 py-3 md:px-4 md:py-4 min-h-[48px] md:min-h-[52px] transition-all duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-accent/20"
+              style={{
+                backgroundColor: 'hsl(215, 35%, 93%)',
+                border: '1px solid hsl(215, 30%, 85%)'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = 'hsl(222, 47%, 25%, 0.3)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = 'hsl(215, 30%, 85%)';
+              }}
             >
               <span 
                 className="text-sm md:text-base font-semibold transition-colors leading-tight group-hover:text-[hsl(180,50%,32%)]"

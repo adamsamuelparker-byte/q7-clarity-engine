@@ -13,33 +13,41 @@ const capabilities = [
 
 export const CapabilityBubbles = () => {
   return (
-    <section className="section-alt -mt-px py-6 md:py-8">
+    <section 
+      className="-mt-px py-8 md:py-10"
+      style={{ backgroundColor: 'hsl(220, 15%, 94%)' }}
+    >
       <div className="container-xl">
-        <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-4 md:mb-5">
+        <p 
+          className="text-xs font-semibold uppercase tracking-wider mb-5 md:mb-6"
+          style={{ color: 'hsl(220, 12%, 50%)' }}
+        >
           What we can help with
         </p>
         
         {/* Mobile: 2 columns, Desktop: 4 columns */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
           {capabilities.map((capability) => (
             <Link
               key={capability.name}
               to={capability.href}
-              className="group block rounded-lg px-3 py-3 md:px-4 md:py-4 min-h-[48px] md:min-h-[52px] transition-all duration-200 flex items-center focus:outline-none focus:ring-2 focus:ring-accent/20"
+              className="group block rounded-md px-4 py-4 md:px-5 md:py-5 min-h-[56px] md:min-h-[64px] transition-all duration-300 flex items-center focus:outline-none focus:ring-2 focus:ring-accent/20"
               style={{
-                backgroundColor: 'hsl(215, 35%, 93%)',
-                border: '1px solid hsl(215, 30%, 85%)'
+                backgroundColor: 'hsl(215, 20%, 90%)',
+                boxShadow: '0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)'
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(222, 47%, 25%, 0.3)';
+                e.currentTarget.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.10), 0 2px 4px rgba(0, 0, 0, 0.05)';
+                e.currentTarget.style.transform = 'translateY(-2px)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = 'hsl(215, 30%, 85%)';
+                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03)';
+                e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
               <span 
-                className="text-sm md:text-base font-semibold transition-colors leading-tight group-hover:text-[hsl(180,50%,32%)]"
-                style={{ color: 'hsl(222, 47%, 25%)' }}
+                className="text-sm md:text-base font-semibold transition-colors leading-tight group-hover:text-[hsl(195,65%,28%)]"
+                style={{ color: 'hsl(220, 45%, 18%)' }}
               >
                 {capability.name}
               </span>

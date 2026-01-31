@@ -71,11 +71,11 @@ export const FloatingCTA = () => {
     >
       <div 
         className={cn(
-          "backdrop-blur-sm rounded-xl shadow-2xl border border-primary-foreground/10",
+          "backdrop-blur-sm rounded-md shadow-2xl",
           "p-6",
           "flex flex-col items-center gap-5"
         )}
-        style={{ backgroundColor: 'hsl(222, 47%, 22%)' }}
+        style={{ backgroundColor: 'hsl(220, 45%, 18%)' }}
       >
         <EnquiryForm
           triggerVariant="hero"

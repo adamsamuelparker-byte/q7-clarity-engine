@@ -25,49 +25,54 @@ export const ProductTile = ({
     <Link
       to={href}
       className={cn(
-        "group block rounded-lg p-6 md:p-7 lg:p-9",
+        "group block rounded-md p-7 md:p-8 lg:p-10",
         "transition-all duration-300 ease-out",
-        "hover:-translate-y-1.5",
-        "min-h-[140px] md:min-h-[160px]",
+        "hover:-translate-y-1",
+        "min-h-[160px] md:min-h-[180px]",
         className
       )}
       style={{
-        backgroundColor: 'hsl(215, 35%, 93%)',
-        border: '1px solid hsl(215, 30%, 85%)',
-        boxShadow: '0 2px 12px rgba(0, 0, 0, 0.06)',
+        backgroundColor: 'hsl(215, 20%, 90%)',
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)',
         ...style,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 8px 24px rgba(0, 0, 0, 0.10)';
-        e.currentTarget.style.borderColor = 'hsl(222, 47%, 25%, 0.3)';
+        e.currentTarget.style.boxShadow = '0 10px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06)';
+        e.currentTarget.style.borderLeft = '3px solid hsl(195, 65%, 28%)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 2px 12px rgba(0, 0, 0, 0.06)';
-        e.currentTarget.style.borderColor = 'hsl(215, 30%, 85%)';
+        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)';
+        e.currentTarget.style.borderLeft = 'none';
       }}
     >
       {icon && (
-        <div className="mb-3 md:mb-4 text-muted-foreground group-hover:text-primary transition-colors duration-300">
+        <div 
+          className="mb-4 transition-colors duration-300"
+          style={{ color: 'hsl(220, 12%, 50%)' }}
+        >
           {icon}
         </div>
       )}
       <h3 
         className={cn(
-          "font-bold mb-3 group-hover:text-primary transition-colors duration-300",
-          featured ? "text-base md:text-lg" : "text-[15px] md:text-base"
+          "font-bold mb-3 transition-colors duration-300",
+          featured ? "text-lg md:text-xl" : "text-base md:text-lg"
         )}
-        style={{ color: 'hsl(222, 47%, 25%)' }}
+        style={{ color: 'hsl(220, 45%, 18%)' }}
       >
         {title}
       </h3>
-      <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-2">
+      <p 
+        className="text-sm mb-5 leading-relaxed line-clamp-2"
+        style={{ color: 'hsl(220, 12%, 45%)' }}
+      >
         {description}
       </p>
       <div 
-        className="flex items-center text-sm font-medium transition-colors duration-300"
-        style={{ color: 'hsl(180, 50%, 32%)' }}
+        className="flex items-center text-sm font-semibold transition-colors duration-300 group-hover:translate-x-0.5"
+        style={{ color: 'hsl(195, 65%, 28%)' }}
       >
-        <span className="cta-text">Learn more</span>
+        <span>Learn more</span>
         <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
       </div>
     </Link>

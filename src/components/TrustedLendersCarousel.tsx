@@ -41,29 +41,28 @@ export const TrustedLendersCarousel = () => {
     <section 
       className="py-10 md:py-12"
       style={{ 
-        backgroundColor: '#e4e7ed',
-        borderTop: '4px solid hsl(215, 30%, 80%)',
-        borderBottom: '1px solid hsl(215, 25%, 85%)'
+        backgroundColor: 'hsl(220, 15%, 92%)',
+        boxShadow: 'inset 0 1px 0 hsl(215, 15%, 88%), inset 0 -1px 0 hsl(215, 15%, 88%)'
       }}
     >
       <div className="container-xl">
         <p 
           className="text-sm font-semibold uppercase tracking-wider mb-6 text-center"
-          style={{ color: 'hsl(222, 47%, 25%)' }}
+          style={{ color: 'hsl(220, 12%, 50%)' }}
         >
           Access to a wide panel of UK lenders
         </p>
         
         {/* Marquee container */}
         <div className="relative overflow-hidden">
-          {/* Fade edges for premium feel */}
+          {/* Fade edges */}
           <div 
             className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to right, #e4e7ed, transparent)' }}
+            style={{ background: 'linear-gradient(to right, hsl(220, 15%, 92%), transparent)' }}
           />
           <div 
             className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-            style={{ background: 'linear-gradient(to left, #e4e7ed, transparent)' }}
+            style={{ background: 'linear-gradient(to left, hsl(220, 15%, 92%), transparent)' }}
           />
           
           {/* Scrolling logo strip */}

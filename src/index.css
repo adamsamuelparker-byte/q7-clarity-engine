@@ -14,72 +14,72 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --background: 220 14% 98%;
-    --foreground: 222 47% 18%;
+    --background: 220 20% 97%;
+    --foreground: 220 40% 16%;
     
-    /* Deep Royal Blue - Primary (Authority, Trust) */
-    --primary: 222 47% 25%;
+    /* Deep Navy - Primary Text (Authority, Trust) */
+    --primary: 220 45% 20%;
     --primary-foreground: 0 0% 100%;
     
-    /* Saturated Teal - Accent (CTAs ONLY) */
-    --accent: 180 50% 32%;
+    /* Deep Blue-Teal - Accent (CTAs ONLY) */
+    --accent: 195 65% 28%;
     --accent-foreground: 0 0% 100%;
-    --accent-hover: 180 50% 26%;
+    --accent-hover: 195 65% 22%;
     
     /* Secondary - Soft Greys for alternating sections */
-    --secondary: 220 14% 95%;
-    --secondary-foreground: 222 47% 18%;
+    --secondary: 220 18% 94%;
+    --secondary-foreground: 220 40% 16%;
     
     /* Muted - For secondary text and labels */
-    --muted: 220 14% 95%;
-    --muted-foreground: 215 12% 42%;
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 12% 45%;
     
-    /* Card - Off-white with premium depth */
-    --card: 215 35% 93%;
-    --card-foreground: 222 47% 25%;
-    --card-border: 215 30% 85%;
-    --card-border-hover: 222 47% 25%;
+    /* Card - Cool blue-grey panels that stand out */
+    --card: 215 20% 92%;
+    --card-foreground: 220 45% 20%;
+    --card-border: 215 15% 85%;
+    --card-border-hover: 220 45% 20%;
     
     /* Popover */
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 18%;
+    --popover-foreground: 220 40% 16%;
     
-    /* Borders - Soft Slate Blue-Grey (Support colour) */
-    --border: 215 20% 80%;
-    --input: 215 20% 82%;
-    --ring: 184 32% 38%;
+    /* Borders - Cool Blue-Grey (Support colour) */
+    --border: 215 15% 85%;
+    --input: 215 18% 88%;
+    --ring: 195 65% 28%;
     
     /* Destructive */
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
     
-    /* Radius - Unified */
-    --radius: 0.5rem;
+    /* Radius - Slightly reduced for professional feel */
+    --radius: 0.375rem;
     
     /* Sidebar */
-    --sidebar-background: 222 47% 18%;
+    --sidebar-background: 220 45% 16%;
     --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 184 32% 38%;
+    --sidebar-primary: 195 65% 28%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 47% 24%;
+    --sidebar-accent: 220 45% 22%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 222 47% 24%;
-    --sidebar-ring: 184 32% 38%;
+    --sidebar-border: 220 45% 22%;
+    --sidebar-ring: 195 65% 28%;
     
     /* Custom Design Tokens */
-    --hero-bg: 222 47% 18%;
+    --hero-bg: 220 45% 16%;
     --hero-foreground: 0 0% 100%;
     
-    /* Section backgrounds - alternating rhythm (premium off-whites) */
-    --section-primary: 220 14% 98%;
-    --section-alt: 215 20% 96%;
-    --section-charcoal-tint: 215 12% 92%;
+    /* Section backgrounds - clear distinction */
+    --section-primary: 220 20% 97%;
+    --section-alt: 220 15% 94%;
+    --section-charcoal-tint: 215 12% 91%;
     
-    /* Typography colors - royal blue to grey hierarchy */
-    --text-heading: 222 47% 25%;
-    --text-body: 215 12% 36%;
-    --text-muted: 215 10% 48%;
-    --text-subtle: 215 10% 58%;
+    /* Typography colors - navy to grey hierarchy */
+    --text-heading: 220 45% 18%;
+    --text-body: 220 12% 40%;
+    --text-muted: 220 10% 52%;
+    --text-subtle: 220 8% 62%;
   }
 
   .dark {
@@ -187,11 +187,10 @@
     display: none;
   }
 
-  /* Premium Card System - off-white with soft depth */
+  /* Premium Card System - cool blue-grey panels with soft shadows */
   .card-base {
-    @apply bg-card rounded-lg p-6 lg:p-8;
-    border: 1px solid hsl(var(--card-border));
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 4px 16px rgba(0, 0, 0, 0.02);
+    @apply bg-card rounded-md p-7 lg:p-9;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
     @apply transition-all duration-300 ease-out;
   }
   
@@ -201,9 +200,8 @@
 
   .card-interactive:hover,
   .card-interactive:focus-within {
-    border-color: hsl(var(--primary) / 0.2);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 8px 24px rgba(0, 0, 0, 0.04);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10), 0 2px 6px rgba(0, 0, 0, 0.06);
+    transform: translateY(-3px);
   }
 
   /* Section Backgrounds - alternating rhythm */

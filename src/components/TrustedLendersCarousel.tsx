@@ -76,7 +76,7 @@ export const TrustedLendersCarousel = () => {
                 <img 
                   src={lender.logo} 
                   alt={lender.name}
-                  className="h-14 md:h-16 lg:h-20 w-auto object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
                 />
               </div>
             ))}
@@ -90,7 +90,7 @@ export const TrustedLendersCarousel = () => {
                 <img 
                   src={lender.logo} 
                   alt=""
-                  className="h-14 md:h-16 lg:h-20 w-auto object-contain grayscale opacity-60"
+                  className="h-14 md:h-16 lg:h-20 w-auto object-contain"
                 />
               </div>
             ))}

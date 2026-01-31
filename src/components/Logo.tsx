@@ -34,7 +34,10 @@ export const Logo = ({
           )}>
             Q7
           </span>
-          <div className="w-5 sm:w-6 md:w-7 h-[1.5px] bg-accent/40 mt-0.5 rounded-full" />
+          <div className={cn(
+            "w-5 sm:w-6 md:w-7 h-[1.5px] mt-0.5 rounded-full",
+            isLight ? "bg-white/40" : "bg-primary/40"
+          )} />
         </div>
       </div>
       
@@ -49,7 +52,10 @@ export const Logo = ({
             isLight ? "text-white" : "text-primary"
           )}>
             Business and Financial
-            <Check className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-accent" strokeWidth={3} />
+            <Check className={cn(
+              "h-3 w-3 sm:h-3.5 sm:w-3.5",
+              isLight ? "text-white/70" : "text-primary/70"
+            )} strokeWidth={3} />
           </span>
           <span className={cn(
             "text-[10px] sm:text-xs font-normal tracking-wide",

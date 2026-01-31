@@ -209,7 +209,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   },
   "leasing-rental": {
     slug: "leasing-rental",
-    name: "Leasing and Rental",
+    name: "Leasing & Rental",
     heroImage: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Leasing and rental solutions that fit how you operate",
@@ -311,7 +311,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   },
   "tracking-protection": {
     slug: "tracking-protection",
-    name: "Tracking and Protection",
+    name: "Tracking & Protection",
     heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Tracking and protection solutions for peace of mind",
@@ -363,7 +363,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   },
   "banking-accounting": {
     slug: "banking-accounting",
-    name: "Banking and Accounting Services",
+    name: "Banking & Accounting Services",
     heroImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Banking and accounting services, organised for clarity",

@@ -814,7 +814,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "vehicle-leasing": {
       slug: "vehicle-leasing",
       parentSlug: "leasing-rental",
-      parentName: "Leasing and Rental",
+      parentName: "Leasing & Rental",
       name: "Vehicle Leasing",
       heroImage: parentHeroImages["leasing-rental"],
       hero: {
@@ -859,7 +859,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "equipment-leasing": {
       slug: "equipment-leasing",
       parentSlug: "leasing-rental",
-      parentName: "Leasing and Rental",
+      parentName: "Leasing & Rental",
       name: "Equipment Leasing",
       heroImage: parentHeroImages["leasing-rental"],
       hero: {
@@ -902,7 +902,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "fleet-leasing": {
       slug: "fleet-leasing",
       parentSlug: "leasing-rental",
-      parentName: "Leasing and Rental",
+      parentName: "Leasing & Rental",
       name: "Fleet Leasing",
       heroImage: parentHeroImages["leasing-rental"],
       hero: {
@@ -944,7 +944,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "short-term-rental": {
       slug: "short-term-rental",
       parentSlug: "leasing-rental",
-      parentName: "Leasing and Rental",
+      parentName: "Leasing & Rental",
       name: "Short Term Rental",
       heroImage: parentHeroImages["leasing-rental"],
       hero: {
@@ -1338,7 +1338,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "vehicle-tracking": {
       slug: "vehicle-tracking",
       parentSlug: "tracking-protection",
-      parentName: "Tracking and Protection",
+      parentName: "Tracking & Protection",
       name: "Vehicle Tracking",
       heroImage: parentHeroImages["tracking-protection"],
       hero: {
@@ -1383,7 +1383,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "asset-tracking": {
       slug: "asset-tracking",
       parentSlug: "tracking-protection",
-      parentName: "Tracking and Protection",
+      parentName: "Tracking & Protection",
       name: "Asset Tracking",
       heroImage: parentHeroImages["tracking-protection"],
       hero: {
@@ -1427,7 +1427,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "thatcham-tracking": {
       slug: "thatcham-tracking",
       parentSlug: "tracking-protection",
-      parentName: "Tracking and Protection",
+      parentName: "Tracking & Protection",
       name: "Thatcham Approved Trackers",
       heroImage: parentHeroImages["tracking-protection"],
       hero: {
@@ -1471,7 +1471,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "cctv-webcams": {
       slug: "cctv-webcams",
       parentSlug: "tracking-protection",
-      parentName: "Tracking and Protection",
+      parentName: "Tracking & Protection",
       name: "Webcams and CCTV",
       heroImage: parentHeroImages["tracking-protection"],
       hero: {
@@ -1515,7 +1515,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "asset-recovery": {
       slug: "asset-recovery",
       parentSlug: "tracking-protection",
-      parentName: "Tracking and Protection",
+      parentName: "Tracking & Protection",
       name: "Asset Recovery",
       heroImage: parentHeroImages["tracking-protection"],
       hero: {
@@ -1561,7 +1561,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "business-bank-accounts": {
       slug: "business-bank-accounts",
       parentSlug: "banking-accounting",
-      parentName: "Banking and Accounting Services",
+      parentName: "Banking & Accounting Services",
       name: "Business Bank Accounts",
       heroImage: parentHeroImages["banking-accounting"],
       hero: {
@@ -1606,7 +1606,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "business-credit-cards": {
       slug: "business-credit-cards",
       parentSlug: "banking-accounting",
-      parentName: "Banking and Accounting Services",
+      parentName: "Banking & Accounting Services",
       name: "Business Credit Cards",
       heroImage: parentHeroImages["banking-accounting"],
       hero: {
@@ -1650,7 +1650,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "accounting-services": {
       slug: "accounting-services",
       parentSlug: "banking-accounting",
-      parentName: "Banking and Accounting Services",
+      parentName: "Banking & Accounting Services",
       name: "Accounting Services",
       heroImage: parentHeroImages["banking-accounting"],
       hero: {
@@ -1694,7 +1694,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "tax-compliance-support": {
       slug: "tax-compliance-support",
       parentSlug: "banking-accounting",
-      parentName: "Banking and Accounting Services",
+      parentName: "Banking & Accounting Services",
       name: "Tax and Compliance Support",
       heroImage: parentHeroImages["banking-accounting"],
       hero: {

@@ -42,7 +42,7 @@ const products = [
     icon: <Truck className="h-5 w-5" />,
   },
   {
-    title: "Leasing and Rental",
+    title: "Leasing & Rental",
     description: "Flexible leasing options for equipment, vehicles, and technology.",
     href: "/leasing-rental",
     icon: <Building2 className="h-5 w-5" />,
@@ -54,13 +54,13 @@ const products = [
     icon: <Car className="h-5 w-5" />,
   },
   {
-    title: "Tracking and Protection",
+    title: "Tracking & Protection",
     description: "Monitor and protect your valuable assets with advanced tracking solutions.",
     href: "/tracking-protection",
     icon: <MapPin className="h-5 w-5" />,
   },
   {
-    title: "Banking and Accounting",
+    title: "Banking & Accounting",
     description: "Streamline your business finances with banking and accounting services.",
     href: "/banking-accounting",
     icon: <Landmark className="h-5 w-5" />,
@@ -150,7 +150,7 @@ const Index = () => {
         <section className="section-padding section-alt">
           <div className="container-xl">
             <div className="mb-10">
-              <h2 className="text-heading mb-2">
+              <h2 className="text-[hsl(222,47%,25%)] font-bold mb-2">
                 Our Solutions
               </h2>
               <p className="text-muted-foreground max-w-lg text-sm">

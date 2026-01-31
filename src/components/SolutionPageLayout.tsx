@@ -71,7 +71,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
             <div className="container-xl">
               <Collapsible open={isProductsOpen} onOpenChange={setIsProductsOpen}>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-lg md:text-xl font-semibold text-heading">
+                <h2 className="text-lg md:text-xl font-bold" style={{ color: 'hsl(222, 47%, 25%)' }}>
                     Explore {solution.name} options
                   </h2>
                   <CollapsibleTrigger className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors p-2 -mr-2">
@@ -107,7 +107,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
         <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: 'hsl(222, 47%, 25%)' }}>
                 What this covers
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -142,7 +142,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
         <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: 'hsl(222, 47%, 25%)' }}>
                 How Q7 helps
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -172,7 +172,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
         <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: 'hsl(222, 47%, 25%)' }}>
                 Who this is for
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
@@ -202,7 +202,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
         <section className="py-14 md:py-16 lg:py-20 section-primary">
           <div className="container-lg">
             <div className="max-w-2xl">
-              <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
+              <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: 'hsl(222, 47%, 25%)' }}>
                 What happens next
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">

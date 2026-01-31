@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ProductTileProps {
@@ -25,33 +25,33 @@ export const ProductTile = ({
     <Link
       to={href}
       className={cn(
-        "group block bg-card rounded-lg p-4 md:p-5 lg:p-6",
+        "group block bg-card rounded-lg p-5 md:p-6 lg:p-8",
         "border border-card-border",
-        "transition-all duration-200 ease-out",
-        "hover:border-card-border-hover hover:-translate-y-px",
-        "hover:shadow-sm",
-        "min-h-[120px] md:min-h-[140px]",
+        "transition-all duration-300 ease-out",
+        "hover:border-primary/20 hover:-translate-y-1",
+        "hover:shadow-[0_4px_16px_rgba(0,0,0,0.06),0_8px_24px_rgba(0,0,0,0.04)]",
+        "min-h-[140px] md:min-h-[160px]",
         className
       )}
       style={style}
     >
       {icon && (
-        <div className="mb-2.5 md:mb-3 text-foreground/60 group-hover:text-accent transition-colors duration-200">
+        <div className="mb-3 md:mb-4 text-muted-foreground group-hover:text-primary transition-colors duration-300">
           {icon}
         </div>
       )}
       <h3 className={cn(
-        "font-medium text-heading mb-1.5 group-hover:text-accent transition-colors duration-200",
-        featured ? "text-base" : "text-[15px] md:text-base"
+        "font-semibold text-heading mb-2 group-hover:text-primary transition-colors duration-300",
+        featured ? "text-base md:text-lg" : "text-[15px] md:text-base"
       )}>
         {title}
       </h3>
-      <p className="text-sm text-muted-foreground mb-2.5 md:mb-3 leading-relaxed line-clamp-2">
+      <p className="text-sm text-muted-foreground mb-4 leading-relaxed line-clamp-2">
         {description}
       </p>
-      <div className="flex items-center text-xs md:text-sm font-medium text-foreground/50 group-hover:text-accent transition-colors duration-200">
-        Learn more
-        <ChevronRight className="ml-0.5 h-3.5 w-3.5 md:h-4 md:w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+      <div className="flex items-center text-sm font-medium text-accent group-hover:text-accent-hover transition-colors duration-300">
+        <span className="cta-text">Learn more</span>
+        <ArrowRight className="ml-1.5 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
       </div>
     </Link>
   );

@@ -8,7 +8,7 @@ const parentHeroImages: Record<string, string> = {
   "asset-finance": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop&q=80",
   "leasing-rental": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=600&fit=crop&q=80",
   "vehicles-mobility": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
-  "tracking-protection": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80",
+  "tracking-protection": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&q=80",
   "banking-accounting": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
   "business-support": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&q=80",
 };
@@ -368,7 +368,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "card-machines": {
       slug: "card-machines",
       parentSlug: "payments-merchant",
-      parentName: "Payments and Merchant Solutions",
+      parentName: "Payments & Merchant Services",
       name: "Card Machines",
       heroImage: parentHeroImages["payments-merchant"],
       hero: {
@@ -413,7 +413,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "epos-systems": {
       slug: "epos-systems",
       parentSlug: "payments-merchant",
-      parentName: "Payments and Merchant Solutions",
+      parentName: "Payments & Merchant Services",
       name: "EPOS Systems",
       heroImage: parentHeroImages["payments-merchant"],
       hero: {
@@ -458,7 +458,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "ecommerce-payments": {
       slug: "ecommerce-payments",
       parentSlug: "payments-merchant",
-      parentName: "Payments and Merchant Solutions",
+      parentName: "Payments & Merchant Services",
       name: "Ecommerce Payments",
       heroImage: parentHeroImages["payments-merchant"],
       hero: {
@@ -502,7 +502,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "merchant-accounts": {
       slug: "merchant-accounts",
       parentSlug: "payments-merchant",
-      parentName: "Payments and Merchant Solutions",
+      parentName: "Payments & Merchant Services",
       name: "Merchant Accounts",
       heroImage: parentHeroImages["payments-merchant"],
       hero: {
@@ -545,7 +545,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "payment-processing": {
       slug: "payment-processing",
       parentSlug: "payments-merchant",
-      parentName: "Payments and Merchant Solutions",
+      parentName: "Payments & Merchant Services",
       name: "Payment Processing",
       heroImage: parentHeroImages["payments-merchant"],
       hero: {
@@ -587,7 +587,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "switching-providers": {
       slug: "switching-providers",
       parentSlug: "payments-merchant",
-      parentName: "Payments and Merchant Solutions",
+      parentName: "Payments & Merchant Services",
       name: "Switching Providers",
       heroImage: parentHeroImages["payments-merchant"],
       hero: {
@@ -991,7 +991,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "electric-bikes": {
       slug: "electric-bikes",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Electric Bikes",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1035,7 +1035,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "electric-mopeds": {
       slug: "electric-mopeds",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Electric Mopeds",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1078,7 +1078,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "branded-vehicles": {
       slug: "branded-vehicles",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Branded Vehicles",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1122,7 +1122,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "fleet-vehicles": {
       slug: "fleet-vehicles",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Fleet Vehicles",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1166,7 +1166,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "business-vehicles": {
       slug: "business-vehicles",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Business Vehicles",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1208,7 +1208,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "electric-vehicles": {
       slug: "electric-vehicles",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Electric Vehicles",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1250,7 +1250,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "delivery-courier-vehicles": {
       slug: "delivery-courier-vehicles",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Delivery and Courier Vehicles",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {
@@ -1292,7 +1292,7 @@ export const subServicePages: Record<string, Record<string, SubServicePageData>>
     "micro-mobility": {
       slug: "micro-mobility",
       parentSlug: "vehicles-mobility",
-      parentName: "Vehicles and Mobility",
+      parentName: "Vehicles & Fleet Solutions",
       name: "Micro Mobility",
       heroImage: parentHeroImages["vehicles-mobility"],
       hero: {

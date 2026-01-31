@@ -25,10 +25,10 @@ import { useToast } from "@/hooks/use-toast";
 
 const coreCategories = [
   { id: "business-funding", name: "Business Funding" },
-  { id: "payments-merchant", name: "Payments and Merchant Solutions" },
+  { id: "payments-merchant", name: "Payments & Merchant Services" },
   { id: "asset-finance", name: "Asset Finance" },
   { id: "leasing-rental", name: "Leasing and Rental" },
-  { id: "vehicles-mobility", name: "Vehicles and Mobility" },
+  { id: "vehicles-mobility", name: "Vehicles & Fleet Solutions" },
   { id: "tracking-protection", name: "Tracking and Protection" },
   { id: "banking-accounting", name: "Banking and Accounting Services" },
   { id: "business-support", name: "Business Support Services" },

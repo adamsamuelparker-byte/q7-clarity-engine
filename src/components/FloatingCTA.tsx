@@ -70,19 +70,19 @@ export const FloatingCTA = () => {
       )}
     >
       <div className={cn(
-        "bg-primary/95 backdrop-blur-sm rounded-xl shadow-lg border border-primary-foreground/10",
-        "p-4",
-        "flex flex-col items-center gap-3"
+        "bg-primary/95 backdrop-blur-sm rounded-xl shadow-xl border border-primary-foreground/10",
+        "p-5",
+        "flex flex-col items-center gap-4"
       )}>
         <EnquiryForm
           triggerVariant="hero"
-          triggerSize="default"
-          triggerText="Enquire Now"
-          triggerClassName="w-full text-sm"
+          triggerSize="lg"
+          triggerText="Enquire now"
+          triggerClassName="w-full text-base"
         />
         <WhatsAppCTA 
           text="Chat to us on WhatsApp"
-          className="text-primary-foreground/70 hover:text-primary-foreground text-xs"
+          className="text-primary-foreground/70 hover:text-primary-foreground text-sm"
         />
       </div>
     </div>

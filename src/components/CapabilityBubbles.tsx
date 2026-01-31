@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const capabilities = [
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Payments and Merchant", href: "/payments-merchant" },
+  { name: "Payments & Merchant Services", href: "/payments-merchant" },
   { name: "Asset Finance", href: "/asset-finance" },
   { name: "Leasing and Rental", href: "/leasing-rental" },
-  { name: "Vehicles and Mobility", href: "/vehicles-mobility" },
+  { name: "Vehicles & Fleet Solutions", href: "/vehicles-mobility" },
   { name: "Tracking and Protection", href: "/tracking-protection" },
   { name: "Banking and Accounting", href: "/banking-accounting" },
   { name: "Business Support", href: "/business-support" },

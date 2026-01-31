@@ -102,7 +102,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   },
   "payments-merchant": {
     slug: "payments-merchant",
-    name: "Payments and Merchant Solutions",
+    name: "Payments & Merchant Services",
     heroImage: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Payments and merchant solutions, built around how you trade",
@@ -259,10 +259,10 @@ export const solutionPages: Record<string, SolutionPageData> = {
   },
   "vehicles-mobility": {
     slug: "vehicles-mobility",
-    name: "Vehicles and Mobility",
+    name: "Vehicles & Fleet Solutions",
     heroImage: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&q=80",
     hero: {
-      headline: "Vehicles and mobility solutions for modern businesses",
+      headline: "Vehicles and fleet solutions for modern businesses",
       intro: "Access to the right vehicles can be essential for how your business operates. We help organise vehicle and mobility solutions that support your team, deliveries, and day to day operations.",
       tagline: "One team. End to end.",
     },
@@ -312,7 +312,7 @@ export const solutionPages: Record<string, SolutionPageData> = {
   "tracking-protection": {
     slug: "tracking-protection",
     name: "Tracking and Protection",
-    heroImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80",
+    heroImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=600&fit=crop&q=80",
     hero: {
       headline: "Tracking and protection solutions for peace of mind",
       intro: "Protecting vehicles and assets is an important part of running a business. We help organise tracking and protection solutions that give visibility, security, and reassurance.",
@@ -480,7 +480,7 @@ export const solutionNavigation = [
   { name: "Payments & Merchant", href: "/payments-merchant" },
   { name: "Asset Finance", href: "/asset-finance" },
   { name: "Leasing & Rental", href: "/leasing-rental" },
-  { name: "Vehicles & Mobility", href: "/vehicles-mobility" },
+  { name: "Vehicles & Fleet", href: "/vehicles-mobility" },
   { name: "Tracking & Protection", href: "/tracking-protection" },
   { name: "Banking & Accounting", href: "/banking-accounting" },
   { name: "Business Support", href: "/business-support" },

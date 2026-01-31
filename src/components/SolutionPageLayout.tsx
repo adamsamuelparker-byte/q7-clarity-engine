@@ -1,10 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ProductTile } from "@/components/ProductTile";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { TrustedLendersCarousel } from "@/components/TrustedLendersCarousel";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
+import { cn } from "@/lib/utils";
 import type { SolutionPageData } from "@/data/solutionPages";
 
 interface SolutionPageLayoutProps {
@@ -12,6 +17,9 @@ interface SolutionPageLayoutProps {
 }
 
 export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
+  const [isProductsOpen, setIsProductsOpen] = useState(true);
+  const showLendersCarousel = solution.slug === "business-funding";
+
   return (
     <div className="min-h-screen flex flex-col bg-section-primary">
       {/* Hero wrapper - includes header for unified fade treatment */}
@@ -24,7 +32,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center md:pl-[4%] lg:pl-[6%]">
               {/* Text content - left side with centered block */}
               <div className="max-w-xl mx-auto md:mx-0">
-                <h1 className="text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.15] mb-3 animate-slide-up text-primary-foreground">
+                <h1 className="text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-bold leading-[1.15] mb-3 animate-slide-up text-primary-foreground">
                   {solution.hero.headline}
                 </h1>
                 <p className="text-sm md:text-base text-accent font-medium mb-3 animate-slide-up" style={{ animationDelay: "40ms" }}>
@@ -54,13 +62,53 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
       <div className="hero-fade" />
       
       <main className="flex-1">
+        {/* Trusted Lenders Carousel - only on business-funding page */}
+        {showLendersCarousel && <TrustedLendersCarousel />}
+
+        {/* Sub Products Grid (if available) - MOVED TO TOP, compact and collapsible */}
+        {solution.subProducts && solution.subProducts.length > 0 && (
+          <section className="py-6 md:py-8 section-alt border-b border-border/30">
+            <div className="container-xl">
+              <Collapsible open={isProductsOpen} onOpenChange={setIsProductsOpen}>
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-lg md:text-xl font-semibold text-heading">
+                    Explore {solution.name} options
+                  </h2>
+                  <CollapsibleTrigger className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors p-2 -mr-2">
+                    <span className="hidden sm:inline">{isProductsOpen ? "Hide" : "Show"}</span>
+                    <ChevronDown 
+                      className={cn(
+                        "h-4 w-4 transition-transform duration-300",
+                        isProductsOpen && "rotate-180"
+                      )} 
+                    />
+                  </CollapsibleTrigger>
+                </div>
+                <CollapsibleContent className="data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up overflow-hidden">
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+                    {solution.subProducts.map((subProduct, index) => (
+                      <ProductTile
+                        key={subProduct.id}
+                        title={subProduct.name}
+                        description={subProduct.description}
+                        href={`/${solution.slug}/${subProduct.id}`}
+                        className="animate-fade-in min-h-[120px] md:min-h-[140px]"
+                        style={{ animationDelay: `${index * 40}ms` }}
+                      />
+                    ))}
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
+          </section>
+        )}
 
         {/* What This Covers - on alt background */}
         <section className="py-14 md:py-16 lg:py-20 section-alt">
           <div className="container-lg">
             <div className="max-w-2xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
-                What This Covers
+                What this covers
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {solution.whatThisCovers.intro}
@@ -95,7 +143,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           <div className="container-lg">
             <div className="max-w-2xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
-                How Q7 Helps
+                How Q7 helps
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {solution.howQ7Helps.intro}
@@ -125,7 +173,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           <div className="container-lg">
             <div className="max-w-2xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
-                Who This Is For
+                Who this is for
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 {solution.whoThisIsFor.intro}
@@ -155,7 +203,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           <div className="container-lg">
             <div className="max-w-2xl">
               <h2 className="text-xl md:text-2xl font-semibold mb-6 text-heading">
-                What Happens Next
+                What happens next
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 {solution.whatHappensNext.intro}
@@ -174,29 +222,6 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
-        {/* Sub Products Grid (if available) - on alt background */}
-        {solution.subProducts && solution.subProducts.length > 0 && (
-          <section className="py-14 md:py-16 lg:py-20 section-alt">
-            <div className="container-xl">
-              <h2 className="text-xl md:text-2xl font-semibold mb-8 text-heading">
-                Explore {solution.name} Options
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                {solution.subProducts.map((subProduct, index) => (
-                  <ProductTile
-                    key={subProduct.id}
-                    title={subProduct.name}
-                    description={subProduct.description}
-                    href={`/${solution.slug}/${subProduct.id}`}
-                    className="animate-fade-in"
-                    style={{ animationDelay: `${index * 40}ms` }}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
-
         {/* CTA Section with reassurance */}
         <section className="py-16 md:py-20 bg-primary text-primary-foreground relative">
           <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-section-primary/10 to-transparent pointer-events-none" />
@@ -212,10 +237,10 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
                 preSelectedCategory={solution.slug}
                 triggerVariant="hero"
                 triggerSize="lg"
-                triggerText="Start Your Enquiry"
+                triggerText="Start your enquiry"
               />
               <p className="text-xs text-primary-foreground/40 mt-3">
-                No obligation. One of the team will be in touch.
+                No obligation. Speak directly with our team.
               </p>
               <div className="mt-4">
                 <WhatsAppCTA variant="service" />

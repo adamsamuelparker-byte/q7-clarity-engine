@@ -20,6 +20,7 @@ import { CapabilityBubbles } from "@/components/CapabilityBubbles";
 import { BridgingSection } from "@/components/BridgingSection";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
+import { TrustedLendersCarousel } from "@/components/TrustedLendersCarousel";
 
 const products = [
   {
@@ -29,7 +30,7 @@ const products = [
     icon: <Banknote className="h-5 w-5" />,
   },
   {
-    title: "Payments and Merchant",
+    title: "Payments & Merchant Services",
     description: "Accept payments efficiently with solutions that grow with your business.",
     href: "/payments-merchant",
     icon: <CreditCard className="h-5 w-5" />,
@@ -47,7 +48,7 @@ const products = [
     icon: <Building2 className="h-5 w-5" />,
   },
   {
-    title: "Vehicles and Mobility",
+    title: "Vehicles & Fleet Solutions",
     description: "Business vehicles, electric bikes, and mobility solutions for your operations.",
     href: "/vehicles-mobility",
     icon: <Car className="h-5 w-5" />,
@@ -136,6 +137,9 @@ const Index = () => {
         </section>
       </div>
       <main className="flex-1">
+        {/* Trusted Lenders Carousel - immediately after hero */}
+        <TrustedLendersCarousel />
+
         {/* Capability Bubbles Grid - on alt background */}
         <CapabilityBubbles />
 

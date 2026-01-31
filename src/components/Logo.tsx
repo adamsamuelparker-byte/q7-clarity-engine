@@ -22,9 +22,11 @@ export const Logo = ({
     <div className={cn("flex items-center gap-2", className)}>
       {/* Q7 Icon */}
       <div className={cn(
-        "flex items-center justify-center rounded-lg",
+        "flex items-center justify-center rounded-md",
         "w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10",
-        isLight ? "bg-white/10 border border-white/20" : "bg-primary/5 border border-primary/10",
+        isLight 
+          ? "bg-white/15 border border-white/30" 
+          : "bg-primary/10 border border-primary/20 shadow-sm",
         iconClassName
       )}>
         <div className="flex flex-col items-center">

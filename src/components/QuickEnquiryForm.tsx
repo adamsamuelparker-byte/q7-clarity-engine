@@ -73,7 +73,7 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
     mobile: "",
   });
 
-  const totalSteps = 7;
+  const totalSteps = 8;
 
   const formatCurrency = (amount: number) => {
     if (amount >= 200000) {
@@ -95,7 +95,8 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
       case 4: return !!residentialStatus;
       case 5: return !!tradingTime;
       case 6: return !!businessType;
-      case 7: return !!(contactDetails.fullName && contactDetails.businessName && contactDetails.email && contactDetails.mobile);
+      case 7: return !!(contactDetails.fullName && contactDetails.businessName);
+      case 8: return !!(contactDetails.email && contactDetails.mobile);
       default: return false;
     }
   };
@@ -379,14 +380,14 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
             </div>
           )}
 
-          {/* Step 7: Contact Details */}
+          {/* Step 7: Name Details */}
           {step === 7 && (
             <div className="space-y-4">
               <h3 
                 className="text-lg font-semibold mb-4"
                 style={{ color: 'hsl(220, 45%, 18%)' }}
               >
-                Contact details
+                Your details
               </h3>
               <div className="space-y-4">
                 <div className="space-y-2">
@@ -409,6 +410,20 @@ export const QuickEnquiryForm = ({ loanAmount }: QuickEnquiryFormProps) => {
                     className="h-12"
                   />
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* Step 8: Contact Details */}
+          {step === 8 && (
+            <div className="space-y-4">
+              <h3 
+                className="text-lg font-semibold mb-4"
+                style={{ color: 'hsl(220, 45%, 18%)' }}
+              >
+                Contact details
+              </h3>
+              <div className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="email" style={{ color: 'hsl(220, 45%, 18%)' }}>Email</Label>
                   <Input

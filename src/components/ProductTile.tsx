@@ -29,20 +29,20 @@ export const ProductTile = ({
         "transition-all duration-300 ease-out",
         "hover:-translate-y-1",
         "min-h-[160px] md:min-h-[180px]",
+        "border border-[hsl(220,45%,20%,0.15)]",
+        "hover:border-[hsl(195,65%,28%,0.5)]",
         className
       )}
       style={{
-        backgroundColor: 'hsl(215, 20%, 90%)',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)',
+        backgroundColor: 'hsl(215, 20%, 93%)',
+        boxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
         ...style,
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 10px 24px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06)';
-        e.currentTarget.style.borderLeft = '3px solid hsl(195, 65%, 28%)';
+        e.currentTarget.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04)';
-        e.currentTarget.style.borderLeft = 'none';
+        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.04)';
       }}
     >
       {icon && (
@@ -55,7 +55,7 @@ export const ProductTile = ({
       )}
       <h3 
         className={cn(
-          "font-bold mb-3 transition-colors duration-300",
+          "font-semibold mb-3 transition-colors duration-300",
           featured ? "text-lg md:text-xl" : "text-base md:text-lg"
         )}
         style={{ color: 'hsl(220, 45%, 18%)' }}
@@ -69,7 +69,7 @@ export const ProductTile = ({
         {description}
       </p>
       <div 
-        className="flex items-center text-sm font-semibold transition-colors duration-300 group-hover:translate-x-0.5"
+        className="flex items-center text-sm font-semibold transition-all duration-300 group-hover:translate-x-0.5"
         style={{ color: 'hsl(195, 65%, 28%)' }}
       >
         <span>Learn more</span>

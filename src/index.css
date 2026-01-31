@@ -371,7 +371,7 @@
 }
 
 .animate-marquee-smooth {
-  animation: marquee 6s linear infinite;
+  animation: marquee 4s linear infinite;
 }
 
 .animate-marquee:hover,

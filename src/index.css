@@ -369,7 +369,7 @@
 }
 
 .animate-marquee-fast {
-  animation: marquee 7s linear infinite;
+  animation: marquee 4s linear infinite;
 }
 
 .animate-marquee:hover,

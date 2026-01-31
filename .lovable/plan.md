@@ -1,115 +1,61 @@
 
-
-# Slider Redesign - Q7 Logo as Draggable Handle
+# Add "Your Name" Field to Standard Enquiry Form
 
 ## Overview
-Redesign the slider so the Q7 logo IS the draggable element, sitting on a fully teal track with no white circle background.
+Add a contact name field to the main enquiry form so we capture who is making the enquiry, not just the company name. This will match the Quick Landing form which already collects both names.
 
----
+## Changes Required
 
-## Current State
+### 1. Database Update
+Add a new column to store the contact person's name:
+- **Table**: `leads`
+- **New Column**: `contact_name` (text, nullable to maintain compatibility with existing leads)
 
-```text
-Grey track ════════[White circle with tiny Q7]═══════ Teal active bar
+### 2. Standard Enquiry Form Update
+Modify `src/components/EnquiryForm.tsx`:
+- Add a "Your Name" field in Step 3 (Contact Details)
+- Position it before the Company Name field
+- Update the form state to include `contactName`
+- Include contact name in both database insert and email notification
+
+### 3. Email Notification Update
+Modify `supabase/functions/send-lead-notification/index.ts`:
+- Add `contactName` to the expected request interface
+- Include the contact person's name in the email HTML template
+
+## Form Field Layout (Step 3)
+
+The updated Step 3 will display:
+1. Your Name (new field)
+2. Company Name
+3. Annual Turnover
+4. Email
+5. Phone
+6. Additional Notes
+
+## Technical Details
+
+**Form State Change:**
+```typescript
+const [formData, setFormData] = useState({
+  contactName: "",  // NEW
+  companyName: "",
+  turnover: "",
+  email: "",
+  phone: "",
+  notes: "",
+});
 ```
 
-The thumb currently has:
-- White circular background
-- Teal border
-- Small Q7 logo inside
-
----
-
-## Desired State
-
-```text
-Full teal track ════════════[Q7 LOGO]════════════════
-                                ↑
-                    Actual Q7 logo image as the handle
-                    No white background, no border
+**Validation Update:**
+```typescript
+const canSubmit = formData.contactName && formData.companyName && 
+  formData.turnover && formData.email && formData.phone;
 ```
 
-The Q7 logo itself becomes the draggable element that users grab and slide.
-
----
-
-## Technical Changes
-
-### File: `src/components/ui/slider.tsx`
-
-**Track Changes:**
-- Make the entire track teal (`hsl(195, 65%, 28%)`) instead of grey
-- Remove the separate "Range" element since the whole track is now one colour
-
-**Thumb Changes:**
-- Remove white background (`bg-white` → `bg-transparent`)
-- Remove teal border
-- Make the Q7 logo larger (fills the thumb area)
-- Add a subtle drop shadow to the logo for depth
-- Keep the circular or square shape based on the actual logo
-
-**Specifications:**
-| Property | Current | New |
-|----------|---------|-----|
-| Track colour | Grey with teal active | Full teal |
-| Thumb background | White | Transparent |
-| Thumb border | 2px teal | None |
-| Logo size | 20x20px (w-5 h-5) | 32x32px (w-8 h-8) - fills thumb |
-| Thumb size | 32x32px | 32x32px (or slightly larger if needed) |
-| Shadow | On white circle | Directly on logo |
-
----
-
-## Visual Comparison
-
-### Before (Current)
-```text
-[Grey]════════[⚪Q7⚪]════════[Teal]
-              ↑
-      White circle with logo inside
-```
-
-### After (New)
-```text
-[Teal]═══════════[Q7]═══════════[Teal]
-                  ↑
-         Q7 logo IS the handle
-         No background, just the logo
-```
-
----
-
-## Code Changes
-
-```tsx
-<SliderPrimitive.Track 
-  className="relative h-3 w-full grow overflow-hidden rounded-full"
-  style={{ backgroundColor: 'hsl(195, 65%, 28%)' }}  // Full teal track
->
-  {/* No Range element needed - entire track is teal */}
-</SliderPrimitive.Track>
-
-<SliderPrimitive.Thumb 
-  className="block h-8 w-8 rounded-md ring-offset-background transition-colors 
-             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
-             cursor-grab active:cursor-grabbing overflow-visible"
-  style={{ 
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)'  // Shadow on logo itself
-  }}
->
-  <img 
-    src={q7Thumb} 
-    alt="Q7" 
-    className="w-full h-full object-contain pointer-events-none"
-  />
-</SliderPrimitive.Thumb>
-```
-
----
-
-## File to Modify
-
-| File | Changes |
-|------|---------|
-| `src/components/ui/slider.tsx` | Full teal track, transparent thumb with Q7 logo as the handle |
-
+## Confirmation Points
+- Both forms will now collect: Your Name + Business/Company Name
+- Leads are saved to the database with the new `contact_name` field
+- Email notifications will include the contact person's name
+- Users are redirected to `/thank-you` page after submission (already working)
+- All leads visible in admin dashboard (already working)

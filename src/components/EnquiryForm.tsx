@@ -156,6 +156,7 @@ export const EnquiryForm = ({
     preSelectedSubProduct ? [preSelectedSubProduct] : []
   );
   const [formData, setFormData] = useState({
+    contactName: "",
     companyName: "",
     turnover: "",
     email: "",
@@ -198,6 +199,7 @@ export const EnquiryForm = ({
     setIsSubmitting(true);
     
     const leadData = {
+      contactName: formData.contactName,
       companyName: formData.companyName,
       email: formData.email,
       phone: formData.phone,
@@ -211,6 +213,7 @@ export const EnquiryForm = ({
     try {
       // Save to database
       const { error: dbError } = await supabase.from('leads').insert({
+        contact_name: formData.contactName,
         company_name: formData.companyName,
         email: formData.email,
         phone: formData.phone,
@@ -251,7 +254,7 @@ export const EnquiryForm = ({
   const canProceedStep1 = selectedCategories.length > 0;
   const canProceedStep2 = true; // Sub-products are optional
   const canSubmit =
-    formData.companyName && formData.turnover && formData.email && formData.phone;
+    formData.contactName && formData.companyName && formData.turnover && formData.email && formData.phone;
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
@@ -351,6 +354,18 @@ export const EnquiryForm = ({
           {/* Step 3: Contact Details */}
           {step === 3 && (
             <div className="space-y-4">
+              <div className="space-y-2">
+                <Label htmlFor="contactName">Your Name *</Label>
+                <Input
+                  id="contactName"
+                  value={formData.contactName}
+                  onChange={(e) =>
+                    setFormData({ ...formData, contactName: e.target.value })
+                  }
+                  placeholder="Your full name"
+                />
+              </div>
+
               <div className="space-y-2">
                 <Label htmlFor="companyName">Company Name *</Label>
                 <Input

@@ -18,6 +18,7 @@ export type Database = {
         Row: {
           categories: string[] | null
           company_name: string
+          contact_name: string | null
           created_at: string
           email: string
           id: string
@@ -30,6 +31,7 @@ export type Database = {
         Insert: {
           categories?: string[] | null
           company_name: string
+          contact_name?: string | null
           created_at?: string
           email: string
           id?: string
@@ -42,6 +44,7 @@ export type Database = {
         Update: {
           categories?: string[] | null
           company_name?: string
+          contact_name?: string | null
           created_at?: string
           email?: string
           id?: string

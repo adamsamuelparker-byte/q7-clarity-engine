@@ -9,6 +9,7 @@ const corsHeaders = {
 };
 
 interface LeadNotificationRequest {
+  contactName: string;
   companyName: string;
   email: string;
   phone: string;
@@ -47,6 +48,7 @@ const handler = async (req: Request): Promise<Response> => {
       
       <h3>Contact Details</h3>
       <ul>
+        <li><strong>Contact Name:</strong> ${leadData.contactName || 'Not provided'}</li>
         <li><strong>Company Name:</strong> ${leadData.companyName}</li>
         <li><strong>Email:</strong> ${leadData.email}</li>
         <li><strong>Phone:</strong> ${leadData.phone}</li>

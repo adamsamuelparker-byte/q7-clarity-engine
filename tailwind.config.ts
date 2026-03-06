@@ -53,7 +53,6 @@ export default {
           border: "hsl(var(--card-border))",
           "border-hover": "hsl(var(--card-border-hover))",
         },
-        // Section backgrounds
         section: {
           primary: "hsl(var(--section-primary))",
           alt: "hsl(var(--section-alt))",
@@ -68,17 +67,6 @@ export default {
           "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
-        },
-        // Custom Q7 colors
-        charcoal: {
-          DEFAULT: "hsl(220 20% 14%)",
-          light: "hsl(220 20% 20%)",
-          dark: "hsl(220 20% 10%)",
-        },
-        teal: {
-          DEFAULT: "hsl(174 35% 40%)",
-          light: "hsl(174 35% 50%)",
-          dark: "hsl(174 35% 30%)",
         },
       },
       borderRadius: {
@@ -116,6 +104,7 @@ export default {
         "slide-in-right": "slide-in-right 0.5s ease-out forwards",
       },
       spacing: {
+        '13': '3.25rem',
         '18': '4.5rem',
         '22': '5.5rem',
       },

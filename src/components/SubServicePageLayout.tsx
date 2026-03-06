@@ -198,7 +198,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
             <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold mb-3 text-primary-foreground">
               Interested in {subService.name.toLowerCase()}?
             </h2>
-            <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+            <p className="text-primary-foreground/75 mb-8 max-w-md mx-auto text-sm leading-relaxed">
               Get in touch to discuss your requirements and find out how we can help.
             </p>
             <div className="flex flex-col items-center" data-cta="primary">

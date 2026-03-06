@@ -48,7 +48,7 @@ const secondaryServices = [
     title: "Merchant Cash Advance",
     description: "Advance funding against your future card sales with flexible repayments.",
     href: "/business-funding/merchant-cash-advance",
-    icon: <DollarSign className="h-6 w-6" />,
+    icon: <PoundSterling className="h-6 w-6" />,
   },
   {
     title: "Asset Finance",

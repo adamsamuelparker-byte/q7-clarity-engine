@@ -133,7 +133,7 @@ const Index = () => {
                   preSelectedService={selectedIntent || undefined}
                   preSelectedServiceName={selectedIntentName || undefined}
                 />
-                <p className="text-sm text-primary-foreground/40 mt-3 text-left">
+                <p className="text-sm text-primary-foreground/60 mt-3 text-left">
                   No obligation. One of the team will be in touch.
                 </p>
                 <div className="mt-5">

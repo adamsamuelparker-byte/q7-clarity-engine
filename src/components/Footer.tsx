@@ -103,7 +103,7 @@ export const Footer = () => {
               <li>
                 <a 
                   href={`mailto:${contactInfo.email}`}
-                  className="flex items-start gap-2.5 text-sm text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors duration-200 break-all"
+                  className="flex items-start gap-2.5 text-sm text-primary-foreground/70 hover:text-primary-foreground/90 transition-colors duration-200 break-all"
                 >
                   <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
                   <span className="break-all">{contactInfo.email}</span>

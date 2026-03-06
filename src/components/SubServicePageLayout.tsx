@@ -27,7 +27,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
                 <h1 className="text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.15] mb-3 animate-slide-up text-primary-foreground">
                   {subService.hero.headline}
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "60ms" }}>
+                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/85 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "60ms" }}>
                   {subService.hero.intro}
                 </p>
               </div>
@@ -198,7 +198,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
             <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold mb-3 text-primary-foreground">
               Interested in {subService.name.toLowerCase()}?
             </h2>
-            <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+            <p className="text-primary-foreground/75 mb-8 max-w-md mx-auto text-sm leading-relaxed">
               Get in touch to discuss your requirements and find out how we can help.
             </p>
             <div className="flex flex-col items-center" data-cta="primary">
@@ -209,7 +209,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
                 triggerSize="lg"
                 triggerText="Start Your Enquiry"
               />
-              <p className="text-xs text-primary-foreground/40 mt-3">
+              <p className="text-xs text-primary-foreground/60 mt-3">
                 No obligation. We'll help you understand your options.
               </p>
               <div className="mt-4">

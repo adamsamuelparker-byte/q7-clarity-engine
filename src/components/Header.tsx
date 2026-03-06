@@ -59,7 +59,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground"
-                      : "text-primary-foreground/50 hover:text-primary-foreground/80"
+                      : "text-primary-foreground/70 hover:text-primary-foreground/90"
                     : location.pathname === item.href
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -81,7 +81,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground"
-                      : "text-primary-foreground/50 hover:text-primary-foreground/80"
+                      : "text-primary-foreground/70 hover:text-primary-foreground/90"
                     : location.pathname === item.href
                       ? "text-foreground"
                       : "text-muted-foreground hover:text-foreground"
@@ -128,7 +128,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   transparent
                     ? location.pathname === "/"
                       ? "text-primary-foreground bg-white/10"
-                      : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
+                      : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-white/5"
                     : location.pathname === "/"
                       ? "text-foreground bg-secondary"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
@@ -146,7 +146,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground bg-white/10"
-                        : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
+                        : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-white/5"
                       : location.pathname === item.href
                         ? "text-foreground bg-secondary"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
@@ -169,7 +169,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground bg-white/10"
-                        : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
+                        : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-white/5"
                       : location.pathname === item.href
                         ? "text-foreground bg-secondary"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"

@@ -40,7 +40,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
                 <p className="text-sm md:text-base text-accent font-medium mb-3 animate-slide-up" style={{ animationDelay: "40ms" }}>
                   {solution.hero.tagline}
                 </p>
-                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "80ms" }}>
+                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/85 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "80ms" }}>
                   {solution.hero.intro}
                 </p>
               </div>
@@ -242,7 +242,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
             <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold mb-3 text-primary-foreground">
               Ready to explore {solution.name.toLowerCase()}?
             </h2>
-            <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+            <p className="text-primary-foreground/75 mb-8 max-w-md mx-auto text-sm leading-relaxed">
               Get in touch to discuss your requirements and find the right solution for your business.
             </p>
             <div className="flex flex-col items-center" data-cta="primary">
@@ -252,7 +252,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
                 triggerSize="lg"
                 triggerText="Start your enquiry"
               />
-              <p className="text-xs text-primary-foreground/40 mt-3">
+              <p className="text-xs text-primary-foreground/60 mt-3">
                 No obligation. Speak directly with our team.
               </p>
               <div className="mt-4">

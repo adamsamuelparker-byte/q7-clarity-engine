@@ -114,7 +114,7 @@ const Index = () => {
                 One team. End to end.
               </p>
               
-              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/70 font-medium mb-8 leading-relaxed animate-slide-up text-left max-w-md" style={{ animationDelay: "80ms" }}>
+              <p className="text-base sm:text-lg md:text-xl text-primary-foreground/85 font-medium mb-8 leading-relaxed animate-slide-up text-left max-w-md" style={{ animationDelay: "80ms" }}>
                 From funding to payments, assets, and services, one team helps you organise what your business needs.
               </p>
               
@@ -133,7 +133,7 @@ const Index = () => {
                   preSelectedService={selectedIntent || undefined}
                   preSelectedServiceName={selectedIntentName || undefined}
                 />
-                <p className="text-sm text-primary-foreground/40 mt-3 text-left">
+                <p className="text-sm text-primary-foreground/60 mt-3 text-left">
                   No obligation. One of the team will be in touch.
                 </p>
                 <div className="mt-5">

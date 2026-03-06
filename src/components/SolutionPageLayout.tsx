@@ -224,6 +224,17 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
           </div>
         </section>
 
+        {/* FAQs */}
+        {serviceFAQs[solution.slug] && (
+          <>
+            <div className="section-divider" />
+            <FAQSection
+              title={`${solution.name} FAQs`}
+              faqs={serviceFAQs[solution.slug]}
+            />
+          </>
+        )}
+
         {/* CTA Section with reassurance */}
         <section className="py-16 md:py-20 bg-primary text-primary-foreground relative">
           <div className="absolute inset-x-0 top-0 h-8 bg-gradient-to-b from-section-primary/10 to-transparent pointer-events-none" />

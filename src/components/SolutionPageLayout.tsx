@@ -242,7 +242,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
             <h2 className="text-xl md:text-2xl lg:text-[1.75rem] font-semibold mb-3 text-primary-foreground">
               Ready to explore {solution.name.toLowerCase()}?
             </h2>
-            <p className="text-primary-foreground/60 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+            <p className="text-primary-foreground/75 mb-8 max-w-md mx-auto text-sm leading-relaxed">
               Get in touch to discuss your requirements and find the right solution for your business.
             </p>
             <div className="flex flex-col items-center" data-cta="primary">

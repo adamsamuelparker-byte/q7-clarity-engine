@@ -8,9 +8,11 @@ import { ProductTile } from "@/components/ProductTile";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { TrustedLendersCarousel } from "@/components/TrustedLendersCarousel";
+import { FAQSection } from "@/components/FAQSection";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 import type { SolutionPageData } from "@/data/solutionPages";
+import { serviceFAQs } from "@/data/serviceFAQs";
 
 interface SolutionPageLayoutProps {
   solution: SolutionPageData;

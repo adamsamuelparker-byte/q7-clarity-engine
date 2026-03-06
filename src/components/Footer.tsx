@@ -109,7 +109,7 @@ export const Footer = () => {
                   <span className="break-all">{contactInfo.email}</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2.5 text-sm text-primary-foreground/50">
+              <li className="flex items-start gap-2.5 text-sm text-primary-foreground/70">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
                 <span>{contactInfo.address}</span>
               </li>

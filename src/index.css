@@ -128,54 +128,55 @@
     line-height: 1.6;
   }
 
-  /* Typography Scale - Accessible sizes */
+  /* Typography Scale - Large, accessible sizes */
   h1 {
     @apply font-bold tracking-tight;
-    font-size: 2.125rem; /* ~34px mobile */
+    font-size: 1.7rem; /* ~34px mobile */
     line-height: 1.2;
     color: hsl(var(--text-heading));
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
   
   @media (min-width: 768px) {
     h1 {
-      font-size: 2.667rem; /* ~48px desktop */
+      font-size: 2.4rem; /* ~48px desktop */
     }
   }
   
   h2 {
     @apply font-semibold tracking-tight;
-    font-size: 1.556rem; /* ~28px mobile */
+    font-size: 1.4rem; /* ~28px mobile */
     line-height: 1.25;
     color: hsl(var(--text-heading));
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
   
   @media (min-width: 768px) {
     h2 {
-      font-size: 2rem; /* ~36px desktop */
+      font-size: 1.8rem; /* ~36px desktop */
     }
   }
   
   h3 {
     @apply font-semibold tracking-tight;
-    font-size: 1.333rem; /* ~24px mobile */
+    font-size: 1.2rem; /* ~24px mobile */
     line-height: 1.3;
     color: hsl(var(--text-heading));
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
   
   @media (min-width: 768px) {
     h3 {
-      font-size: 1.556rem; /* ~28px desktop */
+      font-size: 1.4rem; /* ~28px desktop */
     }
   }
   
   p {
     @apply leading-relaxed;
     color: hsl(var(--text-body));
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
+    font-size: 1rem; /* 20px with 125% base */
+    line-height: 1.7;
+    margin-bottom: 1rem;
   }
 
   /* Links default to green */

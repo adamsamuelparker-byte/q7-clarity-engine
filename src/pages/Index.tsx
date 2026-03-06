@@ -10,7 +10,7 @@ import {
   Landmark,
   HeadphonesIcon,
   ArrowRight,
-  DollarSign
+  PoundSterling
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/Header";

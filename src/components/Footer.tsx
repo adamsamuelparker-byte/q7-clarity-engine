@@ -94,7 +94,7 @@ export const Footer = () => {
                   href={`https://wa.me/44${contactInfo.whatsapp.replace(/\s/g, '').substring(1)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-start gap-2.5 text-sm text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors duration-200"
+                  className="flex items-start gap-2.5 text-sm text-primary-foreground/70 hover:text-primary-foreground/90 transition-colors duration-200"
                 >
                   <MessageCircle className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
                   <span>{contactInfo.whatsapp}</span>

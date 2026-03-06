@@ -4,18 +4,20 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 const services = [
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Merchant Services", href: "/merchant-services" },
+  { name: "Card Processing & Merchant Services", href: "/payments-merchant" },
+  { name: "Emergency Funding", href: "/business-funding/emergency-funding" },
+  { name: "Merchant Cash Advance", href: "/business-funding/merchant-cash-advance" },
   { name: "Asset Finance", href: "/asset-finance" },
-  { name: "Leasing and Rental", href: "/leasing-rental" },
-  { name: "Vehicles and Mobility", href: "/asset-finance" },
-  { name: "Tracking and Protection", href: "/tracking-protection" },
-  { name: "Banking Services", href: "/banking-services" },
+  { name: "Leasing & Rental", href: "/leasing-rental" },
+  { name: "E-Moped & E-Bike", href: "/vehicles-mobility" },
+  { name: "Tracking & Protect", href: "/tracking-protection" },
+  { name: "Bank Accounts & Accounting", href: "/banking-accounting" },
+  { name: "Business Support", href: "/business-support" },
 ];
 
 export const ServicesDiscoverySection = () => {
   const isMobile = useIsMobile();
 
-  // Mobile: Always visible list (no collapsible)
   if (isMobile) {
     return (
       <section className="bg-muted/50 border-y border-border py-4">
@@ -28,10 +30,10 @@ export const ServicesDiscoverySection = () => {
               <Link
                 key={service.name}
                 to={service.href}
-                className="flex items-center justify-between py-3.5 text-foreground/80 hover:text-foreground transition-colors group"
+                className="flex items-center justify-between py-4 text-foreground/80 hover:text-foreground transition-colors group"
               >
-                <span className="text-sm">{service.name}</span>
-                <ChevronRight className="h-4 w-4 text-muted-foreground/50 group-hover:text-accent transition-colors" />
+                <span className="text-base">{service.name}</span>
+                <ChevronRight className="h-5 w-5 text-muted-foreground/50 group-hover:text-accent transition-colors" />
               </Link>
             ))}
           </div>
@@ -40,15 +42,14 @@ export const ServicesDiscoverySection = () => {
     );
   }
 
-  // Desktop: Rounded teal container
   return (
     <section className="bg-muted/30 border-y border-border py-8">
       <div className="container-xl">
         <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-5">
           What we can help with
         </p>
-        <div className="bg-accent/5 border border-accent/20 rounded-xl p-6">
-          <div className="grid grid-cols-4 gap-x-8 gap-y-4">
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+          <div className="grid grid-cols-5 gap-x-8 gap-y-4">
             {services.map((service) => (
               <Link
                 key={service.name}

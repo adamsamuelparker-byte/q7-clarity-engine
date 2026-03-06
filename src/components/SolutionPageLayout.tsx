@@ -40,7 +40,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
                 <p className="text-sm md:text-base text-accent font-medium mb-3 animate-slide-up" style={{ animationDelay: "40ms" }}>
                   {solution.hero.tagline}
                 </p>
-                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "80ms" }}>
+                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/85 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "80ms" }}>
                   {solution.hero.intro}
                 </p>
               </div>

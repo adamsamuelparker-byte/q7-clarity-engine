@@ -37,7 +37,7 @@ export const Footer = () => {
               showText={true} 
               variant="light"
             />
-            <p className="mt-4 text-sm text-primary-foreground/60 max-w-xs">
+            <p className="mt-4 text-sm text-primary-foreground/75 max-w-xs">
               Organising financial solutions for your business
             </p>
           </div>

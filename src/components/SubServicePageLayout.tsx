@@ -209,7 +209,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
                 triggerSize="lg"
                 triggerText="Start Your Enquiry"
               />
-              <p className="text-xs text-primary-foreground/40 mt-3">
+              <p className="text-xs text-primary-foreground/60 mt-3">
                 No obligation. We'll help you understand your options.
               </p>
               <div className="mt-4">

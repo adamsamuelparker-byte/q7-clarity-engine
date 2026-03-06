@@ -252,7 +252,7 @@ export const SolutionPageLayout = ({ solution }: SolutionPageLayoutProps) => {
                 triggerSize="lg"
                 triggerText="Start your enquiry"
               />
-              <p className="text-xs text-primary-foreground/40 mt-3">
+              <p className="text-xs text-primary-foreground/60 mt-3">
                 No obligation. Speak directly with our team.
               </p>
               <div className="mt-4">

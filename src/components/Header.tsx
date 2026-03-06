@@ -7,12 +7,14 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Business Funding", href: "/business-funding" },
-  { name: "Payments & Merchant", href: "/payments-merchant" },
+  { name: "Card Processing & Merchant Services", href: "/payments-merchant" },
+  { name: "Emergency Funding", href: "/business-funding/emergency-funding" },
+  { name: "Merchant Cash Advance", href: "/business-funding/merchant-cash-advance" },
   { name: "Asset Finance", href: "/asset-finance" },
   { name: "Leasing & Rental", href: "/leasing-rental" },
-  { name: "Vehicles & Fleet", href: "/vehicles-mobility" },
-  { name: "Tracking & Protection", href: "/tracking-protection" },
-  { name: "Banking & Accounting", href: "/banking-accounting" },
+  { name: "E-Moped & E-Bike", href: "/vehicles-mobility" },
+  { name: "Tracking & Protect", href: "/tracking-protection" },
+  { name: "Bank Accounts & Accounting", href: "/banking-accounting" },
   { name: "Business Support", href: "/business-support" },
 ];
 
@@ -46,14 +48,14 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             />
           </Link>
 
-          {/* Desktop Navigation - 8 solution pages */}
-          <div className="hidden lg:flex lg:items-center lg:gap-1">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex lg:items-center lg:gap-0.5">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-2 py-1.5 text-[10px] font-normal transition-colors duration-200 whitespace-nowrap",
+                  "px-1.5 py-1.5 text-[9px] xl:text-[10px] font-normal transition-colors duration-200 whitespace-nowrap",
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground"
@@ -67,7 +69,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
               </Link>
             ))}
             <span className={cn(
-              "mx-1.5 h-4 w-px",
+              "mx-1 h-4 w-px",
               transparent ? "bg-primary-foreground/20" : "bg-border"
             )} />
             {secondaryNav.map((item) => (
@@ -75,7 +77,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 key={item.name}
                 to={item.href}
                 className={cn(
-                  "px-2 py-1.5 text-[10px] font-normal transition-colors duration-200",
+                  "px-1.5 py-1.5 text-[9px] xl:text-[10px] font-normal transition-colors duration-200",
                   transparent 
                     ? location.pathname === item.href
                       ? "text-primary-foreground"
@@ -90,12 +92,12 @@ export const Header = ({ transparent = false }: HeaderProps) => {
             ))}
           </div>
 
-          {/* Mobile Menu Button - larger touch target */}
+          {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="icon"
             className={cn(
-              "lg:hidden h-11 w-11 min-h-[44px] min-w-[44px]",
+              "lg:hidden h-12 w-12 min-h-[48px] min-w-[48px]",
               transparent && "text-primary-foreground hover:bg-white/10"
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -109,7 +111,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
           </Button>
         </nav>
 
-        {/* Mobile Navigation - fixed styling */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className={cn(
             "lg:hidden py-3 animate-fade-in",
@@ -122,7 +124,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                 to="/"
                 onClick={() => setMobileMenuOpen(false)}
                 className={cn(
-                  "px-4 py-3.5 text-base font-normal min-h-[48px] flex items-center rounded-lg mx-2 transition-colors duration-200",
+                  "px-4 py-4 text-base font-normal min-h-[52px] flex items-center rounded-lg mx-2 transition-colors duration-200",
                   transparent
                     ? location.pathname === "/"
                       ? "text-primary-foreground bg-white/10"
@@ -140,7 +142,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-3.5 text-base font-normal min-h-[48px] flex items-center rounded-lg mx-2 transition-colors duration-200",
+                    "px-4 py-4 text-base font-normal min-h-[52px] flex items-center rounded-lg mx-2 transition-colors duration-200",
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground bg-white/10"
@@ -163,7 +165,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                   to={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "px-4 py-3.5 text-base font-normal min-h-[48px] flex items-center rounded-lg mx-2 transition-colors duration-200",
+                    "px-4 py-4 text-base font-normal min-h-[52px] flex items-center rounded-lg mx-2 transition-colors duration-200",
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground bg-white/10"

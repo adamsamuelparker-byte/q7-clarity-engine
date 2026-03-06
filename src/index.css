@@ -118,7 +118,7 @@
 
   html {
     scroll-behavior: smooth;
-    font-size: 112.5%; /* 18px base for accessibility */
+    font-size: 125%; /* 20px base for improved readability */
   }
 
   body {

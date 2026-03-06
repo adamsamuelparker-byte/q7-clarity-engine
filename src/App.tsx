@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import AdminDashboard from "./pages/AdminDashboard";
 import QuickLanding from "./pages/QuickLanding";
 import LogoDownload from "./pages/LogoDownload";
+import EMopedEBikePage from "./pages/EMopedEBikePage";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/logo" element={<LogoDownload />} />
           <Route path="/quick" element={<QuickLanding />} />
+          <Route path="/e-moped-e-bike" element={<EMopedEBikePage />} />
           
           {/* Sub Product Pages - more specific, comes before single param route */}
           <Route path="/:categorySlug/:productSlug" element={<SubProductPage />} />

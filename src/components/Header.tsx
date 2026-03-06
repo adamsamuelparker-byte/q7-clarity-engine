@@ -12,7 +12,7 @@ const navigation = [
   { name: "Merchant Cash Advance", href: "/business-funding/merchant-cash-advance" },
   { name: "Asset Finance", href: "/asset-finance" },
   { name: "Leasing & Rental", href: "/leasing-rental" },
-  { name: "E-Moped & E-Bike", href: "/vehicles-mobility" },
+  { name: "E-Moped & E-Bike", href: "/e-moped-e-bike" },
   { name: "Tracking & Protect", href: "/tracking-protection" },
   { name: "Bank Accounts & Accounting", href: "/banking-accounting" },
   { name: "Business Support", href: "/business-support" },

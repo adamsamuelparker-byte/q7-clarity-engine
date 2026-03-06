@@ -50,7 +50,7 @@ export const Footer = () => {
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className="text-sm text-primary-foreground/50 hover:text-primary-foreground/80 transition-colors duration-200"
+                    className="text-sm text-primary-foreground/70 hover:text-primary-foreground/90 transition-colors duration-200"
                   >
                     {item.name}
                   </Link>

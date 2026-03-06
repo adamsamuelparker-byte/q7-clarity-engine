@@ -146,7 +146,7 @@ export const Header = ({ transparent = false }: HeaderProps) => {
                     transparent
                       ? location.pathname === item.href
                         ? "text-primary-foreground bg-white/10"
-                        : "text-primary-foreground/60 hover:text-primary-foreground hover:bg-white/5"
+                        : "text-primary-foreground/75 hover:text-primary-foreground hover:bg-white/5"
                       : location.pathname === item.href
                         ? "text-foreground bg-secondary"
                         : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"

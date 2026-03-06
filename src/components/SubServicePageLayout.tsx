@@ -27,7 +27,7 @@ export const SubServicePageLayout = ({ subService }: SubServicePageLayoutProps) 
                 <h1 className="text-[1.6rem] md:text-[2rem] lg:text-[2.5rem] font-semibold leading-[1.15] mb-3 animate-slide-up text-primary-foreground">
                   {subService.hero.headline}
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/70 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "60ms" }}>
+                <p className="text-sm md:text-base lg:text-lg text-primary-foreground/85 leading-relaxed animate-slide-up max-w-md" style={{ animationDelay: "60ms" }}>
                   {subService.hero.intro}
                 </p>
               </div>

@@ -15,6 +15,9 @@ import AdminDashboard from "./pages/AdminDashboard";
 import QuickLanding from "./pages/QuickLanding";
 import LogoDownload from "./pages/LogoDownload";
 import EMopedEBikePage from "./pages/EMopedEBikePage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import { CookieConsent } from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +35,8 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
           <Route path="/logo" element={<LogoDownload />} />
           <Route path="/quick" element={<QuickLanding />} />
@@ -46,6 +51,7 @@ const App = () => (
           {/* Catch-all */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <CookieConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -16,6 +16,8 @@ const navigation = {
   company: [
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms and Conditions", href: "/terms-and-conditions" },
   ],
 };
 

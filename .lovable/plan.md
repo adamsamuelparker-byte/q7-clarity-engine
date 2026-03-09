@@ -1,61 +1,25 @@
 
-# Add "Your Name" Field to Standard Enquiry Form
 
-## Overview
-Add a contact name field to the main enquiry form so we capture who is making the enquiry, not just the company name. This will match the Quick Landing form which already collects both names.
+## Plan: Add remaining sub-service data to subServicePages.ts
 
-## Changes Required
+All content for the 6 remaining categories has now been provided. The implementation is straightforward data addition.
 
-### 1. Database Update
-Add a new column to store the contact person's name:
-- **Table**: `leads`
-- **New Column**: `contact_name` (text, nullable to maintain compatibility with existing leads)
+### What will be done
 
-### 2. Standard Enquiry Form Update
-Modify `src/components/EnquiryForm.tsx`:
-- Add a "Your Name" field in Step 3 (Contact Details)
-- Position it before the Company Name field
-- Update the form state to include `contactName`
-- Include contact name in both database insert and email notification
+Update `src/data/subServicePages.ts` to add sub-service entries for:
 
-### 3. Email Notification Update
-Modify `supabase/functions/send-lead-notification/index.ts`:
-- Add `contactName` to the expected request interface
-- Include the contact person's name in the email HTML template
+1. **asset-finance** (4 sub-services): equipment-finance, machinery-finance, technology-finance, specialist-assets
+2. **leasing-rental** (4 sub-services): vehicle-leasing, equipment-leasing, fleet-leasing, short-term-rental
+3. **vehicles-mobility** (8 sub-services): electric-bikes, electric-mopeds, branded-vehicles, fleet-solutions, business-vehicles, electric-vehicles, delivery-courier-vehicles, micro-mobility
+4. **tracking-protection** (5 sub-services): vehicle-tracking, asset-tracking, thatcham-tracking, cctv-webcams, asset-recovery
+5. **banking-accounting** (4 sub-services): business-bank-accounts, business-credit-cards, accounting-services, tax-compliance-support
+6. **business-support** (5 sub-services): operational-support, back-office-services, admin-support, partner-introductions, advisory-support
 
-## Form Field Layout (Step 3)
+### Technical details
 
-The updated Step 3 will display:
-1. Your Name (new field)
-2. Company Name
-3. Annual Turnover
-4. Email
-5. Phone
-6. Additional Notes
+- Single file change: `src/data/subServicePages.ts`
+- Replace existing placeholder entries for these 6 categories with the full expanded content provided
+- Add the two helper functions (`getSubService`, `getSubServicesForParent`) if not already present
+- No interface changes needed — same `SubServicePageData` structure
+- No routing or component changes required — `SubProductPage` and `SubServicePageLayout` already handle rendering
 
-## Technical Details
-
-**Form State Change:**
-```typescript
-const [formData, setFormData] = useState({
-  contactName: "",  // NEW
-  companyName: "",
-  turnover: "",
-  email: "",
-  phone: "",
-  notes: "",
-});
-```
-
-**Validation Update:**
-```typescript
-const canSubmit = formData.contactName && formData.companyName && 
-  formData.turnover && formData.email && formData.phone;
-```
-
-## Confirmation Points
-- Both forms will now collect: Your Name + Business/Company Name
-- Leads are saved to the database with the new `contact_name` field
-- Email notifications will include the contact person's name
-- Users are redirected to `/thank-you` page after submission (already working)
-- All leads visible in admin dashboard (already working)

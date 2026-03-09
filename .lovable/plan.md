@@ -1,61 +1,28 @@
 
-# Add "Your Name" Field to Standard Enquiry Form
 
-## Overview
-Add a contact name field to the main enquiry form so we capture who is making the enquiry, not just the company name. This will match the Quick Landing form which already collects both names.
+## Consolidated Plan
 
-## Changes Required
+### 1. Create Cookie Consent Banner (`src/components/CookieConsent.tsx`)
+- Fixed bottom banner, appears after 1-second delay if no `q7-cookie-consent` in localStorage
+- "We use cookies" heading + description linking to Privacy Policy
+- Accept (accent button) and Decline (outline button) — stores choice in localStorage
+- Smooth slide-up animation, matches site brand styling
 
-### 1. Database Update
-Add a new column to store the contact person's name:
-- **Table**: `leads`
-- **New Column**: `contact_name` (text, nullable to maintain compatibility with existing leads)
+### 2. Update Footer (`src/components/Footer.tsx`)
+- Add "Privacy Policy" and "Terms and Conditions" to the company navigation column
+- Keep all existing structure and styling intact
 
-### 2. Standard Enquiry Form Update
-Modify `src/components/EnquiryForm.tsx`:
-- Add a "Your Name" field in Step 3 (Contact Details)
-- Position it before the Company Name field
-- Update the form state to include `contactName`
-- Include contact name in both database insert and email notification
+### 3. Create Privacy Policy Page (`src/pages/PrivacyPolicy.tsx`)
+- Standard legal page with privacy policy content for Q7 Business and Financial Solutions Ltd
 
-### 3. Email Notification Update
-Modify `supabase/functions/send-lead-notification/index.ts`:
-- Add `contactName` to the expected request interface
-- Include the contact person's name in the email HTML template
+### 4. Create Terms and Conditions Page (`src/pages/TermsAndConditions.tsx`)
+- Standard legal page with terms and conditions content
 
-## Form Field Layout (Step 3)
+### 5. Update App Routes (`src/App.tsx`)
+- Add `/privacy-policy` and `/terms-and-conditions` routes (above dynamic slug routes)
+- Render `<CookieConsent />` inside `BrowserRouter`
 
-The updated Step 3 will display:
-1. Your Name (new field)
-2. Company Name
-3. Annual Turnover
-4. Email
-5. Phone
-6. Additional Notes
+---
 
-## Technical Details
+*Waiting for more items before implementation. Reply when ready to proceed or keep adding.*
 
-**Form State Change:**
-```typescript
-const [formData, setFormData] = useState({
-  contactName: "",  // NEW
-  companyName: "",
-  turnover: "",
-  email: "",
-  phone: "",
-  notes: "",
-});
-```
-
-**Validation Update:**
-```typescript
-const canSubmit = formData.contactName && formData.companyName && 
-  formData.turnover && formData.email && formData.phone;
-```
-
-## Confirmation Points
-- Both forms will now collect: Your Name + Business/Company Name
-- Leads are saved to the database with the new `contact_name` field
-- Email notifications will include the contact person's name
-- Users are redirected to `/thank-you` page after submission (already working)
-- All leads visible in admin dashboard (already working)

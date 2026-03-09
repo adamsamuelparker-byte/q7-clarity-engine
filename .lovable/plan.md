@@ -1,25 +1,61 @@
 
+# Add "Your Name" Field to Standard Enquiry Form
 
-## Consolidated Plan (Updated)
+## Overview
+Add a contact name field to the main enquiry form so we capture who is making the enquiry, not just the company name. This will match the Quick Landing form which already collects both names.
 
-### Previously approved and implemented
-1. Cookie consent banner
-2. Footer legal links
-3. Privacy Policy and Terms pages
-4. App routes update
-5. Logo PNG replacement
+## Changes Required
 
-### Previously approved, awaiting implementation
-6. Update `src/data/serviceFAQs.ts` with expanded FAQ content (10 categories, 5-6 FAQs each)
-7. Update `src/data/solutionPages.ts` with expanded solution page data (all 8 core solutions)
+### 1. Database Update
+Add a new column to store the contact person's name:
+- **Table**: `leads`
+- **New Column**: `contact_name` (text, nullable to maintain compatibility with existing leads)
 
-### New addition
-8. **Update `src/data/subServicePages.ts`** with expanded sub-service content
-   - Business Funding: 7 sub-services (unsecured-business-loans, secured-business-loans, working-capital, invoice-finance, merchant-cash-advance, emergency-funding, refinancing)
-   - Payments & Merchant: 6 sub-services (card-machines, epos-systems, ecommerce-payments, merchant-accounts, payment-processing, switching-providers)
-   - **Remaining 6 categories not yet provided** (asset-finance, leasing-rental, vehicles-mobility, tracking-protection, banking-accounting, business-support)
-   - Same `SubServicePageData` interface — no structural changes needed
-   - Replace existing entries with the expanded, more detailed versions provided
+### 2. Standard Enquiry Form Update
+Modify `src/components/EnquiryForm.tsx`:
+- Add a "Your Name" field in Step 3 (Contact Details)
+- Position it before the Company Name field
+- Update the form state to include `contactName`
+- Include contact name in both database insert and email notification
 
-All data file updates (items 6, 7, 8) will be implemented together once all content is provided. Keep adding remaining sub-service categories if you have them.
+### 3. Email Notification Update
+Modify `supabase/functions/send-lead-notification/index.ts`:
+- Add `contactName` to the expected request interface
+- Include the contact person's name in the email HTML template
 
+## Form Field Layout (Step 3)
+
+The updated Step 3 will display:
+1. Your Name (new field)
+2. Company Name
+3. Annual Turnover
+4. Email
+5. Phone
+6. Additional Notes
+
+## Technical Details
+
+**Form State Change:**
+```typescript
+const [formData, setFormData] = useState({
+  contactName: "",  // NEW
+  companyName: "",
+  turnover: "",
+  email: "",
+  phone: "",
+  notes: "",
+});
+```
+
+**Validation Update:**
+```typescript
+const canSubmit = formData.contactName && formData.companyName && 
+  formData.turnover && formData.email && formData.phone;
+```
+
+## Confirmation Points
+- Both forms will now collect: Your Name + Business/Company Name
+- Leads are saved to the database with the new `contact_name` field
+- Email notifications will include the contact person's name
+- Users are redirected to `/thank-you` page after submission (already working)
+- All leads visible in admin dashboard (already working)

@@ -121,7 +121,7 @@ export const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-primary-foreground/10">
-          <div className="text-xs text-primary-foreground/40 text-center space-y-1">
+          <div className="text-xs text-primary-foreground/70 text-center space-y-1">
             <p>
               © {new Date().getFullYear()} Q7 Business and Financial Solutions Ltd. All rights reserved.
             </p>

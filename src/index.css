@@ -16,7 +16,7 @@
     --foreground: 220 25% 14%;
     
     /* Green - Primary brand (authority, trust) */
-    --primary: 152 48% 22%;
+    --primary: 152 48% 18%;
     --primary-foreground: 0 0% 100%;
     
     /* Splash Pink - Accent (CTAs ONLY) */
@@ -36,7 +36,7 @@
     --card: 0 0% 100%;
     --card-foreground: 220 25% 14%;
     --card-border: 220 12% 88%;
-    --card-border-hover: 152 45% 28%;
+    --card-border-hover: 152 45% 24%;
     
     /* Popover */
     --popover: 0 0% 100%;
@@ -45,7 +45,7 @@
     /* Borders */
     --border: 220 12% 88%;
     --input: 220 12% 90%;
-    --ring: 152 45% 28%;
+    --ring: 152 45% 24%;
     
     /* Destructive */
     --destructive: 0 72% 51%;
@@ -55,7 +55,7 @@
     --radius: 0.5rem;
     
     /* Sidebar */
-    --sidebar-background: 152 45% 22%;
+    --sidebar-background: 152 45% 18%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 340 75% 55%;
     --sidebar-primary-foreground: 0 0% 100%;

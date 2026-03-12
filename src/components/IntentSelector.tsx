@@ -46,7 +46,7 @@ export const IntentSelector = ({
   const [isFading, setIsFading] = useState(false);
   const [pendingService, setPendingService] = useState<{ id: string; name: string; href: string } | null>(null);
   const isMobile = useIsMobile();
-  const rotationIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const rotationIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Rotation interval - slower on mobile
   const rotationInterval = isMobile ? 4000 : 3500;

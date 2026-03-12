@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import q7LogoPng from "@/assets/q7-logo.png";
+import q7LogoSvg from "@/assets/q7-logo.svg";
 
 interface LogoProps {
   showText?: boolean;
@@ -21,7 +21,7 @@ export const Logo = ({
   return (
     <div className={cn("flex items-center", className)}>
       <img
-        src={q7LogoPng}
+        src={q7LogoSvg}
         alt="Q7 Business and Financial Solutions"
         className={cn(
           "h-10 sm:h-12 md:h-14 w-auto",

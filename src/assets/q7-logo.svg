@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2760" height="800" viewBox="0 0 1380 400" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="340" height="340" rx="64" ry="64" fill="#1A3C2A"/>
+  <text x="186" y="218" font-family="Liberation Sans, Arial Black, Helvetica Neue, sans-serif" font-weight="900" font-size="144" fill="#FFFFFF" text-anchor="middle" letter-spacing="-3">Q7</text>
+  <rect x="72" y="268" width="228" height="13" rx="6.5" fill="#E8386D"/>
+  <!-- Business and Financial: measured width ~889px at 80px font, starts x=386, ends ~1275 -->
+  <text x="386" y="186" font-family="Liberation Sans, Arial, Helvetica Neue, sans-serif" font-weight="700" font-size="80" fill="#0F2318" letter-spacing="-1.5">Business and Financial</text>
+  <!-- Checkmark: tight gap of ~8px after text end (1275+8=1283) -->
+  <g transform="translate(1283, 114)">
+    <polyline points="0,27 16,47 48,4" fill="none" stroke="#E8386D" stroke-width="9.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="388" y="286" font-family="Liberation Sans, Arial, Helvetica Neue, sans-serif" font-weight="400" font-size="68" fill="#4A5E52" letter-spacing="1.5">Solutions</text>
+</svg>

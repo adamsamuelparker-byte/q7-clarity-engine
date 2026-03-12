@@ -56,6 +56,36 @@ export type Database = {
         }
         Relationships: []
       }
+      page_views: {
+        Row: {
+          device_type: string | null
+          id: string
+          page_url: string
+          referrer: string | null
+          screen_width: number | null
+          user_agent: string | null
+          visited_at: string
+        }
+        Insert: {
+          device_type?: string | null
+          id?: string
+          page_url: string
+          referrer?: string | null
+          screen_width?: number | null
+          user_agent?: string | null
+          visited_at?: string
+        }
+        Update: {
+          device_type?: string | null
+          id?: string
+          page_url?: string
+          referrer?: string | null
+          screen_width?: number | null
+          user_agent?: string | null
+          visited_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

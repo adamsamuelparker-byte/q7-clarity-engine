@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import q7LogoPng from "@/assets/q7-logo.png";
+import q7LogoSvg from "@/assets/q7-logo.svg";
 
 interface LogoProps {
   showText?: boolean;

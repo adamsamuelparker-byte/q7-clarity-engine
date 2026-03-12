@@ -18,6 +18,7 @@ import LogoDownload from "./pages/LogoDownload";
 import EMopedEBikePage from "./pages/EMopedEBikePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import Tracking from "./pages/Tracking";
 import { CookieConsent } from "./components/CookieConsent";
 
 const queryClient = new QueryClient();

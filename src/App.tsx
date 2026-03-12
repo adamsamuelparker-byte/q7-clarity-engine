@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { PageViewTracker } from "@/components/PageViewTracker";
 import Index from "./pages/Index";
 import SolutionPage from "./pages/SolutionPage";
 import SubProductPage from "./pages/SubProductPage";
@@ -17,6 +18,7 @@ import LogoDownload from "./pages/LogoDownload";
 import EMopedEBikePage from "./pages/EMopedEBikePage";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsAndConditions from "./pages/TermsAndConditions";
+import Tracking from "./pages/Tracking";
 import { CookieConsent } from "./components/CookieConsent";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <PageViewTracker />
         <Routes>
           <Route path="/" element={<Index />} />
           
@@ -38,6 +41,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/tracking" element={<Tracking />} />
           <Route path="/logo" element={<LogoDownload />} />
           <Route path="/quick" element={<QuickLanding />} />
           <Route path="/e-moped-e-bike" element={<EMopedEBikePage />} />

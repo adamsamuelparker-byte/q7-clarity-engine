@@ -24,7 +24,7 @@ export const Logo = ({
         src={q7LogoPng}
         alt="Q7 Business and Financial Solutions"
         className={cn(
-          "h-8 sm:h-9 md:h-10 w-auto",
+          "h-10 sm:h-12 md:h-14 w-auto",
           isLight && "brightness-0 invert",
           iconClassName
         )}

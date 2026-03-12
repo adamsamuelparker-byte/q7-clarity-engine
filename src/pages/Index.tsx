@@ -203,7 +203,7 @@ const Index = () => {
           <div className="container-xl">
             <div className="mb-12 md:mb-14">
               <h2 className="text-heading font-bold mb-3">
-                Explore Leasing & Rental Options
+                More Business Solutions
               </h2>
               <p className="text-muted-foreground max-w-lg text-base md:text-lg">
                 Additional services to support every part of your business

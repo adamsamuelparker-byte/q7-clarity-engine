@@ -103,7 +103,7 @@ const Index = () => {
       <div className="hero-wrapper">
         <Header transparent />
         
-        <section className="text-primary-foreground pt-6 pb-10 sm:pt-8 sm:pb-12 md:pt-8 md:pb-14">
+        <section className="text-primary-foreground pt-6 pb-10 sm:pt-8 sm:pb-12 md:pt-8 md:pb-14 lg:pt-6 lg:pb-10">
           <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
             <div className="max-w-xl mx-auto md:mx-0 md:ml-[8%] lg:ml-[12%]">
               <h1 className="text-[2rem] sm:text-[2.25rem] md:text-[2.75rem] lg:text-[3rem] font-semibold leading-[1.2] mb-3 sm:mb-4 animate-slide-up text-left text-primary-foreground">

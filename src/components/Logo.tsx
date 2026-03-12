@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import q7LogoSvg from "@/assets/q7-logo.svg";
-
+import q7LogoWhiteSvg from "@/assets/q7-logo-white.svg";
 interface LogoProps {
   showText?: boolean;
   className?: string;

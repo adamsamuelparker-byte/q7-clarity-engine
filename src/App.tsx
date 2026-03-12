@@ -30,6 +30,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <PageViewTracker />
         <Routes>
           <Route path="/" element={<Index />} />
           
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
           <Route path="/admindashboard" element={<AdminDashboard />} />
+          <Route path="/tracking" element={<Tracking />} />
           <Route path="/logo" element={<LogoDownload />} />
           <Route path="/quick" element={<QuickLanding />} />
           <Route path="/e-moped-e-bike" element={<EMopedEBikePage />} />

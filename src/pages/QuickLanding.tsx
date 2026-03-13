@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { LoanSliderHero } from "@/components/LoanSliderHero";
 import { TrustedLendersCarousel } from "@/components/TrustedLendersCarousel";
 import { QuickEnquiryForm } from "@/components/QuickEnquiryForm";
+import { EmergencyFundingBanner } from "@/components/EmergencyFundingBanner";
 
 const QuickLanding = () => {
   const [loanAmount, setLoanAmount] = useState(50000);
@@ -32,6 +33,9 @@ const QuickLanding = () => {
       </div>
 
       <main className="flex-1">
+        {/* Emergency Funding Banner */}
+        <EmergencyFundingBanner />
+
         {/* Trusted Lenders Carousel */}
         <TrustedLendersCarousel />
 

@@ -1,35 +1,61 @@
 
+# Add "Your Name" Field to Standard Enquiry Form
 
-## Fix Pink CTA Colors + Add Emergency Funding Banner
+## Overview
+Add a contact name field to the main enquiry form so we capture who is making the enquiry, not just the company name. This will match the Quick Landing form which already collects both names.
 
-### Problem 1: Colors not updated to Splash Pink
-The `/quick` page LoanSliderHero still uses Racing Blue (`hsl(195, 65%, 28%)`) for:
-- The "Get started" button background
-- The word "minutes" in the heading
+## Changes Required
 
-These should use Splash Pink (`hsl(340, 75%, 55%)`) per the design system where accent/CTA elements use pink.
+### 1. Database Update
+Add a new column to store the contact person's name:
+- **Table**: `leads`
+- **New Column**: `contact_name` (text, nullable to maintain compatibility with existing leads)
 
-### Problem 2: Emergency Funding Banner
-Create a new `EmergencyFundingBanner` component and place it on the `/quick` page between the hero and lender carousel.
+### 2. Standard Enquiry Form Update
+Modify `src/components/EnquiryForm.tsx`:
+- Add a "Your Name" field in Step 3 (Contact Details)
+- Position it before the Company Name field
+- Update the form state to include `contactName`
+- Include contact name in both database insert and email notification
 
-### Changes
+### 3. Email Notification Update
+Modify `supabase/functions/send-lead-notification/index.ts`:
+- Add `contactName` to the expected request interface
+- Include the contact person's name in the email HTML template
 
-**`src/components/LoanSliderHero.tsx`**
-- Change "Get started" button from `hsl(195, 65%, 28%)` to `hsl(340, 75%, 55%)` (Splash Pink)
-- Change "minutes" span from `hsl(195, 65%, 28%)` to `hsl(340, 75%, 55%)`
+## Form Field Layout (Step 3)
 
-**`src/components/EmergencyFundingBanner.tsx`** (new)
-- Red background (`#c0392b`), white text, rounded corners, padding
-- Desktop: single row — lightning bolt icon (semi-transparent white box behind it), heading + subtext center, green WhatsApp button right
-- Mobile: stacked vertically, button full-width
-- Heading: "Need emergency business funding?"
-- Subtext: "No forms, no waiting — speak to a specialist right now"
-- WhatsApp button: `#25D366` background, white text, WhatsApp icon (MessageCircle from lucide), border-radius 7px, subtle pulse animation via box-shadow keyframes
-- WhatsApp link: `https://wa.me/447454759742?text=Emergency%20Funding%20-%20Hi%2C%20I%20would%20like%20to%20discuss%20emergency%20business%20funding%20options%20for%20my%20business.` (using the real number already in use)
+The updated Step 3 will display:
+1. Your Name (new field)
+2. Company Name
+3. Annual Turnover
+4. Email
+5. Phone
+6. Additional Notes
 
-**`src/pages/QuickLanding.tsx`**
-- Import and place `<EmergencyFundingBanner />` between the hero-wrapper div and `<TrustedLendersCarousel />`
+## Technical Details
 
-**`src/pages/Index.tsx`**
-- Also place `<EmergencyFundingBanner />` between the hero-wrapper and `<TrustedLendersCarousel />`
+**Form State Change:**
+```typescript
+const [formData, setFormData] = useState({
+  contactName: "",  // NEW
+  companyName: "",
+  turnover: "",
+  email: "",
+  phone: "",
+  notes: "",
+});
+```
 
+**Validation Update:**
+```typescript
+const canSubmit = formData.contactName && formData.companyName && 
+  formData.turnover && formData.email && formData.phone;
+```
+
+## Confirmation Points
+- Both forms will now collect: Your Name + Business/Company Name
+- Leads are saved to the database with the new `contact_name` field
+- Email notifications will include the contact person's name
+- Users are redirected to `/thank-you` page after submission (already working)
+- All leads visible in admin dashboard (already working)

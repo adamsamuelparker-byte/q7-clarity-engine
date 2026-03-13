@@ -21,6 +21,7 @@ import { IntentSelector } from "@/components/IntentSelector";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { TrustedLendersCarousel } from "@/components/TrustedLendersCarousel";
+import { EmergencyFundingBanner } from "@/components/EmergencyFundingBanner";
 
 const primaryProducts = [
   {
@@ -146,6 +147,9 @@ const Index = () => {
       </div>
 
       <main className="flex-1">
+        {/* Emergency Funding Banner */}
+        <EmergencyFundingBanner />
+
         {/* Trusted Lenders Carousel */}
         <TrustedLendersCarousel />
 

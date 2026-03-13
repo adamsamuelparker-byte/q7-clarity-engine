@@ -33,6 +33,9 @@ const QuickLanding = () => {
       </div>
 
       <main className="flex-1">
+        {/* Emergency Funding Banner */}
+        <EmergencyFundingBanner />
+
         {/* Trusted Lenders Carousel */}
         <TrustedLendersCarousel />
 

@@ -142,7 +142,7 @@ export const LoanSliderHero = ({ onGetStarted }: LoanSliderHeroProps) => {
             size="lg"
             className="group text-lg font-bold px-12 py-4 h-auto gap-2"
             style={{
-              backgroundColor: 'hsl(195, 65%, 28%)',
+              backgroundColor: 'hsl(340, 75%, 55%)',
               color: 'hsl(0, 0%, 100%)',
             }}
           >

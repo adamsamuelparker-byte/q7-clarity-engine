@@ -22,6 +22,7 @@ const navigation = {
 };
 
 const contactInfo = {
+  landline: "0330 6331199",
   sales: "07378 375160",
   whatsapp: "07378 375160",
   email: "Info@q7businessandfinancialsolutions.com",

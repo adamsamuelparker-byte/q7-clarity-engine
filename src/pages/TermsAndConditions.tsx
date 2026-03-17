@@ -72,7 +72,8 @@ const TermsAndConditions = () => {
             <p>If you have any questions about these Terms and Conditions, please contact us:</p>
             <ul className="list-none space-y-2">
               <li>Email: Info@q7businessandfinancialsolutions.com</li>
-              <li>Phone: 07378 375160</li>
+              <li>Landline: 0330 6331199</li>
+              <li>Mobile: 07378 375160</li>
               <li>Address: 71–75 Shelton Street, Covent Garden, London, WC2H 9JQ</li>
             </ul>
           </section>

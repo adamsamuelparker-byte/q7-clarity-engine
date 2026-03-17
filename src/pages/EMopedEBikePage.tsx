@@ -168,6 +168,14 @@ const EMopedEBikePage = () => {
                 Leasing solutions may be available for businesses looking to introduce electric delivery vehicles into their operations or expand an existing fleet.
               </p>
             </div>
+            <div className="mt-8">
+              <img 
+                src="/src/assets/eskuta-delivery-bikes.png" 
+                alt="Eskuta electric delivery bike for business use" 
+                className="w-full max-w-xl rounded-lg shadow-md"
+                loading="lazy"
+              />
+            </div>
           </div>
         </section>
 

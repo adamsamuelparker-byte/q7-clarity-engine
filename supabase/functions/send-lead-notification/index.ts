@@ -77,7 +77,7 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "Q7 Website <onboarding@resend.dev>",
-        to: ["Ibusinessfinancialsolutions@gmail.com"],
+        to: ["Info@q7businessandfinancialsolutions.com"],
         subject: `New Lead: ${leadData.companyName}`,
         html: emailHtml,
       }),

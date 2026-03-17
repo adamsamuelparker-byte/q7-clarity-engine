@@ -2,7 +2,7 @@ import { Zap, MessageCircle } from "lucide-react";
 
 export const EmergencyFundingBanner = () => {
   const whatsappUrl =
-    "https://wa.me/447454759742?text=Emergency%20Funding%20-%20Hi%2C%20I%20would%20like%20to%20discuss%20emergency%20business%20funding%20options%20for%20my%20business.";
+    "https://wa.me/447378375160?text=Emergency%20Funding%20-%20Hi%2C%20I%20would%20like%20to%20discuss%20emergency%20business%20funding%20options%20for%20my%20business.";
 
   return (
     <section className="px-4 sm:px-6 py-6">

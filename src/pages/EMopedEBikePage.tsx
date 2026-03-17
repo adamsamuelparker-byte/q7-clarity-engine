@@ -4,6 +4,7 @@ import { EnquiryForm } from "@/components/EnquiryForm";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { FAQSection } from "@/components/FAQSection";
+import eskutaBikeImg from "@/assets/eskuta-delivery-bikes.png";
 
 const whoThisIsFor = [
   "Restaurants offering delivery services",
@@ -167,6 +168,14 @@ const EMopedEBikePage = () => {
               <p>
                 Leasing solutions may be available for businesses looking to introduce electric delivery vehicles into their operations or expand an existing fleet.
               </p>
+            </div>
+            <div className="mt-8">
+              <img 
+                src={eskutaBikeImg} 
+                alt="Eskuta electric delivery bike for business use" 
+                className="w-full max-w-xl rounded-lg shadow-md"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>

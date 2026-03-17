@@ -6,9 +6,9 @@ import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
 const contactInfo = {
-  sales: "0330 6113399",
-  whatsapp: "07454 759742",
-  email: "Ibusinessfinancialsolutions@gmail.com",
+  sales: "07378 375160",
+  whatsapp: "07378 375160",
+  email: "Info@q7businessandfinancialsolutions.com",
   address: "71-75 Shelton Street, Covent Garden, London WC2H 9JQ",
 };
 

@@ -8,7 +8,7 @@ interface WhatsAppCTAProps {
   variant?: "default" | "contact" | "service";
 }
 
-const WHATSAPP_LINK = "https://wa.me/447454759742?text=Hi%20I%20am%20getting%20in%20touch%20from%20your%20website";
+const WHATSAPP_LINK = "https://wa.me/447378375160?text=Hi%20I%20am%20getting%20in%20touch%20from%20your%20website";
 
 export const WhatsAppCTA = ({ 
   text = "Or chat to us on WhatsApp",

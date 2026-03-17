@@ -171,7 +171,7 @@ const EMopedEBikePage = () => {
             </div>
             <div className="mt-8">
               <img 
-                src="/src/assets/eskuta-delivery-bikes.png" 
+                src={eskutaBikeImg} 
                 alt="Eskuta electric delivery bike for business use" 
                 className="w-full max-w-xl rounded-lg shadow-md"
                 loading="lazy"

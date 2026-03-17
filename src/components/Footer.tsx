@@ -22,6 +22,7 @@ const navigation = {
 };
 
 const contactInfo = {
+  landline: "0330 6331199",
   sales: "07378 375160",
   whatsapp: "07378 375160",
   email: "Info@q7businessandfinancialsolutions.com",
@@ -84,11 +85,20 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a 
+                  href={`tel:${contactInfo.landline.replace(/\s/g, '')}`}
+                  className="flex items-start gap-2.5 text-sm text-primary-foreground/70 hover:text-primary-foreground/90 transition-colors duration-200"
+                >
+                  <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
+                  <span>{contactInfo.landline} (Landline)</span>
+                </a>
+              </li>
+              <li>
+                <a 
                   href={`tel:${contactInfo.sales.replace(/\s/g, '')}`}
                   className="flex items-start gap-2.5 text-sm text-primary-foreground/70 hover:text-primary-foreground/90 transition-colors duration-200"
                 >
                   <Phone className="h-4 w-4 mt-0.5 flex-shrink-0 text-accent" />
-                  <span>{contactInfo.sales}</span>
+                  <span>{contactInfo.sales} (Mobile)</span>
                 </a>
               </li>
               <li>

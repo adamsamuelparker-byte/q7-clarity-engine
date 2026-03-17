@@ -6,6 +6,7 @@ import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { Phone, MessageCircle, Mail, MapPin } from "lucide-react";
 
 const contactInfo = {
+  landline: "0330 6331199",
   sales: "07378 375160",
   whatsapp: "07378 375160",
   email: "Info@q7businessandfinancialsolutions.com",
@@ -70,6 +71,21 @@ const Contact = () => {
                 </h2>
                 <div className="space-y-4">
                   <a 
+                    href={`tel:${contactInfo.landline.replace(/\s/g, '')}`}
+                    className="flex items-start gap-3 p-3 bg-card rounded-lg border border-card-border hover:border-card-border-hover transition-all duration-200 group min-h-[52px]"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-accent/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="h-4 w-4 text-foreground/50 group-hover:text-accent transition-colors" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-heading">Landline</p>
+                      <p className="text-sm text-muted-foreground group-hover:text-accent transition-colors">
+                        {contactInfo.landline}
+                      </p>
+                    </div>
+                  </a>
+
+                  <a 
                     href={`tel:${contactInfo.sales.replace(/\s/g, '')}`}
                     className="flex items-start gap-3 p-3 bg-card rounded-lg border border-card-border hover:border-card-border-hover transition-all duration-200 group min-h-[52px]"
                   >
@@ -77,7 +93,7 @@ const Contact = () => {
                       <Phone className="h-4 w-4 text-foreground/50 group-hover:text-accent transition-colors" />
                     </div>
                     <div>
-                      <p className="text-sm font-medium text-heading">Sales</p>
+                      <p className="text-sm font-medium text-heading">Mobile</p>
                       <p className="text-sm text-muted-foreground group-hover:text-accent transition-colors">
                         {contactInfo.sales}
                       </p>

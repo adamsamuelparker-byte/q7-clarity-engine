@@ -1,61 +1,33 @@
 
-# Add "Your Name" Field to Standard Enquiry Form
 
-## Overview
-Add a contact name field to the main enquiry form so we capture who is making the enquiry, not just the company name. This will match the Quick Landing form which already collects both names.
+## Plan: Update Contact Details, Add E-Moped Image, Verify CTA Colors
 
-## Changes Required
+### 1. LoanSliderHero & EmergencyFundingBanner — Already Correct
+The "Get started" button and "minutes" text already use `hsl(340, 75%, 55%)` (Splash Pink). The EmergencyFundingBanner component is already placed on both `/quick` and `/` pages. No changes needed here.
 
-### 1. Database Update
-Add a new column to store the contact person's name:
-- **Table**: `leads`
-- **New Column**: `contact_name` (text, nullable to maintain compatibility with existing leads)
+### 2. Add Delivery Bike Image to E-Moped Page
+- Copy `user-uploads://IMG_7498.png` to `src/assets/eskuta-delivery-bikes.png`
+- Update `src/pages/EMopedEBikePage.tsx` — add the image in the Eskuta section (around line 153-172), displayed as a full-width rounded image with appropriate alt text
 
-### 2. Standard Enquiry Form Update
-Modify `src/components/EnquiryForm.tsx`:
-- Add a "Your Name" field in Step 3 (Contact Details)
-- Position it before the Company Name field
-- Update the form state to include `contactName`
-- Include contact name in both database insert and email notification
+### 3. Update Contact Numbers & Email Site-Wide
 
-### 3. Email Notification Update
-Modify `supabase/functions/send-lead-notification/index.ts`:
-- Add `contactName` to the expected request interface
-- Include the contact person's name in the email HTML template
+**Old values → New values:**
+- Phone: `0330 6113399` → `07378 375160`
+- WhatsApp: `07454 759742` → `07378 375160`
+- Email: `Ibusinessfinancialsolutions@gmail.com` → `Info@q7businessandfinancialsolutions.com`
+- WhatsApp URL number: `447454759742` → `447378375160`
 
-## Form Field Layout (Step 3)
+**Files to update:**
 
-The updated Step 3 will display:
-1. Your Name (new field)
-2. Company Name
-3. Annual Turnover
-4. Email
-5. Phone
-6. Additional Notes
+| File | Changes |
+|------|---------|
+| `src/components/Footer.tsx` | Update contactInfo object (phone, whatsapp, email) |
+| `src/pages/Contact.tsx` | Update contactInfo object (phone, whatsapp, email) |
+| `src/pages/TermsAndConditions.tsx` | Update email and phone in contact section |
+| `src/pages/PrivacyPolicy.tsx` | Update email and phone in contact section |
+| `src/components/WhatsAppCTA.tsx` | Update WhatsApp link number to `447378375160` |
+| `src/components/EmergencyFundingBanner.tsx` | Update WhatsApp link number to `447378375160` |
+| `supabase/functions/send-lead-notification/index.ts` | Update `to` email address to `Info@q7businessandfinancialsolutions.com` and redeploy |
 
-## Technical Details
+Total: 7 files updated, 1 image copied, 1 edge function redeployed.
 
-**Form State Change:**
-```typescript
-const [formData, setFormData] = useState({
-  contactName: "",  // NEW
-  companyName: "",
-  turnover: "",
-  email: "",
-  phone: "",
-  notes: "",
-});
-```
-
-**Validation Update:**
-```typescript
-const canSubmit = formData.contactName && formData.companyName && 
-  formData.turnover && formData.email && formData.phone;
-```
-
-## Confirmation Points
-- Both forms will now collect: Your Name + Business/Company Name
-- Leads are saved to the database with the new `contact_name` field
-- Email notifications will include the contact person's name
-- Users are redirected to `/thank-you` page after submission (already working)
-- All leads visible in admin dashboard (already working)

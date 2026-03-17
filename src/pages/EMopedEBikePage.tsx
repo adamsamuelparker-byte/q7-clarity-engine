@@ -4,6 +4,7 @@ import { EnquiryForm } from "@/components/EnquiryForm";
 import { FloatingCTA } from "@/components/FloatingCTA";
 import { WhatsAppCTA } from "@/components/WhatsAppCTA";
 import { FAQSection } from "@/components/FAQSection";
+import eskutaBikeImg from "@/assets/eskuta-delivery-bikes.png";
 
 const whoThisIsFor = [
   "Restaurants offering delivery services",
